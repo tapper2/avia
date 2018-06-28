@@ -1,3 +1,45 @@
 page-home {
+  .mainIcons
+  {
 
+  }
+
+  .mainRow
+  {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .mainIcon
+  {
+    margin: auto;
+  }
+
+  .topBorder
+  {
+    border-top:1px solid #6eb43f ;
+  }
+
+  .leftBorder
+  {
+    border-left:1px solid #6eb43f ;
+  }
+
+  .leftIcon
+  {
+    float: left;
+    width: 50%;
+  }
+
+  .rightIcon
+  {
+    float: left;
+    width: 50%;
+  }
+
+  .mainIconTitle
+  {
+    text-align: center;
+    color: #7f7f7f;
+  }
 }

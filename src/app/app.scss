@@ -14,3 +14,27 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.MT10
+{
+  margin-top: 10px;
+}
+
+.MT20
+{
+  margin-top: 20px;
+}
+
+.inputText
+{
+  width: 100%;
+  border-radius:5px;
+  border: 1px solid #ccc;
+  padding: 9px 13px;
+  text-align: right;
+}
+
+.mainToastClass
+{
+  text-align: center;
+}

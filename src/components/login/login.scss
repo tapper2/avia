@@ -1,0 +1,24 @@
+login {
+  .mainLogo
+  {
+    width: 80%;
+    margin: auto;
+  }
+
+  .loginForm
+  {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  button
+  {
+    background-color: #6eb43f !important;
+  }
+
+  p{
+    color: #ccc;
+    text-align: center;
+    direction: rtl;
+  };
+}

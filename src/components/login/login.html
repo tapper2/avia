@@ -1,0 +1,15 @@
+<!-- Generated template for the LoginComponent component -->
+
+    <div>
+        <div class="mainLogo">
+            <img src="images/logo.png" style="width: 100%">
+        </div>
+
+        <div class="loginForm">
+            <input type="text" class="inputText" value="" [(ngModel)]="UserId" placeholder="הכנס מייל "/>
+            <input type="text" class="inputText MT10" value="" [(ngModel)]="Password"  placeholder="הכנס סיסמה "/>
+        </div>
+
+        <button ion-button color="dark" full class="MT20" (click)="LogIn()">כניסה</button>
+        <p >שכחת סיסמה ?</p>
+    </div>

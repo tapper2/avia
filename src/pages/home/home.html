@@ -1,18 +1,60 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+  <!--<ion-navbar>-->
+    <!--<button ion-button menuToggle>-->
+      <!--<ion-icon name="menu"></ion-icon>-->
+    <!--</button>-->
+    <!--<ion-title>Home</ion-title>-->
+  <!--</ion-navbar>-->
+    <header></header>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+    <div>
+        <ion-slides>
+            <ion-slide>
+                <img src="images/home/s_image_1.jpg" style="width: 100%" />
+            </ion-slide>
+            <ion-slide>
+                <img src="images/home/s_image_1.jpg" style="width: 100%" />
+            </ion-slide>
+            <ion-slide>
+                <img src="images/home/s_image_1.jpg" style="width: 100%" />
+            </ion-slide>
+        </ion-slides>
+    </div>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <div class="mainIcons">
+        <div class="mainRow" >
+            <div class="leftIcon">
+                <div class="mainIcon" [style.width]="iconWidth">
+                    <img src="images/home/ic1.png" style="width:100%" />
+                    <div class="mainIconTitle">יחידות אכסון</div>
+                </div>
+            </div>
+            <div class="rightIcon leftBorder" [style.height]="cubeHeight" (click)="NavigatePage(3)">
+                <div class="mainIcon" [style.width]="iconWidth">
+                    <img src="images/home/ic2.png" style="width:100%" />
+                    <div class="mainIconTitle">הפריטים שלי</div>
+                </div>
+            </div>
+        </div>
+        <div class="mainRow topBorder" >
+            <div class="leftIcon">
+                <div class="mainIcon" [style.width]="iconWidth">
+                    <img src="images/home/ic3.png" style="width:100%" />
+                    <div class="mainIconTitle">פירוט חיובים</div>
+                </div>
+            </div>
+            <div class="rightIcon leftBorder" [style.height]="cubeHeight">
+                <div class="mainIcon" [style.width]="iconWidth">
+                    <img src="images/home/ic4.png" style="width:100%" />
+                    <div class="mainIconTitle">החלפת כרטיסי אשראי</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </ion-content>
+
+<ion-footer no-border class="topBorder">
+    <footer></footer>
+</ion-footer>

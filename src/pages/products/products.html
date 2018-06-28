@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ProductsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <header></header>
+</ion-header>
+
+
+<ion-content>
+    <div class="products">
+        <div *ngFor="let item of productsArray let i=index" class="productItem">
+            <div *ngIf="!item.STATUS || item.STATUS == 0">
+                <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
+                <div class="productInfo" >
+                    <div class="productImage">
+                        <img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}" style="width: 100%" />
+                    </div>
+                    <div class="productText">
+                        <div> {{item.PARTDES}}</div>
+                        <div> {{item.FREE1}}</div>
+                        <div> {{item.PRIT_FREE}}</div>
+                    </div>
+                    <div class="productEdit" (click)="changeStatus(i,1)">
+                        <img src="images/edit.png" style="width: 100%" />
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="item.STATUS == 1">
+                <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>
+                <div>6666767676767676767</div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</ion-content>
