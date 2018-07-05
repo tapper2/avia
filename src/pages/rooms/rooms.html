@@ -1,0 +1,37 @@
+<!--
+  Generated template for the RoomsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <header></header>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="products">
+    <div *ngFor="let item of roomsArray let i=index" class="productItem">
+      <div >
+        <div class="productNumber">  {{item.PDES}}</div>
+        <div class="productInfo" >
+          <div class="productText">
+            <div dir="rtl" style="direction: rtl;"> מספר מוצר: {{item.PARTNAME}}</div>
+            <div dir="rtl" style="direction: rtl;">כמות: {{item.QUANT}} {{item.UNITNAME}}</div>
+            <div dir="rtl" style="direction: rtl;">מחיר: {{item.BASEPRICE}} {{item.OCODE}}</div>
+          </div>
+          <div class="productEdit" (click)="clearRoom(item.PARTNAME)">
+            <ion-icon name="exit" style="font-size:30px"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer no-border class="topBorder">
+  <button ion-button full style="background-color: #6eb43f" (click)="ClearRooms()">פינוי חדרים כללי</button>
+</ion-footer>
+

@@ -12,7 +12,7 @@
         <div class="EditRow" *ngIf="isOpen">
             <img src="images/edit.png" class="absoluteEditButton" (click)="editRow()">
             <input type="text" class="inputText MT10" value="" [(ngModel)]="Data[jsonKey]"
-                   placeholder="הכנס סיסמה "/>
+                   [placeholder]="Title"/>
         </div>
     </div>
 </div>

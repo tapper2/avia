@@ -22,7 +22,6 @@ export class LoginComponent {
     public Password : string = '34343434rr'
     public jsonResponse;
     constructor(public navCtrl: NavController , public server:ServerService , public Toast:ToastService) {
-    
     }
     
     gotoHomePage() {
@@ -39,8 +38,10 @@ export class LoginComponent {
             if(data.json().value[0])
             {
                 console.log(data.json().value[0])
-                localStorage.userData = JSON.stringify(data.json().value[0]);
-                this.navCtrl.push(UserDetailsPage);
+
+                localStorage.setItem("CUSTNAME",data.json().value[0].CUSTNAME)
+                localStorage.setItem("userData",JSON.stringify(data.json().value[0]))
+                this.navCtrl.push(HomePage);
             }
             else
             {

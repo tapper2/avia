@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {ContactsPage} from "../contacts/contacts";
+import {ToastService} from "../../services/toast-service";
+import {ServerService} from "../../services/server-service";
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the UserDetailsPage page.
@@ -27,8 +31,8 @@ export class UserDetailsPage implements OnInit{
         'zip':false,
     }
     
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-        this.userData = JSON.parse(localStorage.userData);
+    constructor(public navCtrl: NavController, public navParams: NavParams, public server:ServerService, public Toast:ToastService) {
+        this.userData = JSON.parse(localStorage.getItem("userData"));
         console.log("Details : " , this.userData);
     }
     
@@ -46,10 +50,55 @@ export class UserDetailsPage implements OnInit{
         console.log(row)
         this.inputFlags[row] = this.inputFlags[row] == true ? false : true;
     }
-    
-    showDetails()
+
+    saveDetails()
     {
         console.log("1111" , this.userData);
+
+
+        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+        let sendData =
+
+
+
+            {
+                "LOADCODE": "1",
+                "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),           //מספר לקוח
+                "CUSTDES": this.userData.CUSTDES,        // customer name
+                "ADDRESS":  this.userData.ADDRESS,
+                "CITY":  this.userData.STATE,
+                "ZIP":  this.userData.ZIP,                 //מיקוד
+                "PHONE1":  this.userData.PHONE,          //טלפון נייד
+                "PHONE2":  this.userData.AVI_PHONE2,        //טלפון 2
+                "PHONE3":  this.userData.AVI_PHONE3,         //טלפון3
+                "PHONE4":  this.userData.FAX,           //פקס
+                "EMAIL":  this.userData.EMAIL,     //אימייל
+                "PASSWORD": this.userData.PRIT_PASSWORD,           //סיסמא
+                "PRIT_INTERFACE_SUBFORM":
+                    [
+                        {
+                            "EXECUTE": "Y"
+                        }
+                    ]
+            }
+        this.server.SendPost(URL,sendData).then((data: any) => {
+            console.log("response",data);
+            let response = data;
+            if  (response.ok) {
+                this.Toast.presentToast("עידכון פרטים התבצע בהצלחה");
+                localStorage.userData = JSON.stringify(this.userData);
+                this.navCtrl.push(HomePage);
+            }
+            else {
+                this.Toast.presentToast("שגיאה, יש לנסות שוב");
+            }
+        });
+
+
+    }
+
+    goContactsPage() {
+        this.navCtrl.push(ContactsPage);
     }
     
 }

@@ -1,0 +1,28 @@
+<!--
+  Generated template for the AddcontactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <header></header>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="info">
+
+
+    <edit-row jsonKey="NAME" Title = "שם לקוח" [Data]="contactFields"> </edit-row>
+    <edit-row jsonKey="PHONENUM" Title = "טלפון" [Data]="contactFields"> </edit-row>
+    <edit-row jsonKey="CELLPHONE" Title = "טלפון נייד" [Data]="contactFields"> </edit-row>
+    <edit-row jsonKey="HOMEPHONE" Title = "תעודת זהות" [Data]="contactFields"> </edit-row>
+    <edit-row jsonKey="EMAIL" Title = "דואר אלקטרוני" [Data]="contactFields"> </edit-row>
+
+
+
+    <div class="buttons">
+      <button ion-button full style="background-color: #6eb43f" (click)="saveContact()">שלח</button>
+    </div>
+  </div>
+</ion-content>

@@ -11,17 +11,21 @@
                 <div>{{userData.CUSTNAME}}</div>
             </div>
 
-            <edit-row jsonKey="AVI_PHONE2" Title = "טלפון נייד" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="AVI_PHONE3" Title = "טלפון ראשי" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="FAX" Title = "פקס" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="EMAIL" Title = "אימייל" [Data]="userData"> </edit-row>
+            <edit-row jsonKey="CUSTDES" Title = "שם לקוח" [Data]="userData"> </edit-row>
             <edit-row jsonKey="ADDRESS" Title = "כתובת" [Data]="userData"> </edit-row>
             <edit-row jsonKey="STATE" Title = "עיר" [Data]="userData"> </edit-row>
             <edit-row jsonKey="ZIP" Title = "מיקוד" [Data]="userData"> </edit-row>
+            <edit-row jsonKey="PHONE" Title = "טלפון נייד" [Data]="userData"> </edit-row>
+            <edit-row jsonKey="AVI_PHONE2" Title = "טלפון 2" [Data]="userData"> </edit-row>
+            <edit-row jsonKey="AVI_PHONE3" Title = "טלפון 3" [Data]="userData"> </edit-row>
+            <edit-row jsonKey="FAX" Title = "פקס" [Data]="userData"> </edit-row>
+            <edit-row jsonKey="EMAIL" Title = "אימייל" [Data]="userData"> </edit-row>
+            <edit-row jsonKey="PRIT_PASSWORD" Title = "סיסמא" [Data]="userData"> </edit-row>
+
 
             <div class="buttons">
-                <button ion-button full style="background-color: #6eb43f">עדכן פרטים</button>
-                <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" (click)="showDetails()">אנשי קשר</button>
+                <button ion-button full style="background-color: #6eb43f" (click)="saveDetails()">עדכן פרטים</button>
+                <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" (click)="goContactsPage()">אנשי קשר</button>
             </div>
         </div>
 </ion-content>

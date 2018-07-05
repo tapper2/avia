@@ -16,7 +16,7 @@
                 <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
                 <div class="productInfo" >
                     <div class="productImage">
-                        <img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}" style="width: 100%" />
+                        <img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />
                     </div>
                     <div class="productText">
                         <div> {{item.PARTDES}}</div>
@@ -29,8 +29,22 @@
                 </div>
             </div>
             <div *ngIf="item.STATUS == 1">
-                <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>
-                <div>6666767676767676767</div>
+                <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
+                <div class="productInfo" >
+                    <div class="productImage">
+                        <img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}" style="width: 100%" />
+                    </div>
+                    <div class="productText">
+                        <div> {{item.PARTDES}}</div>
+                        <div> {{item.FREE1}}</div>
+                        <input type="text" [(ngModel)]="item.PRIT_FREE">
+                    </div>
+                    <div class="productEdit" (click)="changeStatus(i,0)">
+                        <img src="images/edit.png" style="width: 100%" />
+                    </div>
+                </div>
+                <!-- <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>
+                <div>6666767676767676767</div> -->
             </div>
             <hr>
         </div>

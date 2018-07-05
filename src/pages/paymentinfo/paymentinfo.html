@@ -1,0 +1,51 @@
+<!--
+  Generated template for the PaymentinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <header></header>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div>
+    <div class="fullRow">
+      <div class="nonEditRow" *ngIf="!cardFieldOpen" >
+        <div class="rowRight">
+          {{jsonResponse.PAYACCOUNT}}
+        </div>
+        <!--<div class="rowLeft">-->
+          <!--<img src="images/edit.png" style="width: 100%">-->
+        <!--</div>-->
+      </div>
+      <!--<div class="EditRow" *ngIf="cardFieldOpen">-->
+        <!--<img src="images/edit.png" class="absoluteEditButton" (click)="ToggleCardField(0)">-->
+        <!--<input type="tel" class="inputText MT10"  [(ngModel)]="jsonResponse.PAYACCOUNT"-->
+               <!--placeholder="4 ספרות אחרונות של כרטיס האשראי"/>-->
+      <!--</div>-->
+
+    </div>
+
+      <div class="fullRow">
+        <div class="nonEditRow" *ngIf="!expirationOpen" >
+          <div class="rowRight">
+            {{jsonResponse.VALIDMONTH}}
+          </div>
+          <!--<div class="rowLeft">-->
+            <!--<img src="images/edit.png" style="width: 100%">-->
+          <!--</div>-->
+        </div>
+        <!--<div class="EditRow" *ngIf="expirationOpen">-->
+          <!--<img src="images/edit.png" class="absoluteEditButton" (click)="ToggleExpirationField(0)">-->
+          <!--<ion-datetime displayFormat="MM/YY" class="inputText MT10" [max]="maxDate" [(ngModel)]="validMonth"></ion-datetime>-->
+        <!--</div>-->
+
+    </div>
+
+    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" (click)="saveCard()">החלף כרטיס</button>
+
+  </div>
+</ion-content>

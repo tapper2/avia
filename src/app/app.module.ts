@@ -13,8 +13,16 @@ import {ComponentsModule} from "../components/components.module";
 import {ServerService} from "../services/server-service";
 import {HttpModule} from "@angular/http";
 import {ProductsPage} from "../pages/products/products";
+import {RoomsPage} from "../pages/rooms/rooms";
+import {ContactsPage} from "../pages/contacts/contacts";
+import {AddcontactPage} from "../pages/addcontact/addcontact";
+import {ContactPage} from "../pages/contact/contact";
+import {PaymentinfoPage} from "../pages/paymentinfo/paymentinfo";
+
 import {UserDetailsPage} from "../pages/user-details/user-details";
 import {ToastService} from "../services/toast-service";
+import { CallNumber } from '@ionic-native/call-number';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 
@@ -25,7 +33,12 @@ import {ToastService} from "../services/toast-service";
         ListPage,
         LoginPage,
         ProductsPage,
-        UserDetailsPage
+        UserDetailsPage,
+        RoomsPage,
+        ContactsPage,
+        ContactPage,
+        AddcontactPage,
+        PaymentinfoPage
     ],
     imports: [
         BrowserModule,
@@ -40,13 +53,20 @@ import {ToastService} from "../services/toast-service";
         ListPage,
         LoginPage,
         ProductsPage,
-        UserDetailsPage
+        UserDetailsPage,
+        RoomsPage,
+        ContactsPage,
+        ContactPage,
+        AddcontactPage,
+        PaymentinfoPage
     ],
     providers: [
         StatusBar,
         SplashScreen,
         ServerService,
         ToastService,
+        CallNumber,
+        InAppBrowser,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })

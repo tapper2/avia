@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {UserDetailsPage} from "../../pages/user-details/user-details";
+import {ContactPage} from "../../pages/contact/contact";
 import {ProductsPage} from "../../pages/products/products";
 import {NavController} from "ionic-angular";
 
@@ -24,8 +25,13 @@ export class FooterComponent {
     
     NavigatePage(pageNum) {
         switch (pageNum) {
+
+            case 1:
+                this.navCtrl.push(ContactPage);
+                break;
+
             case 5:
-                this.navCtrl.push(UserDetailsPage); //LoginPage
+                this.navCtrl.push(UserDetailsPage);
                 break;
         }
     }
