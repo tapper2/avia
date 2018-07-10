@@ -10,13 +10,22 @@
 
 
 <ion-content>
+    <div class="buttonsBar">
+        <div class="buttonsBarLeft">
+            <button ion-button class="buttonsBarButton" (click)="c()"> החזרת פריטים</button>
+        </div>
+        <div class="buttonsBarRight">
+            <button ion-button class="buttonsBarButton" (click)="c()"> שליפת פריטים</button>
+        </div>
+    </div>
     <div class="products">
         <div *ngFor="let item of productsArray let i=index" class="productItem">
             <div *ngIf="!item.STATUS || item.STATUS == 0">
                 <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
                 <div class="productInfo" >
                     <div class="productImage">
-                        <img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />
+                        <!--<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />-->
+                        <img src="images/avatar.png"  style="width: 100%" />
                     </div>
                     <div class="productText">
                         <div> {{item.PARTDES}}</div>
@@ -37,11 +46,10 @@
                     <div class="productText">
                         <div> {{item.PARTDES}}</div>
                         <div> {{item.FREE1}}</div>
-                        <input type="text" [(ngModel)]="item.PRIT_FREE">
                     </div>
-                    <div class="productEdit" (click)="changeStatus(i,0)">
-                        <img src="images/edit.png" style="width: 100%" />
-                    </div>
+
+                    <textarea rows="4" cols="50" [(ngModel)]="item.PRIT_FREE"> </textarea>
+                    <button ion-button class="editButton" (click)="changeStatus(i,0)"> סיים עריכה</button>
                 </div>
                 <!-- <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>
                 <div>6666767676767676767</div> -->

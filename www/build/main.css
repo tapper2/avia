@@ -25955,6 +25955,47 @@ page-products .productEdit {
   margin-left: 20px;
 }
 
+page-products .editButton {
+  background-color: #6fb43f;
+  width: 90%;
+  margin: auto;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+page-products textarea {
+  width: 67%;
+  margin: auto;
+  margin-left: 5%;
+  margin-top: 10px;
+  text-align: right;
+  padding: 5px;
+  border: 1px solid #B6B6B6;
+}
+
+page-products .buttonsBar {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+page-products .buttonsBarLeft {
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+}
+
+page-products .buttonsBarRight {
+  width: 40%;
+  float: right;
+  margin-right: 5%;
+}
+
+page-products .buttonsBarButton {
+  width: 100%;
+  background-color: #6fb43f;
+}
+
 page-rooms .productInfo {
   overflow: hidden;
   width: 100%;
