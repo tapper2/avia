@@ -42,6 +42,13 @@ $colors: (
 );
 
 
+@import "../../ion2-calendar/dist/components/calendar-week.component";
+@import "../../ion2-calendar/dist/components/calendar.component";
+@import "../../ion2-calendar/dist/components/month.component";
+@import "../../ion2-calendar/dist/components/calendar.modal";
+@import "../../ion2-calendar/dist/components/month-picker.component";
+
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

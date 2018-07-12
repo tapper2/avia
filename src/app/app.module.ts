@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {ErrorHandler, NgModule} from '@angular/core';
+import {ErrorHandler, NgModule, LOCALE_ID} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
 import {MyApp} from './app.component';
@@ -19,12 +19,18 @@ import {AddcontactPage} from "../pages/addcontact/addcontact";
 import {ContactPage} from "../pages/contact/contact";
 import {PaymentinfoPage} from "../pages/paymentinfo/paymentinfo";
 import {SelectedproductsPage} from "../pages/selectedproducts/selectedproducts";
+import {PaymenthistoryPage} from "../pages/paymenthistory/paymenthistory";
+import {RoomscalendarPage} from "../pages/roomscalendar/roomscalendar";
 
 import {UserDetailsPage} from "../pages/user-details/user-details";
 import {ToastService} from "../services/toast-service";
 import { CallNumber } from '@ionic-native/call-number';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { CalendarModule } from "ion2-calendar";
+import { registerLocaleData } from '@angular/common';
+import lcoaleDeAt from '@angular/common/locales/he';
 
+registerLocaleData(lcoaleDeAt);
 
 
 @NgModule({
@@ -40,13 +46,16 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
         ContactPage,
         AddcontactPage,
         PaymentinfoPage,
-        SelectedproductsPage
+        SelectedproductsPage,
+        PaymenthistoryPage,
+        RoomscalendarPage
     ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
         ComponentsModule,
         HttpModule,
+        CalendarModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -61,7 +70,9 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
         ContactPage,
         AddcontactPage,
         PaymentinfoPage,
-        SelectedproductsPage
+        SelectedproductsPage,
+        PaymenthistoryPage,
+        RoomscalendarPage
     ],
     providers: [
         StatusBar,
@@ -70,7 +81,9 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
         ToastService,
         CallNumber,
         InAppBrowser,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        { provide: LOCALE_ID, useValue: "he" }
+
     ]
 })
 export class AppModule {

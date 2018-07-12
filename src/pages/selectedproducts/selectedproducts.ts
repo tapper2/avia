@@ -25,32 +25,32 @@ export class SelectedproductsPage {
         {
             id: '0',
             day: 'ראשון',
-            date: '1988-01-01',
-            dateformatted : '01/01/1988',
+            date: '2018-01-01',
+            dateformatted : '01/01/2018',
             start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
             end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
         },
         {
             id: '1',
             day: 'שני',
-            date: '1988-01-01',
-            dateformatted : '01/01/1988',
+            date: '2018-01-01',
+            dateformatted : '01/01/2018',
             start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
             end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
         },
         {
             id: '2',
             day: 'שלישי',
-            date: '1988-01-01',
-            dateformatted : '01/01/1988',
+            date: '2018-01-01',
+            dateformatted : '01/01/2018',
             start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
             end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
         },
         {
             id: '3',
             day: 'רביעי',
-            date: '1988-01-01',
-            dateformatted : '01/01/1988',
+            date: '2018-01-01',
+            dateformatted : '01/01/2018',
             start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
             end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
         },
@@ -71,10 +71,7 @@ export class SelectedproductsPage {
 
       for (let i = 0; i < this.myProducts.length; i++) {
           if (this.myProducts[i].choosen == true) {
-              if (this.pageName == "products")
-                    this.caluclateProductPrice = this.caluclateProductPrice+this.myProducts[i].PRIT_PRICEOUT;
-              else
-                  this.caluclateProductPrice = this.caluclateProductPrice+this.myProducts[i].BASEPRICE;
+              this.caluclateProductPrice = this.caluclateProductPrice+this.myProducts[i].PRIT_PRICEOUT;
           }
       }
   }

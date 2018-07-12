@@ -16,6 +16,7 @@ export class EditRowComponent implements OnInit {
     @Input() Data:any;
     @Input() Title:string;
     @Input() FieldType:string;
+    @Input() Editable:string;
 
     public isOpen = false;
     
@@ -26,9 +27,10 @@ export class EditRowComponent implements OnInit {
         console.log("Details1 : ", this.Data[this.jsonKey] , this.jsonKey);
     }
     
-    editRow()
+    editRow(Editable)
     {
-        this.isOpen = this.isOpen == true ? false : true;
+        if (Editable =="true")
+            this.isOpen = this.isOpen == true ? false : true;
     }
     
 }

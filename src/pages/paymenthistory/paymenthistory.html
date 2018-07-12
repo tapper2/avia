@@ -1,0 +1,42 @@
+<ion-header>
+  <header></header>
+</ion-header>
+
+
+<ion-content padding>
+    <div class="buttonsBar">
+        <div class="buttonsBarLeft">
+            <button ion-button [ngClass]="[FilterType == 0? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(0)"> כל הפעולות</button>
+        </div>
+        <div class="buttonsBarRight">
+            <button ion-button  [ngClass]="[FilterType == 1 ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(1)"> פעולות זכות</button>
+        </div>
+
+        <div class="buttonsBarRight">
+            <button ion-button  [ngClass]="[FilterType == 2 ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(2)">  פעולות יתרה</button>
+        </div>
+    </div>
+
+  <div class="products">
+    <div *ngFor="let item of paymentHistoryArray let i=index" class="productItem">
+        <div class="productNumber">{{item.ACCDES}} </div>
+        <div class="productInfo" >
+          <div class="productText">
+            <div> {{item.ACCNAME}}</div>
+            <div *ngIf="item.FRECONNUM == 1" style="direction: rtl;">חובה: {{item.DEBIT}} {{item.CODE}} </div>
+            <div *ngIf="item.FRECONNUM == -1" style="direction: rtl;">זכות: {{item.CREDIT}} {{item.CODE}} </div>
+            <div> {{item.DETAILS}}</div>
+          </div>
+        </div>
+        <button ion-button full style="background-color: #6eb43f" >קישור לחשבונית</button>
+        <hr>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer >
+    <div class="buttons">
+        <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ יתרה: {{caluclatedSum}} ש"ח</button>
+    </div>
+</ion-footer>

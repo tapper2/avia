@@ -3,6 +3,7 @@ import {UserDetailsPage} from "../../pages/user-details/user-details";
 import {ContactPage} from "../../pages/contact/contact";
 import {ProductsPage} from "../../pages/products/products";
 import {NavController} from "ionic-angular";
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the FooterComponent component.
@@ -18,7 +19,7 @@ export class FooterComponent {
     
     text: string;
     
-    constructor(public navCtrl: NavController ) {
+    constructor(public navCtrl: NavController,private iab: InAppBrowser ) {
         console.log('Hello FooterComponent Component');
         this.text = 'Hello World';
     }
@@ -30,7 +31,12 @@ export class FooterComponent {
                 this.navCtrl.push(ContactPage);
                 break;
 
-            case 5:
+            case 2:
+                const browser = this.iab.create('https://avias.org/aviaform/', '_self', "location=yes");
+                browser.show();
+                break;
+
+            case 3:
                 this.navCtrl.push(UserDetailsPage);
                 break;
         }

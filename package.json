@@ -36,6 +36,7 @@
         "cordova-plugin-ionic-webview": "^1.1.19",
         "cordova-plugin-splashscreen": "^5.0.2",
         "cordova-plugin-whitelist": "^1.3.3",
+        "ion2-calendar": "^2.1.7",
         "ionic-angular": "3.9.2",
         "ionicons": "3.0.0",
         "melanke-watchjs": "^1.4.3",

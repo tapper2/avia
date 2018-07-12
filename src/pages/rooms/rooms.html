@@ -12,12 +12,7 @@
 
 <ion-content padding>
   <div class="buttonsBar">
-    <div class="buttonsBarLeft">
-      <button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>
-    </div>
-    <div class="buttonsBarRight">
-      <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>
-    </div>
+    <button ion-button full style="background-color: #7f7f7f"  (click)="ToggleCheckBox(1)">הודעה על פינוי</button>
   </div>
 
   <div class="products">
@@ -40,9 +35,9 @@
   </div>
 </ion-content>
 
-<ion-footer no-border class="topBorder" *ngIf="!showSelectedFooter">
-  <button ion-button full style="background-color: #6eb43f" (click)="ClearRooms()">פינוי חדרים כללי</button>
-</ion-footer>
+<!--<ion-footer no-border class="topBorder" *ngIf="!showSelectedFooter">-->
+  <!--<button ion-button full style="background-color: #6eb43f" (click)="ClearRooms()">פינוי חדרים כללי</button>-->
+<!--</ion-footer>-->
 
 
 <ion-footer *ngIf="showSelectedFooter">

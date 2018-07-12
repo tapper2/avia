@@ -132,7 +132,6 @@ export class ProductsPage  {
             this.showSelectedFooter  = false;
             this.selectedPullItems = false;
             this.toggleCheckBox = false;
-            this.selectedPullItems  = false;
             this.selectedReturnItems  = false;
             this.productsSendArray = [];
 
@@ -158,8 +157,8 @@ export class ProductsPage  {
                             "SERNUM" : this.productsArray[i].SERNUM,
                             "DUEDATE": this.todaydate, /* תאריך אספקה*/
                             "TASKDATE": moment(this.selectedDayArray.date, 'YYYY-MM-DD').format(),   /* תאריך למשימה*/
-                            "FROMDATE": moment(this.selectedDayArray.date+' '+this.selectedDayArray.start_hour+':00', 'YYYY-MM-DD HH:mm:ss').format(), /* משעה למשימה*/
-                            "TODATE": moment(this.selectedDayArray.date+' '+this.selectedDayArray.end_hour+':00', 'YYYY-MM-DD HH:mm:ss').format() /* עד שעה למשימה*/
+                            "FROMDATE": moment('1988-01-01 '+this.selectedDayArray.start_hour+':00', 'YYYY-MM-DD HH:mm:ss').format(), /* משעה למשימה*/
+                            "TODATE": moment('1988-01-01 '+this.selectedDayArray.end_hour+':00', 'YYYY-MM-DD HH:mm:ss').format() /* עד שעה למשימה*/
                         });
                     }
                 }
