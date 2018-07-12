@@ -38,4 +38,31 @@ page-rooms {
     margin-top: 15px;
     margin-left: 20px;
   }
+
+  .buttonsBar
+  {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 15px;
+  }
+
+  .buttonsBarLeft
+  {
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+  }
+
+  .buttonsBarRight
+  {
+    width: 40%;
+    float: right;
+    margin-right: 5%;
+  }
+
+  .buttonsBarButton
+  {
+    width: 100%;
+    background-color:#6fb43f;
+  }
 }

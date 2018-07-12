@@ -18,6 +18,7 @@ import {ContactsPage} from "../pages/contacts/contacts";
 import {AddcontactPage} from "../pages/addcontact/addcontact";
 import {ContactPage} from "../pages/contact/contact";
 import {PaymentinfoPage} from "../pages/paymentinfo/paymentinfo";
+import {SelectedproductsPage} from "../pages/selectedproducts/selectedproducts";
 
 import {UserDetailsPage} from "../pages/user-details/user-details";
 import {ToastService} from "../services/toast-service";
@@ -38,7 +39,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
         ContactsPage,
         ContactPage,
         AddcontactPage,
-        PaymentinfoPage
+        PaymentinfoPage,
+        SelectedproductsPage
     ],
     imports: [
         BrowserModule,
@@ -58,7 +60,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
         ContactsPage,
         ContactPage,
         AddcontactPage,
-        PaymentinfoPage
+        PaymentinfoPage,
+        SelectedproductsPage
     ],
     providers: [
         StatusBar,

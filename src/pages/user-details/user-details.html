@@ -11,16 +11,16 @@
                 <div>{{userData.CUSTNAME}}</div>
             </div>
 
-            <edit-row jsonKey="CUSTDES" Title = "שם לקוח" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="ADDRESS" Title = "כתובת" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="STATE" Title = "עיר" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="ZIP" Title = "מיקוד" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="PHONE" Title = "טלפון נייד" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="AVI_PHONE2" Title = "טלפון 2" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="AVI_PHONE3" Title = "טלפון 3" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="FAX" Title = "פקס" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="EMAIL" Title = "אימייל" [Data]="userData"> </edit-row>
-            <edit-row jsonKey="PRIT_PASSWORD" Title = "סיסמא" [Data]="userData"> </edit-row>
+            <edit-row jsonKey="CUSTDES" Title = "שם לקוח" [Data]="userData" FieldType="text"> </edit-row>
+            <edit-row jsonKey="ADDRESS" Title = "כתובת" [Data]="userData" FieldType="text"> </edit-row>
+            <edit-row jsonKey="STATE" Title = "עיר" [Data]="userData" FieldType="text"> </edit-row>
+            <edit-row jsonKey="ZIP" Title = "מיקוד" [Data]="userData" FieldType="tel"> </edit-row>
+            <edit-row jsonKey="PHONE" Title = "טלפון נייד" [Data]="userData" FieldType="tel"> </edit-row>
+            <edit-row jsonKey="AVI_PHONE2" Title = "טלפון 2" [Data]="userData" FieldType="tel"> </edit-row>
+            <edit-row jsonKey="AVI_PHONE3" Title = "טלפון 3" [Data]="userData" FieldType="tel"> </edit-row>
+            <edit-row jsonKey="FAX" Title = "פקס" [Data]="userData" FieldType="tel"> </edit-row>
+            <edit-row jsonKey="EMAIL" Title = "אימייל" [Data]="userData" FieldType="email"> </edit-row>
+            <edit-row jsonKey="PRIT_PASSWORD" Title = "סיסמא" [Data]="userData" FieldType="text"> </edit-row>
 
 
             <div class="buttons">

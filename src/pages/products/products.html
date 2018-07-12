@@ -12,23 +12,25 @@
 <ion-content>
     <div class="buttonsBar">
         <div class="buttonsBarLeft">
-            <button ion-button class="buttonsBarButton" (click)="c()"> החזרת פריטים</button>
+            <button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>
         </div>
         <div class="buttonsBarRight">
-            <button ion-button class="buttonsBarButton" (click)="c()"> שליפת פריטים</button>
+            <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>
         </div>
     </div>
     <div class="products">
         <div *ngFor="let item of productsArray let i=index" class="productItem">
             <div *ngIf="!item.STATUS || item.STATUS == 0">
                 <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
+                <ion-checkbox [(ngModel)]="item.choosen" *ngIf="toggleCheckBox"  (click)="selectProduct(item)" ></ion-checkbox>
+
                 <div class="productInfo" >
                     <div class="productImage">
                         <!--<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />-->
                         <img src="images/avatar.png"  style="width: 100%" />
                     </div>
                     <div class="productText">
-                        <div> {{item.PARTDES}}</div>
+                        <div> {{item.PARTDES}} </div>
                         <div> {{item.FREE1}}</div>
                         <div> {{item.PRIT_FREE}}</div>
                     </div>
@@ -41,8 +43,8 @@
                 <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
                 <div class="productInfo" >
                     <div class="productImage">
-                        <img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}" style="width: 100%" />
-                    </div>
+                        <!--<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />-->
+                        <img src="images/avatar.png"  style="width: 100%" />                    </div>
                     <div class="productText">
                         <div> {{item.PARTDES}}</div>
                         <div> {{item.FREE1}}</div>
@@ -58,3 +60,12 @@
         </div>
     </div>
 </ion-content>
+
+<ion-footer *ngIf="showSelectedFooter">
+        <div class="buttons">
+            <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice}} ש"ח</button>
+            <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>
+        </div>
+</ion-footer>
+
+

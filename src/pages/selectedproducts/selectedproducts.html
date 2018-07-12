@@ -1,0 +1,45 @@
+<!--<ion-header>-->
+
+  <!--<ion-navbar>-->
+    <!--<ion-buttons start>-->
+      <!--<button ion-button (click)="dismiss()">Close</button>-->
+    <!--</ion-buttons>-->
+    <!--<ion-title>Modals</ion-title>-->
+  <!--</ion-navbar>-->
+
+<!--</ion-header>-->
+
+
+<ion-header>
+  <div class="mainHeader">
+    <div class="headLogo" align="center">
+      <img src="images/home/head_logo.png" style="width: 70%"/>
+    </div>
+  </div>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <div class="products">
+    <div *ngFor="let item of daysOptions let i=index" class="productItem">
+        <div class="productNumber"> {{item.day}} | {{item.dateformatted}} | {{item.start_hour}} - {{item.end_hour}}</div>
+        <div class="productInfo" >
+          <div class="productEdit" >
+            <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>
+          </div>
+        </div>
+    </div>
+  </div>
+</ion-content>
+
+
+
+<ion-footer >
+  <div class="buttons">
+    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice}} ש"ח</button>
+      <button ion-button color="danger" full (click)="sendSelectedProducts(0)">ביטול</button>
+      <button ion-button full style="background-color: #6eb43f" (click)="sendSelectedProducts(1)">שליחה</button>
+  </div>
+</ion-footer>

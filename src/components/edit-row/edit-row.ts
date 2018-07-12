@@ -15,7 +15,8 @@ export class EditRowComponent implements OnInit {
     @Input() jsonKey: any;
     @Input() Data:any;
     @Input() Title:string;
-    
+    @Input() FieldType:string;
+
     public isOpen = false;
     
     constructor() {

@@ -11,6 +11,15 @@
 
 
 <ion-content padding>
+  <div class="buttonsBar">
+    <div class="buttonsBarLeft">
+      <button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>
+    </div>
+    <div class="buttonsBarRight">
+      <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>
+    </div>
+  </div>
+
   <div class="products">
     <div *ngFor="let item of roomsArray let i=index" class="productItem">
       <div >
@@ -21,8 +30,8 @@
             <div dir="rtl" style="direction: rtl;">כמות: {{item.QUANT}} {{item.UNITNAME}}</div>
             <div dir="rtl" style="direction: rtl;">מחיר: {{item.BASEPRICE}} {{item.OCODE}}</div>
           </div>
-          <div class="productEdit" (click)="clearRoom(item.PARTNAME)">
-            <ion-icon name="exit" style="font-size:30px"></ion-icon>
+          <div class="productEdit" >
+            <ion-checkbox [(ngModel)]="item.choosen" *ngIf="toggleCheckBox"  (click)="selectProduct(item)" ></ion-checkbox>
           </div>
         </div>
       </div>
@@ -31,7 +40,16 @@
   </div>
 </ion-content>
 
-<ion-footer no-border class="topBorder">
+<ion-footer no-border class="topBorder" *ngIf="!showSelectedFooter">
   <button ion-button full style="background-color: #6eb43f" (click)="ClearRooms()">פינוי חדרים כללי</button>
 </ion-footer>
+
+
+<ion-footer *ngIf="showSelectedFooter">
+  <div class="buttons">
+    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice}} ש"ח</button>
+    <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>
+  </div>
+</ion-footer>
+
 

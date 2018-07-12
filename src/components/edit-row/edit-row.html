@@ -11,8 +11,9 @@
         </div>
         <div class="EditRow" *ngIf="isOpen">
             <img src="images/edit.png" class="absoluteEditButton" (click)="editRow()">
-            <input type="text" class="inputText MT10" value="" [(ngModel)]="Data[jsonKey]"
+            <input [type]="FieldType" class="inputText MT10" value="" [(ngModel)]="Data[jsonKey]"
                    [placeholder]="Title"/>
         </div>
     </div>
 </div>
+
