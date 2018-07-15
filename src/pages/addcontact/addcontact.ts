@@ -49,8 +49,6 @@ export class AddcontactPage {
         else if (!this.contactFields.HOMEPHONE)
             this.Toast.presentToast("יש להזין תעודת זהות");
 
-        else if (!this.contactFields.EMAIL)
-            this.Toast.presentToast("יש להזין דואר אלקטרוני");
 
         else {
             let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";

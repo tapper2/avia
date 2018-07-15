@@ -2,57 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3539d66a-597d-40ab-bb4f-00877f5202f1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/0.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/1.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/10.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/10.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/2.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/3.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/4.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/5.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/6.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/6.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/7.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/7.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/8.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/9.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/9.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/main.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/vendor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/vendor.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/0.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/0.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/1.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/1.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/2.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/2.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/3.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/3.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/4.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/4.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/5.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/5.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/6.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/6.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/7.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/7.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/8.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/8.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/main.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/edit-row/edit-row.html" afterPath="$PROJECT_DIR$/src/components/edit-row/edit-row.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/edit-row/edit-row.ts" afterPath="$PROJECT_DIR$/src/components/edit-row/edit-row.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/footer/footer.html" afterPath="$PROJECT_DIR$/src/components/footer/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/footer/footer.ts" afterPath="$PROJECT_DIR$/src/components/footer/footer.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/addcontact/addcontact.html" afterPath="$PROJECT_DIR$/src/pages/addcontact/addcontact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.html" afterPath="$PROJECT_DIR$/src/pages/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/paymentinfo/paymentinfo.html" afterPath="$PROJECT_DIR$/src/pages/paymentinfo/paymentinfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/products/products.ts" afterPath="$PROJECT_DIR$/src/pages/products/products.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/rooms/rooms.html" afterPath="$PROJECT_DIR$/src/pages/rooms/rooms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/rooms/rooms.ts" afterPath="$PROJECT_DIR$/src/pages/rooms/rooms.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts" afterPath="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/user-details/user-details.html" afterPath="$PROJECT_DIR$/src/pages/user-details/user-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/theme/variables.scss" afterPath="$PROJECT_DIR$/src/theme/variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="$PROJECT_DIR$/www/build/0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js.map" afterPath="$PROJECT_DIR$/www/build/0.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/1.js" afterPath="$PROJECT_DIR$/www/build/1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/1.js.map" afterPath="$PROJECT_DIR$/www/build/1.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/2.js" afterPath="$PROJECT_DIR$/www/build/2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/2.js.map" afterPath="$PROJECT_DIR$/www/build/2.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/3.js" afterPath="$PROJECT_DIR$/www/build/3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/3.js.map" afterPath="$PROJECT_DIR$/www/build/3.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/4.js" afterPath="$PROJECT_DIR$/www/build/4.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/4.js.map" afterPath="$PROJECT_DIR$/www/build/4.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/5.js" afterPath="$PROJECT_DIR$/www/build/5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/5.js.map" afterPath="$PROJECT_DIR$/www/build/5.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/6.js" afterPath="$PROJECT_DIR$/www/build/6.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/6.js.map" afterPath="$PROJECT_DIR$/www/build/6.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/7.js" afterPath="$PROJECT_DIR$/www/build/7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/7.js.map" afterPath="$PROJECT_DIR$/www/build/7.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/8.js" afterPath="$PROJECT_DIR$/www/build/8.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/8.js.map" afterPath="$PROJECT_DIR$/www/build/8.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.css" afterPath="$PROJECT_DIR$/www/build/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/vendor.js" afterPath="$PROJECT_DIR$/www/build/vendor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/vendor.js.map" afterPath="$PROJECT_DIR$/www/build/vendor.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/addcontact/addcontact.ts" afterPath="$PROJECT_DIR$/src/pages/addcontact/addcontact.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/roomscalendar/roomscalendar.ts" afterPath="$PROJECT_DIR$/src/pages/roomscalendar/roomscalendar.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,11 +44,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="login.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/login/login.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addcontact.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/addcontact/addcontact.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user-details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/user-details/user-details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="122" lean-forward="false" selection-start-line="13" selection-start-column="93" selection-end-line="13" selection-end-column="122" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="roomscalendar.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/roomscalendar/roomscalendar.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="42" />
+            <state relative-caret-position="510">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,7 +131,6 @@
         <option value="$PROJECT_DIR$/src/components/login/login.ts" />
         <option value="$PROJECT_DIR$/src/pages/contacts/contacts.html" />
         <option value="$PROJECT_DIR$/src/pages/addcontact/addcontact.scss" />
-        <option value="$PROJECT_DIR$/src/pages/addcontact/addcontact.ts" />
         <option value="$PROJECT_DIR$/src/pages/contacts/contacts.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/services/server-service.ts" />
@@ -164,8 +176,9 @@
         <option value="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts" />
         <option value="$PROJECT_DIR$/src/pages/rooms/rooms.ts" />
         <option value="$PROJECT_DIR$/src/pages/products/products.ts" />
-        <option value="$PROJECT_DIR$/src/pages/roomscalendar/roomscalendar.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/pages/addcontact/addcontact.ts" />
+        <option value="$PROJECT_DIR$/src/pages/roomscalendar/roomscalendar.ts" />
       </list>
     </option>
   </component>
@@ -250,14 +263,14 @@
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
               <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="footer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
               <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addcontact" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
@@ -265,6 +278,13 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="roomscalendar" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="avia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user-details" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
@@ -293,6 +313,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ionic-table" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -323,12 +344,12 @@
       <workItem from="1531220692657" duration="11853000" />
       <workItem from="1531296315637" duration="3029000" />
       <workItem from="1531304279736" duration="9979000" />
-      <workItem from="1531376413772" duration="21234000" />
+      <workItem from="1531376413772" duration="22564000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116920000" />
+    <option name="totallyTimeSpent" value="118250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -379,7 +400,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/D26DD2BE_edit.tmp/payment-ok.php" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/D26DD2BE_view.tmp/payment_redirect.php" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/D26DD2BE_view.tmp/payment-ok.php" />
     <entry file="file://$PROJECT_DIR$/src/pages/login/login.ts">
@@ -519,14 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login/login.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/paymentinfo/paymentinfo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -605,16 +617,6 @@
         <state relative-caret-position="527">
           <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/user-details/user-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="122" lean-forward="true" selection-start-line="13" selection-start-column="93" selection-end-line="13" selection-end-column="122" />
-          <folding>
-            <element signature="n#style#0;n#button#1;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -726,14 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/rooms/rooms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -770,10 +764,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/login/login.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/addcontact/addcontact.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/user-details/user-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="122" lean-forward="false" selection-start-line="13" selection-start-column="93" selection-end-line="13" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/roomscalendar/roomscalendar.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="42" />
+        <state relative-caret-position="510">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>

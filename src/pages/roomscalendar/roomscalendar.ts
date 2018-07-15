@@ -37,7 +37,6 @@ export class RoomscalendarPage {
         //monthPickerFormat : ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
         weekdays: ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ש'],
         weekStart: 0,
-        canBackwardsSelected : false,
         disableWeeks: [6]
     };
 
