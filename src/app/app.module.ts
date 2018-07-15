@@ -30,7 +30,7 @@ import { CalendarModule } from "ion2-calendar";
 import { registerLocaleData } from '@angular/common';
 import lcoaleDeAt from '@angular/common/locales/he';
 
-registerLocaleData(lcoaleDeAt);
+registerLocaleData(lcoaleDeAt,'he');
 
 
 @NgModule({
