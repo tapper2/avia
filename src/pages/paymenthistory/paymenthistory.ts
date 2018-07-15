@@ -51,6 +51,10 @@ export class PaymenthistoryPage {
 
     }
 
+    showRecipet(row) {
+
+    }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymenthistoryPage');
   }
