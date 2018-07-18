@@ -1119,14 +1119,25 @@ var PaymenthistoryPage = /** @class */ (function () {
                 return item.FRECONNUM == '1';
         });
     };
-    PaymenthistoryPage.prototype.showRecipet = function (row) {
+    PaymenthistoryPage.prototype.showRecipet = function (recipet) {
+        var _this = this;
+        console.log(recipet);
+        var URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_CUSTINVOICES?$filter=IVNUM eq '" + recipet + "'&$expand=EXTFILES_SUBFORM($filter=EXTFILEDES eq 'Printed Invoice')";
+        this.server.GetData(URL).then(function (data) {
+            console.log("recipet:", data.json().value[0]);
+            var response = data.json().value[0];
+            var URL2 = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/$metadata#PRIT_CUSTINVOICES(IVNUM='" + response.IVNUM + "',DEBIT='" + response.DEBIT + "',TYPE='" + response.TYPE + "')/EXTFILES_SUBFORM";
+            _this.server.GetData(URL2).then(function (data) {
+                console.log("new:", data);
+            });
+        });
     };
     PaymenthistoryPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad PaymenthistoryPage');
     };
     PaymenthistoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-paymenthistory',template:/*ion-inline-start:"C:\Users\USER\Desktop\gitlab\avia\src\pages\paymenthistory\paymenthistory.html"*/'<ion-header>\n  <header></header>\n</ion-header>\n\n\n<ion-content padding>\n    <div class="buttonsBar">\n        <div class="buttonsBarLeft">\n            <button ion-button [ngClass]="[FilterType == 0? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(0)"> כל הפעולות</button>\n        </div>\n        <div class="buttonsBarRight">\n            <button ion-button  [ngClass]="[FilterType == 1 ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(1)"> פעולות זכות</button>\n        </div>\n\n        <div class="buttonsBarRight">\n            <button ion-button  [ngClass]="[FilterType == 2 ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(2)">  פעולות יתרה</button>\n        </div>\n    </div>\n\n  <div class="products">\n    <div *ngFor="let item of paymentHistoryArray let i=index" class="productItem">\n        <div class="productNumber">{{item.ACCDES}} </div>\n        <div class="productInfo" >\n          <div class="productText">\n            <div> {{item.ACCNAME}}</div>\n            <div *ngIf="item.FRECONNUM == 1" style="direction: rtl;">חובה: {{item.DEBIT}} {{item.CODE}} </div>\n            <div *ngIf="item.FRECONNUM == -1" style="direction: rtl;">זכות: {{item.CREDIT}} {{item.CODE}} </div>\n            <div> {{item.DETAILS}}</div>\n          </div>\n        </div>\n        <button ion-button full style="background-color: #6eb43f" (click)="showRecipet(item)"> קישור לחשבונית</button>\n        <hr>\n    </div>\n  </div>\n\n</ion-content>\n\n<ion-footer >\n    <div class="buttons">\n        <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ יתרה: {{caluclatedSum}} ש"ח</button>\n    </div>\n</ion-footer>'/*ion-inline-end:"C:\Users\USER\Desktop\gitlab\avia\src\pages\paymenthistory\paymenthistory.html"*/,
+            selector: 'page-paymenthistory',template:/*ion-inline-start:"C:\Users\USER\Desktop\gitlab\avia\src\pages\paymenthistory\paymenthistory.html"*/'<ion-header>\n  <header></header>\n</ion-header>\n\n\n<ion-content padding>\n    <div class="buttonsBar">\n        <div class="buttonsBarLeft">\n            <button ion-button [ngClass]="[FilterType == 0? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(0)"> כל הפעולות</button>\n        </div>\n        <div class="buttonsBarRight">\n            <button ion-button  [ngClass]="[FilterType == 1 ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(1)"> פעולות זכות</button>\n        </div>\n\n        <div class="buttonsBarRight">\n            <button ion-button  [ngClass]="[FilterType == 2 ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(2)">  פעולות יתרה</button>\n        </div>\n    </div>\n\n  <div class="products">\n    <div *ngFor="let item of paymentHistoryArray let i=index" class="productItem">\n        <div class="productNumber">{{item.ACCDES}} </div>\n        <div class="productInfo" >\n          <div class="productText">\n            <div> {{item.ACCNAME}}</div>\n            <div *ngIf="item.FRECONNUM == 1" style="direction: rtl;">חובה: {{item.DEBIT}} {{item.CODE}} </div>\n            <div *ngIf="item.FRECONNUM == -1" style="direction: rtl;">זכות: {{item.CREDIT}} {{item.CODE}} </div>\n            <div> {{item.DETAILS}}</div>\n          </div>\n        </div>\n        <button ion-button full style="background-color: #6eb43f" *ngIf="item.TODOREF" (click)="showRecipet(item.TODOREF)"> קישור לחשבונית</button>\n        <hr>\n    </div>\n  </div>\n\n</ion-content>\n\n<ion-footer >\n    <div class="buttons">\n        <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ יתרה: {{caluclatedSum}} ש"ח</button>\n    </div>\n</ion-footer>'/*ion-inline-end:"C:\Users\USER\Desktop\gitlab\avia\src\pages\paymenthistory\paymenthistory.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_2__services_server_service__["a" /* ServerService */]])
     ], PaymenthistoryPage);
@@ -1331,11 +1342,11 @@ var map = {
 		10
 	],
 	"../pages/contact/contact.module": [
-		835,
+		834,
 		9
 	],
 	"../pages/contacts/contacts.module": [
-		834,
+		835,
 		8
 	],
 	"../pages/login/login.module": [
@@ -1355,19 +1366,19 @@ var map = {
 		4
 	],
 	"../pages/rooms/rooms.module": [
-		841,
+		840,
 		3
 	],
 	"../pages/roomscalendar/roomscalendar.module": [
-		840,
+		841,
 		2
 	],
 	"../pages/selectedproducts/selectedproducts.module": [
-		842,
+		843,
 		1
 	],
 	"../pages/user-details/user-details.module": [
-		843,
+		842,
 		0
 	]
 };
@@ -1713,16 +1724,16 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["IonicModule"].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/addcontact/addcontact.module#AddcontactPageModule', name: 'AddcontactPage', segment: 'addcontact', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/paymenthistory/paymenthistory.module#PaymenthistoryPageModule', name: 'PaymenthistoryPage', segment: 'paymenthistory', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/paymentinfo/paymentinfo.module#PaymentinfoPageModule', name: 'PaymentinfoPage', segment: 'paymentinfo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/products/products.module#ProductsPageModule', name: 'ProductsPage', segment: 'products', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/roomscalendar/roomscalendar.module#RoomscalendarPageModule', name: 'RoomscalendarPage', segment: 'roomscalendar', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rooms/rooms.module#RoomsPageModule', name: 'RoomsPage', segment: 'rooms', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/selectedproducts/selectedproducts.module#SelectedproductsPageModule', name: 'SelectedproductsPage', segment: 'selectedproducts', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/user-details/user-details.module#UserDetailsPageModule', name: 'UserDetailsPage', segment: 'user-details', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/roomscalendar/roomscalendar.module#RoomscalendarPageModule', name: 'RoomscalendarPage', segment: 'roomscalendar', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/user-details/user-details.module#UserDetailsPageModule', name: 'UserDetailsPage', segment: 'user-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/selectedproducts/selectedproducts.module#SelectedproductsPageModule', name: 'SelectedproductsPage', segment: 'selectedproducts', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_9__components_components_module__["a" /* ComponentsModule */],

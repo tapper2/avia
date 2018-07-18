@@ -51,8 +51,19 @@ export class PaymenthistoryPage {
 
     }
 
-    showRecipet(row) {
+    showRecipet(recipet) {
 
+        console.log(recipet);
+
+        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_CUSTINVOICES?$filter=IVNUM eq '"+recipet+"'&$expand=EXTFILES_SUBFORM($filter=EXTFILEDES eq 'Printed Invoice')";
+        this.server.GetData(URL).then((data: any) => {
+            console.log("recipet:", data.json().value[0]);
+            let response = data.json().value[0];
+            let URL2 = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/$metadata#PRIT_CUSTINVOICES(IVNUM='"+response.IVNUM+"',DEBIT='"+response.DEBIT+"',TYPE='"+response.TYPE+"')/EXTFILES_SUBFORM";
+            this.server.GetData(URL2).then((data: any) => {
+                console.log("new:", data);
+            });
+        });
     }
 
   ionViewDidLoad() {
