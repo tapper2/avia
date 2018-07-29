@@ -38,7 +38,7 @@
 
 <ion-footer >
   <div class="buttons">
-    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice}} ש"ח</button>
+    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>
       <button ion-button color="danger" full (click)="sendSelectedProducts(0)">ביטול</button>
       <button ion-button full style="background-color: #6eb43f" (click)="sendSelectedProducts(1)">שליחה</button>
   </div>

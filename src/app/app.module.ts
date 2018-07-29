@@ -21,6 +21,8 @@ import {PaymentinfoPage} from "../pages/paymentinfo/paymentinfo";
 import {SelectedproductsPage} from "../pages/selectedproducts/selectedproducts";
 import {PaymenthistoryPage} from "../pages/paymenthistory/paymenthistory";
 import {RoomscalendarPage} from "../pages/roomscalendar/roomscalendar";
+import {DaypickermodalPage} from "../pages/daypickermodal/daypickermodal";
+import {ArticlePage} from "../pages/article/article";
 
 import {UserDetailsPage} from "../pages/user-details/user-details";
 import {ToastService} from "../services/toast-service";
@@ -48,7 +50,9 @@ registerLocaleData(lcoaleDeAt,'he');
         PaymentinfoPage,
         SelectedproductsPage,
         PaymenthistoryPage,
-        RoomscalendarPage
+        RoomscalendarPage,
+        DaypickermodalPage,
+        ArticlePage
     ],
     imports: [
         BrowserModule,
@@ -72,7 +76,9 @@ registerLocaleData(lcoaleDeAt,'he');
         PaymentinfoPage,
         SelectedproductsPage,
         PaymenthistoryPage,
-        RoomscalendarPage
+        RoomscalendarPage,
+        DaypickermodalPage,
+        ArticlePage
     ],
     providers: [
         StatusBar,

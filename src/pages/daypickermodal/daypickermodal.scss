@@ -1,0 +1,63 @@
+page-daypickermodal {
+  .mainHeader
+  {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .headLogo
+  {
+    //float: left;
+    width: 100%;
+    margin: auto;
+  }
+
+  .headLogo img
+  {
+    width: 150px !important;
+    margin: auto;
+    margin-top: 3px;
+  }
+
+
+
+  .productInfo
+  {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .productNumber
+  {
+    text-align: right;
+    direction: rtl;
+    padding: 10px 20px;
+    color: #6eb43f;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .productImage
+  {
+    float: right;
+    width: 20%;
+    margin-right: 20px;
+  }
+
+  .productText
+  {
+    float: right;
+    width: 60%;
+    padding: 0px 10px;
+    text-align: right;
+    color: #B6B6B6;
+    font-size: 15px;
+  }
+
+  .productEdit
+  {
+    float: left;
+    width: 7%;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}

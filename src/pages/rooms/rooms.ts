@@ -3,8 +3,9 @@ import {IonicPage, NavController, NavParams, AlertController, ModalController} f
 import {ServerService} from "../../services/server-service";
 import moment from 'moment';
 import {ToastService} from "../../services/toast-service";
-import {SelectedproductsPage} from "../selectedproducts/selectedproducts";
-import {RoomscalendarPage} from "../roomscalendar/roomscalendar";
+//import {SelectedproductsPage} from "../selectedproducts/selectedproducts";
+//import {RoomscalendarPage} from "../roomscalendar/roomscalendar";
+import {DaypickermodalPage} from "../daypickermodal/daypickermodal";
 
 /**
  * Generated class for the RoomsPage page.
@@ -32,10 +33,12 @@ export class RoomsPage implements OnInit {
     public selectedPullType : number = 0;
     public productsSendArray: any = [];
     public todaydate :any = moment().format();
+    public selectedDayArray : any = [];
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService,private alertCtrl: AlertController, public Toast:ToastService,public modalCtrl: ModalController) {
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService,private alertCtrl: AlertController, public Toast:ToastService,public modalCtrl: ModalController) {
 
     this.getItems();
   }
@@ -90,7 +93,9 @@ export class RoomsPage implements OnInit {
         for (let i = 0; i < this.roomsArray.length; i++) {
             if (this.roomsArray[i].choosen == true) {
                 this.countedSelected++;
-                this.caluclateProductPrice = this.caluclateProductPrice+row.BASEPRICE;
+                this.caluclateProductPrice = this.caluclateProductPrice+this.roomsArray[i].BASEPRICE;
+                // console.log("BASEPRICE",row.BASEPRICE)
+                // console.log("caluclateProductPrice",this.caluclateProductPrice)
             }
         }
 
@@ -113,83 +118,112 @@ export class RoomsPage implements OnInit {
     }
 
     async openProductsModal() {
-        let ProductsModal = this.modalCtrl.create(RoomscalendarPage, {products: this.roomsArray,page: 'rooms'});
-        ProductsModal.present();
-        this.todaydate = moment().format();
+
+      let branchCode = '';
 
 
-        ProductsModal.onDidDismiss(data => {
-
-            console.log("dismiss: ", data);
-
-
-            this.countedSelected = 0;
-            this.caluclateProductPrice = 0;
-            this.showSelectedFooter  = false;
-            this.toggleCheckBox = false;
-            this.selectedReturnItems  = false;
-            this.productsSendArray = [];
-
-            if (data[0].type == 1)
-            {
-
-
-
-                for (let i = 0; i < this.roomsArray.length; i++) {
-                    if (this.roomsArray[i].choosen == true)
-                    {
-                        this.productsSendArray.push({
-                            "PARTNAME" : this.roomsArray[i].PARTNAME,
-                            "DUEDATE": data[0].date,   /* תאריך פינוי*/
-                        });
-                    }
-                }
-
-                console.log("productsSendArray:",this.productsSendArray);
-
-                //send to server//
-
-
-
-                let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
-
-                let sendData =
-                    {
-                        "LOADCODE": "6",
-                        "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),       /* מספר לקוח */
-
-                        "PRIT_DOCLINE_SUBFORM":
-
-                        this.productsSendArray,
-
-                        "PRIT_INTERFACE_SUBFORM":
-                            [
-                                {
-                                    "EXECUTE": "Y"
-                                }
-                            ]
-                    }
-
-
-                console.log("sent data11:",JSON.stringify(sendData))
-                this.server.SendPost(URL,sendData).then((data: any) => {
-                    console.log(data);
-                    let response = data;
-                    if  (response.ok) {
-                        this.Toast.presentToast("נשלח בהצלחה");
-                    }
-                    else {
-                        this.Toast.presentToast("שגיאה, יש לנסות שוב");
-                    }
-                });
+        //check none matches branches
+        for (let i = 0; i < this.roomsArray.length; i++) {
+            if (this.roomsArray[i].choosen == true) {
+                branchCode = this.roomsArray[i].SPEC1;
             }
-
-        else if (data[0].type == 0) {
-            this.Toast.presentToast("פעולה בוטלה");
         }
 
-        this.resetChoosen();
-    });
+
+        this.server.getRoomsBranchDays("getBranchDays",branchCode).then((data: any) => {
+            let serverResponse = data.json();
+            console.log("serverResponse",serverResponse)
+            if (serverResponse.length == 0) {
+                this.Toast.presentToast("לא נמצאו שעות פעילות לסניף שנבחר");
+            } else {
+                    let ProductsModal = this.modalCtrl.create(DaypickermodalPage, {products: this.roomsArray,page: 'rooms',daysArray:serverResponse});
+                    ProductsModal.present();
+                    this.todaydate = moment().format();
+
+
+                    ProductsModal.onDidDismiss(data => {
+
+                        console.log("dismiss: ", data);
+
+
+                        this.countedSelected = 0;
+                        this.caluclateProductPrice = 0;
+                        this.showSelectedFooter  = false;
+                        this.toggleCheckBox = false;
+                        this.selectedReturnItems  = false;
+                        this.productsSendArray = [];
+
+                        if (data[0].type == 1)
+                        {
+                            for (let i = 0; i < data[0].days.length; i++) {
+                                if (data[0].days[i].choosen) {
+                                    this.selectedDayArray = data[0].days[i];
+                                }
+                            }
+
+
+                            for (let i = 0; i < this.roomsArray.length; i++) {
+                                if (this.roomsArray[i].choosen == true)
+                                {
+                                    this.productsSendArray.push({
+                                        "PARTNAME" : this.roomsArray[i].PARTNAME,
+                                        "DUEDATE": moment(this.selectedDayArray.regular_date, 'YYYY-MM-DD').format(),   /* תאריך פינוי*/
+                                    });
+                                }
+                            }
+
+                            console.log("productsSendArray:",this.productsSendArray);
+
+                            //send to server//
+
+
+
+                            let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+
+                            let sendData =
+                                {
+                                    "LOADCODE": "6",
+                                    "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),       /* מספר לקוח */
+
+                                    "PRIT_DOCLINE_SUBFORM":
+
+                                    this.productsSendArray,
+
+                                    "PRIT_INTERFACE_SUBFORM":
+                                        [
+                                            {
+                                                "EXECUTE": "Y"
+                                            }
+                                        ]
+                                }
+
+
+                            console.log("sent data11:",JSON.stringify(sendData))
+                            this.server.SendPost(URL,sendData).then((data: any) => {
+                                console.log(data);
+                                let response = data;
+                                if  (response.ok) {
+                                    this.Toast.presentToast("נשלח בהצלחה");
+                                }
+                                else {
+                                    this.Toast.presentToast("שגיאה, יש לנסות שוב");
+                                }
+                            });
+                        }
+
+                    else if (data[0].type == 0) {
+                        this.Toast.presentToast("פעולה בוטלה");
+                    }
+
+                    this.resetChoosen();
+                });
+            }
+        });
+
+
+
+
+
 
     }
 

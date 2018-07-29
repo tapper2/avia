@@ -11,14 +11,8 @@
 <ion-content>
     <div>
         <ion-slides>
-            <ion-slide>
-                <img src="images/home/s_image_1.jpg" style="width: 100%" />
-            </ion-slide>
-            <ion-slide>
-                <img src="images/home/s_image_1.jpg" style="width: 100%" />
-            </ion-slide>
-            <ion-slide>
-                <img src="images/home/s_image_1.jpg" style="width: 100%" />
+            <ion-slide *ngFor="let row of articlesArray; let i = index" (click)="goArticle(i)">
+                <img [src]="imageHost+row.image" style="width: 100%"  />
             </ion-slide>
         </ion-slides>
     </div>

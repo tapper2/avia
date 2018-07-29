@@ -29250,6 +29250,16 @@ page-addcontact .absoluteEditButton {
   margin-left: 8px;
 }
 
+page-article .storyPic {
+  float: right;
+  width: 100%;
+  overflow: hidden;
+}
+
+page-article .storyPic div {
+  width: 100%;
+}
+
 page-contact .nonEditRow {
   text-align: right;
   border-bottom: 2px solid #b1bdbe;
@@ -29284,6 +29294,58 @@ page-contact .absoluteEditButton {
   position: absolute;
   margin-top: 18px;
   margin-left: 8px;
+}
+
+page-daypickermodal .mainHeader {
+  width: 100%;
+  overflow: hidden;
+}
+
+page-daypickermodal .headLogo {
+  width: 100%;
+  margin: auto;
+}
+
+page-daypickermodal .headLogo img {
+  width: 150px !important;
+  margin: auto;
+  margin-top: 3px;
+}
+
+page-daypickermodal .productInfo {
+  overflow: hidden;
+  width: 100%;
+}
+
+page-daypickermodal .productNumber {
+  text-align: right;
+  direction: rtl;
+  padding: 10px 20px;
+  color: #6eb43f;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+page-daypickermodal .productImage {
+  float: right;
+  width: 20%;
+  margin-right: 20px;
+}
+
+page-daypickermodal .productText {
+  float: right;
+  width: 60%;
+  padding: 0px 10px;
+  text-align: right;
+  color: #B6B6B6;
+  font-size: 15px;
+}
+
+page-daypickermodal .productEdit {
+  float: left;
+  width: 7%;
+  margin-top: 15px;
+  margin-left: 20px;
 }
 
 page-home .mainRow {

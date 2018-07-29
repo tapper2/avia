@@ -63,7 +63,7 @@
 
 <ion-footer *ngIf="showSelectedFooter">
         <div class="buttons">
-            <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice}} ש"ח</button>
+            <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>
             <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>
         </div>
 </ion-footer>

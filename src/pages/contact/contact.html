@@ -21,9 +21,10 @@
         <div class="EditRow" >
           <select class="inputText MT10" [(ngModel)]="contactFields.subject">
             <option value="">נושא הפניה</option>
-            <option [value]="0" >תמיכה טכנית</option>
-            <option [value]="1" >פניית שירות</option>
-            <option [value]="2" >אחר</option>
+            <option *ngFor="let row of contactSubjects; let i = index" [value]="row.subject_code">{{row.title}}</option>
+            <!--<option [value]="0" >תמיכה טכנית</option>-->
+            <!--<option [value]="1" >פניית שירות</option>-->
+            <!--<option [value]="2" >אחר</option>-->
           </select>
         </div>
 

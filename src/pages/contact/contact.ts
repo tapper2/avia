@@ -23,7 +23,14 @@ export class ContactPage {
       "desc" : ""
   }
 
+  public contactSubjects:any[] = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public server:ServerService, public Toast:ToastService) {
+
+      this.contactSubjects = this.server.homePageArray.contact_subjects;
+      console.log("contactSubjects",this.contactSubjects)
+
+
   }
 
   ionViewDidLoad() {
@@ -48,7 +55,7 @@ export class ContactPage {
 
                 "LOADCODE": "10",                        /* קבוע*/
                 "CUSTNAME" : localStorage.getItem("CUSTNAME").toString(),       /* מספר לקוח*/
-                "SUBJCODE" : "210",                   /*קוד סוג המשימה, יש להעביר רשימה של קודים עבור סוגי משימות ולסנכרן בפריוריטי*/
+                "SUBJCODE" : this.contactFields.subject,//  /*קוד סוג המשימה, יש להעביר רשימה של קודים עבור סוגי משימות ולסנכרן בפריוריטי*/
                 "PRIT_DOCTEXT_SUBFORM":
                     [
                         {
