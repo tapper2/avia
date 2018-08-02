@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3539d66a-597d-40ab-bb4f-00877f5202f1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/0.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/0.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/1.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/1.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/10.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/10.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/11.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/11.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/2.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/2.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/3.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/3.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/4.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/4.js.map" />
@@ -19,30 +16,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/8.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/8.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/9.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/9.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/main.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/build/0.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/build/0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/build/1.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/build/1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/build/8.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/build/8.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/build/main.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/build/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/build/main.js.map" afterPath="$PROJECT_DIR$/platforms/android/assets/www/build/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/build/vendor.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/build/vendor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/build/vendor.js.map" afterPath="$PROJECT_DIR$/platforms/android/assets/www/build/vendor.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/contact/contact.html" afterPath="$PROJECT_DIR$/src/pages/contact/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/contact/contact.ts" afterPath="$PROJECT_DIR$/src/pages/contact/contact.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.html" afterPath="$PROJECT_DIR$/src/pages/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/products/products.html" afterPath="$PROJECT_DIR$/src/pages/products/products.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/rooms/rooms.html" afterPath="$PROJECT_DIR$/src/pages/rooms/rooms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/rooms/rooms.ts" afterPath="$PROJECT_DIR$/src/pages/rooms/rooms.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.html" afterPath="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/app-settings.ts" afterPath="$PROJECT_DIR$/src/services/app-settings.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/server-service.ts" afterPath="$PROJECT_DIR$/src/services/server-service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="$PROJECT_DIR$/www/build/0.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js.map" afterPath="$PROJECT_DIR$/www/build/0.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/1.js" afterPath="$PROJECT_DIR$/www/build/1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/1.js.map" afterPath="$PROJECT_DIR$/www/build/1.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/10.js" afterPath="$PROJECT_DIR$/www/build/10.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/10.js.map" afterPath="$PROJECT_DIR$/www/build/10.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/11.js" afterPath="$PROJECT_DIR$/www/build/11.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/11.js.map" afterPath="$PROJECT_DIR$/www/build/11.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/12.js" afterPath="$PROJECT_DIR$/www/build/12.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/2.js" afterPath="$PROJECT_DIR$/www/build/2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/2.js.map" afterPath="$PROJECT_DIR$/www/build/2.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/3.js" afterPath="$PROJECT_DIR$/www/build/3.js" />
@@ -59,7 +41,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/8.js.map" afterPath="$PROJECT_DIR$/www/build/8.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/9.js" afterPath="$PROJECT_DIR$/www/build/9.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/9.js.map" afterPath="$PROJECT_DIR$/www/build/9.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.css" afterPath="$PROJECT_DIR$/www/build/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/vendor.js" afterPath="$PROJECT_DIR$/www/build/vendor.js" />
@@ -200,10 +181,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="43" />
-    <option name="y" value="22" />
-    <option name="width" value="1397" />
-    <option name="height" value="878" />
+    <option name="x" value="44" />
+    <option name="y" value="23" />
+    <option name="width" value="1396" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -220,8 +201,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,6 +226,13 @@
               <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="avia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="products" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
@@ -285,7 +273,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../whiteboard_admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../github/ezmath" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
@@ -325,11 +313,13 @@
       <workItem from="1532425151068" duration="12935000" />
       <workItem from="1532510529219" duration="6725000" />
       <workItem from="1532517530616" duration="8033000" />
+      <workItem from="1533018774330" duration="609000" />
+      <workItem from="1533124792639" duration="1649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155380000" />
+    <option name="totallyTimeSpent" value="157638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -339,13 +329,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -502,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="352" column="7" lean-forward="false" selection-start-line="352" selection-start-column="4" selection-end-line="352" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -510,23 +499,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="619">
           <caret line="20916" column="7" lean-forward="false" selection-start-line="20916" selection-start-column="0" selection-end-line="20916" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/AF2E994D_edit.tmp/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="56" lean-forward="false" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/AF2E994D_edit.tmp/api.php" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/622455EA_edit.tmp/api.php" />
     <entry file="file://$PROJECT_DIR$/src/services/app-settings.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,9 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="48" column="38" lean-forward="true" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -587,23 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
           <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="101" column="38" lean-forward="false" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/products/products.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="158" column="40" lean-forward="true" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,9 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,7 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="701">
           <caret line="45" column="118" lean-forward="false" selection-start-line="45" selection-start-column="110" selection-end-line="45" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,7 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="118" lean-forward="false" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -637,7 +593,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="118" lean-forward="false" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,7 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
           <caret line="65" column="126" lean-forward="false" selection-start-line="65" selection-start-column="126" selection-end-line="65" selection-end-column="126" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -671,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,10 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,9 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,9 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -718,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,9 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="96" lean-forward="false" selection-start-line="23" selection-start-column="96" selection-end-line="23" selection-end-column="96" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,9 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,17 +697,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="26" column="66" lean-forward="false" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1683">
+          <caret line="101" column="38" lean-forward="false" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/rooms/rooms.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="556">
+          <caret line="169" column="79" lean-forward="false" selection-start-line="169" selection-start-column="63" selection-end-line="169" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/products/products.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="159" column="37" lean-forward="false" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
