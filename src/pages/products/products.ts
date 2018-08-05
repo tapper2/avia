@@ -48,9 +48,7 @@ export class ProductsPage  {
         });
 
     }
-
-
-
+    
         ToggleCheckBox(type) {
         // this.toggleCheckBox = !this.toggleCheckBox;
         this.selectedPullType = type;
@@ -139,16 +137,12 @@ export class ProductsPage  {
             if (data[0].type == 1)
             {
                 //send data
-
-
                 for (let i = 0; i < data[0].days.length; i++) {
                     if (data[0].days[i].choosen) {
                         this.selectedDayArray = data[0].days[i];
                     }
                 }
-
-
-
+                
                 for (let i = 0; i < this.productsArray.length; i++) {
                     if (this.productsArray[i].choosen == true)
                     {

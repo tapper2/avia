@@ -23,18 +23,35 @@ page-daypickermodal {
 
   .productInfo
   {
-    overflow: hidden;
+    float: right;
+    margin-right: 20px;
+    width: 6%;
+    margin-top:0px;
+  }
+
+  .product
+  {
     width: 100%;
+    overflow: hidden;
+  }
+
+  .productDV
+  {
+    width: 100%;
+    overflow: hidden;
   }
 
   .productNumber
   {
     text-align: right;
     direction: rtl;
-    padding: 10px 20px;
+    padding: 5px;
     color: #6eb43f;
     font-weight: bold;
     font-size: 17px;
+    float: left;
+    width: 85%;
+    margin-top:5px;
   }
   .productImage
   {
