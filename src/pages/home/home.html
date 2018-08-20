@@ -11,7 +11,7 @@
 <ion-content>
     <div>
         <ion-slides>
-            <ion-slide *ngFor="let row of articlesArray; let i = index" (click)="goArticle(i)">
+            <ion-slide *ngFor="let row of articlesArray; let i = index" (click)="goArticle(i,row.clickable)">
                 <img [src]="imageHost+row.image" style="width: 100%"  />
             </ion-slide>
         </ion-slides>
@@ -22,7 +22,7 @@
             <div class="leftIcon">
                 <div class="mainIcon" [style.width]="iconWidth" (click)="NavigatePage(1)">
                     <img src="images/home/ic1.png" style="width:100%" />
-                    <div class="mainIconTitle">יחידות אכסון</div>
+                    <div class="mainIconTitle">יחידות אחסון</div>
                 </div>
             </div>
             <div class="rightIcon leftBorder" [style.height]="cubeHeight" (click)="NavigatePage(2)">

@@ -38,10 +38,10 @@ export class AddcontactPage {
         console.log("1111" , this.contactFields);
 
         if (!this.contactFields.NAME)
-            this.Toast.presentToast("יש להזין שם לקוח");
+            this.Toast.presentToast("יש להזין שם איש קשר");
 
-        else if (!this.contactFields.PHONENUM)
-            this.Toast.presentToast("יש להזין מספר טלפון");
+        // else if (!this.contactFields.PHONENUM)
+        //     this.Toast.presentToast("יש להזין מספר טלפון");
 
         else if (!this.contactFields.CELLPHONE)
             this.Toast.presentToast("יש להזין טלפון נייד");

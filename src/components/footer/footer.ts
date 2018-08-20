@@ -34,6 +34,9 @@ export class FooterComponent {
             case 2:
                 const browser = this.iab.create('https://avias.org/aviaform/', '_self', "location=yes");
                 browser.show();
+                browser.on('loadstop').subscribe(event => {
+                    browser.insertCSS({ code: ".headerTitle { display:none; } div#footerWrapper { display:none; } " });
+                });
                 break;
 
             case 3:

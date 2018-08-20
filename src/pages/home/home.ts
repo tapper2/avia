@@ -36,9 +36,11 @@ export class HomePage implements  OnInit{
       });
   }
 
-    goArticle(index)
+    goArticle(index,clickable)
     {
-        this.navCtrl.push(ArticlePage, {articleIndex: index})
+        if (clickable == 0) {
+            this.navCtrl.push(ArticlePage, {articleIndex: index})
+        }
     }
 
     ngOnInit()
