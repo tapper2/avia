@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ContactsPage} from "../contacts/contacts";
 import {ToastService} from "../../services/toast-service";
 import {ServerService} from "../../services/server-service";
@@ -31,8 +31,9 @@ export class UserDetailsPage implements OnInit{
         'zip':false,
     }
     
-    constructor(public navCtrl: NavController, public navParams: NavParams, public server:ServerService, public Toast:ToastService) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public server:ServerService, public Toast:ToastService,private alertCtrl: AlertController) {
         this.userData = JSON.parse(localStorage.getItem("userData"));
+        this.userData.isChanged = false;
         console.log("Details : " , this.userData);
     }
     
@@ -51,10 +52,37 @@ export class UserDetailsPage implements OnInit{
         this.inputFlags[row] = this.inputFlags[row] == true ? false : true;
     }
 
+
+
+    ionViewCanLeave(): boolean {
+        if (this.userData.isChanged) {
+            let alertBox = this.alertCtrl.create({
+                title: 'שינוים שלא נשמרו',
+                message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
+                buttons: [
+                    {
+                        text: 'לא',
+                        role: 'cancel',
+                        handler: () => {
+                            console.log('Cancel clicked');
+                        }
+                    },
+                    {
+                        text: 'כן',
+                        handler: () => {
+                            this.userData.isChanged = false;
+                            this.navCtrl.pop();
+                        }
+                    }
+                ]
+            });
+            alertBox.present();
+            return false;
+        }
+    }
     saveDetails()
     {
         console.log("1111" , this.userData);
-
 
         let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
         let sendData =
@@ -93,8 +121,6 @@ export class UserDetailsPage implements OnInit{
                 this.Toast.presentToast("שגיאה, יש לנסות שוב");
             }
         });
-
-
     }
 
     goContactsPage() {

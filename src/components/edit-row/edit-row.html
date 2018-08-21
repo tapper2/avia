@@ -10,8 +10,10 @@
             </div>
         </div>
         <div class="EditRow" *ngIf="isOpen">
-            <img src="images/edit.png" class="absoluteEditButton" (click)="editRow(Editable)">
-            <input [type]="FieldType" class="inputText MT10" value="" [(ngModel)]="Data[jsonKey]"
+            <ion-icon name="checkmark" style="font-size:50px; margin:3px 7px" class="absoluteEditButton" (click)="editRow(Editable)" ></ion-icon>
+
+            <!--<img src="images/edit.png"  >-->
+            <input [type]="FieldType" class="inputText MT10" value="" [(ngModel)]="Data[jsonKey]" (ngModelChange)="modelChanged($event)"
                    [placeholder]="Title"/>
         </div>
     </div>

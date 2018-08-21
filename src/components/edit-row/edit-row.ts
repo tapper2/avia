@@ -17,7 +17,7 @@ export class EditRowComponent implements OnInit {
     @Input() Title:string;
     @Input() FieldType:string;
     @Input() Editable:string;
-
+    //public isChanged : boolean = false;
     public isOpen = false;
     
     constructor() {
@@ -25,6 +25,10 @@ export class EditRowComponent implements OnInit {
     
     ngOnInit() {
         console.log("Details1 : ", this.Data[this.jsonKey] , this.jsonKey);
+    }
+
+    modelChanged(newObj) {
+        this.Data.isChanged = true;
     }
     
     editRow(Editable)
