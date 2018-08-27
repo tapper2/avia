@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Aug 05 16:23:56 IDT 2018
+#Tue Aug 21 11:09:30 IDT 2018
 122.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-land-ldpi-v4\\screen.png
 60.set=ASSET
 129.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\plugins\\cordova-plugin-inappbrowser\\www\\inappbrowser.js

@@ -4,6 +4,7 @@ import {ServerService} from "../../services/server-service";
 import {ToastService} from "../../services/toast-service";
 import {SelectedproductsPage} from "../selectedproducts/selectedproducts";
 import moment from 'moment';
+import {DaypickermodalPage} from "../daypickermodal/daypickermodal";
 
 /**
  * Generated class for the ProductsPage page.
@@ -115,100 +116,111 @@ export class ProductsPage  {
 
 
     async openProductsModal() {
-        let ProductsModal = this.modalCtrl.create(SelectedproductsPage, {products: this.productsArray,page: 'products'});
-        ProductsModal.present();
-        this.todaydate =  moment().format();
 
 
-        ProductsModal.onDidDismiss(data => {
+        await this.server.getWorkingDays("getWorkingDays").then((data: any) => {
+            let serverResponse = data.json();
+            console.log("serverResponse",serverResponse);
 
-            console.log("dismiss: ", data);
-
-
-            this.countedSelected = 0;
-            this.caluclateProductPrice = 0;
-            this.showSelectedFooter  = false;
-            this.selectedPullItems = false;
-            this.toggleCheckBox = false;
-            this.selectedReturnItems  = false;
-            this.productsSendArray = [];
+                let ProductsModal = this.modalCtrl.create(DaypickermodalPage, {products: this.productsArray,page: 'products',daysArray:serverResponse});
+                ProductsModal.present();
+                this.todaydate = moment().format();
 
 
-            if (data[0].type == 1)
-            {
-                //send data
-                for (let i = 0; i < data[0].days.length; i++) {
-                    if (data[0].days[i].choosen) {
-                        this.selectedDayArray = data[0].days[i];
-                    }
-                }
-                
-                for (let i = 0; i < this.productsArray.length; i++) {
-                    if (this.productsArray[i].choosen == true)
+                ProductsModal.onDidDismiss(data => {
+
+                    console.log("dismiss: ", data);
+
+
+                    this.countedSelected = 0;
+                    this.caluclateProductPrice = 0;
+                    this.showSelectedFooter  = false;
+                    this.selectedPullItems = false;
+                    this.toggleCheckBox = false;
+                    this.selectedReturnItems  = false;
+                    this.productsSendArray = [];
+
+
+                    if (data[0].type == 1)
                     {
-                        this.productsSendArray.push({
-                            "PARTNAME" : this.productsArray[i].PARTNAME,
-                            "SERNUM" : this.productsArray[i].SERNUM,
-                            "DUEDATE": this.todaydate, /* תאריך אספקה*/
-                            "TASKDATE": moment(this.selectedDayArray.date, 'YYYY-MM-DD').format(),   /* תאריך למשימה*/
-                            "FROMDATE": moment('1988-01-01 '+this.selectedDayArray.start_hour+':00', 'YYYY-MM-DD HH:mm:ss').format(), /* משעה למשימה*/
-                            "TODATE": moment('1988-01-01 '+this.selectedDayArray.end_hour+':00', 'YYYY-MM-DD HH:mm:ss').format() /* עד שעה למשימה*/
+
+
+                        //send data
+                        for (let i = 0; i < data[0].days.length; i++) {
+                            if (data[0].days[i].choosen) {
+                                this.selectedDayArray = data[0].days[i];
+                            }
+                        }
+
+
+                        for (let i = 0; i < this.productsArray.length; i++) {
+                            if (this.productsArray[i].choosen == true)
+                            {
+                                this.productsSendArray.push({
+                                    "PARTNAME" : this.productsArray[i].PARTNAME,
+                                    "SERNUM" : this.productsArray[i].SERNUM,
+                                    "DUEDATE": this.todaydate, /* תאריך אספקה*/
+                                    "TASKDATE": moment(this.selectedDayArray.regular_date, 'YYYY-MM-DD').format(),   /* תאריך למשימה*/
+                                    "FROMDATE": moment('1988-01-01 '+this.selectedDayArray.start_hour+':00', 'YYYY-MM-DD HH:mm:ss').format(), /* משעה למשימה*/
+                                    "TODATE": moment('1988-01-01 '+this.selectedDayArray.end_hour+':00', 'YYYY-MM-DD HH:mm:ss').format() /* עד שעה למשימה*/
+                                });
+                            }
+                        }
+
+                        console.log("productsSendArray:",this.productsSendArray)
+
+                        //send to server//
+
+                        let TYPECODE;
+
+                        if (this.selectedPullType == 0)
+                            TYPECODE = "13";
+                        else
+                            TYPECODE = "14";
+
+                        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+
+                        let sendData =
+                            {
+                                "LOADCODE": "3",
+                                "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),       /* מספר לקוח */
+                                "DOCDATE": this.todaydate, /* תאריך הזמנה */
+                                "TYPECODE": TYPECODE ,       /* עבור שליפה יש לשים ערך 13, עבור החזרה ערך 14 */
+
+                                "PRIT_DOCLINE_SUBFORM":
+
+                                this.productsSendArray,
+
+                                "PRIT_INTERFACE_SUBFORM":
+                                    [
+                                        {
+                                            "EXECUTE": "Y"
+                                        }
+                                    ]
+                            }
+
+
+                        console.log("sent data11:",JSON.stringify(sendData))
+                        this.server.SendPost(URL,sendData).then((data: any) => {
+                            console.log(data);
+                            let response = data;
+                            if  (response.ok) {
+                                this.Toast.presentToast("נשלח בהצלחה");
+                            }
+                            else {
+                                this.Toast.presentToast("שגיאה, יש לנסות שוב");
+                            }
                         });
-                    }
-                }
 
-             console.log("productsSendArray:",this.productsSendArray)
 
-             //send to server//
-
-                let TYPECODE;
-
-                if (this.selectedPullType == 0)
-                    TYPECODE = "13";
-                else
-                    TYPECODE = "14";
-
-                let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
-
-                let sendData =
-                    {
-                        "LOADCODE": "3",
-                        "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),       /* מספר לקוח */
-                        "DOCDATE": this.todaydate, /* תאריך הזמנה */
-                        "TYPECODE": TYPECODE ,       /* עבור שליפה יש לשים ערך 13, עבור החזרה ערך 14 */
-
-                        "PRIT_DOCLINE_SUBFORM":
-
-                         this.productsSendArray,
-
-                        "PRIT_INTERFACE_SUBFORM":
-                            [
-                                {
-                                    "EXECUTE": "Y"
-                                }
-                            ]
+                    } else if (data[0].type == 0) {
+                        this.Toast.presentToast("פעולה בוטלה");
                     }
 
-
-                console.log("sent data11:",JSON.stringify(sendData))
-                this.server.SendPost(URL,sendData).then((data: any) => {
-                    console.log(data);
-                    let response = data;
-                    if  (response.ok) {
-                        this.Toast.presentToast("נשלח בהצלחה");
-                    }
-                    else {
-                        this.Toast.presentToast("שגיאה, יש לנסות שוב");
-                    }
+                    this.resetChoosen();
                 });
-
-
-            } else if (data[0].type == 0) {
-                this.Toast.presentToast("פעולה בוטלה");
-            }
-
-            this.resetChoosen();
         });
+
     }
 
 

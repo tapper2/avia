@@ -22,6 +22,7 @@ import {DaypickermodalPage} from "../daypickermodal/daypickermodal";
 export class RoomsPage implements OnInit {
 
     public roomsArray = [];
+    public roomsArray1 = [];
     public imageUrl = 'https://aviatest.wee.co.il/primail/';
 
 
@@ -88,16 +89,20 @@ export class RoomsPage implements OnInit {
     selectProduct(row) {
         this.countedSelected = 0;
         this.caluclateProductPrice = 0;
+        this.roomsArray1 = [];
 
 
         for (let i = 0; i < this.roomsArray.length; i++) {
             if (this.roomsArray[i].choosen == true) {
                 this.countedSelected++;
                 this.caluclateProductPrice = this.caluclateProductPrice+this.roomsArray[i].BASEPRICE;
+                this.roomsArray1.push(this.roomsArray[i]);
                 // console.log("BASEPRICE",row.BASEPRICE)
                 // console.log("caluclateProductPrice",this.caluclateProductPrice)
             }
         }
+
+        console.log("roomsArray1",this.roomsArray1);
 
         if (this.countedSelected > 0) {
             this.showSelectedFooter = true;
@@ -117,25 +122,40 @@ export class RoomsPage implements OnInit {
         }
     }
 
+
+
     async openProductsModal() {
 
-      let branchCode = '';
+      let selectedBranch = '';
+      let branchFlag = 0;
 
+
+
+        for (let g = 0; g < this.roomsArray1.length; g++) {
+            selectedBranch = this.roomsArray1[0].SPEC1;
+        }
 
         //check none matches branches
         for (let i = 0; i < this.roomsArray.length; i++) {
             if (this.roomsArray[i].choosen == true) {
-                branchCode = this.roomsArray[i].SPEC1;
+                if (selectedBranch != this.roomsArray[i].SPEC1) {
+                    branchFlag = 1;
+                } else {
+                    branchFlag = 0;
+                }
             }
         }
 
 
-        this.server.getRoomsBranchDays("getBranchDays",branchCode).then((data: any) => {
-            let serverResponse = data.json();
-            console.log("serverResponse",serverResponse)
-            if (serverResponse.length == 0) {
-                this.Toast.presentToast("לא נמצאו שעות פעילות לסניף שנבחר");
-            } else {
+        if (branchFlag == 1)  {
+            this.Toast.presentToast("לא ניתן לבצע הודעה על פינוי ל 2 סניפים שונים");
+        } else {
+            await this.server.getRoomsBranchDays("getBranchDays",selectedBranch).then((data: any) => {
+                let serverResponse = data.json();
+                console.log("serverResponse",serverResponse)
+                if (serverResponse.length == 0) {
+                    this.Toast.presentToast("לא נמצאו שעות פעילות לסניף שנבחר");
+                } else {
                     let ProductsModal = this.modalCtrl.create(DaypickermodalPage, {products: this.roomsArray,page: 'rooms',daysArray:serverResponse});
                     ProductsModal.present();
                     this.todaydate = moment().format();
@@ -152,6 +172,7 @@ export class RoomsPage implements OnInit {
                         this.toggleCheckBox = false;
                         this.selectedReturnItems  = false;
                         this.productsSendArray = [];
+                        this.roomsArray1 = [];
 
                         if (data[0].type == 1)
                         {
@@ -211,20 +232,15 @@ export class RoomsPage implements OnInit {
                             });
                         }
 
-                    else if (data[0].type == 0) {
-                        this.Toast.presentToast("פעולה בוטלה");
-                    }
+                        else if (data[0].type == 0) {
+                            this.Toast.presentToast("פעולה בוטלה");
+                        }
 
-                    this.resetChoosen();
-                });
-            }
-        });
-
-
-
-
-
-
+                        this.resetChoosen();
+                    });
+                }
+            });
+        }
     }
 
 }

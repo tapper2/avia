@@ -83,6 +83,7 @@ export class UserDetailsPage implements OnInit{
     saveDetails()
     {
         console.log("1111" , this.userData);
+        this.userData.isChanged = false;
 
         let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
         let sendData =

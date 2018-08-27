@@ -74,7 +74,12 @@ export class DaypickermodalPage {
 
       for (let i = 0; i < this.myProducts.length; i++) {
           if (this.myProducts[i].choosen == true) {
-              this.caluclateProductPrice = this.caluclateProductPrice+this.myProducts[i].BASEPRICE;
+              if (this.pageName =="rooms") {
+                  this.caluclateProductPrice = this.caluclateProductPrice+this.myProducts[i].BASEPRICE;
+              } else {
+                  this.caluclateProductPrice = this.caluclateProductPrice+this.myProducts[i].PRIT_PRICEOUT;
+              }
+
           }
       }
   }

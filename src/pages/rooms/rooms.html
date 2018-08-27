@@ -18,13 +18,15 @@
   <div class="products">
     <div *ngFor="let item of roomsArray let i=index" class="productItem">
       <div >
-        <div class="productNumber">  {{item.PDES}}</div>
+        <div class="productNumber">  {{item.PARTNAME}}</div>
         <div class="productInfo" >
           <div class="productText">
-            <div dir="rtl" style="direction: rtl;"> מספר מוצר: {{item.PARTNAME}}</div>
-            <div dir="rtl" style="direction: rtl;">כמות: {{item.QUANT}} {{item.UNITNAME}}</div>
-            <div dir="rtl" style="direction: rtl;">מחיר: {{item.BASEPRICE}} {{item.OCODE}}</div>
-            <div dir="rtl" style="direction: rtl;">סניף: {{item.PRIT_SPECDES1}}</div>
+            <div dir="rtl" style="direction: rtl;"> סניף: {{item.PRIT_SPECDES1}}</div>
+            <div dir="rtl" style="direction: rtl;">מבנה: {{item.PRIT_SPECDES2}}</div>
+            <div dir="rtl" style="direction: rtl;">אגף: {{item.PRIT_SPECDES3}}</div>
+            <div dir="rtl" style="direction: rtl;">כמות קוב: {{item.AVI_KUB_QUANT}}</div>
+            <div dir="rtl" style="direction: rtl;">תאריך כניסה: {{item.DUEDATE | date:'dd/MM/yyyy'}}</div>
+            <div dir="rtl" style="direction: rtl;">מחיר כולל מע"מ ל-30 יום: {{item.PRIT_VATPRICE}}</div>
           </div>
           <div class="productEdit" >
             <ion-checkbox [(ngModel)]="item.choosen" *ngIf="toggleCheckBox"  (click)="selectProduct(item)" ></ion-checkbox>
@@ -43,7 +45,7 @@
 
 <ion-footer *ngIf="showSelectedFooter">
   <div class="buttons">
-    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>
+    <!--<button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>-->
     <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>
   </div>
 </ion-footer>

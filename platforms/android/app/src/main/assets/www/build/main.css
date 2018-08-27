@@ -29133,6 +29133,10 @@ ion-navbar.toolbar {
   text-align: center;
 }
 
+.alert-ios .alert-message {
+  direction: rtl;
+}
+
 edit-row .nonEditRow {
   text-align: right;
   direction: rtl;

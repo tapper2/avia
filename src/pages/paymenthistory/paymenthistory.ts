@@ -43,13 +43,13 @@ export class PaymenthistoryPage {
 
         this.paymentHistoryArray = this.paymentHistoryArray.filter((item) => {
             if (type == 0)
-                return item.FRECONNUM !== '';
+                return item.KLINE !== '';
 
             else if (type == 1)
-                return item.FRECONNUM == '-1';
+                return item.KLINE == '2';
 
             else if (type == 2)
-                return item.FRECONNUM == '1';
+                return item.KLINE == '1';
         });
 
     }
@@ -64,8 +64,12 @@ export class PaymenthistoryPage {
             let response = data.json().value[0];
             if (response.EXTFILES_SUBFORM.length > 0) {
                 if (response.EXTFILES_SUBFORM[0].EXTFILENAME) {
-                    let split = response.EXTFILES_SUBFORM[0].EXTFILENAME.split("/");
-                    filename = split['5'];
+
+                    let  parts = response.EXTFILES_SUBFORM[0].EXTFILENAME.split('/');
+                    filename = parts[parts.length - 1];
+                    alert (filename)
+                    // let split = response.EXTFILES_SUBFORM[0].EXTFILENAME.split("/");
+                    // filename = split['5'];
                     const browser = this.iab.create(this.pdfURL+'/'+filename, '_system', "location=yes");
                     browser.show();
                 }

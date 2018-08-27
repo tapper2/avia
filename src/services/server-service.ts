@@ -41,6 +41,7 @@ export class ServerService {
         }
     }
 
+
     getRoomsBranchDays(url,branch_code) {
 
         let loading = this.loadingCtrl.create({content: 'Please wait...'});
@@ -48,6 +49,27 @@ export class ServerService {
         try {
             let body = new FormData();
             body.append('branch_code', branch_code);
+            return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
+                this.http.post(AppSettings.SERVER_URL+url,body) //for post, put and delete put the body before the headers
+                    .toPromise()
+                    .then(res => resolve(res))
+                    .catch(err => console.log("error:", err));
+            });
+
+        } catch (err) {
+            console.log( err);
+        } finally {
+            loading.dismiss();
+        }
+    }
+
+
+    getWorkingDays(url) {
+
+        let loading = this.loadingCtrl.create({content: 'Please wait...'});
+        loading.present();
+        try {
+            let body = new FormData();
             return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
                 this.http.post(AppSettings.SERVER_URL+url,body) //for post, put and delete put the body before the headers
                     .toPromise()

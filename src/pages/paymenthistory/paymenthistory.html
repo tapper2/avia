@@ -9,26 +9,28 @@
             <button ion-button [ngClass]="[FilterType == 0? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(0)"> כל הפעולות</button>
         </div>
         <div class="buttonsBarRight">
-            <button ion-button  [ngClass]="[FilterType == 1 ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(1)"> פעולות זכות</button>
+            <button ion-button  [ngClass]="[FilterType == 1 ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(1)"> קבלות</button>
         </div>
 
         <div class="buttonsBarRight">
-            <button ion-button  [ngClass]="[FilterType == 2 ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(2)">  פעולות יתרה</button>
+            <button ion-button  [ngClass]="[FilterType == 2 ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(2)">  חשבוניות</button>
         </div>
     </div>
 
   <div class="products">
     <div *ngFor="let item of paymentHistoryArray let i=index" class="productItem">
-        <div class="productNumber">{{item.ACCDES}} </div>
+        <div class="productNumber">{{item.DETAILS}} </div>
         <div class="productInfo" >
           <div class="productText">
-            <div> {{item.ACCNAME}}</div>
-            <div *ngIf="item.FRECONNUM == 1" style="direction: rtl;">חובה: {{item.DEBIT}} {{item.CODE}} </div>
-            <div *ngIf="item.FRECONNUM == -1" style="direction: rtl;">זכות: {{item.CREDIT}} {{item.CODE}} </div>
-            <div> {{item.DETAILS}}</div>
+            <div> תאריך: {{item.BALDATE | date:'dd/MM/yyyy'}}</div>
+              <div style="direction: rtl;" *ngIf="item.KLINE == 2"> מספר קבלה: {{item.TODOREF}}</div>
+              <div style="direction: rtl;" *ngIf="item.KLINE == 1"> מספר חשבונית: {{item.TODOREF}}</div>
+
+              <div style="direction: rtl;" *ngIf="item.KLINE == 2"> סכום הקבלה: {{item.CREDIT}}</div>
+              <div style="direction: rtl;" *ngIf="item.KLINE == 1"> סכום החשבונית: {{item.DEBIT}}</div>
           </div>
         </div>
-        <button ion-button full style="background-color: #6eb43f" *ngIf="item.TODOREF" (click)="showRecipet(item.TODOREF)"> קישור לחשבונית</button>
+        <button ion-button full style="background-color: #6eb43f"   *ngIf="item.KLINE == 1" (click)="showRecipet(item.TODOREF)"> קישור לחשבונית</button>
         <hr>
     </div>
   </div>
