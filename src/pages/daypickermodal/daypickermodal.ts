@@ -22,7 +22,7 @@ export class DaypickermodalPage {
     public countSelectedDays : number = 0
     public myProducts: any = [];
     public pageName: any = '';
-    public serverData: any[] = [];
+    public serverData: any;
     dayName: any[] = ["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
     date: string;
     type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
