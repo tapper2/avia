@@ -21,8 +21,19 @@
 
 
 <ion-content padding>
-    <div>
 
+
+    <div>
+        <ion-card>
+            <ion-card-header dir="rtl">
+                סניף {{serverData.title}}
+            </ion-card-header>
+            <ion-card-content dir="rtl">
+                {{serverData.description}}
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <div>
         <ion-calendar [(ngModel)]="date"
                       (onChange)="onChange($event)"
                       [type]="type"
@@ -30,19 +41,8 @@
                       [options]="optionsMulti">
         </ion-calendar>
     </div>
-  <!--<div class="products">-->
-    <!--<div *ngFor="let item of daysOptions let i=index" class="product">-->
-        <!--<div class="productDV">-->
-              <!--<div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}}  {{item.end_hour}}</div>-->
-              <!--<div class="productInfo" >-->
-                <!--<div class="productEdit" >-->
-                  <!--<ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>-->
-                <!--</div>-->
-              <!--</div>-->
-        <!--</div>-->
-        <!--<hr>-->
-    <!--</div>-->
-  <!--</div>-->
+
+
 </ion-content>
 
 

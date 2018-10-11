@@ -22,55 +22,27 @@ export class DaypickermodalPage {
     public countSelectedDays : number = 0
     public myProducts: any = [];
     public pageName: any = '';
-    public daysOptions: any[] = [];
+    public serverData: any[] = [];
     dayName: any[] = ["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
-
     date: string;
     type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
-
     selectedDate : any = '';
+    disable_sat:any = '';
+
+    public optionsMulti: CalendarComponentOptions = {
+        pickMode: 'single',
+        weekdays: ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ש'],
+        weekStart: 0,
+        disableWeeks: [],
+    };
 
 
-    // daysOptions : any[] = [
-    //     {
-    //         id: '0',
-    //         day: 'ראשון',
-    //         date: '2018-01-01',
-    //         dateformatted : '01/01/2018',
-    //         start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
-    //         end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
-    //     },
-    //     {
-    //         id: '1',
-    //         day: 'שני',
-    //         date: '2018-01-01',
-    //         dateformatted : '01/01/2018',
-    //         start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
-    //         end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
-    //     },
-    //     {
-    //         id: '2',
-    //         day: 'שלישי',
-    //         date: '2018-01-01',
-    //         dateformatted : '01/01/2018',
-    //         start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
-    //         end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
-    //     },
-    //     {
-    //         id: '3',
-    //         day: 'רביעי',
-    //         date: '2018-01-01',
-    //         dateformatted : '01/01/2018',
-    //         start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
-    //         end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
-    //     },
-    // ];
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController, public Toast:ToastService) {
       console.log("products:",navParams.get('products'));
       this.myProducts = navParams.get('products');
         this.pageName = navParams.get('page');
-        this.daysOptions = navParams.get('daysArray');
+        this.serverData = navParams.get('daysArray');
         //console.log("daysOptions",this.daysOptions)
 
       this.caluclateProductPrice = 0;
@@ -90,16 +62,17 @@ export class DaypickermodalPage {
 
           }
       }
+
+      if (this.serverData.open_saturday == 0)
+          this.optionsMulti.disableWeeks = [6];
+    else
+          this.optionsMulti.disableWeeks = [];
   }
 
 
-    optionsMulti: CalendarComponentOptions = {
-        pickMode: 'single',
-        //monthPickerFormat : ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-        weekdays: ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ש'],
-        weekStart: 0,
-        disableWeeks: [6]
-    };
+
+
+
 
     selectDay(row) {
 

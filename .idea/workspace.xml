@@ -2,98 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3539d66a-597d-40ab-bb4f-00877f5202f1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/15.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/15.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/16.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/16.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/17.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/17.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/18.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/18.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/19.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/19.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/20.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/20.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/21.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/21.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/22.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/22.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/23.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/23.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/24.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/24.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/25.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/25.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/26.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/26.js.map" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/main.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/0.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/1.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/10.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/10.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/11.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/11.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/12.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/12.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/4.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/4.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/5.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/6.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/6.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/7.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/8.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/8.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/main.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/main.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/vendor.js" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/vendor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/vendor.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/assets/debug/www/build/vendor.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/build/intermediates/incremental/packageDebug/debug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/platforms/android/app/build/intermediates/incremental/packageDebug/debug/file-input-save-data.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/0.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/1.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/10.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/10.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/11.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/11.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/12.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/12.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/4.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/4.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/5.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/6.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/6.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/7.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/8.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/8.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/main.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/main.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/vendor.js" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/vendor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/vendor.js.map" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/build/vendor.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/addcontact/addcontact.html" afterPath="$PROJECT_DIR$/src/pages/addcontact/addcontact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/addcontact/addcontact.ts" afterPath="$PROJECT_DIR$/src/pages/addcontact/addcontact.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/contact/contact.html" afterPath="$PROJECT_DIR$/src/pages/contact/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/contacts/contacts.html" afterPath="$PROJECT_DIR$/src/pages/contacts/contacts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/contacts/contacts.ts" afterPath="$PROJECT_DIR$/src/pages/contacts/contacts.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.html" afterPath="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts" afterPath="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/products/products.html" afterPath="$PROJECT_DIR$/src/pages/products/products.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/products/products.scss" afterPath="$PROJECT_DIR$/src/pages/products/products.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/products/products.ts" afterPath="$PROJECT_DIR$/src/pages/products/products.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/rooms/rooms.html" afterPath="$PROJECT_DIR$/src/pages/rooms/rooms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/rooms/rooms.ts" afterPath="$PROJECT_DIR$/src/pages/rooms/rooms.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.html" afterPath="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts" afterPath="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/server-service.ts" afterPath="$PROJECT_DIR$/src/services/server-service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="$PROJECT_DIR$/www/build/0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js.map" afterPath="$PROJECT_DIR$/www/build/0.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/1.js" afterPath="$PROJECT_DIR$/www/build/1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/1.js.map" afterPath="$PROJECT_DIR$/www/build/1.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/10.js" afterPath="$PROJECT_DIR$/www/build/10.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/11.js" afterPath="$PROJECT_DIR$/www/build/11.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/2.js" afterPath="$PROJECT_DIR$/www/build/2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/3.js" afterPath="$PROJECT_DIR$/www/build/3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/3.js.map" afterPath="$PROJECT_DIR$/www/build/3.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/4.js" afterPath="$PROJECT_DIR$/www/build/4.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/5.js" afterPath="$PROJECT_DIR$/www/build/5.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/6.js" afterPath="$PROJECT_DIR$/www/build/6.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/7.js" afterPath="$PROJECT_DIR$/www/build/7.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/8.js" afterPath="$PROJECT_DIR$/www/build/8.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.css" afterPath="$PROJECT_DIR$/www/build/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/9.js" afterPath="$PROJECT_DIR$/www/build/9.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/vendor.js.map" afterPath="$PROJECT_DIR$/www/build/vendor.js.map" />
@@ -106,12 +29,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>newuserre</find>
-      <find>inputFlags</find>
       <find>editRow</find>
       <find>jsonKey</find>
       <find>model</find>
@@ -121,7 +42,6 @@
       <find>selectProduct</find>
       <find>selectedBranch</find>
       <find>WebGetWorkingDayById</find>
-      <find>getBranchDays</find>
       <find>getWorkingDays</find>
       <find>text</find>
       <find>regular_date</find>
@@ -140,6 +60,9 @@
       <find>day</find>
       <find>daysArray</find>
       <find>SelectedproductsPage</find>
+      <find>getBranchDays</find>
+      <find>daysOptions</find>
+      <find>optionsMulti</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\USER\Desktop\gitlab\avia\src\pages\home</dir>
@@ -151,7 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/contact/contact.ts" />
         <option value="$USER_HOME$/AppData/Local/Temp/~flashfxp/E2CADEE3_edit.tmp/AppController.php" />
         <option value="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.scss" />
         <option value="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.scss" />
@@ -196,12 +118,13 @@
         <option value="$PROJECT_DIR$/src/pages/addcontact/addcontact.ts" />
         <option value="$PROJECT_DIR$/src/pages/contact/contact.html" />
         <option value="$PROJECT_DIR$/src/pages/addcontact/addcontact.html" />
-        <option value="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts" />
         <option value="$PROJECT_DIR$/src/pages/rooms/rooms.ts" />
-        <option value="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.html" />
         <option value="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.ts" />
         <option value="$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.html" />
         <option value="$PROJECT_DIR$/src/pages/products/products.ts" />
+        <option value="$USER_HOME$/AppData/Local/Temp/~flashfxp/D191994F_edit.tmp/AppController.php" />
+        <option value="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.html" />
+        <option value="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts" />
       </list>
     </option>
   </component>
@@ -257,7 +180,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -269,12 +191,6 @@
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
               <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="avia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
@@ -294,14 +210,7 @@
               <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="avia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="products" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="paymenthistory" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
@@ -309,13 +218,6 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="rooms" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="avia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="avia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="selectedproducts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="avia" type="b2602c69:ProjectViewProjectNode" />
@@ -338,6 +240,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,12 +301,13 @@
       <workItem from="1537182180173" duration="6451000" />
       <workItem from="1537426027600" duration="19000" />
       <workItem from="1539247167970" duration="450000" />
-      <workItem from="1539249673061" duration="1444000" />
+      <workItem from="1539249673061" duration="2006000" />
+      <workItem from="1539253189761" duration="3009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212498000" />
+    <option name="totallyTimeSpent" value="216069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -413,13 +317,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -457,7 +361,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/9FC0BCE9_edit.tmp/questions_by_category.php" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/9FC0BCE9_edit.tmp/question_catagory.php" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/0589B217_edit.tmp/HomeController.php" />
     <entry file="file://$PROJECT_DIR$/src/app/app.scss">
@@ -485,16 +388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/paymenthistory/paymenthistory.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="69" column="36" lean-forward="false" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,9 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="27" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,38 +592,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/rooms/rooms.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="158" column="80" lean-forward="false" selection-start-line="158" selection-start-column="62" selection-end-line="158" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="31" selection-end-column="10" />
-          <folding>
-            <marker date="1539250257821" expanded="true" signature="446:705" ph="..." />
-            <marker date="1539250257821" expanded="true" signature="489:694" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/selectedproducts/selectedproducts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="27" column="85" lean-forward="false" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,6 +611,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="201" column="0" lean-forward="true" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/~flashfxp/D191994F_edit.tmp/AppController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="82" column="36" lean-forward="false" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/rooms/rooms.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="158" column="132" lean-forward="false" selection-start-line="158" selection-start-column="123" selection-end-line="158" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/paymenthistory/paymenthistory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="29" column="155" lean-forward="false" selection-start-line="29" selection-start-column="135" selection-end-line="29" selection-end-column="155" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="62" column="11" lean-forward="true" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="45" />
           <folding />
         </state>
       </provider>
