@@ -63,27 +63,17 @@ export class DaypickermodalPage {
           }
       }
 
-      if (this.serverData.open_saturday == 0)
-          this.optionsMulti.disableWeeks = [6];
-    else
-          this.optionsMulti.disableWeeks = [];
+      if (this.serverData.length > 0)
+      {
+          if (this.serverData.open_saturday == 0)
+              this.optionsMulti.disableWeeks = [6];
+          else
+              this.optionsMulti.disableWeeks = [];
+      }
+
+
   }
 
-
-
-
-
-
-    selectDay(row) {
-
-        for (let i = 0; i < this.daysOptions.length; i++) {
-
-            if (row.id != this.daysOptions[i].id){
-                this.daysOptions[i].choosen = false;
-            }
-        }
-
-    }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad DaypickermodalPage');
@@ -115,34 +105,6 @@ export class DaypickermodalPage {
         else {
             this.viewCtrl.dismiss(options);
         }
-
-        // let options  = [
-        //     {
-        //         type: type,
-        //         days: this.daysOptions
-        //     }
-        // ];
-        //
-        //
-        // if (type == 1) {
-        //     this.countSelectedDays = 0;
-        //
-        //     for (let i = 0; i < this.daysOptions.length; i++) {
-        //         if (this.daysOptions[i].choosen == true) {
-        //             this.countSelectedDays++;
-        //         }
-        //     }
-        //
-        //     if (this.countSelectedDays == 0)
-        //         this.Toast.presentToast("יש לבחור יום");
-        //     else {
-        //         this.viewCtrl.dismiss(options);
-        //     }
-        // } else {
-        //     this.viewCtrl.dismiss(options);
-        // }
-
-
     }
 
 
