@@ -166,6 +166,7 @@ export class RoomsPage implements OnInit {
                         console.log("dismiss: ", data);
 
 
+
                         this.countedSelected = 0;
                         this.caluclateProductPrice = 0;
                         this.showSelectedFooter  = false;
@@ -176,11 +177,12 @@ export class RoomsPage implements OnInit {
 
                         if (data[0].type == 1)
                         {
-                            for (let i = 0; i < data[0].days.length; i++) {
-                                if (data[0].days[i].choosen) {
-                                    this.selectedDayArray = data[0].days[i];
-                                }
-                            }
+
+                            // for (let i = 0; i < data[0].days.length; i++) {
+                            //     if (data[0].days[i].choosen) {
+                            //         this.selectedDayArray = data[0].days[i];
+                            //     }
+                            // }
 
 
                             for (let i = 0; i < this.roomsArray.length; i++) {
@@ -188,7 +190,8 @@ export class RoomsPage implements OnInit {
                                 {
                                     this.productsSendArray.push({
                                         "PARTNAME" : this.roomsArray[i].PARTNAME,
-                                        "DUEDATE": moment(this.selectedDayArray.regular_date, 'YYYY-MM-DD').format(),   /* תאריך פינוי*/
+                                        //"DUEDATE": moment(this.selectedDayArray.regular_date, 'YYYY-MM-DD').format(),   /* תאריך פינוי*/
+                                        "DUEDATE": moment(data[0].date, 'YYYY-MM-DD').format(),   /* תאריך פינוי*/
                                     });
                                 }
                             }
@@ -241,6 +244,11 @@ export class RoomsPage implements OnInit {
                 }
             });
         }
+    }
+
+    mathRound(number)
+    {
+        return Math.round(number);
     }
 
 }

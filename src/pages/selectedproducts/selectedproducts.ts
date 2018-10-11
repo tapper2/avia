@@ -19,47 +19,16 @@ export class SelectedproductsPage {
     public caluclateProductPrice : number = 0;
     public countSelectedDays : number = 0
     public myProducts: any = [];
+    public daysOptions: any = [];
     public pageName: any = '';
+    dayName: any[] = ["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
 
-    daysOptions : any[] = [
-        {
-            id: '0',
-            day: 'ראשון',
-            date: '2018-01-01',
-            dateformatted : '01/01/2018',
-            start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
-            end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
-        },
-        {
-            id: '1',
-            day: 'שני',
-            date: '2018-01-01',
-            dateformatted : '01/01/2018',
-            start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
-            end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
-        },
-        {
-            id: '2',
-            day: 'שלישי',
-            date: '2018-01-01',
-            dateformatted : '01/01/2018',
-            start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
-            end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
-        },
-        {
-            id: '3',
-            day: 'רביעי',
-            date: '2018-01-01',
-            dateformatted : '01/01/2018',
-            start_hour: '17:00',//'1988-01-01T09:00:00+03:00',
-            end_hour: '18:00',//'1988-01-01T11:00:00+03:00',
-        },
-    ];
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController, public Toast:ToastService) {
       console.log("products:",navParams.get('products'));
         this.myProducts = navParams.get('products');
+        this.daysOptions = navParams.get('daysArray');
         this.pageName = navParams.get('page');
 
       this.caluclateProductPrice = 0;
@@ -74,6 +43,8 @@ export class SelectedproductsPage {
               this.caluclateProductPrice = this.caluclateProductPrice+this.myProducts[i].PRIT_PRICEOUT;
           }
       }
+
+      console.log("daysOptions:",this.daysOptions)
   }
 
 

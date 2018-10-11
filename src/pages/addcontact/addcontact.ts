@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ToastService} from "../../services/toast-service";
 import {ServerService} from "../../services/server-service";
 import {HomePage} from "../home/home";
@@ -25,17 +25,54 @@ export class AddcontactPage {
       "CELLPHONE" : "",
       "HOMEPHONE" : "",
       "EMAIL" : "",
+      "isChanged" : false
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public server:ServerService, public Toast:ToastService) {
+    public appsettingsArray = [];
+
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, public server:ServerService, public Toast:ToastService,private alertCtrl: AlertController) {
+      this.contactFields.isChanged = false;
+
+      this.appsettingsArray = this.server.appsettingsArray;
+      console.log("appsettingsArray",this.appsettingsArray)
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddcontactPage');
   }
 
+    ionViewCanLeave(): boolean {
+        if (this.contactFields.isChanged) {
+            let alertBox = this.alertCtrl.create({
+                title: 'שינוים שלא נשמרו',
+                message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
+                buttons: [
+                    {
+                        text: 'לא',
+                        role: 'cancel',
+                        handler: () => {
+                            console.log('Cancel clicked');
+                        }
+                    },
+                    {
+                        text: 'כן',
+                        handler: () => {
+                            this.contactFields.isChanged = false;
+                            this.navCtrl.pop();
+                        }
+                    }
+                ]
+            });
+            alertBox.present();
+            return false;
+        }
+    }
+
     saveContact() {
         console.log("1111" , this.contactFields);
+        this.contactFields.isChanged = false;
 
         if (!this.contactFields.NAME)
             this.Toast.presentToast("יש להזין שם איש קשר");

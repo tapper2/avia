@@ -25,7 +25,7 @@
   <div class="products">
     <div *ngFor="let item of daysOptions let i=index" class="product">
         <div class="productDV">
-            <div class="productNumber"> {{item.day}} | {{item.dateformatted}} | {{item.start_hour}} - {{item.end_hour}}</div>
+            <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>
             <div class="productInfo" >
                 <div class="productEdit" >
                     <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>

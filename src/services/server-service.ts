@@ -13,6 +13,7 @@ import {HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 export class ServerService {
 
     public homePageArray:any = [];
+    public appsettingsArray:any = [];
 
     constructor(public loadingCtrl: LoadingController,
                 private http: Http) {

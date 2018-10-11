@@ -18,6 +18,13 @@
             <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>
         </div>
     </div>
+
+    <div align="center">
+        <button ion-button color="secondary" round *ngIf="selectedPullItems || selectedReturnItems" (click)="selectAll()">סימון כל הפריטים</button>
+    </div>
+
+
+
     <div class="products">
         <div *ngFor="let item of productsArray let i=index" class="productItem">
             <div *ngIf="!item.STATUS || item.STATUS == 0">
@@ -27,13 +34,13 @@
                 <div class="productInfo" >
                     <ion-checkbox class = "productCheck" [(ngModel)]="item.choosen" *ngIf="toggleCheckBox"  (click)="selectProduct(item)" ></ion-checkbox>
                     <div class="productImage">
-                        <!--<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />-->
-                        <img src="images/avatar.png"  style="width: 100%" />
+                        <img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />
+                        <!--<img src="images/avatar.png"  style="width: 100%" />-->
                     </div>
                     <div class="productText">
                         <div> {{item.PARTDES}} </div>
                         <div> {{item.FREE1}}</div>
-                        <div> {{item.PRIT_FREE}}</div>
+                        <div class="editable"> {{item.PRIT_FREE}}</div>
                     </div>
                     <div class="productEdit" (click)="changeStatus(i,1)">
                         <img src="images/edit.png" style="width: 100%" />
@@ -51,7 +58,7 @@
                         <div> {{item.FREE1}}</div>
                     </div>
 
-                    <textarea rows="4" cols="50" [(ngModel)]="item.PRIT_FREE"> </textarea>
+                    <textarea rows="4" cols="50" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>
                     <button ion-button class="editButton" (click)="changeStatus(i,0)"> סיים עריכה</button>
                 </div>
                 <!-- <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>

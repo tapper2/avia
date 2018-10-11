@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {ToastService} from "../../services/toast-service"
+import moment from 'moment';
+import {CalendarComponentOptions} from "ion2-calendar";
 
 /**
  * Generated class for the DaypickermodalPage page.
@@ -22,6 +24,12 @@ export class DaypickermodalPage {
     public pageName: any = '';
     public daysOptions: any[] = [];
     dayName: any[] = ["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
+
+    date: string;
+    type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
+
+    selectedDate : any = '';
+
 
     // daysOptions : any[] = [
     //     {
@@ -84,6 +92,15 @@ export class DaypickermodalPage {
       }
   }
 
+
+    optionsMulti: CalendarComponentOptions = {
+        pickMode: 'single',
+        //monthPickerFormat : ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+        weekdays: ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ש'],
+        weekStart: 0,
+        disableWeeks: [6]
+    };
+
     selectDay(row) {
 
         for (let i = 0; i < this.daysOptions.length; i++) {
@@ -100,33 +117,57 @@ export class DaypickermodalPage {
     }
 
 
-    sendSelectedProducts(type) {
+    onChange(event) {
+        console.log(event);
+        this.selectedDate = moment(event.format('YYYY-MM-DD'), 'YYYY-MM-DD').format()
+    }
+
+    closeModal(type) {
+
 
         let options  = [
             {
                 type: type,
-                days: this.daysOptions
+                date: this.selectedDate,
             }
         ];
 
-
         if (type == 1) {
-            this.countSelectedDays = 0;
-
-            for (let i = 0; i < this.daysOptions.length; i++) {
-                if (this.daysOptions[i].choosen == true) {
-                    this.countSelectedDays++;
-                }
-            }
-
-            if (this.countSelectedDays == 0)
-                this.Toast.presentToast("יש לבחור יום");
-            else {
+            if (!this.selectedDate) {
+                this.Toast.presentToast("יש תחילה לבחור תאריך");
+            } else {
                 this.viewCtrl.dismiss(options);
             }
-        } else {
+        }
+        else {
             this.viewCtrl.dismiss(options);
         }
+
+        // let options  = [
+        //     {
+        //         type: type,
+        //         days: this.daysOptions
+        //     }
+        // ];
+        //
+        //
+        // if (type == 1) {
+        //     this.countSelectedDays = 0;
+        //
+        //     for (let i = 0; i < this.daysOptions.length; i++) {
+        //         if (this.daysOptions[i].choosen == true) {
+        //             this.countSelectedDays++;
+        //         }
+        //     }
+        //
+        //     if (this.countSelectedDays == 0)
+        //         this.Toast.presentToast("יש לבחור יום");
+        //     else {
+        //         this.viewCtrl.dismiss(options);
+        //     }
+        // } else {
+        //     this.viewCtrl.dismiss(options);
+        // }
 
 
     }

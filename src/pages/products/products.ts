@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams,ModalController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ModalController, AlertController} from 'ionic-angular';
 import {ServerService} from "../../services/server-service";
 import {ToastService} from "../../services/toast-service";
 import {SelectedproductsPage} from "../selectedproducts/selectedproducts";
@@ -32,11 +32,14 @@ export class ProductsPage  {
     public selectedPullType : number = 0;
     public productsSendArray: any = [];
     public todaydate :any = moment().format();
+    public productFields : any = {
+        "isChanged" : false
+    }
 
 
 
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService, public Toast:ToastService,public modalCtrl: ModalController) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService, public Toast:ToastService,public modalCtrl: ModalController,private alertCtrl: AlertController) {
         let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/SERNUMBERS?$filter=CUSTNAME eq '"+localStorage.getItem("CUSTNAME")+"'";
         
         this.server.GetData(URL).then((data: any) => {
@@ -48,6 +51,48 @@ export class ProductsPage  {
 
         });
 
+    }
+
+    modelChanged(newObj) {
+        this.productFields.isChanged = true;
+    }
+
+
+    ionViewCanLeave(): boolean {
+        if (this.productFields.isChanged) {
+            let alertBox = this.alertCtrl.create({
+                title: 'שינוים שלא נשמרו',
+                message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
+                buttons: [
+                    {
+                        text: 'לא',
+                        role: 'cancel',
+                        handler: () => {
+                            console.log('Cancel clicked');
+                        }
+                    },
+                    {
+                        text: 'כן',
+                        handler: () => {
+                            this.productFields.isChanged = false;
+                            this.navCtrl.pop();
+                        }
+                    }
+                ]
+            });
+            alertBox.present();
+            return false;
+        }
+    }
+
+    selectAll()
+    {
+        for (let i = 0; i < this.productsArray.length; i++) {
+            if (this.productsArray[i].choosen == false)
+                this.productsArray[i].choosen = true;
+            else
+                this.productsArray[i].choosen = false;
+        }
     }
     
         ToggleCheckBox(type) {
@@ -122,7 +167,7 @@ export class ProductsPage  {
             let serverResponse = data.json();
             console.log("serverResponse",serverResponse);
 
-                let ProductsModal = this.modalCtrl.create(DaypickermodalPage, {products: this.productsArray,page: 'products',daysArray:serverResponse});
+                let ProductsModal = this.modalCtrl.create(SelectedproductsPage, {products: this.productsArray,page: 'products',daysArray:serverResponse});
                 ProductsModal.present();
                 this.todaydate = moment().format();
 
@@ -153,6 +198,8 @@ export class ProductsPage  {
                         }
 
 
+                        console.log ("selectedDayArray",this.selectedDayArray)
+
                         for (let i = 0; i < this.productsArray.length; i++) {
                             if (this.productsArray[i].choosen == true)
                             {
@@ -160,7 +207,7 @@ export class ProductsPage  {
                                     "PARTNAME" : this.productsArray[i].PARTNAME,
                                     "SERNUM" : this.productsArray[i].SERNUM,
                                     "DUEDATE": this.todaydate, /* תאריך אספקה*/
-                                    "TASKDATE": moment(this.selectedDayArray.regular_date, 'YYYY-MM-DD').format(),   /* תאריך למשימה*/
+                                    "TASKDATE": moment(this.selectedDayArray.c, 'YYYY-MM-DD').format(),   /* תאריך למשימה*/
                                     "FROMDATE": moment('1988-01-01 '+this.selectedDayArray.start_hour+':00', 'YYYY-MM-DD HH:mm:ss').format(), /* משעה למשימה*/
                                     "TODATE": moment('1988-01-01 '+this.selectedDayArray.end_hour+':00', 'YYYY-MM-DD HH:mm:ss').format() /* עד שעה למשימה*/
                                 });
@@ -247,6 +294,8 @@ export class ProductsPage  {
         this.productsArray[place].STATUS = status;
 
         if (status == 0) {
+
+            this.productFields.isChanged = false;
 
 
             let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";

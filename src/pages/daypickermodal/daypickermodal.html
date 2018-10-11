@@ -21,27 +21,36 @@
 
 
 <ion-content padding>
-  <div class="products">
-    <div *ngFor="let item of daysOptions let i=index" class="product">
-        <div class="productDV">
-              <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>
-              <div class="productInfo" >
-                <div class="productEdit" >
-                  <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>
-                </div>
-              </div>
-        </div>
-        <hr>
+    <div>
+
+        <ion-calendar [(ngModel)]="date"
+                      (onChange)="onChange($event)"
+                      [type]="type"
+                      [format]="'YYYY-MM-DD'"
+                      [options]="optionsMulti">
+        </ion-calendar>
     </div>
-  </div>
+  <!--<div class="products">-->
+    <!--<div *ngFor="let item of daysOptions let i=index" class="product">-->
+        <!--<div class="productDV">-->
+              <!--<div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}}  {{item.end_hour}}</div>-->
+              <!--<div class="productInfo" >-->
+                <!--<div class="productEdit" >-->
+                  <!--<ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>-->
+                <!--</div>-->
+              <!--</div>-->
+        <!--</div>-->
+        <!--<hr>-->
+    <!--</div>-->
+  <!--</div>-->
 </ion-content>
 
 
 
 <ion-footer >
   <div class="buttons">
-    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number }} ש"ח</button>
-    <button ion-button color="danger" full (click)="sendSelectedProducts(0)">ביטול</button>
-    <button ion-button full style="background-color: #6eb43f" (click)="sendSelectedProducts(1)">שליחה</button>
+    <!--<button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number }} ש"ח</button>-->
+      <button ion-button color="danger" full (click)="closeModal(0)">ביטול</button>
+      <button ion-button full style="background-color: #6eb43f" (click)="closeModal(1)">שליחה</button>
   </div>
 </ion-footer>

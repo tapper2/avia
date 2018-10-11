@@ -20,7 +20,8 @@ export class HomePage implements  OnInit{
     public jsonResponse;
     public imageHost:any = '';
     public articlesArray:any = [];
-    
+    public appsettingsArray:any = [];
+
   constructor(public navCtrl: NavController , public server:ServerService) {
       this.imageHost = AppSettings.IMAGE_URL;
       this.getHomePageData();
@@ -32,7 +33,8 @@ export class HomePage implements  OnInit{
       this.server.getServerData("getHomePageData").then((data: any) => {
         let serverResponse = data.json();
         this.server.homePageArray = serverResponse;
-        this.articlesArray = serverResponse.articles;
+          this.articlesArray = serverResponse.articles;
+          this.server.appsettingsArray = serverResponse.app_settings;
       });
   }
 

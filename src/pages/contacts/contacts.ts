@@ -20,6 +20,7 @@ import {AddcontactPage} from "../addcontact/addcontact";
 export class ContactsPage {
 
     public contactsArray = [];
+    public appsettingsArray = [];
     public imageUrl = 'https://aviatest.wee.co.il/primail/';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService, public Toast:ToastService,private callNumber: CallNumber) {
@@ -29,6 +30,9 @@ export class ContactsPage {
           this.contactsArray = data.json().value;
           console.log(this.contactsArray);
       });
+
+      this.appsettingsArray = this.server.appsettingsArray;
+      console.log("appsettingsArray",this.appsettingsArray)
 
   }
 

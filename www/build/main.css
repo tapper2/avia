@@ -29586,6 +29586,12 @@ page-products .buttonsBarButton {
   background-color: #6fb43f;
 }
 
+page-products .editable {
+  color: #000000;
+  font-weight: bold;
+  font-size: 12px;
+}
+
 page-rooms .productInfo {
   overflow: hidden;
   width: 100%;
