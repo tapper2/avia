@@ -20,12 +20,12 @@
     <div class="mainIcons">
         <div class="mainRow" >
             <div class="leftIcon">
-                <div class="mainIcon" [style.width]="iconWidth" (click)="NavigatePage(1)">
+                <div class="mainIcon" [style.width]="iconWidth" (click)="NavigatePage(1)"  *ngIf="ctypecode == 7 || ctypecode != 6">
                     <img src="images/home/ic1.png" style="width:100%" />
                     <div class="mainIconTitle">יחידות אחסון</div>
                 </div>
             </div>
-            <div class="rightIcon leftBorder" [style.height]="cubeHeight" (click)="NavigatePage(2)">
+            <div class="rightIcon leftBorder" [style.height]="cubeHeight" (click)="NavigatePage(2)" *ngIf="ctypecode == 6 || ctypecode == 7">
                 <div class="mainIcon" [style.width]="iconWidth">
                     <img src="images/home/ic2.png" style="width:100%" />
                     <div class="mainIconTitle">הפריטים שלי</div>

@@ -21,10 +21,12 @@ export class HomePage implements  OnInit{
     public imageHost:any = '';
     public articlesArray:any = [];
     public appsettingsArray:any = [];
+    public ctypecode:any = '';
 
   constructor(public navCtrl: NavController , public server:ServerService) {
       this.imageHost = AppSettings.IMAGE_URL;
       this.getHomePageData();
+      this.checkClient();
 }
 
 
@@ -35,6 +37,14 @@ export class HomePage implements  OnInit{
         this.server.homePageArray = serverResponse;
           this.articlesArray = serverResponse.articles;
           this.server.appsettingsArray = serverResponse.app_settings;
+      });
+  }
+
+  checkClient()
+  {
+      this.server.GetData("https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')").then((data: any) => {
+          this.ctypecode  = 7;//data.json().CTYPECODE;
+          console.log("ctypecode : " , "hard coded:"+this.ctypecode);
       });
   }
 
