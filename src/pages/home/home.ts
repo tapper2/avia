@@ -21,7 +21,7 @@ export class HomePage implements  OnInit{
     public imageHost:any = '';
     public articlesArray:any = [];
     public appsettingsArray:any = [];
-    public ctypecode:any = '';
+    public ctypecode:any = 7;
 
   constructor(public navCtrl: NavController , public server:ServerService) {
       this.imageHost = AppSettings.IMAGE_URL;

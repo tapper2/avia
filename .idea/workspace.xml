@@ -4,9 +4,10 @@
     <list default="true" id="3539d66a-597d-40ab-bb4f-00877f5202f1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/main.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts" afterPath="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="$PROJECT_DIR$/www/build/0.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/1.js" afterPath="$PROJECT_DIR$/www/build/1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/10.js" afterPath="$PROJECT_DIR$/www/build/10.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/2.js" afterPath="$PROJECT_DIR$/www/build/2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/3.js" afterPath="$PROJECT_DIR$/www/build/3.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/4.js" afterPath="$PROJECT_DIR$/www/build/4.js" />
@@ -14,10 +15,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/6.js" afterPath="$PROJECT_DIR$/www/build/6.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/7.js" afterPath="$PROJECT_DIR$/www/build/7.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/8.js" afterPath="$PROJECT_DIR$/www/build/8.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/9.js" afterPath="$PROJECT_DIR$/www/build/9.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/vendor.js.map" afterPath="$PROJECT_DIR$/www/build/vendor.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,18 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="daypickermodal.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -132,8 +122,8 @@
         <option value="$USER_HOME$/AppData/Local/Temp/~flashfxp/D191994F_edit.tmp/AppController.php" />
         <option value="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.html" />
         <option value="$PROJECT_DIR$/src/pages/home/home.html" />
-        <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts" />
+        <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
       </list>
     </option>
   </component>
@@ -318,19 +308,18 @@
       <workItem from="1539247167970" duration="450000" />
       <workItem from="1539249673061" duration="2006000" />
       <workItem from="1539253189761" duration="3498000" />
-      <workItem from="1539260382708" duration="2985000" />
+      <workItem from="1539260382708" duration="3689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219543000" />
+    <option name="totallyTimeSpent" value="220247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28511906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28511906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -667,14 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -685,8 +666,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/daypickermodal/daypickermodal.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
           <folding />
         </state>
       </provider>
