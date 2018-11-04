@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Aug 29 13:56:45 IDT 2018
+#Thu Oct 25 12:51:48 IDT 2018
 122.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-land-ldpi-v4\\screen.png
 60.set=ASSET
 129.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\plugins\\cordova-plugin-inappbrowser\\www\\inappbrowser.js
@@ -33,7 +33,7 @@
 105.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\build\\1.js.map
 35.set=ASSET
 27.set=ASSET
-68.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\icon.png
+68.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\ic_action_previous_item.png
 19.set=ASSET
 36.base=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 97.set=ANDROID_RESOURCE
@@ -387,7 +387,7 @@ count=134
 37.set=ASSET
 29.set=ASSET
 37.base=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-69.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\ic_action_previous_item.png
+69.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\icon.png
 84.base=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 99.set=ASSET
 113.file=C\:\\Users\\USER\\Desktop\\gitlab\\avia\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\build\\12.js
