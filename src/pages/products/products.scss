@@ -9,42 +9,37 @@ page-products {
   {
     text-align: right;
     direction: rtl;
-    padding: 10px 20px;
+    padding: 0px 20px;
     color: #6eb43f;
     font-weight: bold;
     font-size: 17px;
   }
-  .productCheck
-  {
-    float: right;
-    width: 3%;
-    margin-right: 20px;
-    margin-top: 15px;
-  }
-
   .productImage
   {
-    float: right;
-    width: 15%;
     margin-right: 20px;
+    margin-top: 20px;
   }
 
   .productText
   {
-    float: right;
-    width: 55%;
-    padding: 0px 10px;
+    padding: 0px 20px;
     text-align: right;
     color: #B6B6B6;
     font-size: 15px;
+    width: 150%;
   }
 
   .productEdit
   {
-    float: left;
-    width: 7%;
+    width: 50%;
     margin-top: 15px;
     margin-left: 20px;
+  }
+
+  .toggleCheckBox
+  {
+    margin-right: 13px;
+    margin-top: 18px;
   }
 
   .editButton
@@ -76,16 +71,32 @@ page-products {
 
   .buttonsBarLeft
   {
-    width: 40%;
+    width: 82%;
     float: left;
-    margin-left: 5%;
+    margin-left: 4%;
+  }
+
+  .buttonsBarLeftSelected
+  {
+    width: 38%;
+    float: right;
+    margin-right: 3%;
+    background-color: red;
   }
 
   .buttonsBarRight
   {
+    width: 38%;
+    float: left;
+    margin-left: 3%;
+  }
+
+  .buttonsBarRightSelected
+  {
     width: 40%;
     float: right;
-    margin-right: 5%;
+    margin-right: 3%;
+    background-color: blue;
   }
 
   .buttonsBarButton
@@ -94,10 +105,94 @@ page-products {
     background-color:#6fb43f;
   }
 
-  .editable
+  .buttonsBarButton2
   {
-    color:#000000;
-    font-weight: bold;
-    font-size: 12px;
+    width: 100%;
+    background-color: #333;
+    border: none;
+  }
+
+  .buttonsBarAll
+  {
+    width: 5%;
+    float: right;
+    margin-right: 5%;
+  }
+
+  .checkAllIcon
+  {
+    font-size: 30px;
+    margin-top: 8px;
+    color:#6fb43f;
+  }
+
+  .alert-wrapper , alert-message
+  {
+    text-align: right !important;
+    direction: rtl !important;
+  }
+
+  .alert-title {
+    text-align: center !important;
+ }
+
+ .alert-ios .alert-wrapper{
+  text-align: right !important;
+  button.alertButton
+  {
+    background-color: red !important;
+    text-align: right
+    }
+  }
+
+  .alert-message
+  {
+    text-align: right !important;
+  }
+
+  .products
+  {
+    margin-bottom: 150px;
+  }
+
+  .ActiveBt
+  {
+    width: 50% !important;
+    height: 40px;
+    font-size: 17px;
+    padding-top: 6px;
+    color: #fff;
+    background-color: #6eb43f;
+    border-color: #6eb43f;
+  }
+
+  .detailsEdit
+  {
+    margin-top: 5px;
+    margin-bottom: -5px;
+    font-weight: bold
+  }
+
+  
+  .btnGr
+  {
+    width: 50% !important;
+    height: 40px;
+    font-size: 17px;
+    padding-top: 6px;
+    border-color: #6eb43f;
+    background-color: #fff;
+    color:#6eb43f;
+  }
+
+  .btn-group
+  {
+    width: 100% !important;
   }
 }
+  .alert-ios .alert-message,
+    .alert-md .alert-message ,.alert-title{
+        text-align: right;
+        direction: rtl;
+    }
+

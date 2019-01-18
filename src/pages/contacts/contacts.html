@@ -11,26 +11,33 @@
 
 
 <ion-content padding>
-
   <div align="center">
     {{appsettingsArray.ContactDesc}}
   </div>
 
-  <ion-list>
-    <ion-item *ngFor="let item of contactsArray let i=index">
-      <ion-thumbnail item-end >
-        <img src="images/avatar.png">
-      </ion-thumbnail>
-      <div float-right>
-        <h2>{{item.NAME}}</h2>
-        <p>{{item.CELLPHONE}}</p>
-        <p>{{item.EMAIL}}</p>
+  <ion-list class="mt-4">
+    <div *ngFor="let item of contactsArray let i=index">
+      <div class="row">
+        <div class="col-2">
+            <button ion-button clear item-left (click)="callPhone(item.CELLPHONE)">
+                <ion-icon name="call" style="font-size:30px;"></ion-icon>
+              </button>
+        </div>
+        <div class="col-8">
+            <div class="infoContactText">
+                <p class="inf1">{{item.NAME}}</p>
+                <p class="inf2">{{item.CELLPHONE}}</p>
+                <p class="inf3">{{item.EMAIL}}</p>
+              </div>
+        </div>
+        <div class="col-2">
+            <ion-thumbnail item-end >
+                <img src="images/avatar.png">
+              </ion-thumbnail> 
+        </div>
       </div>
-
-      <button ion-button clear item-left (click)="callPhone(item.CELLPHONE)">
-        <ion-icon name="call" style="font-size:30px;"></ion-icon>
-      </button>
-    </ion-item>
+      <hr>
+    </div>
   </ion-list>
 
 

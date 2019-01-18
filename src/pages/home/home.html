@@ -16,8 +16,39 @@
             </ion-slide>
         </ion-slides>
     </div>
-
-    <div class="mainIcons">
+    <div class="lineH"></div>
+    <div class="mainRow">
+        <div class="row firstdRow">
+            <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(2)" *ngIf="ctypecode == 6 || ctypecode == 7">
+                    <img src="images/home/ic2.png"  />
+                    <div class="mainIconTitle">הפריטים שלי</div>
+            </div> 
+            <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(5)" *ngIf="ctypecode != 6 && ctypecode != 7">
+                    <img src="images/home/ic6.png" style="margin-top: 4px;"  />
+                    <div class="mainIconTitle">אנשי קשר</div>
+            </div> 
+            <div class="col-6 mainIcon" align="center" (click)="NavigatePage(1)"  *ngIf="ctypecode != 6">
+                    <img src="images/home/ic1.png"  />
+                    <div class="mainIconTitle">יחידות אחסון</div>
+            </div>
+            <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(5)" *ngIf="ctypecode == 6">
+                    <img src="images/home/ic6.png"  />
+                    <div class="mainIconTitle">אנשי קשר</div>
+            </div> 
+        </div>
+        <div class="lineW"></div>
+        <div class="row secondRow">
+                <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(3)">
+                        <img src="images/home/ic3.png" />
+                        <div class="mainIconTitle">פירוט חיובים</div>
+                </div> 
+                <div class="col-6 mainIcon" align="center" (click)="NavigatePage(4)">
+                        <img src="images/home/ic4.png" />
+                        <div class="mainIconTitle">החלפת כרטיסי אשראי</div>
+                </div>  
+        </div>
+    </div>
+    <!-- <div class="mainIcons">
         <div class="mainRow" >
             <div class="leftIcon">
                 <div class="mainIcon" [style.width]="iconWidth" (click)="NavigatePage(1)"  *ngIf="ctypecode == 7 || ctypecode != 6">
@@ -46,7 +77,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </ion-content>
 
 <ion-footer no-border class="topBorder">

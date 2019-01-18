@@ -23,7 +23,7 @@ export class ServerService {
 
     getServerData(url) {
 
-        let loading = this.loadingCtrl.create({content: 'Please wait...'});
+        let loading = this.loadingCtrl.create({content: '...בטעינה'});
         loading.present();
         try {
             let body = new FormData();
@@ -45,7 +45,7 @@ export class ServerService {
 
     getRoomsBranchDays(url,branch_code) {
 
-        let loading = this.loadingCtrl.create({content: 'Please wait...'});
+        let loading = this.loadingCtrl.create({content: '...בטעינה'});
         loading.present();
         try {
             let body = new FormData();
@@ -67,7 +67,7 @@ export class ServerService {
 
     getWorkingDays(url) {
 
-        let loading = this.loadingCtrl.create({content: 'Please wait...'});
+        let loading = this.loadingCtrl.create({content: '...בטעינה'});
         loading.present();
         try {
             let body = new FormData();
@@ -88,7 +88,7 @@ export class ServerService {
 
     
     GetData(url) {
-        let loading = this.loadingCtrl.create({content: 'Please wait...'});
+        let loading = this.loadingCtrl.create({content: '...בטעינה'});
         loading.present();
         try {
             let body = new FormData();
@@ -117,11 +117,13 @@ export class ServerService {
 
 
     SendPost(url,data) {
-        let loading = this.loadingCtrl.create({content: 'Please wait...'});
+        console.log("Start1");
+        let loading = this.loadingCtrl.create({content: '...בטעינה'});
         loading.present();
         try {
             let body = new FormData();
             //body.append('data', JSON.stringify(data));
+            console.log("Start2");
             return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
                 this.http.post(url,JSON.stringify(data),{ headers: new Headers(
                     {
@@ -131,14 +133,21 @@ export class ServerService {
                     }
                 )}) //for post, put and delete put the body before the headers
                     .toPromise()
-                    .then(res => resolve(res))
-                    .catch(err => console.log("error:", err));
+                    .then(res =>{ 
+                        resolve(res); 
+                        console.log("Start3");
+                        loading.dismiss();
+                    })
+                    .catch(err => {
+                        console.log("error:", err);
+                        loading.dismiss();
+                    });
             });
 
         } catch (err) {
             console.log( err);
         } finally {
-            loading.dismiss();
+            console.log("Start4");
         }
     }
 }

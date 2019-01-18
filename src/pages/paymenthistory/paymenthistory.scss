@@ -24,7 +24,7 @@ page-paymenthistory {
   .productText
   {
     float: right;
-    width: 60%;
+    width: 100%;
     padding: 0px 10px;
     text-align: right;
     color: #B6B6B6;
@@ -74,5 +74,69 @@ page-paymenthistory {
   {
     width: 80%;
     background-color:#6fb43f;
+  }
+
+  .btn-group
+  {
+    width: 100% !important;
+  }
+
+  .mIcon
+  {
+    margin-left: 3px;
+  }
+
+  .btnGr
+  {
+    width: 33% !important;
+    height: 40px;
+    font-size: 17px;
+    padding-top: 6px;
+    border-color: #6eb43f;
+    background-color: #fff;
+    color:#6eb43f;
+  }
+
+  .invoicIcon
+  {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+
+  .invoicIcon i
+  {
+    padding-left: 18px;
+    color: #6eb43f
+  }
+
+  .invoicIcon p
+  {
+    font-size: 10px;
+    text-align: center;
+    color: #6eb43f
+  }
+
+//   .btnGr:active{
+//   color: #fff;
+//   background-color: #5cb85c !important;
+  
+//   outline: none;
+// }
+
+  // .btnGr:focus, .btnGr:active , .btnGr:hover ,btnGr.active {
+  //   color: #fff;
+  //   background-color: #5cb85c;
+  //   border-color: #5cb85c;
+  // }
+
+  .ActiveBt
+  {
+    width: 33% !important;
+    height: 40px;
+    font-size: 17px;
+    padding-top: 6px;
+    color: #fff;
+    background-color: #6eb43f;
+    border-color: #6eb43f;
   }
 }

@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, ModalController, AlertController} from 'ionic-angular';
 import {ServerService} from "../../services/server-service";
@@ -32,6 +33,7 @@ export class ProductsPage  {
     public selectedPullType : number = 0;
     public productsSendArray: any = [];
     public todaydate :any = moment().format();
+    public selectedAll:boolean = false ;
     public productFields : any = {
         "isChanged" : false
     }
@@ -41,61 +43,157 @@ export class ProductsPage  {
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService, public Toast:ToastService,public modalCtrl: ModalController,private alertCtrl: AlertController) {
         let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/SERNUMBERS?$filter=CUSTNAME eq '"+localStorage.getItem("CUSTNAME")+"'";
-        
+    
         this.server.GetData(URL).then((data: any) => {
+            console.log("DTT : " , data)
             this.productsArray = data.json().value;
             for (let i = 0; i < this.productsArray.length; i++) {
                 this.productsArray[i].choosen = "0";
             }
             console.log(this.productsArray);
-
         });
 
     }
 
     modelChanged(newObj) {
+        console.log("Change");
         this.productFields.isChanged = true;
     }
 
 
+    // ionViewCanLeave(): boolean {
+    //     console.log("CanLeave" , this.productFields.isChanged);
+    //     if (this.productFields.isChanged) {
+    //         let alertBox = this.alertCtrl.create({
+    //             title: 'שינוים שלא נשמרו',
+    //             message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
+    //             buttons: [
+    //                 {
+    //                     text: 'לא',
+    //                     role: 'cancel',
+    //                     handler: () => {
+    //                         console.log('Cancel clicked');
+    //                     }
+    //                 },
+    //                 {
+    //                     text: 'כן',
+    //                     handler: () => {
+    //                         this.productFields.isChanged = false;
+    //                         this.navCtrl.pop();
+    //                     }
+    //                 }
+    //             ]
+    //         });
+    //         alertBox.present();
+    //         return false;
+    //     }
+    // }
+
     ionViewCanLeave(): boolean {
-        if (this.productFields.isChanged) {
-            let alertBox = this.alertCtrl.create({
-                title: 'שינוים שלא נשמרו',
-                message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
-                buttons: [
-                    {
-                        text: 'לא',
-                        role: 'cancel',
-                        handler: () => {
-                            console.log('Cancel clicked');
-                        }
-                    },
-                    {
-                        text: 'כן',
-                        handler: () => {
-                            this.productFields.isChanged = false;
-                            this.navCtrl.pop();
-                        }
-                    }
-                ]
-            });
-            alertBox.present();
-            return false;
-        }
+    //     console.log("CanLeave : " , this.selectedPullItems  , this.selectedReturnItems )
+    //    if(this.selectedPullItems || this.selectedReturnItems)
+    //    {
+        console.log("CanLeave : " , this.productFields.isChanged);
+        if (this.productFields.isChanged)
+        {
+             // this.productFields.isChanged = false;
+             let status = -1;
+             for(let i=0;i<this.productsArray.length; i++)
+             {
+                 if(this.productsArray[i].STATUS == 1)
+                     status = i;
+             }
+             console.log("CanLeave2 : " , status , this.productsArray);
+             if(status >= 0)
+             {
+            
+                // let alertPopup = this.alertCtrl.create({
+                //     title: 'שים לב !!',
+                //     message: 'ישנם נתונים שלא נשמרו האם ברצונך לשמור אותם ?  ',
+                //     buttons: [{
+                //             text: 'בטל',
+                //             role: 'cancel',
+                //             handler: () => {
+                              
+                //                 alertPopup.dismiss().then(() => {
+                //                     //this.navCtrl.push(HomePage);
+                //                     this.navCtrl.pop();
+                //                 })     
+                //             }
+                //         },
+                //         {
+                //             text: 'אשר',
+                //             handler: () => {
+                //                 this.changeStatus(status,3)
+                //             }
+                //         }]
+                // });
+        
+                // Show the alert
+               // alertPopup.present();
+        
+                // Return false to avoid the page to be popped up
+                //return false;
+
+
+              
+                   
+                        let alertBox = this.alertCtrl.create({
+                            title: 'שינוים שלא נשמרו',
+                            message: 'האם ברצונך לשמור את השינוים?',
+                            buttons: [
+                                {
+                                    text: 'לא',
+                                    role: 'cancel',
+                                    handler: () => {
+                                        console.log('Cancel clicked');
+                                    }
+                                },
+                                {
+                                    text: 'כן',
+                                    handler: () => {
+                                        this.changeStatus(status,3)
+                                    }
+                                }
+                            ]
+                        });
+                        alertBox.present();
+                        return false;
+                  
+               
+            }
+       }
+
     }
+    
+
+    public exitPage() {
+        this.navCtrl.popToRoot();
+    }
+  
 
     selectAll()
     {
+        
+
         for (let i = 0; i < this.productsArray.length; i++) {
-            if (this.productsArray[i].choosen == false)
+            if(this.selectedAll == false)
+            {
                 this.productsArray[i].choosen = true;
+                this.showSelectedFooter  = true;
+            }
             else
+            {
                 this.productsArray[i].choosen = false;
+                this.showSelectedFooter = false;
+            }
         }
+        
+        this.selectProduct();
+        this.selectedAll = !this.selectedAll;
     }
     
-        ToggleCheckBox(type) {
+    ToggleCheckBox(type) {
         // this.toggleCheckBox = !this.toggleCheckBox;
         this.selectedPullType = type;
 
@@ -128,18 +226,29 @@ export class ProductsPage  {
         if (!this.toggleCheckBox) {
             this.showSelectedFooter  = false;
         }
-
     }
 
-    selectProduct(row) {
+    selectProduct() {
         this.countedSelected = 0;
         this.caluclateProductPrice = 0;
+        let isMakat100 = false;
 
 
         for (let i = 0; i < this.productsArray.length; i++) {
             if (this.productsArray[i].choosen == true) {
-                this.countedSelected++;
-                this.caluclateProductPrice = this.caluclateProductPrice+row.PRIT_PRICEOUT;
+                if(this.productsArray[i].PARTNAME == "100" || this.productsArray[i].PARTNAME == "101")
+                {
+                    if(isMakat100 == false)
+                    {
+                        isMakat100 = true;
+                        this.caluclateProductPrice += this.productsArray[i].PRIT_PRICEOUT;
+                    }
+                    else
+                    this.caluclateProductPrice += Number(this.productsArray[i].PRIT_PRICEOUT)/2;
+                }
+                else if(this.productsArray[i].PARTNAME == "102")
+                    this.caluclateProductPrice += this.productsArray[i].PRIT_PRICEOUT;
+                this.countedSelected++;   
             }
         }
 
@@ -158,6 +267,8 @@ export class ProductsPage  {
             }
         }
     }
+    
+   
 
 
     async openProductsModal() {
@@ -167,7 +278,7 @@ export class ProductsPage  {
             let serverResponse = data.json();
             console.log("serverResponse",serverResponse);
 
-                let ProductsModal = this.modalCtrl.create(SelectedproductsPage, {products: this.productsArray,page: 'products',daysArray:serverResponse});
+                let ProductsModal = this.modalCtrl.create(SelectedproductsPage, {products: this.productsArray,page: 'products',daysArray:serverResponse,selectedPullItems:this.selectedPullItems, selectedReturnItems:this.selectedReturnItems});
                 ProductsModal.present();
                 this.todaydate = moment().format();
 
@@ -175,8 +286,14 @@ export class ProductsPage  {
                 ProductsModal.onDidDismiss(data => {
 
                     console.log("dismiss: ", data);
-
-
+    
+                    let TYPECODE;
+                    if(data[0].selectedPullItems == true)
+                        TYPECODE = "13"
+                    else if(data[0].selectedReturnItems == true)
+                        TYPECODE = "14"
+                    console.log("TYPECODE  : "  , data[0].selectedPullItems , data[0].selectedReturnItems , TYPECODE )
+                    
                     this.countedSelected = 0;
                     this.caluclateProductPrice = 0;
                     this.showSelectedFooter  = false;
@@ -188,8 +305,6 @@ export class ProductsPage  {
 
                     if (data[0].type == 1)
                     {
-
-
                         //send data
                         for (let i = 0; i < data[0].days.length; i++) {
                             if (data[0].days[i].choosen) {
@@ -218,32 +333,28 @@ export class ProductsPage  {
 
                         //send to server//
 
-                        let TYPECODE;
-
-                        if (this.selectedPullType == 0)
-                            TYPECODE = "13";
-                        else
-                            TYPECODE = "14";
+                        // let TYPECODE;
+                        //
+                        // if (this.selectedPullType == 0)
+                        //     TYPECODE = "13";
+                        // else
+                        //     TYPECODE = "14";
 
                         let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
 
                         let sendData =
                             {
-                                "LOADCODE": "3",
-                                "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),       /* מספר לקוח */
-                                "DOCDATE": this.todaydate, /* תאריך הזמנה */
-                                "TYPECODE": TYPECODE ,       /* עבור שליפה יש לשים ערך 13, עבור החזרה ערך 14 */
-
-                                "PRIT_DOCLINE_SUBFORM":
-
-                                this.productsSendArray,
-
+                                "LOADCODE":"3",
+                                "CUSTNAME":localStorage.getItem("CUSTNAME").toString(),       /* מספר לקוח */
+                                "DOCDATE":this.todaydate, /* תאריך הזמנה */
+                                "TYPECODE":TYPECODE ,       /* עבור שליפה יש לשים ערך 13, עבור החזרה ערך 14 */
+                                "PRIT_DOCLINE_SUBFORM":this.productsSendArray,
                                 "PRIT_INTERFACE_SUBFORM":
-                                    [
-                                        {
-                                            "EXECUTE": "Y"
-                                        }
-                                    ]
+                                [
+                                    {
+                                        "EXECUTE": "Y"
+                                    }
+                                ]
                             }
 
 
@@ -276,25 +387,42 @@ export class ProductsPage  {
         console.log('ionViewDidLoad ProductsPage');
     }
     
-    cutImageUrl(url)
+    // cutImageUrl(url)
+    // {
+    //     //console.log("image url:",url);
+    //     if (url) {
+    //          let arr = url.split("/");
+    //          //console.log("arr",arr);
+    //          return arr[4]+"/"+arr[5]+"/"+arr[6];
+    //     }
+    //     else {
+    //         return '';
+    //     }
+    //
+    // }
+    
+    cutImageUrl(url,type)
     {
-        //console.log("image url:",url);
         if (url) {
-             let arr = url.split("/");
-             //console.log("arr",arr);
-             return arr[4]+"/"+arr[5]+"/"+arr[6];
+            let arr = url.split("/");
+            return this.imageUrl +"/"+arr[4]+"/"+arr[5]+"/"+arr[6];
         }
         else {
-            return '';
+            if(String(type) == "100")
+                return 'images/100.png';
+            else if(String(type) == "101")
+                return 'images/100.jpg';
+            else if(String(type) == "102")
+                return 'images/102.jpg';
         }
-
+        
     }
     
     changeStatus(place, status) {
         this.productsArray[place].STATUS = status;
-
-        if (status == 0) {
-
+        this.productFields.isChanged = true;
+        if (status == 0 || status == 3) {
+            console.log("cs1");
             this.productFields.isChanged = false;
 
 
@@ -326,6 +454,8 @@ export class ProductsPage  {
                 let response = data;
                 if  (response.ok) {
                     this.Toast.presentToast("עודכן בהצלחה");
+                    if(status == 3)
+                    this.navCtrl.pop();
                 }
                 else {
                     this.Toast.presentToast("שגיאה, יש לנסות שוב");
@@ -333,5 +463,10 @@ export class ProductsPage  {
             });
         }
     }
+
     
+
+    presentConfirm() {
+      
+    }
 }

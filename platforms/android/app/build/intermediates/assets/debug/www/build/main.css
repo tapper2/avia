@@ -29137,6 +29137,25 @@ ion-navbar.toolbar {
   direction: rtl;
 }
 
+.menuItem {
+  width: 100%;
+  overflow: hidden;
+}
+
+.menuItemIcon {
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+
+.menuItemText {
+  float: right;
+  margin-top: 4px;
+  margin-right: 10px;
+  color: #6eb43f;
+  font-weight: bold;
+}
+
 edit-row .nonEditRow {
   text-align: right;
   direction: rtl;
@@ -29168,7 +29187,7 @@ header .avatar {
   width: 10%;
   margin: auto;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 30px;
 }
 
 header p {
@@ -29185,7 +29204,7 @@ header .headLogo {
 }
 
 header .headLogo img {
-  width: 150px !important;
+  width: 125px !important;
   margin: auto;
   margin-top: 3px;
 }
@@ -29216,6 +29235,20 @@ login p {
   color: #ccc;
   text-align: center;
   direction: rtl;
+}
+
+login .loginImg {
+  position: absolute;
+  width: 22px;
+  margin-top: 8px;
+  margin-left: 6px;
+}
+
+login .loginImg1 {
+  position: absolute;
+  width: 20px;
+  margin-top: 20px;
+  margin-left: 8px;
 }
 
 page-addcontact .nonEditRow {
@@ -29300,6 +29333,28 @@ page-contact .absoluteEditButton {
   margin-left: 8px;
 }
 
+page-contacts .infoContactText {
+  text-align: right;
+  direction: rtl;
+}
+
+page-contacts .inf1 {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+page-contacts .inf2 {
+  font-weight: 300;
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+page-contacts .inf3 {
+  font-weight: 300;
+  font-size: 12px;
+  margin-top: -10px;
+}
+
 page-daypickermodal .mainHeader {
   width: 100%;
   overflow: hidden;
@@ -29367,6 +29422,53 @@ page-daypickermodal .productEdit {
   margin-left: 20px;
 }
 
+page-daypickermodal ion-calendar-month .days {
+  float: right !important;
+}
+
+page-daypickermodal ion-calendar-week .week-title.transparent {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+page-daypickermodal ion-calendar .title .forward {
+  margin-left: -100%;
+  left: -40px;
+  width: 40px;
+  right: auto;
+}
+
+page-daypickermodal ion-calendar .title .back {
+  margin-left: -40px;
+  right: -40px;
+  width: 40px;
+  left: auto;
+}
+
+page-daypickermodal .ion-ios-arrow-forward {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+page-daypickermodal .ion-ios-arrow-back {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+page-daypickermodal .cardHeader {
+  direction: rtl;
+  text-align: right;
+}
+
+page-daypickermodal .cardTitle {
+  direction: rtl;
+  text-align: right;
+  padding: 10px;
+  padding-top: 10px !important;
+}
+
 page-home .mainRow {
   overflow: hidden;
   width: 100%;
@@ -29399,6 +29501,41 @@ page-home .mainIconTitle {
   color: #7f7f7f;
 }
 
+page-home .mainRow {
+  margin-top: -15px;
+}
+
+page-home .mainIcon img {
+  width: 60%;
+}
+
+page-home .mainIcon div {
+  margin-top: -10px;
+}
+
+page-home .lineH {
+  position: absolute;
+  margin-left: 50%;
+  height: 300px;
+  width: 1px;
+  background-color: #6eb43f;
+}
+
+page-home .lineW {
+  width: 100%;
+  height: 1px;
+  background-color: #6eb43f;
+  margin-top: 30px;
+}
+
+page-home .secondRow {
+  margin-top: 10px;
+}
+
+page-home .leftIcon img, page-home .leftIcon div {
+  margin-left: 15px;
+}
+
 page-paymenthistory .productInfo {
   overflow: hidden;
   width: 100%;
@@ -29421,7 +29558,7 @@ page-paymenthistory .productImage {
 
 page-paymenthistory .productText {
   float: right;
-  width: 60%;
+  width: 100%;
   padding: 0px 10px;
   text-align: right;
   color: #B6B6B6;
@@ -29464,6 +29601,50 @@ page-paymenthistory .buttonsBarRight {
 page-paymenthistory .buttonsBarButton {
   width: 80%;
   background-color: #6fb43f;
+}
+
+page-paymenthistory .btn-group {
+  width: 100% !important;
+}
+
+page-paymenthistory .mIcon {
+  margin-left: 3px;
+}
+
+page-paymenthistory .btnGr {
+  width: 33% !important;
+  height: 40px;
+  font-size: 17px;
+  padding-top: 6px;
+  border-color: #6eb43f;
+  background-color: #fff;
+  color: #6eb43f;
+}
+
+page-paymenthistory .invoicIcon {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+page-paymenthistory .invoicIcon i {
+  padding-left: 18px;
+  color: #6eb43f;
+}
+
+page-paymenthistory .invoicIcon p {
+  font-size: 10px;
+  text-align: center;
+  color: #6eb43f;
+}
+
+page-paymenthistory .ActiveBt {
+  width: 33% !important;
+  height: 40px;
+  font-size: 17px;
+  padding-top: 6px;
+  color: #fff;
+  background-color: #6eb43f;
+  border-color: #6eb43f;
 }
 
 page-paymentinfo .nonEditRow {
@@ -29510,39 +29691,34 @@ page-products .productInfo {
 page-products .productNumber {
   text-align: right;
   direction: rtl;
-  padding: 10px 20px;
+  padding: 0px 20px;
   color: #6eb43f;
   font-weight: bold;
   font-size: 17px;
 }
 
-page-products .productCheck {
-  float: right;
-  width: 3%;
-  margin-right: 20px;
-  margin-top: 15px;
-}
-
 page-products .productImage {
-  float: right;
-  width: 15%;
   margin-right: 20px;
+  margin-top: 20px;
 }
 
 page-products .productText {
-  float: right;
-  width: 55%;
-  padding: 0px 10px;
+  padding: 0px 20px;
   text-align: right;
   color: #B6B6B6;
   font-size: 15px;
+  width: 150%;
 }
 
 page-products .productEdit {
-  float: left;
-  width: 7%;
+  width: 50%;
   margin-top: 15px;
   margin-left: 20px;
+}
+
+page-products .toggleCheckBox {
+  margin-right: 13px;
+  margin-top: 18px;
 }
 
 page-products .editButton {
@@ -29570,15 +29746,29 @@ page-products .buttonsBar {
 }
 
 page-products .buttonsBarLeft {
-  width: 40%;
+  width: 82%;
   float: left;
-  margin-left: 5%;
+  margin-left: 4%;
+}
+
+page-products .buttonsBarLeftSelected {
+  width: 38%;
+  float: right;
+  margin-right: 3%;
+  background-color: red;
 }
 
 page-products .buttonsBarRight {
+  width: 38%;
+  float: left;
+  margin-left: 3%;
+}
+
+page-products .buttonsBarRightSelected {
   width: 40%;
   float: right;
-  margin-right: 5%;
+  margin-right: 3%;
+  background-color: blue;
 }
 
 page-products .buttonsBarButton {
@@ -29586,10 +29776,84 @@ page-products .buttonsBarButton {
   background-color: #6fb43f;
 }
 
-page-products .editable {
-  color: #000000;
+page-products .buttonsBarButton2 {
+  width: 100%;
+  background-color: #333;
+  border: none;
+}
+
+page-products .buttonsBarAll {
+  width: 5%;
+  float: right;
+  margin-right: 5%;
+}
+
+page-products .checkAllIcon {
+  font-size: 30px;
+  margin-top: 8px;
+  color: #6fb43f;
+}
+
+page-products .alert-wrapper, page-products alert-message {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+page-products .alert-title {
+  text-align: center !important;
+}
+
+page-products .alert-ios .alert-wrapper {
+  text-align: right !important;
+}
+
+page-products .alert-ios .alert-wrapper button.alertButton {
+  background-color: red !important;
+  text-align: right;
+}
+
+page-products .alert-message {
+  text-align: right !important;
+}
+
+page-products .products {
+  margin-bottom: 150px;
+}
+
+page-products .ActiveBt {
+  width: 50% !important;
+  height: 40px;
+  font-size: 17px;
+  padding-top: 6px;
+  color: #fff;
+  background-color: #6eb43f;
+  border-color: #6eb43f;
+}
+
+page-products .detailsEdit {
+  margin-top: 5px;
+  margin-bottom: -5px;
   font-weight: bold;
-  font-size: 12px;
+}
+
+page-products .btnGr {
+  width: 50% !important;
+  height: 40px;
+  font-size: 17px;
+  padding-top: 6px;
+  border-color: #6eb43f;
+  background-color: #fff;
+  color: #6eb43f;
+}
+
+page-products .btn-group {
+  width: 100% !important;
+}
+
+.alert-ios .alert-message,
+.alert-md .alert-message, .alert-title {
+  text-align: right;
+  direction: rtl;
 }
 
 page-rooms .productInfo {
@@ -29600,7 +29864,7 @@ page-rooms .productInfo {
 page-rooms .productNumber {
   text-align: right;
   direction: rtl;
-  padding: 10px 20px;
+  padding: 0px 0px;
   color: #6eb43f;
   font-weight: bold;
   font-size: 17px;
@@ -29613,8 +29877,6 @@ page-rooms .productImage {
 }
 
 page-rooms .productText {
-  float: right;
-  width: 60%;
   padding: 0px 10px;
   text-align: right;
   color: #B6B6B6;
@@ -29628,10 +29890,23 @@ page-rooms .productEdit {
   margin-left: 20px;
 }
 
+page-rooms .RTL {
+  direction: rtl;
+  text-align: right;
+}
+
+page-rooms .infoRow {
+  padding-right: 35px;
+}
+
+page-rooms .infoRow1 {
+  padding-right: 0px;
+}
+
 page-rooms .buttonsBar {
   width: 100%;
   overflow: hidden;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 
 page-rooms .buttonsBarLeft {
@@ -29672,6 +29947,14 @@ page-selectedproducts .mainHeader {
   overflow: hidden;
 }
 
+page-selectedproducts .productItem {
+  direction: rtl;
+}
+
+page-selectedproducts .toogleCB {
+  margin-top: 15px;
+}
+
 page-selectedproducts .headLogo {
   width: 100%;
   margin: auto;
@@ -29683,33 +29966,18 @@ page-selectedproducts .headLogo img {
   margin-top: 3px;
 }
 
-page-selectedproducts .product {
-  width: 100%;
-  overflow: hidden;
-}
-
-page-selectedproducts .productDV {
-  width: 100%;
-  overflow: hidden;
-}
-
 page-selectedproducts .productInfo {
-  float: right;
-  margin-right: 20px;
-  width: 4%;
-  margin-top: 0px;
+  overflow: hidden;
+  width: 100%;
 }
 
 page-selectedproducts .productNumber {
   text-align: right;
   direction: rtl;
-  padding: 5px;
+  padding: 10px 0px;
   color: #6eb43f;
   font-weight: bold;
   font-size: 17px;
-  float: left;
-  width: 85%;
-  margin-top: 5px;
 }
 
 page-selectedproducts .productImage {
@@ -29728,10 +29996,75 @@ page-selectedproducts .productText {
 }
 
 page-selectedproducts .productEdit {
-  float: right;
+  float: left;
   width: 7%;
   margin-top: 15px;
   margin-left: 20px;
+}
+
+page-selectedproducts .buttonsBar {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+page-selectedproducts .buttonsBarLeft {
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+}
+
+page-selectedproducts .buttonsBarRight {
+  width: 40%;
+  float: right;
+  margin-right: 6%;
+}
+
+page-selectedproducts .buttonsBarButton {
+  width: 100%;
+  background-color: #6fb43f;
+}
+
+page-selectedproducts .buttonsBarButton2 {
+  width: 100%;
+  background-color: #333;
+  border: none;
+}
+
+page-selectedproducts .ActiveBt {
+  width: 50% !important;
+  height: 40px;
+  font-size: 17px;
+  padding-top: 6px;
+  color: #fff;
+  background-color: #6eb43f;
+  border-color: #6eb43f;
+}
+
+page-selectedproducts .btnGr {
+  width: 50% !important;
+  height: 40px;
+  font-size: 17px;
+  padding-top: 6px;
+  border-color: #6eb43f;
+  background-color: #fff;
+  color: #6eb43f;
+}
+
+page-selectedproducts .greenButton {
+  margin-left: 0px;
+  width: 95%;
+  float: left;
+  background-color: #6eb43f;
+}
+
+page-selectedproducts .redButton {
+  width: 95%;
+  margin-left: 10px;
+}
+
+page-selectedproducts .btn-group {
+  width: 100% !important;
 }
 
 page-user-details .nonEditRow {

@@ -77,4 +77,50 @@ page-daypickermodal {
     margin-top: 15px;
     margin-left: 20px;
   }
+
+
+  ion-calendar-month .days{
+    float: right !important;
+  }
+  ion-calendar-week .week-title.transparent{
+    display: flex !important;
+  }
+  ion-calendar .title .forward{
+    margin-left: -100%;
+    left: -40px;
+    width: 40px;
+    right: auto;
+  }
+  ion-calendar .title .back{
+    margin-left: -40px;
+    right: -40px;
+    width: 40px;
+    left: auto;
+  }
+
+  .ion-ios-arrow-forward
+  {
+    transform: rotate(180deg);
+  }
+
+  .ion-ios-arrow-back
+  {
+  transform: rotate(180deg);
+  }
+
+  .cardHeader
+  {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .cardTitle
+  {
+    direction: rtl;
+    text-align: right;
+    padding: 10px;
+    padding-top: 10px!important;
+  }
+
+
 }

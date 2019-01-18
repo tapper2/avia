@@ -4,6 +4,7 @@ import {ContactPage} from "../../pages/contact/contact";
 import {ProductsPage} from "../../pages/products/products";
 import {NavController} from "ionic-angular";
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { InsurancePage } from "../../pages/insurance/insurance";
 
 /**
  * Generated class for the FooterComponent component.
@@ -32,11 +33,12 @@ export class FooterComponent {
                 break;
 
             case 2:
-                const browser = this.iab.create('https://avias.org/aviaform/', '_self', "location=yes");
-                browser.show();
-                browser.on('loadstop').subscribe(event => {
-                    browser.insertCSS({ code: ".headerTitle { display:none; } div#footerWrapper { display:none; } " });
-                });
+                // const browser = this.iab.create('https://avias.org/aviaform/', '_self', "location=yes");
+                // browser.show();
+                // browser.on('loadstop').subscribe(event => {
+                //     browser.insertCSS({ code: ".headerTitle { display:none; } div#footerWrapper { display:none; } " });
+                // });
+                this.navCtrl.push(InsurancePage);
                 break;
 
             case 3:

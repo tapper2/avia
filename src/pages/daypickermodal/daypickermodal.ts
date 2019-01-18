@@ -39,12 +39,12 @@ export class DaypickermodalPage {
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController, public Toast:ToastService) {
-      console.log("products:",navParams.get('products'));
+      
       this.myProducts = navParams.get('products');
         this.pageName = navParams.get('page');
         this.serverData = navParams.get('daysArray');
         //console.log("daysOptions",this.daysOptions)
-
+        console.log("products:",navParams.get('products') , this.serverData);
       this.caluclateProductPrice = 0;
 
       // for (let i = 0; i < this.daysOptions.length; i++) {
@@ -63,12 +63,19 @@ export class DaypickermodalPage {
           }
       }
 
-      if (this.serverData.length > 0)
+      if (this.serverData)
       {
           if (this.serverData.open_saturday == 0)
+          {
+              console.log("DisableWeek");
               this.optionsMulti.disableWeeks = [6];
+          }
           else
+          {
+              console.log("DisableWeek1");
               this.optionsMulti.disableWeeks = [];
+          }
+          
       }
 
 

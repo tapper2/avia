@@ -224,7 +224,7 @@ export class RoomsPage implements OnInit {
 
                             console.log("sent data11:",JSON.stringify(sendData))
                             this.server.SendPost(URL,sendData).then((data: any) => {
-                                console.log(data);
+                                console.log("ResponseData : " , data);
                                 let response = data;
                                 if  (response.ok) {
                                     this.Toast.presentToast("נשלח בהצלחה");

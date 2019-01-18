@@ -22,6 +22,7 @@ export class PaymenthistoryPage {
     public paymentHistoryArray1:any = [];
     public caluclatedSum:any = 0;
     public FilterType: number = 0;
+    public BALANCE:number = 0;
     public pdfURL = 'https://aviatest.wee.co.il/primail/invoices/';
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService,private iab: InAppBrowser, public Toast:ToastService) {
@@ -32,9 +33,16 @@ export class PaymenthistoryPage {
       this.server.GetData(URL).then((data: any) => {
           this.paymentHistoryArray = data.json().value;
           this.paymentHistoryArray1 = data.json().value;
-          console.log(this.paymentHistoryArray);
-
       });
+
+      let URL1 = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/ACCOUNTS_RECEIVABLE('"+localStorage.getItem("CUSTNAME")+"')";
+
+      this.server.GetData(URL1).then((data: any) => {
+          let ans = data.json();
+          this.BALANCE = ans['BALANCE1'] *-1;
+       console.log("Balance  : " , data.json() , this.BALANCE)
+      });
+
   }
 
     ChangeFilter(type) {
@@ -67,11 +75,13 @@ export class PaymenthistoryPage {
 
                     let  parts = response.EXTFILES_SUBFORM[0].EXTFILENAME.split('/');
                     filename = parts[parts.length - 1];
-                    alert (filename)
+                   // alert (filename)
                     // let split = response.EXTFILES_SUBFORM[0].EXTFILENAME.split("/");
                     // filename = split['5'];
-                    const browser = this.iab.create(this.pdfURL+'/'+filename, '_system', "location=yes");
-                    browser.show();
+                    console.log("Url : ", this.pdfURL+'/'+filename)
+                    window.location.href= this.pdfURL+'/'+filename
+                    // const browser = this.iab.create(this.pdfURL+'/'+filename, '_system', "location=yes");
+                    // browser.show();
                 }
             } else {
                 this.Toast.presentToast("לא נמצאה חשבונית");

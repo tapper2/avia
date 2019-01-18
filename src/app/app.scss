@@ -42,3 +42,26 @@
 {
   direction:rtl;
 }
+
+.menuItem
+{
+  width:100%;
+  overflow: hidden;
+}
+
+.menuItemIcon
+{
+  width:30px;
+  height:30px;
+  float: right;
+}
+
+.menuItemText
+{
+  float: right;
+  margin-top: 4px;
+  margin-right:10px;
+  color:#6eb43f;
+  font-weight: bold;
+
+}

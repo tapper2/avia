@@ -2,11 +2,15 @@
   <header></header>
 </ion-header>
 
-
 <ion-content padding>
-    <div class="buttonsBar">
+    <div class="btn-group btn-group-justified">
+                <a href="#" class="btn"  [ngClass]="[FilterType == 2 ? 'ActiveBt' : 'btnGr']" (click)="ChangeFilter(2)">חשבוניות</a>
+                <a href="#" class="btn"  [ngClass]="[FilterType == 1 ? 'ActiveBt' : 'btnGr']" (click)="ChangeFilter(1)">קבלות</a>
+                <a href="#" class="btn"  [ngClass]="[FilterType == 0 ? 'ActiveBt' : 'btnGr']" (click)="ChangeFilter(0)">כל הפעולות</a>
+    </div>
+    <!-- <div class="buttonsBar">
         <div class="buttonsBarLeft">
-            <button ion-button [ngClass]="[FilterType == 0? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(0)"> כל הפעולות</button>
+            <button ion-button [ngClass]="[FilterType == 0? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(0)"> {{FilterType}}כל הפעולות</button>
         </div>
         <div class="buttonsBarRight">
             <button ion-button  [ngClass]="[FilterType == 1 ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(1)"> קבלות</button>
@@ -15,22 +19,32 @@
         <div class="buttonsBarRight">
             <button ion-button  [ngClass]="[FilterType == 2 ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ChangeFilter(2)">  חשבוניות</button>
         </div>
-    </div>
+    </div> -->
 
   <div class="products">
     <div *ngFor="let item of paymentHistoryArray let i=index" class="productItem">
-        <div class="productNumber">{{item.DETAILS}} </div>
-        <div class="productInfo" >
-          <div class="productText">
-            <div> תאריך: {{item.BALDATE | date:'dd/MM/yyyy'}}</div>
-              <div style="direction: rtl;" *ngIf="item.KLINE == 2"> מספר קבלה: {{item.TODOREF}}</div>
-              <div style="direction: rtl;" *ngIf="item.KLINE == 1"> מספר חשבונית: {{item.TODOREF}}</div>
-
-              <div style="direction: rtl;" *ngIf="item.KLINE == 2"> סכום הקבלה: {{item.CREDIT}}</div>
-              <div style="direction: rtl;" *ngIf="item.KLINE == 1"> סכום החשבונית: {{item.DEBIT}}</div>
-          </div>
+        <div class="row">
+            <div class="col-3 invoicIcon" >
+                <div *ngIf="item.KLINE == 1" (click)="showRecipet(item.TODOREF)">
+                        <i class="far fa-file-alt mIcon"></i>
+                        <p>לפתיחת החשבונית</p>
+                </div>
+            </div>
+            <div class="col-9" [ngClass]="[item.KLINE == 1 ? 'col-9' : 'col12']">
+                    <div class="productNumber">{{item.DETAILS}} </div>
+                    <div class="productInfo" >
+                        <div class="productText">
+                            <div> תאריך: {{item.BALDATE | date:'dd/MM/yyyy'}}</div>
+                            <div style="direction: rtl;" *ngIf="item.KLINE == 2"> מספר קבלה: {{item.TODOREF}}</div>
+                            <div style="direction: rtl;" *ngIf="item.KLINE == 1"> מספר חשבונית: {{item.TODOREF}}</div>
+                
+                            <div style="direction: rtl;" *ngIf="item.KLINE == 2"> סכום הקבלה: {{item.CREDIT}} &#8362;</div>
+                            <div style="direction: rtl;" *ngIf="item.KLINE == 1"> סכום החשבונית: {{item.DEBIT}} &#8362;</div>
+                        </div>
+                    </div>
+                    <!-- <button ion-button full style="background-color: #6eb43f"   *ngIf="item.KLINE == 1" (click)="showRecipet(item.TODOREF)"> קישור לחשבונית</button> -->
+            </div>
         </div>
-        <button ion-button full style="background-color: #6eb43f"   *ngIf="item.KLINE == 1" (click)="showRecipet(item.TODOREF)"> קישור לחשבונית</button>
         <hr>
     </div>
   </div>
@@ -39,6 +53,6 @@
 
 <ion-footer >
     <div class="buttons">
-        <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ יתרה: {{caluclatedSum}} ש"ח</button>
+        <button ion-button full style="background-color: #7f7f7f; margin-top:5px; direction: rtl" >סה"כ יתרה: {{BALANCE}} &#8362;</button>
     </div>
 </ion-footer>

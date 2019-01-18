@@ -9,7 +9,7 @@ page-rooms {
   {
     text-align: right;
     direction: rtl;
-    padding: 10px 20px;
+    padding: 0px 0px;
     color: #6eb43f;
     font-weight: bold;
     font-size: 17px;
@@ -23,8 +23,6 @@ page-rooms {
 
   .productText
   {
-    float: right;
-    width: 60%;
     padding: 0px 10px;
     text-align: right;
     color: #B6B6B6;
@@ -39,11 +37,27 @@ page-rooms {
     margin-left: 20px;
   }
 
+  .RTL
+  {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .infoRow
+  {
+    padding-right: 35px;
+  }
+
+  .infoRow1
+  {
+    padding-right:0px;
+  }
+
   .buttonsBar
   {
     width: 100%;
     overflow: hidden;
-    margin-top: 15px;
+    margin-top: 0px;
   }
 
   .buttonsBarLeft

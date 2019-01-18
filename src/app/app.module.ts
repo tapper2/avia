@@ -31,6 +31,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { CalendarModule } from "ion2-calendar";
 import { registerLocaleData } from '@angular/common';
 import lcoaleDeAt from '@angular/common/locales/he';
+import { InsurancePage } from "../pages/insurance/insurance";
 
 registerLocaleData(lcoaleDeAt,'he');
 
@@ -52,7 +53,8 @@ registerLocaleData(lcoaleDeAt,'he');
         PaymenthistoryPage,
         RoomscalendarPage,
         DaypickermodalPage,
-        ArticlePage
+        ArticlePage,
+        InsurancePage
     ],
     imports: [
         BrowserModule,
@@ -78,7 +80,8 @@ registerLocaleData(lcoaleDeAt,'he');
         PaymenthistoryPage,
         RoomscalendarPage,
         DaypickermodalPage,
-        ArticlePage
+        ArticlePage,
+        InsurancePage
     ],
     providers: [
         StatusBar,

@@ -25,16 +25,16 @@
 
     <div>
         <ion-card>
-            <ion-card-header dir="rtl">
+            <ion-card-header class="cardHeader">
                 סניף {{serverData.title}}
             </ion-card-header>
-            <ion-card-content dir="rtl">
+            <ion-card-content class="cardTitle">
                 {{serverData.description}}
             </ion-card-content>
         </ion-card>
     </div>
     <div>
-        <ion-calendar [(ngModel)]="date"
+        <ion-calendar dir="rtl" [(ngModel)]="date"
                       (onChange)="onChange($event)"
                       [type]="type"
                       [format]="'YYYY-MM-DD'"

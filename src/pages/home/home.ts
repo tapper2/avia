@@ -7,6 +7,8 @@ import {PaymentinfoPage} from "../paymentinfo/paymentinfo";
 import {PaymenthistoryPage} from "../paymenthistory/paymenthistory";
 import {AppSettings} from "../../services/app-settings";
 import {ArticlePage} from "../article/article";
+import { ContactPage } from "../contact/contact";
+import { ContactsPage } from "../contacts/contacts";
 
 @Component({
   selector: 'page-home',
@@ -43,7 +45,7 @@ export class HomePage implements  OnInit{
   checkClient()
   {
       this.server.GetData("https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')").then((data: any) => {
-          this.ctypecode  = 7;//data.json().CTYPECODE;
+          this.ctypecode  = data.json().CTYPECODE;
           console.log("ctypecode : " , "hard coded:"+this.ctypecode);
       });
   }
@@ -62,6 +64,7 @@ export class HomePage implements  OnInit{
 
     NavigatePage(pageNum)
     {
+        console.log("Navigate : " , pageNum)
         switch(pageNum)
         {
 
@@ -80,6 +83,11 @@ export class HomePage implements  OnInit{
             case 4:
                 this.navCtrl.push(PaymentinfoPage); //LoginPage
                 break;
+
+            case 5:
+                this.navCtrl.push(ContactsPage); //ContactPage
+                break;
+
         }
     }
 

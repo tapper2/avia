@@ -22,14 +22,20 @@ export class SelectedproductsPage {
     public daysOptions: any = [];
     public pageName: any = '';
     dayName: any[] = ["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
-
-
-
+    public selectedPullItems : boolean = false;
+    public selectedReturnItems : boolean = false;
+    public selectedPullType:number;
+    public showSelectedFooter : boolean = false;
+    public toggleCheckBox : boolean = false;
+    
+    
     constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController, public Toast:ToastService) {
       console.log("products:",navParams.get('products'));
         this.myProducts = navParams.get('products');
         this.daysOptions = navParams.get('daysArray');
         this.pageName = navParams.get('page');
+        this.selectedPullItems = navParams.get('selectedPullItems');
+        this.selectedReturnItems = navParams.get('selectedReturnItems');
 
       this.caluclateProductPrice = 0;
 
@@ -63,14 +69,48 @@ export class SelectedproductsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SelectedproductsPage');
   }
-
+    
+    ToggleCheckBox(type) {
+        // this.toggleCheckBox = !this.toggleCheckBox;
+        this.selectedPullType = type;
+        
+        if (this.selectedPullType == 0)
+        {
+            this.selectedPullItems = !this.selectedPullItems;
+            this.selectedReturnItems = false;
+            
+            if (this.selectedPullItems)
+                this.toggleCheckBox = true;
+            else {
+                this.toggleCheckBox = false;
+            }
+        }
+        
+        if (this.selectedPullType == 1)
+        {
+            this.selectedPullItems = false;
+            this.selectedReturnItems = !this.selectedReturnItems;
+            
+            if (this.selectedReturnItems)
+                this.toggleCheckBox = true;
+            else {
+                this.toggleCheckBox = false;
+            }
+        }
+        
+        if (!this.toggleCheckBox) {
+            this.showSelectedFooter  = false;
+        }
+    }
 
     sendSelectedProducts(type) {
 
         let options  = [
             {
                 type: type,
-                days: this.daysOptions
+                days: this.daysOptions,
+                selectedReturnItems : this.selectedReturnItems,
+                selectedPullItems : this.selectedPullItems
             }
         ];
 
@@ -95,5 +135,6 @@ export class SelectedproductsPage {
 
 
   }
+  
 
 }
