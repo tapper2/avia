@@ -2,7 +2,7 @@ page-paymentinfo {
   .nonEditRow
   {
     text-align: right;
-    border-bottom: 2px solid #b1bdbe;
+    border-bottom: 1px solid #b1bdbe;
     padding: 30px 5px;
     color: #8b9596;
   }
@@ -19,6 +19,22 @@ page-paymentinfo {
     float: right;
     width: 75%;
     margin-top: 6px;
+  }
+
+  .InfoText
+  {
+    text-align: right;
+    color: #aaa;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: -20px;
+  }
+
+  .iconInfoText
+  {
+    margin-top: -10px;
+    color: #ccc;
   }
 
   .rowLeft

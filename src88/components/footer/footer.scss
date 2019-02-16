@@ -1,0 +1,17 @@
+footer {
+  td
+  {
+    border-right: 1px solid #6eb43f ;
+  }
+
+  .borderLeft{
+    border-left: 1px solid #6eb43f ;
+  };
+
+  .bar.bar-header.no-bgColor, .bar.bar-footer.no-bgColor{
+    border: 0px;
+    border-color: transparent;
+    border-top: transparent;
+    border-bottom: transparent;
+    background-image: none !important; }
+}

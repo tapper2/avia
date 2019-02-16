@@ -6,11 +6,11 @@
                 {{Title}} : {{Data[jsonKey]}}
             </div>
             <div class="rowLeft">
-                <img src="images/edit.png" *ngIf="Editable == 'true'" style="width: 100%">
+                <img src="images/edit.png" *ngIf="Editable == 'true'" style="width: 80%">
             </div>
         </div>
         <div class="EditRow" *ngIf="isOpen">
-            <ion-icon name="checkmark" style="font-size:50px; margin:3px 7px" class="absoluteEditButton" (click)="editRow(Editable)" ></ion-icon>
+            <ion-icon name="checkmark" class="absoluteEditButton" (click)="editRow(Editable)" ></ion-icon>
 
             <!--<img src="images/edit.png"  >-->
             <input [type]="FieldType" class="inputText MT10" value="" [(ngModel)]="Data[jsonKey]" (ngModelChange)="modelChanged($event)"

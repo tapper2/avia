@@ -1,11 +1,20 @@
+import { Camera } from '@ionic-native/camera';
+
+
+import { FilePath } from '@ionic-native/file-path';
 import { HomePage } from './../home/home';
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ModalController, AlertController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ModalController, AlertController, ActionSheetController, Platform, LoadingController, ToastController, Loading} from 'ionic-angular';
 import {ServerService} from "../../services/server-service";
 import {ToastService} from "../../services/toast-service";
 import {SelectedproductsPage} from "../selectedproducts/selectedproducts";
 import moment from 'moment';
+import { Transfer, TransferObject } from '@ionic-native/transfer';
+import { File } from '@ionic-native/file';
 import {DaypickermodalPage} from "../daypickermodal/daypickermodal";
+import { ImageModalPage } from "../image-modal/image-modal";
+
+declare var cordova: any;
 
 /**
  * Generated class for the ProductsPage page.
@@ -34,25 +43,53 @@ export class ProductsPage  {
     public productsSendArray: any = [];
     public todaydate :any = moment().format();
     public selectedAll:boolean = false ;
+    public image: string;
+    public lastImage: string = null;
+    loading: Loading;
+    public currentProductId:string;
+    public BeforeImagesArray:Array<string> = [];
+    public ImagesArray:Array<string> = [];
+    public imgURL:string = "http://www.tapper.org.il/avia/laravel/storage/app/public/"
     public productFields : any = {
         "isChanged" : false
     }
-
-
-
-
-    constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService, public Toast:ToastService,public modalCtrl: ModalController,private alertCtrl: AlertController) {
-        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/SERNUMBERS?$filter=CUSTNAME eq '"+localStorage.getItem("CUSTNAME")+"'";
     
-        this.server.GetData(URL).then((data: any) => {
+
+
+
+    constructor(public navCtrl: NavController ,public toastCtrl: ToastController,private transfer: Transfer, public platform: Platform,public navParams: NavParams,public file:File,public filePath:FilePath, public camera:Camera , public actionSheetCtrl: ActionSheetController, public server: ServerService, public Toast:ToastService,public modalCtrl: ModalController,private alertCtrl: AlertController,public loadingCtrl: LoadingController) {
+        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/SERNUMBERS?$filter=CUSTNAME eq '"+localStorage.getItem("CUSTNAME")+"'";
+        this.BeforeImagesArray = [];
+
+        this.server.GetData(URL).then((data: any) => { 
             console.log("DTT : " , data)
             this.productsArray = data.json().value;
             for (let i = 0; i < this.productsArray.length; i++) {
                 this.productsArray[i].choosen = "0";
+                this.BeforeImagesArray.push( this.productsArray[i]['SERNUM'])
             }
+
+            this.getImagesFromServer();
             console.log(this.productsArray);
         });
 
+    }
+
+    getImagesFromServer()
+    {
+        let url = "GetImages"
+        this.server.getImagesFromServer(url,this.BeforeImagesArray).then((data: any) => { 
+            this.ImagesArray = data.json();
+            console.log("IMages : " ,this.ImagesArray  )
+        });
+    }
+
+    getImageLen(i)
+    {
+        if(this.ImagesArray[i])
+            return this.ImagesArray[i].length;
+        else
+            return 0;
     }
 
     modelChanged(newObj) {
@@ -140,7 +177,7 @@ export class ProductsPage  {
                    
                         let alertBox = this.alertCtrl.create({
                             title: 'שינוים שלא נשמרו',
-                            message: 'האם ברצונך לשמור את השינוים?',
+                            message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
                             buttons: [
                                 {
                                     text: 'לא',
@@ -156,6 +193,24 @@ export class ProductsPage  {
                                     }
                                 }
                             ]
+
+                            // buttons: [
+                            //     {
+                            //         text: 'לא',
+                            //         role: 'cancel',
+                            //         handler: () => {
+                            //             console.log('Cancel clicked');
+                            //         }
+                            //     },
+                            //     {
+                            //         text: 'כן',
+                            //         handler: () => {
+
+                            //             this.navCtrl.pop();
+                            //         }
+                            //     }
+                            // ]
+
                         });
                         alertBox.present();
                         return false;
@@ -268,8 +323,30 @@ export class ProductsPage  {
         }
     }
     
+    fullscreenImage(img)
+    {
+        let ImageModal = this.modalCtrl.create( ImageModalPage, {url:this.imgURL+""+img.url , id:img.id});
+        ImageModal.present();
+
+        ImageModal.onDidDismiss(data => {
+            console.log("DissmisData : ", data);
+
+            if(data['type'] == 1)
+            {
+                this.deleteImg(data['id'])
+            }
+        });
+    }
    
 
+    async deleteImg(ImgId)
+    {
+        console.log("StartDelete : " , ImgId)
+        await this.server.deleteImg("deleteImg" , ImgId , this.BeforeImagesArray).then((data: any) => {
+            console.log("Return : " , data.json())   
+            this.ImagesArray = data.json();
+        });
+    }
 
     async openProductsModal() {
 
@@ -314,16 +391,15 @@ export class ProductsPage  {
 
 
                         console.log ("selectedDayArray",this.selectedDayArray)
-
+                        //'1988-01-01 '
                         for (let i = 0; i < this.productsArray.length; i++) {
                             if (this.productsArray[i].choosen == true)
                             {
                                 this.productsSendArray.push({
                                     "PARTNAME" : this.productsArray[i].PARTNAME,
                                     "SERNUM" : this.productsArray[i].SERNUM,
-                                    "DUEDATE": this.todaydate, /* תאריך אספקה*/
-                                    "TASKDATE": moment(this.selectedDayArray.c, 'YYYY-MM-DD').format(),   /* תאריך למשימה*/
-                                    "FROMDATE": moment('1988-01-01 '+this.selectedDayArray.start_hour+':00', 'YYYY-MM-DD HH:mm:ss').format(), /* משעה למשימה*/
+                                    "TASKDATE": moment(this.selectedDayArray.formatted_date, 'YYYY-MM-DD').format(),   /* תאריך למשימה*/
+                                    "FROMDATE": moment('1988-01-01'+this.selectedDayArray.start_hour+':00', 'YYYY-MM-DD HH:mm:ss').format(), /* משעה למשימה*/
                                     "TODATE": moment('1988-01-01 '+this.selectedDayArray.end_hour+':00', 'YYYY-MM-DD HH:mm:ss').format() /* עד שעה למשימה*/
                                 });
                             }
@@ -346,7 +422,7 @@ export class ProductsPage  {
                             {
                                 "LOADCODE":"3",
                                 "CUSTNAME":localStorage.getItem("CUSTNAME").toString(),       /* מספר לקוח */
-                                "DOCDATE":this.todaydate, /* תאריך הזמנה */
+                               // "DOCDATE":"", /* תאריך הזמנה  this.todaydate,*/
                                 "TYPECODE":TYPECODE ,       /* עבור שליפה יש לשים ערך 13, עבור החזרה ערך 14 */
                                 "PRIT_DOCLINE_SUBFORM":this.productsSendArray,
                                 "PRIT_INTERFACE_SUBFORM":
@@ -421,7 +497,10 @@ export class ProductsPage  {
     changeStatus(place, status) {
         this.productsArray[place].STATUS = status;
         this.productFields.isChanged = true;
-        if (status == 0 || status == 3) {
+
+        if(status == 3)
+            this.navCtrl.pop();
+        else if (status == 0) {
             console.log("cs1");
             this.productFields.isChanged = false;
 
@@ -469,4 +548,327 @@ export class ProductsPage  {
     presentConfirm() {
       
     }
+
+
+
+
+//     /////////////////////////////////////////////////////////////////////////////////////////
+//     ///////////////////////////////////  add image functions ////////////////////////////////
+//     /////////////////////////////////////////////////////////////////////////////////////////
+
+
+//     public presentActionSheet() {
+//         // if(this.CarImages.length<6)
+//         // {
+//             let actionSheet = this.actionSheetCtrl.create({
+//                 title: 'Select Image Source',
+//                 buttons: [
+//                     {
+//                         text: 'Load from Library',
+//                         handler: () => {
+//                             this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
+//                         }
+//                     },
+//                     {
+//                         text: 'Use Camera',
+//                         handler: () => {
+//                             this.takePicture(this.camera.PictureSourceType.CAMERA);
+//                         }
+//                     },
+//                     {
+//                         text: 'Cancel',
+//                         role: 'cancel'
+//                     }
+//                 ]
+//             });
+//             actionSheet.present();
+//         // }
+//         // else
+//         //     this.presentToast('אין אפשרות להוסיף יותר מ6 תמונות');
+//     }
+    
+//     public takePicture(sourceType) {
+//         // Create options for the Camera Dialog
+//         var options = {
+//             quality: 60,
+//             sourceType: sourceType,
+//             saveToPhotoAlbum: false,
+//             correctOrientation: true,
+//             targetWidth: 1000,
+//             targetHeight: 1000,
+//             allowEdit: true
+//         };
+        
+//         // Get the data of an image
+//         this.camera.getPicture(options).then((imagePath) => {
+//             // Special handling for Android library
+//             console.log("f0");
+//             if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
+//                 this.filePath.resolveNativePath(imagePath)
+//                     .then(filePath => {
+//                         console.log("f01");
+//                         let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
+//                         console.log("f02");
+//                         let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
+//                         console.log("f03");
+//                         this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+//                     });
+//             } else {
+//                 var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
+//                 var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
+//                 this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+//             }
+//         }, (err) => {
+//             this.presentToast('Error while selecting image.');
+//         });
+//     }
+    
+    
+//     // Create a new name for the image
+//     private createFileName() {
+//         console.log("f1");
+//         var d = new Date(),
+//             n = d.getTime(),
+//             newFileName =  n + ".jpg";
+//         return newFileName;
+//     }
+
+// // Copy the image to a local folder
+//     private copyFileToLocalDir(namePath, currentName, newFileName) {
+//         console.log("f2 : "+ namePath + " : " + currentName + " : " + newFileName);
+//         this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
+//             this.lastImage = newFileName;
+//             this.uploadImage();
+//         }, error => {
+//             this.presentToast('Error while storing file.');
+//         });
+//     }
+    
+//     public presentToast(text) {
+//         console.log("f3");
+//         let toast = this.toastCtrl.create({
+//             message: text,
+//             duration: 3000,
+//             position: 'bottom',
+//             cssClass: "ToastClass"
+//         });
+//         toast.present();
+//     }
+
+// // Always get the accurate path to your apps folder
+//     public pathForImage(img) {
+//         if (img === null) {
+//             return '';
+//         } else {
+//             return cordova.file.dataDirectory + img;
+//         }
+//     }
+    
+    
+//     public uploadImage() {
+//         // Destination URL
+//         console.log("Up1  : ")
+//         var url = "http://www.tapper.co.il/salecar/laravel/public/api/GetFile";
+//         // File for Upload
+//         console.log("Up2  : " + this.lastImage + " : " + this.pathForImage(this.lastImage));
+//         var targetPath = this.pathForImage(this.lastImage);
+        
+//         // File name only
+//         var filename = this.lastImage;
+        
+//         var options = {
+//             fileKey: "file",
+//             fileName: filename,
+//             chunkedMode: false,
+//             mimeType: "multipart/form-data",
+//             params : {'fileName': filename, 'CarId':this.Car['id']}
+//         };
+//         console.log("Up3  : " + this.Car['id']);
+//         const fileTransfer: TransferObject = this.transfer.create();
+        
+//         this.loading = this.loadingCtrl.create({
+//             content: 'Uploading...',
+//         });
+//         this.loading.present();
+        
+//         // Use the FileTransfer to upload the image
+//         fileTransfer.upload(targetPath, url, options).then(data => {
+//             this.loading.dismissAll()
+//             this.callToImagesFromServer(data);
+//         }, err => {
+//             this.loading.dismissAll()
+//             this.presentToast('Error while uploading file.');
+//         });
+//     }
+    
+//     public callToImagesFromServer(data)
+//     {
+//         console.log("GT : " , JSON.parse(data.response));
+//       //  this.CarImages = JSON.parse(data.response);
+//         //console.log(this.companyService.CompaniesArray);
+       
+        
+//        /* this.companyService.GetCompanyById('GetCompanyById').then((data: any) => {
+//             console.log("CarAdmin : ", data);
+//             this.Car = this.companyService.CompanyAdmin['cars'][this.CarPlace];
+//             this.CarImages = this.Car['images'];
+//         });*/
+//     }
+
+
+ /////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////  add image functions ////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+
+
+    public presentActionSheet(item) {
+        // if(this.CarImages.length<6)
+        // {currentProductId
+            console.log("Image : " , item)
+            this.currentProductId = item['SERNUM'];
+            let actionSheet = this.actionSheetCtrl.create({
+               
+                buttons: [
+                    {
+                        cssClass: 'actioSheet',
+                        text: 'טען מהגלרייה',
+                        handler: () => {
+                            this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
+                        }
+                    },
+                    {
+                        cssClass: 'actioSheet',
+                        text: 'טען מהמצלמה',
+                        handler: () => {
+                            this.takePicture(this.camera.PictureSourceType.CAMERA);
+                        }
+                    }
+                ]
+            });
+            actionSheet.present();
+        // }
+        // else
+        //     this.presentToast('אין אפשרות להוסיף יותר מ6 תמונות');
+    }
+    
+    public takePicture(sourceType) {
+        // Create options for the Camera Dialog
+        var options = {
+            quality: 60,
+            sourceType: sourceType,
+            saveToPhotoAlbum: false,
+            correctOrientation: true,
+            targetWidth: 1000,
+            targetHeight: 1000,
+            allowEdit: true
+        };
+        
+        // Get the data of an image
+        this.camera.getPicture(options).then((imagePath) => {
+            // Special handling for Android library
+            console.log("f0");
+            if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
+                this.filePath.resolveNativePath(imagePath)
+                    .then(filePath => {
+                        console.log("f01");
+                        let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
+                        console.log("f02");
+                        let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
+                        console.log("f03");
+                        this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+                    });
+            } else {
+                var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
+                var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
+                this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+            }
+        }, (err) => {
+            this.presentToast('Error while selecting image.');
+        });
+    }
+    
+    
+    // Create a new name for the image
+    private createFileName() {
+        console.log("f1");
+        var d = new Date(),
+            n = d.getTime(),
+            newFileName =  n + ".jpg";
+        return newFileName;
+    }
+
+// Copy the image to a local folder
+    private copyFileToLocalDir(namePath, currentName, newFileName) {
+        console.log("f2 : "+ namePath + " : " + currentName + " : " + newFileName);
+        this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
+            this.lastImage = newFileName;
+            this.uploadImage();
+        }, error => {
+            this.presentToast('Error while storing file.');
+        });
+    }
+    
+    public presentToast(text) {
+        console.log("f3");
+        let toast = this.toastCtrl.create({
+            message: text,
+            duration: 3000,
+            position: 'bottom',
+            cssClass: "ToastClass"
+        });
+        toast.present();
+    }
+
+// Always get the accurate path to your apps folder
+    public pathForImage(img) {
+        if (img === null) {
+            return '';
+        } else {
+            return cordova.file.dataDirectory + img;
+        }
+    }
+    
+    
+    public uploadImage() {
+        // Destination URL
+        console.log("Up1  : getProductImage ")
+        var url = "http://www.tapper.org.il/avia/laravel/public/api/GetFile"
+        //var url = "http://www.tapper.co.il/salecar/laravel/public/api/GetFile";
+       
+        // File for Upload
+        console.log("Up2  : " + this.lastImage + " : " + this.pathForImage(this.lastImage));
+        var targetPath = this.pathForImage(this.lastImage);
+        
+        // File name only
+        var filename = this.lastImage;
+        
+        var options = {
+            fileKey: "file",
+            fileName: filename,
+            chunkedMode: false,
+            mimeType: "multipart/form-data",
+            params : {'fileName': filename,'ProductId':this.currentProductId},//this.currentProductId 'CarId':this.Car['id']}
+        };
+        console.log("Up3  : " ,  options);
+        const fileTransfer: TransferObject = this.transfer.create();
+        
+        this.loading = this.loadingCtrl.create({
+            content: 'Uploading...',
+        });
+        this.loading.present();
+        console.log("PT : " , targetPath, url, options)
+        // Use the FileTransfer to upload the image
+        fileTransfer.upload(targetPath, url, options).then(data => {
+            console.log("Return : " , data);
+            this.loading.dismissAll()
+            this.getImagesFromServer();
+        }, err => {
+            this.loading.dismissAll()
+            this.presentToast('Error while uploading file.');
+        });
+    }
+
 }
+
+
+

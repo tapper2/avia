@@ -13,6 +13,7 @@ import { ServerService } from "../services/server-service";
 import { PaymenthistoryPage } from "../pages/paymenthistory/paymenthistory";
 import { ContactPage } from "../pages/contact/contact";
 import { RoomsPage } from "../pages/rooms/rooms";
+import {PaymentinfoPage} from "../pages/paymentinfo/paymentinfo";
 
 
 @Component({
@@ -40,8 +41,9 @@ export class MyApp {
             {title: 'הפריטים שלי', component: ProductsPage , img:"images/menu/2.png" , type:1},
             {title: 'יחידות איחסון', component: RoomsPage , img:"images/menu/1.png", type:2},
             {title: 'פירוט חיובים', component: PaymenthistoryPage , img:"images/menu/3.png", type:0},
-            {title: 'פרטים אישיים', component: UserDetailsPage , img:"images/menu/7.png", type:0},
-            {title: 'ניהול אנשי קשר', component: ContactsPage  , img:"images/menu/8.png", type:0},
+            {title: 'פרטים אישיים', component: UserDetailsPage , img:"images/menu/8.png", type:0},
+            {title: 'ניהול אנשי קשר', component: ContactsPage  , img:"images/menu/10.png", type:0},
+            {title: 'החלפת כרטיסי אשראי', component: PaymentinfoPage , img:"images/menu/11.png", type:0},
             {title: 'צור קשר', component: ContactPage , img:"images/menu/9.png", type:0},
             {title: 'התנתקות', component: LoginPage , img:"images/menu/6.png", type:0}
         ];

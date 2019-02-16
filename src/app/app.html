@@ -7,14 +7,16 @@
 
   <ion-content>
     <ion-list>
-      <button menuClose  ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        <div class="menuItem" *ngIf="checkVisible(p)">
-            <div class="menuItemIcon">
-              <img src="{{p.img}}" style="width:100%" />
-            </div>
-            <div class="menuItemText">{{p.title}}</div>
-        </div>
-      </button>
+        <div *ngFor="let p of pages" >
+          <button menuClose  ion-item *ngIf="checkVisible(p)" (click)="openPage(p)">
+              <div class="menuItem" >
+                  <div class="menuItemIcon">
+                    <img src="{{p.img}}" style="width:100%" />
+                  </div>
+                  <div class="menuItemText">{{p.title}}</div>
+              </div>
+          </button>
+          </div>
     </ion-list>
   </ion-content>
 

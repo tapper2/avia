@@ -1,4 +1,7 @@
 page-daypickermodal {
+
+
+
   .mainHeader
   {
     width: 100%;
@@ -19,7 +22,19 @@ page-daypickermodal {
     margin-top: 3px;
   }
 
+  .mainInfo
+  {
+    text-align: right;
+    direction: rtl;
+    padding: 5px;
+    border: 1px solid #aaa;
+    color: #aaa;
+  }
 
+  .on-selected
+  {
+    background-color: #6eb43f !important;
+  }
 
   .productInfo
   {

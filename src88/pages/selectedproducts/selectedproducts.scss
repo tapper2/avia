@@ -1,0 +1,152 @@
+page-selectedproducts {
+
+  .mainHeader
+  {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .productItem
+  {
+    direction: rtl;
+  }
+
+  .toogleCB
+  {
+    margin-top: 15px;
+  }
+
+  .headLogo
+  {
+    //float: left;
+    width: 100%;
+    margin: auto;
+  }
+
+  .headLogo img
+  {
+    width: 150px !important;
+    margin: auto;
+    margin-top: 3px;
+  }
+
+
+
+  .productInfo
+  {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .productNumber
+  {
+    text-align: right;
+    direction: rtl;
+    padding: 10px 0px;
+    color: #6eb43f;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .productImage
+  {
+    float: right;
+    width: 20%;
+    margin-right: 20px;
+  }
+
+  .productText
+  {
+    float: right;
+    width: 60%;
+    padding: 0px 10px;
+    text-align: right;
+    color: #B6B6B6;
+    font-size: 15px;
+  }
+
+  .productEdit
+  {
+    float: left;
+    width: 7%;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+
+
+  .buttonsBar
+  {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0px;
+  }
+
+  .buttonsBarLeft
+  {
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+  }
+
+  .buttonsBarRight
+  {
+    width: 40%;
+    float: right;
+    margin-right: 6%;
+  }
+
+  .buttonsBarButton
+  {
+    width: 100%;
+    background-color:#6fb43f;
+  }
+
+  .buttonsBarButton2
+  {
+    width: 100%;
+    background-color: #333;
+    border: none;
+  }
+
+  
+  .ActiveBt
+  {
+    width: 50% !important;
+    height: 40px;
+    font-size: 17px;
+    padding-top: 6px;
+    color: #fff;
+    background-color: #6eb43f;
+    border-color: #6eb43f;
+  }
+
+  
+  .btnGr
+  {
+    width: 50% !important;
+    height: 40px;
+    font-size: 17px;
+    padding-top: 6px;
+    border-color: #6eb43f;
+    background-color: #fff;
+    color:#6eb43f;
+  }
+
+  .greenButton
+  {
+    margin-left:0px;
+    width: 95%;
+    float: left;
+    background-color: #6eb43f;
+  }
+
+  .redButton
+  {
+    width: 95%;
+    margin-left: 10px;
+  }
+
+  .btn-group
+  {
+    width: 100% !important;
+  }
+}

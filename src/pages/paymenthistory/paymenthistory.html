@@ -1,8 +1,8 @@
 <ion-header>
-  <header></header>
+        <header1 HeaderTitle="פירוט חיובים" type="0"></header1>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="mainContent">
     <div class="btn-group btn-group-justified">
                 <a href="#" class="btn"  [ngClass]="[FilterType == 2 ? 'ActiveBt' : 'btnGr']" (click)="ChangeFilter(2)">חשבוניות</a>
                 <a href="#" class="btn"  [ngClass]="[FilterType == 1 ? 'ActiveBt' : 'btnGr']" (click)="ChangeFilter(1)">קבלות</a>
@@ -53,6 +53,6 @@
 
 <ion-footer >
     <div class="buttons">
-        <button ion-button full style="background-color: #7f7f7f; margin-top:5px; direction: rtl" >סה"כ יתרה: {{BALANCE}} &#8362;</button>
+        <button ion-button full style="background-color: #7f7f7f; margin-top:5px; direction: rtl; font-size: 17px;" >סה"כ יתרה: {{BALANCE}} &#8362;</button>
     </div>
 </ion-footer>

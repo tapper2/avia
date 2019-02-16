@@ -1,0 +1,84 @@
+<!--<ion-header>-->
+
+  <!--<ion-navbar>-->
+    <!--<ion-buttons start>-->
+      <!--<button ion-button (click)="dismiss()">Close</button>-->
+    <!--</ion-buttons>-->
+    <!--<ion-title>Modals</ion-title>-->
+  <!--</ion-navbar>-->
+
+<!--</ion-header>-->
+
+
+<ion-header>
+  <div class="mainHeader">
+    <div class="headLogo" align="center">
+      <img src="images/home/head_logo.png" style="width: 70%"/>
+    </div>
+  </div>
+</ion-header>
+
+
+
+<ion-content padding>
+    <div class="buttonsBar">
+        <div class="btn-group btn-group-justified">
+                    <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? 'ActiveBt' : 'btnGr']" (click)="ToggleCheckBox(1)">החזרת פריטים</a>
+                    <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? 'ActiveBt' : 'btnGr']" (click)="ToggleCheckBox(0)">שליפת פריטים</a>
+        </div>
+
+        <!-- <div class="buttonsBarLeft">
+            <button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>
+        </div>
+        <div class="buttonsBarRight">
+            <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>
+        </div> -->
+    </div>
+    <hr>
+  <!--<div class="products">-->
+    <!--<div *ngFor="let item of daysOptions let i=index" class="product">-->
+        <!--<div class="productDV">-->
+            <!--<div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>-->
+            <!--<div class="productInfo" >-->
+                <!--<div class="productEdit" >-->
+                    <!--<ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<hr>-->
+    <!--</div>-->
+    <div class="products">
+        <div *ngFor="let item of daysOptions let i=index" class="productItem">
+            <div class="row">
+                <div class="col-2 toogleCB">
+                    <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>
+                </div>
+                <div class="col-10">
+                    <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+
+</ion-content>
+
+
+
+<ion-footer >
+  <div class="buttons">
+    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>
+    <div class="row">
+        <div class="col-6">
+                <button ion-button color="danger"  class="redButton"  full (click)="sendSelectedProducts(0)">ביטול</button>
+        </div>
+        <div class="col-6">
+                <button ion-button full  class="greenButton" (click)="sendSelectedProducts(1)">שליחה</button>
+        </div>
+    </div>  
+   
+      
+  </div>
+</ion-footer>

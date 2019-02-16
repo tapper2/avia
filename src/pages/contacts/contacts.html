@@ -6,12 +6,12 @@
 -->
 
 <ion-header>
-  <header></header>
+    <header1 HeaderTitle="ניהול אנשי קשר" type="0"></header1>
 </ion-header>
 
 
-<ion-content padding>
-  <div align="center">
+<ion-content padding class="mainContent">
+  <div align="center" class="mainInfoText">
     {{appsettingsArray.ContactDesc}}
   </div>
 
@@ -19,9 +19,11 @@
     <div *ngFor="let item of contactsArray let i=index">
       <div class="row">
         <div class="col-2">
-            <button ion-button clear item-left (click)="callPhone(item.CELLPHONE)">
-                <ion-icon name="call" style="font-size:30px;"></ion-icon>
-              </button>
+            <!-- <button ion-button clear item-left (click)="callPhone(item.CELLPHONE)">
+                <!-- <ion-icon name="call" style="font-size:30px;"></ion-icon> 
+                
+            </button> -->
+            <img src="images/home/call.png" class="phoneImg align-middle" >
         </div>
         <div class="col-8">
             <div class="infoContactText">

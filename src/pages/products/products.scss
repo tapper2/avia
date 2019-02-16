@@ -14,13 +14,24 @@ page-products {
     font-weight: bold;
     font-size: 17px;
   }
-  .productImage
+
+  .addIcon
   {
-    margin-right: 20px;
-    margin-top: 20px;
+    width: 30px;
+    margin-top: 5px;
+    margin-right: 23px;
   }
 
   .productText
+  {
+    padding: 0px 20px;
+    text-align: right;
+    color: #B6B6B6;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .productText1
   {
     padding: 0px 20px;
     text-align: right;
@@ -32,8 +43,52 @@ page-products {
   .productEdit
   {
     width: 50%;
-    margin-top: 15px;
+    margin-top: 0px;
     margin-left: 20px;
+  }
+
+  .addImg
+  {
+    width: 65px;
+    height: 65px;
+    margin-right: 19px;
+    margin-top: 10px;
+    background-color: #7f7f7f;
+  }
+
+  .addIcon
+  {
+    position: relative;
+    color: white;
+    text-align: center;
+    width: 65px;
+    left: 23px;
+    font-size: 16px;
+    margin-top: 23px;
+  }
+
+  .productImage
+  {
+    margin-right: 20px;
+    margin-top: 5px;
+    width: 70px !important;
+    height: 60px !important;
+  }
+
+  .imgThumb
+  {
+    width: 65px;
+    height: 65px;
+    margin-right: 19px;
+    margin-top: 10px;
+    background-color: #7f7f7f;
+  }
+
+  .moreIcon
+  {
+    font-size: 30px;
+    color:#6fb43f;
+    margin-top: -10px;
   }
 
   .toggleCheckBox
@@ -50,6 +105,8 @@ page-products {
     margin-left: 5%;
     margin-top:10px;
   }
+
+ 
 
   textarea
   {
@@ -166,6 +223,22 @@ page-products {
     border-color: #6eb43f;
   }
 
+  .checkbox-icon
+  {
+    border:1px solid #6eb43f !important;
+  }
+
+  .checkbox-checked
+  {
+    border:1px solid #6eb43f !important;
+    background-color: #6eb43f !important;
+  }
+
+  textarea
+  {
+    background-color: #f8f8f8 !important;
+  }
+
   .detailsEdit
   {
     margin-top: 5px;
@@ -181,7 +254,7 @@ page-products {
     font-size: 17px;
     padding-top: 6px;
     border-color: #6eb43f;
-    background-color: #fff;
+    background-color: #f8f8f8;
     color:#6eb43f;
   }
 
@@ -189,6 +262,8 @@ page-products {
   {
     width: 100% !important;
   }
+
+
 }
   .alert-ios .alert-message,
     .alert-md .alert-message ,.alert-title{
@@ -196,3 +271,30 @@ page-products {
         direction: rtl;
     }
 
+    .actioSheet
+    {
+      text-align: right;
+      background-color: red;
+      ion-icon{
+        color: 'red';
+    }
+    }
+
+    .button-inner
+    {
+      text-align: right;
+      direction: rtl;
+      padding: 5px;
+    }
+
+    .action-sheets-groups-page {
+		
+      text-align: right;
+      background-color: red !important;
+   
+      .actioSheet {
+        color: danger !important;
+      }
+  
+ 
+    }

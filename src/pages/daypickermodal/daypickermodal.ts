@@ -28,6 +28,7 @@ export class DaypickermodalPage {
     type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
     selectedDate : any = '';
     disable_sat:any = '';
+    detailsArray:Array<object> = [];
 
     public optionsMulti: CalendarComponentOptions = {
         pickMode: 'single',
@@ -43,7 +44,9 @@ export class DaypickermodalPage {
       this.myProducts = navParams.get('products');
         this.pageName = navParams.get('page');
         this.serverData = navParams.get('daysArray');
-        //console.log("daysOptions",this.daysOptions)
+        this.detailsArray =  this.serverData['description'].split(",");
+
+        console.log("daysOptions",this.detailsArray)
         console.log("products:",navParams.get('products') , this.serverData);
       this.caluclateProductPrice = 0;
 

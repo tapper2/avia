@@ -42,6 +42,51 @@ export class ServerService {
         }
     }
 
+    deleteImg(url,img,imgArr)
+    {
+        let loading = this.loadingCtrl.create({content: '...בטעינה'});
+        loading.present();
+        try {
+            let body = new FormData();
+            body.append('id', img);
+            body.append('data', JSON.stringify(imgArr));
+
+            return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
+                this.http.post(AppSettings.SERVER_URL+url,body) //for post, put and delete put the body before the headers
+                    .toPromise()
+                    .then(res => resolve(res))
+                    .catch(err => console.log("error:", err));
+            });
+
+        } catch (err) {
+            console.log( err);
+        } finally {
+            loading.dismiss();
+        }
+    }
+
+    getImagesFromServer(url,arr)
+    {
+        console.log("IMG : " , arr)
+            let loading = this.loadingCtrl.create({content: '...בטעינה'});
+            loading.present();
+            try {
+                let body = new FormData();
+                body.append('data', JSON.stringify(arr));
+                return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
+                    this.http.post(AppSettings.SERVER_URL+url , body) //for post, put and delete put the body before the headers
+                        .toPromise()
+                        .then(res => resolve(res))
+                        .catch(err => console.log("error:", err));
+                });
+
+            } catch (err) {
+                console.log( err);
+            } finally {
+                loading.dismiss();
+            }
+    }
+
 
     getRoomsBranchDays(url,branch_code) {
 
@@ -140,6 +185,7 @@ export class ServerService {
                     })
                     .catch(err => {
                         console.log("error:", err);
+                        alert("התקבלה שגיאה, יש לנסות שוב");
                         loading.dismiss();
                     });
             });

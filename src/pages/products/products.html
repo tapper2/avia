@@ -5,11 +5,11 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <header></header>
+        <header1 HeaderTitle="הפריטים שלי" type="0"></header1>
 </ion-header>
 
 
-<ion-content>
+<ion-content class="mainContent">
     <!--<div class="buttonsBar">-->
         <!--<div class="buttonsBarLeft">-->
             <!--<button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>-->
@@ -46,15 +46,15 @@
     <div class="products">
         <div *ngFor="let item of productsArray let i=index" class="productItem">
             <div *ngIf="!item.STATUS || item.STATUS == 0">
+                <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
                 <div class="row" style="direction:rtl">
                     <div *ngIf="toggleCheckBox"  class="col-1 toggleCheckBox">
                         <ion-checkbox [(ngModel)]="item.choosen"  (click)="selectProduct()" ></ion-checkbox>
                     </div>
-                    <div class="col-2">
-                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="w-100 productImage"/>
+                    <div class="col-3">
+                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="productImage"/>
                     </div>
-                    <div class="col-8" *ngIf="!toggleCheckBox">
-                        <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
+                    <div class="col-7" *ngIf="!toggleCheckBox">
                         <div class="productText">
                             <div> {{item.PARTDES}}</div>
                             <div> {{item.FREE1}}</div>
@@ -62,48 +62,55 @@
                         </div>
                     </div>
                     <div class="col-6" *ngIf="toggleCheckBox">
-                        <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
                         <div class="productText">
                             <div> {{item.PARTDES}}</div>
                             <div> {{item.FREE1}}</div>
                             <div>  {{item.PRIT_FREE}}</div>
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-1">
                         <div class="productEdit" (click)="changeStatus(i,1)">
-                            <img src="images/edit.png" style="width:100%" />
+                            <ion-icon name="more" class="moreIcon"></ion-icon>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div *ngIf="item.STATUS == 1">
+                <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
                 <div class="row" style="direction:rtl">
                     <div *ngIf="toggleCheckBox"  class="col-1 toggleCheckBox">
                         <ion-checkbox [(ngModel)]="item.choosen"  (click)="selectProduct(item)" ></ion-checkbox>
                     </div>
-                    <div class="col-2">
+                    <div class="col-3">
                         <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="w-100 productImage"/>
-                    </div>
-                    <div class="col-8" *ngIf="!toggleCheckBox">
-                        <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
-                        <div class="productText">
+                        <div *ngIf="ImagesArray">
+                                <div *ngFor="let img of ImagesArray[i]" >
+                                        <img src="{{imgURL}}{{img.url}}" (click)="fullscreenImage(img)" class="imgThumb"/>
+                                </div>
+                        </div>
+                        <div class="addImg" *ngIf="getImageLen(i) < 2" (click)="presentActionSheet(item)">
+                                <ion-icon name="add" class="addIcon"></ion-icon>
+                            </div>
+                            <!-- <img src="images/add.png" class="addIcon"  /> -->
+                        </div>
+                    <div class="col-7" *ngIf="!toggleCheckBox">
+                        <div class="productText1">
                             <div> {{item.PARTDES}}</div>
                             <div> {{item.FREE1}}</div>
                             <div class="detailsEdit"> הערות :</div>
-                            <textarea rows="1" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>
+                            <textarea rows="2" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>
                         </div>
                     </div>
                     <div class="col-6" *ngIf="toggleCheckBox">
-                        <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
-                        <div class="productText">
+                        <div class="productText1">
                             <div> {{item.PARTDES}}</div>
                             <div> {{item.FREE1}}</div>
                             <div class="detailsEdit"> הערות :</div>
                             <textarea rows="1" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-1">
                         <div class="productEdit" (click)="changeStatus(i,1)">
                             <img src="images/edit.png" style="width:100%" />
                         </div>

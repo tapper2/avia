@@ -27,7 +27,8 @@ export class SelectedproductsPage {
     public selectedPullType:number;
     public showSelectedFooter : boolean = false;
     public toggleCheckBox : boolean = false;
-    
+    public userData:any;
+    public userName:string = "";
     
     constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController, public Toast:ToastService) {
       console.log("products:",navParams.get('products'));
@@ -36,6 +37,12 @@ export class SelectedproductsPage {
         this.pageName = navParams.get('page');
         this.selectedPullItems = navParams.get('selectedPullItems');
         this.selectedReturnItems = navParams.get('selectedReturnItems');
+
+        if(localStorage.userData)
+        {
+            this.userData =  JSON.parse(localStorage.userData);
+            this.userName = this.userData.CUSTDES;
+        }
 
       this.caluclateProductPrice = 0;
 

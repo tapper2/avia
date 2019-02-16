@@ -27,6 +27,12 @@
     },
     "mx.ferreyra.callnumber": {
       "PACKAGE_NAME": "com.tapper.avia"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.tapper.avia"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "com.tapper.avia"
     }
   },
   "dependent_plugins": {}

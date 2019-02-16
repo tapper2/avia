@@ -11,30 +11,24 @@
 
 
 <ion-header>
-  <div class="mainHeader">
-    <div class="headLogo" align="center">
-      <img src="images/home/head_logo.png" style="width: 70%"/>
-    </div>
-  </div>
+  <header1 HeaderTitle="יחידת אחסון - בחירת תאריך"></header1>
 </ion-header>
 
 
 
-<ion-content padding>
+<ion-content padding class="mainContent">
 
 
-    <div>
-        <ion-card>
-            <ion-card-header class="cardHeader">
-                סניף {{serverData.title}}
-            </ion-card-header>
-            <ion-card-content class="cardTitle">
-                {{serverData.description}}
-            </ion-card-content>
-        </ion-card>
+    <div class="mainInfo">
+        <div class="infoTitle">
+            סניף {{serverData.title}}
+        </div>
+        <div class="infoDescription" *ngFor="let item of detailsArray">
+            {{item}}
+        </div>
     </div>
     <div>
-        <ion-calendar dir="rtl" [(ngModel)]="date"
+        <ion-calendar style="background-color: #f8f8f8 !important" dir="rtl" [(ngModel)]="date"
                       (onChange)="onChange($event)"
                       [type]="type"
                       [format]="'YYYY-MM-DD'"

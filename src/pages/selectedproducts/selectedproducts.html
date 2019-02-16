@@ -10,29 +10,43 @@
 <!--</ion-header>-->
 
 
-<ion-header>
+<!-- <ion-header>
   <div class="mainHeader">
     <div class="headLogo" align="center">
       <img src="images/home/head_logo.png" style="width: 70%"/>
     </div>
   </div>
-</ion-header>
-
-
-
-<ion-content padding>
+</ion-header> -->
+<ion-header>
+        <!-- <div class="mainHeader">
+                <div class="avatar">
+                    <img src="images/home/avatar.png" style="width:90%"/>
+                    <p>{{userName}}</p>
+                </div>
+            
+                <div class="headLogo" align="center" (click)="goMainPage()">
+                    <img src="images/logo.png" style="width: 60%"/>
+                </div>
+            
+               
+            
+            </div>
+       -->
+       <header1 HeaderTitle="הפריטים שלי - בחירת שעות"></header1>
+    </ion-header>
+<ion-content class="mainContent">
     <div class="buttonsBar">
         <div class="btn-group btn-group-justified">
-                    <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? 'ActiveBt' : 'btnGr']" (click)="ToggleCheckBox(1)">החזרת פריטים</a>
-                    <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? 'ActiveBt' : 'btnGr']" (click)="ToggleCheckBox(0)">שליפת פריטים</a>
+                    <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? 'ActiveBt' : 'btnGr']" >החזרת פריטים</a>
+                    <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? 'ActiveBt' : 'btnGr']" >שליפת פריטים</a>
         </div>
 
-        <!-- <div class="buttonsBarLeft">
-            <button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>
+       <!-- <div class="buttonsBarLeft">
+            <button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']"> החזרת פריטים</button>
         </div>
         <div class="buttonsBarRight">
-            <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>
-        </div> -->
+            <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" > שליפת פריטים</button>
+        </div>  -->
     </div>
     <hr>
   <!--<div class="products">-->
@@ -51,11 +65,15 @@
     <div class="products">
         <div *ngFor="let item of daysOptions let i=index" class="productItem">
             <div class="row">
-                <div class="col-2 toogleCB">
+                <div class="col-1 toogleCB">
                     <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>
                 </div>
-                <div class="col-10">
+                <div class="col-8">
                     <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>
+                </div>
+                <div class="col-2 calenderIcon">
+                      <img *ngIf="!item.choosen" style="width:20px;" src="images/home/cal1.png">
+                      <img *ngIf="item.choosen" style="width:20px" src="images/home/cal2.png">
                 </div>
             </div>
             <hr>
@@ -67,18 +85,16 @@
 
 
 
-<ion-footer >
-  <div class="buttons">
+<ion-footer  >
+  <div class="buttons" >
     <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>
-    <div class="row">
-        <div class="col-6">
+   
+     <div style="width: 100%; overflow: hidden; padding: 0px; margin-top: -10px;">
+        <div style="width: 100%;  float: left">
+                <button ion-button full  class="greenButton" (click)="sendSelectedProducts(1)">שליחה</button>
                 <button ion-button color="danger"  class="redButton"  full (click)="sendSelectedProducts(0)">ביטול</button>
         </div>
-        <div class="col-6">
-                <button ion-button full  class="greenButton" (click)="sendSelectedProducts(1)">שליחה</button>
-        </div>
-    </div>  
-   
+     </div>
       
   </div>
 </ion-footer>

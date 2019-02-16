@@ -29129,6 +29129,10 @@ ion-navbar.toolbar {
   text-align: right;
 }
 
+.mainContent {
+  background-color: #f8f8f8;
+}
+
 .mainToastClass {
   text-align: center;
 }
@@ -29159,6 +29163,24 @@ ion-navbar.toolbar {
 edit-row .nonEditRow {
   text-align: right;
   direction: rtl;
+}
+
+edit-row .inputText {
+  border: none !important;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #b1bdbe !important;
+  color: #8b9596;
+  font-size: 16px;
+}
+
+edit-row .absoluteEditButton {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  margin-top: 18px;
+  margin-left: 8px;
+  font-size: 30px;
+  color: #6eb43f;
 }
 
 footer td {
@@ -29210,6 +29232,54 @@ header .headLogo img {
 }
 
 header .bar {
+  float: right;
+  width: 13%;
+  margin: auto;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+div, input, p {
+  font-family: 'Rubik' !important;
+}
+
+header1 .mainHeader {
+  width: 100%;
+  overflow: hidden;
+}
+
+header1 .avatar {
+  float: left;
+  width: 10%;
+  margin: auto;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+header1 p {
+  margin-top: -3px;
+  margin-left: -5px;
+  font-size: 11px;
+  text-align: center;
+}
+
+header1 .headLogo {
+  float: left;
+  width: 64% !important;
+  margin: auto;
+  margin-top: 22px !important;
+  font-size: 18px;
+  color: #9f9f9f;
+  font-family: 'Rubik', sans-serif;
+}
+
+header1 .headLogo img {
+  width: 125px !important;
+  margin: auto;
+  margin-top: 3px;
+}
+
+header1 .bar {
   float: right;
   width: 13%;
   margin: auto;
@@ -29287,6 +29357,15 @@ page-addcontact .absoluteEditButton {
   margin-left: 8px;
 }
 
+page-addcontact .mainImg {
+  width: 80px;
+}
+
+page-addcontact .infoText {
+  color: #aaaaaa;
+  padding: 0px 6px;
+}
+
 page-article .storyPic {
   float: right;
   width: 100%;
@@ -29302,6 +29381,28 @@ page-contact .nonEditRow {
   border-bottom: 2px solid #b1bdbe;
   padding: 30px 5px;
   color: #8b9596;
+}
+
+page-contact .EditRow {
+  background-color: #f8f8f8 !important;
+}
+
+page-contact .inputText {
+  background-color: #f8f8f8 !important;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  color: #999999;
+}
+
+page-contact .inputText1 {
+  background-color: #f8f8f8 !important;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #999999;
 }
 
 page-contact .MainAvatar {
@@ -29334,25 +29435,41 @@ page-contact .absoluteEditButton {
 }
 
 page-contacts .infoContactText {
+  color: #aaa;
   text-align: right;
   direction: rtl;
 }
 
 page-contacts .inf1 {
-  font-weight: bold;
+  font-weight: 300;
   font-size: 15px;
 }
 
 page-contacts .inf2 {
   font-weight: 300;
-  font-size: 15px;
+  font-size: 13px;
   margin-top: -10px;
 }
 
 page-contacts .inf3 {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: -10px;
+}
+
+page-contacts .mainInfoText {
+  color: #aaa;
+  padding: 3px 8px;
+  border: 1px solid #ddd;
+}
+
+page-contacts .phoneImg {
+  width: 20px;
+  margin-top: 13px;
+}
+
+page-contacts .row {
+  vertical-align: middle;
 }
 
 page-daypickermodal .mainHeader {
@@ -29369,6 +29486,18 @@ page-daypickermodal .headLogo img {
   width: 150px !important;
   margin: auto;
   margin-top: 3px;
+}
+
+page-daypickermodal .mainInfo {
+  text-align: right;
+  direction: rtl;
+  padding: 5px;
+  border: 1px solid #aaa;
+  color: #aaa;
+}
+
+page-daypickermodal .on-selected {
+  background-color: #6eb43f !important;
 }
 
 page-daypickermodal .productInfo {
@@ -29488,7 +29617,12 @@ page-home .leftBorder {
 
 page-home .leftIcon {
   float: left;
-  width: 50%;
+  width: 5%;
+}
+
+page-home .leftIcon1 {
+  float: left;
+  width: 4%;
 }
 
 page-home .rightIcon {
@@ -29499,6 +29633,7 @@ page-home .rightIcon {
 page-home .mainIconTitle {
   text-align: center;
   color: #7f7f7f;
+  font-size: 16px;
 }
 
 page-home .mainRow {
@@ -29507,6 +29642,11 @@ page-home .mainRow {
 
 page-home .mainIcon img {
   width: 60%;
+}
+
+page-home .mainIcon1 img {
+  width: 50%;
+  margin-top: 20px !important;
 }
 
 page-home .mainIcon div {
@@ -29534,6 +29674,14 @@ page-home .secondRow {
 
 page-home .leftIcon img, page-home .leftIcon div {
   margin-left: 15px;
+}
+
+page-image-modal .editButton {
+  background-color: #6fb43f;
+  width: 90%;
+  margin: auto;
+  margin-left: 5%;
+  margin-top: 10px;
 }
 
 page-paymenthistory .productInfo {
@@ -29617,7 +29765,7 @@ page-paymenthistory .btnGr {
   font-size: 17px;
   padding-top: 6px;
   border-color: #6eb43f;
-  background-color: #fff;
+  background-color: #f8f8f8;
   color: #6eb43f;
 }
 
@@ -29649,7 +29797,7 @@ page-paymenthistory .ActiveBt {
 
 page-paymentinfo .nonEditRow {
   text-align: right;
-  border-bottom: 2px solid #b1bdbe;
+  border-bottom: 1px solid #b1bdbe;
   padding: 30px 5px;
   color: #8b9596;
 }
@@ -29664,6 +29812,20 @@ page-paymentinfo .rowRight {
   float: right;
   width: 75%;
   margin-top: 6px;
+}
+
+page-paymentinfo .InfoText {
+  text-align: right;
+  color: #aaa;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: -20px;
+}
+
+page-paymentinfo .iconInfoText {
+  margin-top: -10px;
+  color: #ccc;
 }
 
 page-paymentinfo .rowLeft {
@@ -29697,12 +29859,21 @@ page-products .productNumber {
   font-size: 17px;
 }
 
-page-products .productImage {
-  margin-right: 20px;
-  margin-top: 20px;
+page-products .addIcon {
+  width: 30px;
+  margin-top: 5px;
+  margin-right: 23px;
 }
 
 page-products .productText {
+  padding: 0px 20px;
+  text-align: right;
+  color: #B6B6B6;
+  font-size: 15px;
+  width: 100%;
+}
+
+page-products .productText1 {
   padding: 0px 20px;
   text-align: right;
   color: #B6B6B6;
@@ -29712,8 +29883,47 @@ page-products .productText {
 
 page-products .productEdit {
   width: 50%;
-  margin-top: 15px;
+  margin-top: 0px;
   margin-left: 20px;
+}
+
+page-products .addImg {
+  width: 65px;
+  height: 65px;
+  margin-right: 19px;
+  margin-top: 10px;
+  background-color: #7f7f7f;
+}
+
+page-products .addIcon {
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 65px;
+  left: 23px;
+  font-size: 16px;
+  margin-top: 23px;
+}
+
+page-products .productImage {
+  margin-right: 20px;
+  margin-top: 5px;
+  width: 70px !important;
+  height: 60px !important;
+}
+
+page-products .imgThumb {
+  width: 65px;
+  height: 65px;
+  margin-right: 19px;
+  margin-top: 10px;
+  background-color: #7f7f7f;
+}
+
+page-products .moreIcon {
+  font-size: 30px;
+  color: #6fb43f;
+  margin-top: -10px;
 }
 
 page-products .toggleCheckBox {
@@ -29830,6 +30040,19 @@ page-products .ActiveBt {
   border-color: #6eb43f;
 }
 
+page-products .checkbox-icon {
+  border: 1px solid #6eb43f !important;
+}
+
+page-products .checkbox-checked {
+  border: 1px solid #6eb43f !important;
+  background-color: #6eb43f !important;
+}
+
+page-products textarea {
+  background-color: #f8f8f8 !important;
+}
+
 page-products .detailsEdit {
   margin-top: 5px;
   margin-bottom: -5px;
@@ -29842,7 +30065,7 @@ page-products .btnGr {
   font-size: 17px;
   padding-top: 6px;
   border-color: #6eb43f;
-  background-color: #fff;
+  background-color: #f8f8f8;
   color: #6eb43f;
 }
 
@@ -29854,6 +30077,30 @@ page-products .btn-group {
 .alert-md .alert-message, .alert-title {
   text-align: right;
   direction: rtl;
+}
+
+.actioSheet {
+  text-align: right;
+  background-color: red;
+}
+
+.actioSheet ion-icon {
+  color: 'red';
+}
+
+.button-inner {
+  text-align: right;
+  direction: rtl;
+  padding: 5px;
+}
+
+.action-sheets-groups-page {
+  text-align: right;
+  background-color: red !important;
+}
+
+.action-sheets-groups-page .actioSheet {
+  color: danger !important;
 }
 
 page-rooms .productInfo {
@@ -29874,6 +30121,15 @@ page-rooms .productImage {
   float: right;
   width: 20%;
   margin-right: 20px;
+}
+
+page-rooms .checkbox-icon {
+  border: 1px solid #6eb43f !important;
+}
+
+page-rooms .checkbox-checked {
+  border: 1px solid #6eb43f !important;
+  background-color: #6eb43f !important;
 }
 
 page-rooms .productText {
@@ -29953,6 +30209,7 @@ page-selectedproducts .productItem {
 
 page-selectedproducts .toogleCB {
   margin-top: 15px;
+  margin-right: 15px;
 }
 
 page-selectedproducts .headLogo {
@@ -29966,6 +30223,15 @@ page-selectedproducts .headLogo img {
   margin-top: 3px;
 }
 
+page-selectedproducts .checkbox-icon {
+  border: 1px solid #b0b0b0 !important;
+}
+
+page-selectedproducts .checkbox-checked {
+  border: 1px solid #6eb43f !important;
+  background-color: #6eb43f !important;
+}
+
 page-selectedproducts .productInfo {
   overflow: hidden;
   width: 100%;
@@ -29975,9 +30241,10 @@ page-selectedproducts .productNumber {
   text-align: right;
   direction: rtl;
   padding: 10px 0px;
-  color: #6eb43f;
-  font-weight: bold;
-  font-size: 17px;
+  color: #b0b0b0;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 3px;
 }
 
 page-selectedproducts .productImage {
@@ -30002,10 +30269,17 @@ page-selectedproducts .productEdit {
   margin-left: 20px;
 }
 
+page-selectedproducts .calenderIcon {
+  padding-left: 13px;
+  margin-top: 10px !important;
+}
+
 page-selectedproducts .buttonsBar {
   width: 100%;
   overflow: hidden;
   margin-top: 0px;
+  padding: 15px 30px;
+  padding-bottom: 3px;
 }
 
 page-selectedproducts .buttonsBarLeft {
@@ -30047,24 +30321,67 @@ page-selectedproducts .btnGr {
   font-size: 17px;
   padding-top: 6px;
   border-color: #6eb43f;
-  background-color: #fff;
+  background-color: #f8f8f8;
   color: #6eb43f;
 }
 
 page-selectedproducts .greenButton {
   margin-left: 0px;
-  width: 95%;
+  width: 100%;
   float: left;
   background-color: #6eb43f;
+  margin-top: 9px;
+  font-size: 16px;
 }
 
 page-selectedproducts .redButton {
-  width: 95%;
-  margin-left: 10px;
+  width: 100%;
+  margin-top: -23px !important;
+  font-size: 16px;
 }
 
 page-selectedproducts .btn-group {
   width: 100% !important;
+}
+
+page-selectedproducts .mainHeader {
+  width: 100%;
+  overflow: hidden;
+}
+
+page-selectedproducts .avatar {
+  float: left;
+  width: 10%;
+  margin: auto;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+page-selectedproducts p {
+  margin-top: -3px;
+  margin-left: -5px;
+  font-size: 11px;
+  text-align: center;
+}
+
+page-selectedproducts .headLogo {
+  float: left;
+  width: 64%;
+  margin: auto;
+}
+
+page-selectedproducts .headLogo img {
+  width: 125px !important;
+  margin: auto;
+  margin-top: 3px;
+}
+
+page-selectedproducts .bar {
+  float: right;
+  width: 13%;
+  margin: auto;
+  margin-top: 20px;
+  margin-right: 5px;
 }
 
 page-user-details .nonEditRow {
@@ -30078,12 +30395,15 @@ page-user-details .MainAvatar {
   text-align: center;
   margin: auto;
   color: #8b9596;
+  font-size: 15px;
 }
 
 page-user-details .rowRight {
   float: right;
   width: 75%;
   margin-top: 6px;
+  margin-top: -3px;
+  font-size: 16px;
 }
 
 page-user-details .rowLeft {
@@ -30093,12 +30413,4 @@ page-user-details .rowLeft {
 
 page-user-details .buttons {
   margin-top: 20px;
-}
-
-page-user-details .absoluteEditButton {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  margin-top: 18px;
-  margin-left: 8px;
 }

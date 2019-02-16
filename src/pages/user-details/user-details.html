@@ -1,9 +1,9 @@
 <ion-header>
-    <header></header>
+        <header1 HeaderTitle="עידכון פרטים אישיים" type="0"></header1>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="mainContent">
         <div class="info">
             <div class="MainAvatar">
                 <img src="images/avatar.png" style="width: 20%">
@@ -11,7 +11,7 @@
                 <div>{{userData.CUSTNAME}}</div>
             </div>
 
-            <edit-row jsonKey="CUSTDES" Title = "שם לקוח" [Data]="userData" FieldType="text" Editable="false" > </edit-row>
+            <!-- <edit-row jsonKey="CUSTDES" Title = "שם לקוח" [Data]="userData" FieldType="text" Editable="false" > </edit-row> -->
             <edit-row jsonKey="ADDRESS" Title = "כתובת" [Data]="userData" FieldType="text" Editable="true"> </edit-row>
             <edit-row jsonKey="STATE" Title = "עיר" [Data]="userData" FieldType="text" Editable="true"> </edit-row>
             <edit-row jsonKey="ZIP" Title = "מיקוד" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>

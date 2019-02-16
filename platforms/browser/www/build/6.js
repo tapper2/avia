@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 818:
+/***/ 844:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactPageModule", function() { return ContactPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymenthistoryPageModule", function() { return PaymenthistoryPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__paymenthistory__ = __webpack_require__(98);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ContactPageModule = /** @class */ (function () {
-    function ContactPageModule() {
+var PaymenthistoryPageModule = /** @class */ (function () {
+    function PaymenthistoryPageModule() {
     }
-    ContactPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+    PaymenthistoryPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_2__paymenthistory__["a" /* PaymenthistoryPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__contact__["a" /* ContactPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__paymenthistory__["a" /* PaymenthistoryPage */]),
             ],
         })
-    ], ContactPageModule);
-    return ContactPageModule;
+    ], PaymenthistoryPageModule);
+    return PaymenthistoryPageModule;
 }());
 
-//# sourceMappingURL=contact.module.js.map
+//# sourceMappingURL=paymenthistory.module.js.map
 
 /***/ })
 

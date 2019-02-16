@@ -1,0 +1,28 @@
+<ion-header>
+  <div class="mainHeader">
+    <div class="headLogo" align="center">
+      <img src="images/home/head_logo.png" style="width: 70%"/>
+    </div>
+  </div>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-calendar [(ngModel)]="date"
+                (onChange)="onChange($event)"
+                [type]="type"
+                [format]="'YYYY-MM-DD'"
+                [options]="optionsMulti">
+  </ion-calendar>
+
+</ion-content>
+
+
+<ion-footer >
+  <div class="buttons">
+    <button ion-button color="danger" full (click)="closeModal(0)">ביטול</button>
+    <button ion-button full style="background-color: #6eb43f" (click)="closeModal(1)">שליחה</button>
+  </div>
+</ion-footer>

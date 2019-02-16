@@ -1,0 +1,56 @@
+<!--<ion-header>-->
+
+<!--<ion-navbar>-->
+<!--<ion-buttons start>-->
+<!--<button ion-button (click)="dismiss()">Close</button>-->
+<!--</ion-buttons>-->
+<!--<ion-title>Modals</ion-title>-->
+<!--</ion-navbar>-->
+
+<!--</ion-header>-->
+
+
+<ion-header>
+  <div class="mainHeader">
+    <div class="headLogo" align="center">
+      <img src="images/home/head_logo.png" style="width: 70%"/>
+    </div>
+  </div>
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+    <div>
+        <ion-card>
+            <ion-card-header class="cardHeader">
+                סניף {{serverData.title}}
+            </ion-card-header>
+            <ion-card-content class="cardTitle">
+                {{serverData.description}}
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <div>
+        <ion-calendar dir="rtl" [(ngModel)]="date"
+                      (onChange)="onChange($event)"
+                      [type]="type"
+                      [format]="'YYYY-MM-DD'"
+                      [options]="optionsMulti">
+        </ion-calendar>
+    </div>
+
+
+</ion-content>
+
+
+
+<ion-footer >
+  <div class="buttons">
+    <!--<button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number }} ש"ח</button>-->
+      <button ion-button color="danger" full (click)="closeModal(0)">ביטול</button>
+      <button ion-button full style="background-color: #6eb43f" (click)="closeModal(1)">שליחה</button>
+  </div>
+</ion-footer>

@@ -28,7 +28,13 @@ page-home {
   .leftIcon
   {
     float: left;
-    width: 50%;
+    width: 5%;
+  }
+
+  .leftIcon1
+  {
+    float: left;
+    width: 4%;
   }
 
   .rightIcon
@@ -41,6 +47,7 @@ page-home {
   {
     text-align: center;
     color: #7f7f7f;
+    font-size: 16px;
   }
 
   .mainRow
@@ -56,6 +63,12 @@ page-home {
   .mainIcon img
   {
     width:60%;
+  }
+
+  .mainIcon1 img
+  {
+    width:50%;
+    margin-top: 20px !important
   }
 
   .mainIcon div

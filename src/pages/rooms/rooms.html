@@ -6,17 +6,15 @@
 -->
 
 <ion-header>
-  <header></header>
+  <header1 HeaderTitle="פרטי איחסון" type="0"></header1>
 </ion-header>
 
 
-<ion-content padding>
-    <div align="center">
-        <img src="images/home/ic1.png" class="w-25" />
+<ion-content padding style="background-color: #f8f8f8">
+    <div align="center" style="margin-top: 0px;">
+        <img src="images/home/ic1.jpg" class="w-25" />
     </div>
-  <div class="buttonsBar">
-    <button ion-button full style="background-color: #7f7f7f"  (click)="ToggleCheckBox(1)">הודעה על פינוי</button>
-  </div>
+ 
 
   <div class="products mt-3">
     <div *ngFor="let item of roomsArray let i=index" class="productItem">
@@ -53,10 +51,14 @@
 <!--</ion-footer>-->
 
 
-<ion-footer *ngIf="showSelectedFooter">
-  <div class="buttons">
+<ion-footer no-border >
+  <div class="buttons" *ngIf="showSelectedFooter">
     <!--<button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>-->
     <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>
+  </div>
+
+  <div class="buttonsBar" *ngIf="!showSelectedFooter">
+    <button ion-button full style="background-color: #7f7f7f"  (click)="ToggleCheckBox(1)">הודעה על פינוי</button>
   </div>
 </ion-footer>
 
