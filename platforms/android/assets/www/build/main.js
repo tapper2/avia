@@ -5,12 +5,12 @@ webpackJsonp([14],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserDetailsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts_contacts__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -131,7 +131,7 @@ var UserDetailsPage = /** @class */ (function () {
     };
     UserDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-user-details',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\user-details\user-details.html"*/'<ion-header>\n\n    <header></header>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n        <div class="info">\n\n            <div class="MainAvatar">\n\n                <img src="images/avatar.png" style="width: 20%">\n\n                <div>{{userData.CUSTDES}}</div>\n\n                <div>{{userData.CUSTNAME}}</div>\n\n            </div>\n\n\n\n            <edit-row jsonKey="CUSTDES" Title = "שם לקוח" [Data]="userData" FieldType="text" Editable="false" > </edit-row>\n\n            <edit-row jsonKey="ADDRESS" Title = "כתובת" [Data]="userData" FieldType="text" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="STATE" Title = "עיר" [Data]="userData" FieldType="text" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="ZIP" Title = "מיקוד" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="PHONE" Title = "טלפון נייד" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="AVI_PHONE2" Title = "טלפון 2" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="AVI_PHONE3" Title = "טלפון 3" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="FAX" Title = "פקס" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="EMAIL" Title = "אימייל" [Data]="userData" FieldType="email" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="PRIT_PASSWORD" Title = "סיסמא" [Data]="userData" FieldType="text" Editable="true"> </edit-row>\n\n\n\n\n\n            <div class="buttons">\n\n                <button ion-button full style="background-color: #6eb43f" (click)="saveDetails()">עדכן פרטים</button>\n\n                <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" (click)="goContactsPage()">אנשי קשר</button>\n\n            </div>\n\n        </div>\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\user-details\user-details.html"*/,
+            selector: 'page-user-details',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\user-details\user-details.html"*/'<ion-header>\n\n        <header1 HeaderTitle="עידכון פרטים אישיים" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n        <div class="info">\n\n            <div class="MainAvatar">\n\n                <img src="images/avatar.png" style="width: 20%">\n\n                <div>{{userData.CUSTDES}}</div>\n\n                <div>{{userData.CUSTNAME}}</div>\n\n            </div>\n\n\n\n            <!-- <edit-row jsonKey="CUSTDES" Title = "שם לקוח" [Data]="userData" FieldType="text" Editable="false" > </edit-row> -->\n\n            <edit-row jsonKey="ADDRESS" Title = "כתובת" [Data]="userData" FieldType="text" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="STATE" Title = "עיר" [Data]="userData" FieldType="text" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="ZIP" Title = "מיקוד" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="PHONE" Title = "טלפון נייד" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="AVI_PHONE2" Title = "טלפון 2" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="AVI_PHONE3" Title = "טלפון 3" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="FAX" Title = "פקס" [Data]="userData" FieldType="tel" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="EMAIL" Title = "אימייל" [Data]="userData" FieldType="email" Editable="true"> </edit-row>\n\n            <edit-row jsonKey="PRIT_PASSWORD" Title = "סיסמא" [Data]="userData" FieldType="text" Editable="true"> </edit-row>\n\n\n\n\n\n            <div class="buttons">\n\n                <button ion-button full style="background-color: #6eb43f" (click)="saveDetails()">עדכן פרטים</button>\n\n                <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" (click)="goContactsPage()">אנשי קשר</button>\n\n            </div>\n\n        </div>\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\user-details\user-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_4__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"]])
     ], UserDetailsPage);
@@ -146,146 +146,10 @@ var UserDetailsPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddcontactPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contacts_contacts__ = __webpack_require__(50);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the AddcontactPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AddcontactPage = /** @class */ (function () {
-    function AddcontactPage(navCtrl, navParams, server, Toast, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.server = server;
-        this.Toast = Toast;
-        this.alertCtrl = alertCtrl;
-        this.contactFields = {
-            "NAME": "",
-            "PHONENUM": "",
-            "CELLPHONE": "",
-            "HOMEPHONE": "",
-            "EMAIL": "",
-            "isChanged": false
-        };
-        this.appsettingsArray = [];
-        this.contactFields.isChanged = false;
-        this.appsettingsArray = this.server.appsettingsArray;
-        console.log("appsettingsArray", this.appsettingsArray);
-    }
-    AddcontactPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AddcontactPage');
-    };
-    AddcontactPage.prototype.ionViewCanLeave = function () {
-        var _this = this;
-        if (this.contactFields.isChanged) {
-            var alertBox = this.alertCtrl.create({
-                title: 'שינוים שלא נשמרו',
-                message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
-                buttons: [
-                    {
-                        text: 'לא',
-                        role: 'cancel',
-                        handler: function () {
-                            console.log('Cancel clicked');
-                        }
-                    },
-                    {
-                        text: 'כן',
-                        handler: function () {
-                            _this.contactFields.isChanged = false;
-                            _this.navCtrl.pop();
-                        }
-                    }
-                ]
-            });
-            alertBox.present();
-            return false;
-        }
-    };
-    AddcontactPage.prototype.saveContact = function () {
-        var _this = this;
-        console.log("1111", this.contactFields);
-        this.contactFields.isChanged = false;
-        if (!this.contactFields.NAME)
-            this.Toast.presentToast("יש להזין שם איש קשר");
-        else if (!this.contactFields.CELLPHONE)
-            this.Toast.presentToast("יש להזין טלפון נייד");
-        else if (!this.contactFields.HOMEPHONE)
-            this.Toast.presentToast("יש להזין תעודת זהות");
-        else {
-            var URL_1 = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
-            var sendData = {
-                "LOADCODE": "1",
-                "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),
-                "PRIT_CUSTPERSONNEL_SUBFORM": [
-                    {
-                        "NAME": this.contactFields.NAME,
-                        "PHONENUM": this.contactFields.PHONENUM,
-                        "CELLPHONE": this.contactFields.CELLPHONE,
-                        "HOMEPHONE": this.contactFields.HOMEPHONE,
-                        "EMAIL": this.contactFields.EMAIL,
-                    }
-                ],
-                "PRIT_INTERFACE_SUBFORM": [
-                    {
-                        "EXECUTE": "Y"
-                    }
-                ]
-            };
-            this.server.SendPost(URL_1, sendData).then(function (data) {
-                console.log("response", data);
-                var response = data;
-                if (response.ok) {
-                    _this.Toast.presentToast("איש קשר נוסף בהצלחה");
-                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__contacts_contacts__["a" /* ContactsPage */]);
-                }
-                else {
-                    _this.Toast.presentToast("שגיאה, יש לנסות שוב");
-                }
-            });
-        }
-    };
-    AddcontactPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-addcontact',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\addcontact\addcontact.html"*/'<!--\n\n  Generated template for the AddcontactPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <header></header>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <div align="center">\n\n        <img src="images/home/contact.png" class="w-25" />\n\n    </div>\n\n  <div align="center">\n\n    {{appsettingsArray.AddContactDesc}}\n\n  </div>\n\n\n\n  <div class="info">\n\n\n\n\n\n    <edit-row jsonKey="NAME" Title = "שם איש קשר" [Data]="contactFields" FieldType="text" Editable="true"> </edit-row>\n\n    <!--<edit-row jsonKey="PHONENUM" Title = "טלפון" [Data]="contactFields" FieldType="tel" Editable="true"> </edit-row>-->\n\n    <edit-row jsonKey="CELLPHONE" Title = "טלפון נייד" [Data]="contactFields" FieldType="tel" Editable="true"> </edit-row>\n\n    <edit-row jsonKey="HOMEPHONE" Title = "תעודת זהות" [Data]="contactFields" FieldType="tel" Editable="true"> </edit-row>\n\n    <edit-row jsonKey="EMAIL" Title = "דואר אלקטרוני (לא חובה)" [Data]="contactFields" FieldType="email" Editable="true"> </edit-row>\n\n\n\n\n\n\n\n    <div class="buttons">\n\n      <button ion-button full style="background-color: #6eb43f" (click)="saveContact()">שלח</button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\addcontact\addcontact.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"]])
-    ], AddcontactPage);
-    return AddcontactPage;
-}());
-
-//# sourceMappingURL=addcontact.js.map
-
-/***/ }),
-
-/***/ 166:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticlePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_app_settings__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -335,14 +199,14 @@ var ArticlePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectedproductsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -462,7 +326,7 @@ var SelectedproductsPage = /** @class */ (function () {
     };
     SelectedproductsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-selectedproducts',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\selectedproducts\selectedproducts.html"*/'<!--<ion-header>-->\n\n\n\n  <!--<ion-navbar>-->\n\n    <!--<ion-buttons start>-->\n\n      <!--<button ion-button (click)="dismiss()">Close</button>-->\n\n    <!--</ion-buttons>-->\n\n    <!--<ion-title>Modals</ion-title>-->\n\n  <!--</ion-navbar>-->\n\n\n\n<!--</ion-header>-->\n\n\n\n\n\n<!-- <ion-header>\n\n  <div class="mainHeader">\n\n    <div class="headLogo" align="center">\n\n      <img src="images/home/head_logo.png" style="width: 70%"/>\n\n    </div>\n\n  </div>\n\n</ion-header> -->\n\n<ion-header>\n\n        <div class="mainHeader">\n\n                <div class="avatar">\n\n                    <img src="images/home/avatar.png" style="width:90%"/>\n\n                    <p>{{userName}}</p>\n\n                </div>\n\n            \n\n                <div class="headLogo" align="center" (click)="goMainPage()">\n\n                    <img src="images/logo.png" style="width: 60%"/>\n\n                </div>\n\n            \n\n               \n\n            \n\n            </div>\n\n      \n\n    </ion-header>\n\n<ion-content >\n\n    <!-- <div class="buttonsBar">\n\n        <div class="btn-group btn-group-justified">\n\n                    <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? \'ActiveBt\' : \'btnGr\']" (click)="ToggleCheckBox(1)">החזרת פריטים</a>\n\n                    <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? \'ActiveBt\' : \'btnGr\']" (click)="ToggleCheckBox(0)">שליפת פריטים</a>\n\n        </div>\n\n\n\n        <!-- <div class="buttonsBarLeft">\n\n            <button ion-button [ngClass]="[selectedReturnItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>\n\n        </div>\n\n        <div class="buttonsBarRight">\n\n            <button ion-button  [ngClass]="[selectedPullItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>\n\n        </div> \n\n    </div>\n\n    <hr> -->\n\n  <!--<div class="products">-->\n\n    <!--<div *ngFor="let item of daysOptions let i=index" class="product">-->\n\n        <!--<div class="productDV">-->\n\n            <!--<div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>-->\n\n            <!--<div class="productInfo" >-->\n\n                <!--<div class="productEdit" >-->\n\n                    <!--<ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>-->\n\n                <!--</div>-->\n\n            <!--</div>-->\n\n        <!--</div>-->\n\n\n\n        <!--<hr>-->\n\n    <!--</div>-->\n\n    <div class="products">\n\n        <div *ngFor="let item of daysOptions let i=index" class="productItem">\n\n            <div class="row">\n\n                <div class="col-2 toogleCB">\n\n                    <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>\n\n                </div>\n\n                <div class="col-10">\n\n                    <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>\n\n                </div>\n\n            </div>\n\n            <hr>\n\n        </div>\n\n    </div>\n\n\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n<ion-footer  >\n\n  <div class="buttons" >\n\n    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>\n\n   \n\n     <div style="width: 100%; overflow: hidden; padding: 0px; margin-top: -10px;">\n\n        <div style="width: 50%;  float: left">\n\n                <button ion-button color="danger"  class="redButton"  full (click)="sendSelectedProducts(0)">ביטול</button>\n\n        </div>\n\n        <div style="width: 50%; float: right">\n\n                <button ion-button full  class="greenButton" (click)="sendSelectedProducts(1)">שליחה</button>\n\n        </div>\n\n     </div>\n\n      \n\n  </div>\n\n</ion-footer>'/*ion-inline-end:"G:\gitlab\avia\src\pages\selectedproducts\selectedproducts.html"*/,
+            selector: 'page-selectedproducts',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\selectedproducts\selectedproducts.html"*/'<!--<ion-header>-->\n\n\n\n  <!--<ion-navbar>-->\n\n    <!--<ion-buttons start>-->\n\n      <!--<button ion-button (click)="dismiss()">Close</button>-->\n\n    <!--</ion-buttons>-->\n\n    <!--<ion-title>Modals</ion-title>-->\n\n  <!--</ion-navbar>-->\n\n\n\n<!--</ion-header>-->\n\n\n\n\n\n<!-- <ion-header>\n\n  <div class="mainHeader">\n\n    <div class="headLogo" align="center">\n\n      <img src="images/home/head_logo.png" style="width: 70%"/>\n\n    </div>\n\n  </div>\n\n</ion-header> -->\n\n<ion-header>\n\n        <!-- <div class="mainHeader">\n\n                <div class="avatar">\n\n                    <img src="images/home/avatar.png" style="width:90%"/>\n\n                    <p>{{userName}}</p>\n\n                </div>\n\n            \n\n                <div class="headLogo" align="center" (click)="goMainPage()">\n\n                    <img src="images/logo.png" style="width: 60%"/>\n\n                </div>\n\n            \n\n               \n\n            \n\n            </div>\n\n       -->\n\n       <header1 HeaderTitle="הפריטים שלי - בחירת שעות"></header1>\n\n    </ion-header>\n\n<ion-content class="mainContent">\n\n    <div class="buttonsBar">\n\n        <div class="btn-group btn-group-justified">\n\n                    <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? \'ActiveBt\' : \'btnGr\']" >החזרת פריטים</a>\n\n                    <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? \'ActiveBt\' : \'btnGr\']" >שליפת פריטים</a>\n\n        </div>\n\n\n\n       <!-- <div class="buttonsBarLeft">\n\n            <button ion-button [ngClass]="[selectedReturnItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']"> החזרת פריטים</button>\n\n        </div>\n\n        <div class="buttonsBarRight">\n\n            <button ion-button  [ngClass]="[selectedPullItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" > שליפת פריטים</button>\n\n        </div>  -->\n\n    </div>\n\n    <hr>\n\n  <!--<div class="products">-->\n\n    <!--<div *ngFor="let item of daysOptions let i=index" class="product">-->\n\n        <!--<div class="productDV">-->\n\n            <!--<div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>-->\n\n            <!--<div class="productInfo" >-->\n\n                <!--<div class="productEdit" >-->\n\n                    <!--<ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>-->\n\n                <!--</div>-->\n\n            <!--</div>-->\n\n        <!--</div>-->\n\n\n\n        <!--<hr>-->\n\n    <!--</div>-->\n\n    <div class="products">\n\n        <div *ngFor="let item of daysOptions let i=index" class="productItem">\n\n            <div class="row">\n\n                <div class="col-1 toogleCB">\n\n                    <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>\n\n                </div>\n\n                <div class="col-8">\n\n                    <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>\n\n                </div>\n\n                <div class="col-2 calenderIcon">\n\n                      <img *ngIf="!item.choosen" style="width:20px;" src="images/home/cal1.png">\n\n                      <img *ngIf="item.choosen" style="width:20px" src="images/home/cal2.png">\n\n                </div>\n\n            </div>\n\n            <hr>\n\n        </div>\n\n    </div>\n\n\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n<ion-footer  >\n\n  <div class="buttons" >\n\n    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>\n\n   \n\n     <div style="width: 100%; overflow: hidden; padding: 0px; margin-top: -10px;">\n\n        <div style="width: 100%;  float: left">\n\n                <button ion-button full  class="greenButton" (click)="sendSelectedProducts(1)">שליחה</button>\n\n                <button ion-button color="danger"  class="redButton"  full (click)="sendSelectedProducts(0)">ביטול</button>\n\n        </div>\n\n     </div>\n\n      \n\n  </div>\n\n</ion-footer>'/*ion-inline-end:"G:\gitlab\avia\src\pages\selectedproducts\selectedproducts.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ViewController"], __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */]])
     ], SelectedproductsPage);
@@ -473,14 +337,14 @@ var SelectedproductsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DaypickermodalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -515,6 +379,7 @@ var DaypickermodalPage = /** @class */ (function () {
         this.dayName = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
         this.selectedDate = '';
         this.disable_sat = '';
+        this.detailsArray = [];
         this.optionsMulti = {
             pickMode: 'single',
             weekdays: ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ש'],
@@ -524,7 +389,8 @@ var DaypickermodalPage = /** @class */ (function () {
         this.myProducts = navParams.get('products');
         this.pageName = navParams.get('page');
         this.serverData = navParams.get('daysArray');
-        //console.log("daysOptions",this.daysOptions)
+        this.detailsArray = this.serverData['description'].split(",");
+        console.log("daysOptions", this.detailsArray);
         console.log("products:", navParams.get('products'), this.serverData);
         this.caluclateProductPrice = 0;
         // for (let i = 0; i < this.daysOptions.length; i++) {
@@ -579,7 +445,7 @@ var DaypickermodalPage = /** @class */ (function () {
     };
     DaypickermodalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-daypickermodal',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\daypickermodal\daypickermodal.html"*/'<!--<ion-header>-->\n\n\n\n<!--<ion-navbar>-->\n\n<!--<ion-buttons start>-->\n\n<!--<button ion-button (click)="dismiss()">Close</button>-->\n\n<!--</ion-buttons>-->\n\n<!--<ion-title>Modals</ion-title>-->\n\n<!--</ion-navbar>-->\n\n\n\n<!--</ion-header>-->\n\n\n\n\n\n<ion-header>\n\n  <div class="mainHeader">\n\n    <div class="headLogo" align="center">\n\n      <img src="images/home/head_logo.png" style="width: 70%"/>\n\n    </div>\n\n  </div>\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding>\n\n\n\n\n\n    <div>\n\n        <ion-card>\n\n            <ion-card-header class="cardHeader">\n\n                סניף {{serverData.title}}\n\n            </ion-card-header>\n\n            <ion-card-content class="cardTitle">\n\n                {{serverData.description}}\n\n            </ion-card-content>\n\n        </ion-card>\n\n    </div>\n\n    <div>\n\n        <ion-calendar dir="rtl" [(ngModel)]="date"\n\n                      (onChange)="onChange($event)"\n\n                      [type]="type"\n\n                      [format]="\'YYYY-MM-DD\'"\n\n                      [options]="optionsMulti">\n\n        </ion-calendar>\n\n    </div>\n\n\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n<ion-footer >\n\n  <div class="buttons">\n\n    <!--<button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number }} ש"ח</button>-->\n\n      <button ion-button color="danger" full (click)="closeModal(0)">ביטול</button>\n\n      <button ion-button full style="background-color: #6eb43f" (click)="closeModal(1)">שליחה</button>\n\n  </div>\n\n</ion-footer>'/*ion-inline-end:"G:\gitlab\avia\src\pages\daypickermodal\daypickermodal.html"*/,
+            selector: 'page-daypickermodal',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\daypickermodal\daypickermodal.html"*/'<!--<ion-header>-->\n\n\n\n<!--<ion-navbar>-->\n\n<!--<ion-buttons start>-->\n\n<!--<button ion-button (click)="dismiss()">Close</button>-->\n\n<!--</ion-buttons>-->\n\n<!--<ion-title>Modals</ion-title>-->\n\n<!--</ion-navbar>-->\n\n\n\n<!--</ion-header>-->\n\n\n\n\n\n<ion-header>\n\n  <header1 HeaderTitle="יחידת אחסון - בחירת תאריך"></header1>\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n\n\n\n\n    <div class="mainInfo">\n\n        <div class="infoTitle">\n\n            סניף {{serverData.title}}\n\n        </div>\n\n        <div class="infoDescription" *ngFor="let item of detailsArray">\n\n            {{item}}\n\n        </div>\n\n    </div>\n\n    <div>\n\n        <ion-calendar style="background-color: #f8f8f8 !important" dir="rtl" [(ngModel)]="date"\n\n                      (onChange)="onChange($event)"\n\n                      [type]="type"\n\n                      [format]="\'YYYY-MM-DD\'"\n\n                      [options]="optionsMulti">\n\n        </ion-calendar>\n\n    </div>\n\n\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n<ion-footer >\n\n  <div class="buttons">\n\n    <!--<button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number }} ש"ח</button>-->\n\n      <button ion-button color="danger" full (click)="closeModal(0)">ביטול</button>\n\n      <button ion-button full style="background-color: #6eb43f" (click)="closeModal(1)">שליחה</button>\n\n  </div>\n\n</ion-footer>'/*ion-inline-end:"G:\gitlab\avia\src\pages\daypickermodal\daypickermodal.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ViewController"], __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */]])
     ], DaypickermodalPage);
@@ -590,13 +456,149 @@ var DaypickermodalPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 168:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddcontactPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contacts_contacts__ = __webpack_require__(50);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the AddcontactPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AddcontactPage = /** @class */ (function () {
+    function AddcontactPage(navCtrl, navParams, server, Toast, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.server = server;
+        this.Toast = Toast;
+        this.alertCtrl = alertCtrl;
+        this.contactFields = {
+            "NAME": "",
+            "PHONENUM": "",
+            "CELLPHONE": "",
+            "HOMEPHONE": "",
+            "EMAIL": "",
+            "isChanged": false
+        };
+        this.appsettingsArray = [];
+        this.contactFields.isChanged = false;
+        this.appsettingsArray = this.server.appsettingsArray;
+        console.log("appsettingsArray", this.appsettingsArray);
+    }
+    AddcontactPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AddcontactPage');
+    };
+    AddcontactPage.prototype.ionViewCanLeave = function () {
+        var _this = this;
+        if (this.contactFields.isChanged) {
+            var alertBox = this.alertCtrl.create({
+                title: 'שינוים שלא נשמרו',
+                message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
+                buttons: [
+                    {
+                        text: 'לא',
+                        role: 'cancel',
+                        handler: function () {
+                            console.log('Cancel clicked');
+                        }
+                    },
+                    {
+                        text: 'כן',
+                        handler: function () {
+                            _this.contactFields.isChanged = false;
+                            _this.navCtrl.pop();
+                        }
+                    }
+                ]
+            });
+            alertBox.present();
+            return false;
+        }
+    };
+    AddcontactPage.prototype.saveContact = function () {
+        var _this = this;
+        console.log("1111", this.contactFields);
+        this.contactFields.isChanged = false;
+        if (!this.contactFields.NAME)
+            this.Toast.presentToast("יש להזין שם איש קשר");
+        else if (!this.contactFields.CELLPHONE)
+            this.Toast.presentToast("יש להזין טלפון נייד");
+        else if (!this.contactFields.HOMEPHONE)
+            this.Toast.presentToast("יש להזין תעודת זהות");
+        else {
+            var URL_1 = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+            var sendData = {
+                "LOADCODE": "1",
+                "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),
+                "PRIT_CUSTPERSONNEL_SUBFORM": [
+                    {
+                        "NAME": this.contactFields.NAME,
+                        "PHONENUM": this.contactFields.PHONENUM,
+                        "CELLPHONE": this.contactFields.CELLPHONE,
+                        "HOMEPHONE": this.contactFields.HOMEPHONE,
+                        "EMAIL": this.contactFields.EMAIL,
+                    }
+                ],
+                "PRIT_INTERFACE_SUBFORM": [
+                    {
+                        "EXECUTE": "Y"
+                    }
+                ]
+            };
+            this.server.SendPost(URL_1, sendData).then(function (data) {
+                console.log("response", data);
+                var response = data;
+                if (response.ok) {
+                    _this.Toast.presentToast("איש קשר נוסף בהצלחה");
+                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__contacts_contacts__["a" /* ContactsPage */]);
+                }
+                else {
+                    _this.Toast.presentToast("שגיאה, יש לנסות שוב");
+                }
+            });
+        }
+    };
+    AddcontactPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-addcontact',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\addcontact\addcontact.html"*/'<!--\n\n  Generated template for the AddcontactPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <header1 HeaderTitle="הוספת איש קשר" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n\n\n    <div align="center">\n\n        <img src="images/home/addcontact.png" class="mainImg" />\n\n    </div>\n\n  <div align="center" class="infoText">\n\n    {{appsettingsArray.AddContactDesc}}\n\n  </div>\n\n\n\n  <div class="info">\n\n\n\n\n\n    <edit-row jsonKey="NAME" Title = "שם איש קשר" [Data]="contactFields" FieldType="text" Editable="true"> </edit-row>\n\n    <!--<edit-row jsonKey="PHONENUM" Title = "טלפון" [Data]="contactFields" FieldType="tel" Editable="true"> </edit-row>-->\n\n    <edit-row jsonKey="CELLPHONE" Title = "טלפון נייד" [Data]="contactFields" FieldType="tel" Editable="true"> </edit-row>\n\n    <edit-row jsonKey="HOMEPHONE" Title = "תעודת זהות" [Data]="contactFields" FieldType="tel" Editable="true"> </edit-row>\n\n    <edit-row jsonKey="EMAIL" Title = "דואר אלקטרוני (לא חובה)" [Data]="contactFields" FieldType="email" Editable="true"> </edit-row>\n\n\n\n\n\n\n\n    <div class="buttons">\n\n      <button ion-button full style="background-color: #6eb43f" (click)="saveContact()">שלח</button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\addcontact\addcontact.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"]])
+    ], AddcontactPage);
+    return AddcontactPage;
+}());
+
+//# sourceMappingURL=addcontact.js.map
+
+/***/ }),
+
 /***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsurancePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -624,7 +626,7 @@ var InsurancePage = /** @class */ (function () {
     };
     InsurancePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-insurance',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\insurance\insurance.html"*/'<!--\n  Generated template for the InsurancePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n      <header></header>\n  </ion-header>\n\n\n<ion-content>\n  <iframe src="https://avias.org/aviaform/" style="width: 100%; height:1500px; border: none; margin-top: -100px;" ></iframe>\n</ion-content>\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\insurance\insurance.html"*/,
+            selector: 'page-insurance',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\insurance\insurance.html"*/'<!--\n  Generated template for the InsurancePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n    <header1 HeaderTitle="עידכון ביטוח" type="0"></header1>\n</ion-header>\n\n\n<ion-content class="mainContent">\n  <iframe src="https://avias.org/aviaform/" style="width: 100%; height:1500px; border: none; margin-top: -100px;" ></iframe>\n</ion-content>\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\insurance\insurance.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]])
     ], InsurancePage);
@@ -640,10 +642,10 @@ var InsurancePage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -713,7 +715,7 @@ webpackEmptyAsyncContext.id = 181;
 
 var map = {
 	"../pages/addcontact/addcontact.module": [
-		842,
+		851,
 		13
 	],
 	"../pages/article/article.module": [
@@ -737,15 +739,15 @@ var map = {
 		8
 	],
 	"../pages/login/login.module": [
-		848,
+		854,
 		7
 	],
 	"../pages/paymenthistory/paymenthistory.module": [
-		849,
+		856,
 		6
 	],
 	"../pages/paymentinfo/paymentinfo.module": [
-		850,
+		848,
 		5
 	],
 	"../pages/products/products.module": [
@@ -753,15 +755,15 @@ var map = {
 		4
 	],
 	"../pages/rooms/rooms.module": [
-		854,
+		852,
 		3
 	],
 	"../pages/roomscalendar/roomscalendar.module": [
-		851,
+		849,
 		2
 	],
 	"../pages/selectedproducts/selectedproducts.module": [
-		852,
+		850,
 		1
 	],
 	"../pages/user-details/user-details.module": [
@@ -789,52 +791,9 @@ module.exports = webpackAsyncContext;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_settings__ = __webpack_require__(80);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ToastService = /** @class */ (function () {
-    function ToastService(toastCtrl) {
-        this.toastCtrl = toastCtrl;
-    }
-    ToastService.prototype.presentToast = function (message) {
-        console.log("Toast : ", __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].TOAST);
-        var toastItem = __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].TOAST;
-        toastItem["message"] = message;
-        toastItem["cssClass"] = "mainToastClass";
-        var toast = this.toastCtrl.create(toastItem);
-        toast.present();
-    };
-    ToastService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["ToastController"]])
-    ], ToastService);
-    return ToastService;
-}());
-
-//# sourceMappingURL=toast-service.js.map
-
-/***/ }),
-
-/***/ 24:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServerService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_settings__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(529);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
@@ -1014,6 +973,7 @@ var ServerService = /** @class */ (function () {
                 })
                     .catch(function (err) {
                     console.log("error:", err);
+                    alert("התקבלה שגיאה, יש לנסות שוב");
                     loading.dismiss();
                 });
             });
@@ -1039,13 +999,56 @@ var ServerService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 450:
+/***/ 24:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_settings__ = __webpack_require__(80);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ToastService = /** @class */ (function () {
+    function ToastService(toastCtrl) {
+        this.toastCtrl = toastCtrl;
+    }
+    ToastService.prototype.presentToast = function (message) {
+        console.log("Toast : ", __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].TOAST);
+        var toastItem = __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].TOAST;
+        toastItem["message"] = message;
+        toastItem["cssClass"] = "mainToastClass";
+        var toast = this.toastCtrl.create(toastItem);
+        toast.present();
+    };
+    ToastService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["ToastController"]])
+    ], ToastService);
+    return ToastService;
+}());
+
+//# sourceMappingURL=toast-service.js.map
+
+/***/ }),
+
+/***/ 449:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ImageModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1095,20 +1098,20 @@ var ImageModalPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 48:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_products__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rooms_rooms__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__paymentinfo_paymentinfo__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__paymenthistory_paymenthistory__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_app_settings__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__article_article__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__article_article__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__contacts_contacts__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1205,16 +1208,16 @@ var HomePage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(491);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_products_products__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_contacts_contacts__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_user_details_user_details__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_paymenthistory_paymenthistory__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_contact_contact__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_rooms_rooms__ = __webpack_require__(97);
@@ -1343,9 +1346,9 @@ var MyApp = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomscalendarPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1445,12 +1448,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_call_number__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__addcontact_addcontact__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_call_number__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__addcontact_addcontact__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1507,7 +1510,7 @@ var ContactsPage = /** @class */ (function () {
     };
     ContactsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-contacts',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\contacts\contacts.html"*/'<!--\n\n  Generated template for the ContactsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <header></header>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div align="center">\n\n    {{appsettingsArray.ContactDesc}}\n\n  </div>\n\n\n\n  <ion-list class="mt-4">\n\n    <div *ngFor="let item of contactsArray let i=index">\n\n      <div class="row">\n\n        <div class="col-2">\n\n            <button ion-button clear item-left (click)="callPhone(item.CELLPHONE)">\n\n                <ion-icon name="call" style="font-size:30px;"></ion-icon>\n\n              </button>\n\n        </div>\n\n        <div class="col-8">\n\n            <div class="infoContactText">\n\n                <p class="inf1">{{item.NAME}}</p>\n\n                <p class="inf2">{{item.CELLPHONE}}</p>\n\n                <p class="inf3">{{item.EMAIL}}</p>\n\n              </div>\n\n        </div>\n\n        <div class="col-2">\n\n            <ion-thumbnail item-end >\n\n                <img src="images/avatar.png">\n\n              </ion-thumbnail> \n\n        </div>\n\n      </div>\n\n      <hr>\n\n    </div>\n\n  </ion-list>\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer no-border class="topBorder">\n\n  <button ion-button full style="background-color: #6eb43f" (click)="AddContactPage()">הוספת איש קשר חדש</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\contacts\contacts.html"*/,
+            selector: 'page-contacts',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\contacts\contacts.html"*/'<!--\n\n  Generated template for the ContactsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n    <header1 HeaderTitle="ניהול אנשי קשר" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n  <div align="center" class="mainInfoText">\n\n    {{appsettingsArray.ContactDesc}}\n\n  </div>\n\n\n\n  <ion-list class="mt-4">\n\n    <div *ngFor="let item of contactsArray let i=index">\n\n      <div class="row">\n\n        <div class="col-2">\n\n            <!-- <button ion-button clear item-left (click)="callPhone(item.CELLPHONE)">\n\n                <!-- <ion-icon name="call" style="font-size:30px;"></ion-icon> \n\n                \n\n            </button> -->\n\n            <img src="images/home/call.png" class="phoneImg align-middle" >\n\n        </div>\n\n        <div class="col-8">\n\n            <div class="infoContactText">\n\n                <p class="inf1">{{item.NAME}}</p>\n\n                <p class="inf2">{{item.CELLPHONE}}</p>\n\n                <p class="inf3">{{item.EMAIL}}</p>\n\n              </div>\n\n        </div>\n\n        <div class="col-2">\n\n            <ion-thumbnail item-end >\n\n                <img src="images/avatar.png">\n\n              </ion-thumbnail> \n\n        </div>\n\n      </div>\n\n      <hr>\n\n    </div>\n\n  </ion-list>\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer no-border class="topBorder">\n\n  <button ion-button full style="background-color: #6eb43f" (click)="AddContactPage()">הוספת איש קשר חדש</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\contacts\contacts.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_2__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_call_number__["a" /* CallNumber */]])
     ], ContactsPage);
@@ -1525,42 +1528,42 @@ var ContactsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_file_transfer__ = __webpack_require__(504);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(490);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(831);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(448);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(491);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(492);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_components_module__ = __webpack_require__(832);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_http__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_products_products__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_rooms_rooms__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_contacts_contacts__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_addcontact_addcontact__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_addcontact_addcontact__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_contact_contact__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_paymentinfo_paymentinfo__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_selectedproducts_selectedproducts__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_selectedproducts_selectedproducts__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_paymenthistory_paymenthistory__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_roomscalendar_roomscalendar__ = __webpack_require__(497);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_daypickermodal_daypickermodal__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_article_article__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_daypickermodal_daypickermodal__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_article_article__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_user_details_user_details__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_call_number__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_call_number__ = __webpack_require__(450);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_native_in_app_browser__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_ion2_calendar__ = __webpack_require__(837);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_ion2_calendar__ = __webpack_require__(838);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_ion2_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_29_ion2_calendar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__angular_common__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_common_locales_he__ = __webpack_require__(841);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_common_locales_he__ = __webpack_require__(842);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_insurance_insurance__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_camera__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ionic_native_file_path__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_transfer__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_image_modal_image_modal__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_camera__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ionic_native_file_path__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_transfer__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_image_modal_image_modal__ = __webpack_require__(449);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1634,20 +1637,20 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["IonicModule"].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/addcontact/addcontact.module#AddcontactPageModule', name: 'AddcontactPage', segment: 'addcontact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/article/article.module#ArticlePageModule', name: 'ArticlePage', segment: 'article', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/daypickermodal/daypickermodal.module#DaypickermodalPageModule', name: 'DaypickermodalPage', segment: 'daypickermodal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insurance/insurance.module#InsurancePageModule', name: 'InsurancePage', segment: 'insurance', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/paymenthistory/paymenthistory.module#PaymenthistoryPageModule', name: 'PaymenthistoryPage', segment: 'paymenthistory', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/paymentinfo/paymentinfo.module#PaymentinfoPageModule', name: 'PaymentinfoPage', segment: 'paymentinfo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/roomscalendar/roomscalendar.module#RoomscalendarPageModule', name: 'RoomscalendarPage', segment: 'roomscalendar', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/selectedproducts/selectedproducts.module#SelectedproductsPageModule', name: 'SelectedproductsPage', segment: 'selectedproducts', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/user-details/user-details.module#UserDetailsPageModule', name: 'UserDetailsPage', segment: 'user-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/addcontact/addcontact.module#AddcontactPageModule', name: 'AddcontactPage', segment: 'addcontact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rooms/rooms.module#RoomsPageModule', name: 'RoomsPage', segment: 'rooms', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/products/products.module#ProductsPageModule', name: 'ProductsPage', segment: 'products', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/user-details/user-details.module#UserDetailsPageModule', name: 'UserDetailsPage', segment: 'user-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/products/products.module#ProductsPageModule', name: 'ProductsPage', segment: 'products', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/paymenthistory/paymenthistory.module#PaymenthistoryPageModule', name: 'PaymenthistoryPage', segment: 'paymenthistory', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_11__components_components_module__["a" /* ComponentsModule */],
@@ -1721,252 +1724,252 @@ var AppSettings = Object.freeze({
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 325,
-	"./af.js": 325,
-	"./ar": 326,
-	"./ar-dz": 327,
-	"./ar-dz.js": 327,
-	"./ar-kw": 328,
-	"./ar-kw.js": 328,
-	"./ar-ly": 329,
-	"./ar-ly.js": 329,
-	"./ar-ma": 330,
-	"./ar-ma.js": 330,
-	"./ar-sa": 331,
-	"./ar-sa.js": 331,
-	"./ar-tn": 332,
-	"./ar-tn.js": 332,
-	"./ar.js": 326,
-	"./az": 333,
-	"./az.js": 333,
-	"./be": 334,
-	"./be.js": 334,
-	"./bg": 335,
-	"./bg.js": 335,
-	"./bm": 336,
-	"./bm.js": 336,
-	"./bn": 337,
-	"./bn.js": 337,
-	"./bo": 338,
-	"./bo.js": 338,
-	"./br": 339,
-	"./br.js": 339,
-	"./bs": 340,
-	"./bs.js": 340,
-	"./ca": 341,
-	"./ca.js": 341,
-	"./cs": 342,
-	"./cs.js": 342,
-	"./cv": 343,
-	"./cv.js": 343,
-	"./cy": 344,
-	"./cy.js": 344,
-	"./da": 345,
-	"./da.js": 345,
-	"./de": 346,
-	"./de-at": 347,
-	"./de-at.js": 347,
-	"./de-ch": 348,
-	"./de-ch.js": 348,
-	"./de.js": 346,
-	"./dv": 349,
-	"./dv.js": 349,
-	"./el": 350,
-	"./el.js": 350,
-	"./en-au": 351,
-	"./en-au.js": 351,
-	"./en-ca": 352,
-	"./en-ca.js": 352,
-	"./en-gb": 353,
-	"./en-gb.js": 353,
-	"./en-ie": 354,
-	"./en-ie.js": 354,
-	"./en-il": 355,
-	"./en-il.js": 355,
-	"./en-nz": 356,
-	"./en-nz.js": 356,
-	"./eo": 357,
-	"./eo.js": 357,
-	"./es": 358,
-	"./es-do": 359,
-	"./es-do.js": 359,
-	"./es-us": 360,
-	"./es-us.js": 360,
-	"./es.js": 358,
-	"./et": 361,
-	"./et.js": 361,
-	"./eu": 362,
-	"./eu.js": 362,
-	"./fa": 363,
-	"./fa.js": 363,
-	"./fi": 364,
-	"./fi.js": 364,
-	"./fo": 365,
-	"./fo.js": 365,
-	"./fr": 366,
-	"./fr-ca": 367,
-	"./fr-ca.js": 367,
-	"./fr-ch": 368,
-	"./fr-ch.js": 368,
-	"./fr.js": 366,
-	"./fy": 369,
-	"./fy.js": 369,
-	"./gd": 370,
-	"./gd.js": 370,
-	"./gl": 371,
-	"./gl.js": 371,
-	"./gom-latn": 372,
-	"./gom-latn.js": 372,
-	"./gu": 373,
-	"./gu.js": 373,
-	"./he": 374,
-	"./he.js": 374,
-	"./hi": 375,
-	"./hi.js": 375,
-	"./hr": 376,
-	"./hr.js": 376,
-	"./hu": 377,
-	"./hu.js": 377,
-	"./hy-am": 378,
-	"./hy-am.js": 378,
-	"./id": 379,
-	"./id.js": 379,
-	"./is": 380,
-	"./is.js": 380,
-	"./it": 381,
-	"./it.js": 381,
-	"./ja": 382,
-	"./ja.js": 382,
-	"./jv": 383,
-	"./jv.js": 383,
-	"./ka": 384,
-	"./ka.js": 384,
-	"./kk": 385,
-	"./kk.js": 385,
-	"./km": 386,
-	"./km.js": 386,
-	"./kn": 387,
-	"./kn.js": 387,
-	"./ko": 388,
-	"./ko.js": 388,
-	"./ky": 389,
-	"./ky.js": 389,
-	"./lb": 390,
-	"./lb.js": 390,
-	"./lo": 391,
-	"./lo.js": 391,
-	"./lt": 392,
-	"./lt.js": 392,
-	"./lv": 393,
-	"./lv.js": 393,
-	"./me": 394,
-	"./me.js": 394,
-	"./mi": 395,
-	"./mi.js": 395,
-	"./mk": 396,
-	"./mk.js": 396,
-	"./ml": 397,
-	"./ml.js": 397,
-	"./mn": 398,
-	"./mn.js": 398,
-	"./mr": 399,
-	"./mr.js": 399,
-	"./ms": 400,
-	"./ms-my": 401,
-	"./ms-my.js": 401,
-	"./ms.js": 400,
-	"./mt": 402,
-	"./mt.js": 402,
-	"./my": 403,
-	"./my.js": 403,
-	"./nb": 404,
-	"./nb.js": 404,
-	"./ne": 405,
-	"./ne.js": 405,
-	"./nl": 406,
-	"./nl-be": 407,
-	"./nl-be.js": 407,
-	"./nl.js": 406,
-	"./nn": 408,
-	"./nn.js": 408,
-	"./pa-in": 409,
-	"./pa-in.js": 409,
-	"./pl": 410,
-	"./pl.js": 410,
-	"./pt": 411,
-	"./pt-br": 412,
-	"./pt-br.js": 412,
-	"./pt.js": 411,
-	"./ro": 413,
-	"./ro.js": 413,
-	"./ru": 414,
-	"./ru.js": 414,
-	"./sd": 415,
-	"./sd.js": 415,
-	"./se": 416,
-	"./se.js": 416,
-	"./si": 417,
-	"./si.js": 417,
-	"./sk": 418,
-	"./sk.js": 418,
-	"./sl": 419,
-	"./sl.js": 419,
-	"./sq": 420,
-	"./sq.js": 420,
-	"./sr": 421,
-	"./sr-cyrl": 422,
-	"./sr-cyrl.js": 422,
-	"./sr.js": 421,
-	"./ss": 423,
-	"./ss.js": 423,
-	"./sv": 424,
-	"./sv.js": 424,
-	"./sw": 425,
-	"./sw.js": 425,
-	"./ta": 426,
-	"./ta.js": 426,
-	"./te": 427,
-	"./te.js": 427,
-	"./tet": 428,
-	"./tet.js": 428,
-	"./tg": 429,
-	"./tg.js": 429,
-	"./th": 430,
-	"./th.js": 430,
-	"./tl-ph": 431,
-	"./tl-ph.js": 431,
-	"./tlh": 432,
-	"./tlh.js": 432,
-	"./tr": 433,
-	"./tr.js": 433,
-	"./tzl": 434,
-	"./tzl.js": 434,
-	"./tzm": 435,
-	"./tzm-latn": 436,
-	"./tzm-latn.js": 436,
-	"./tzm.js": 435,
-	"./ug-cn": 437,
-	"./ug-cn.js": 437,
-	"./uk": 438,
-	"./uk.js": 438,
-	"./ur": 439,
-	"./ur.js": 439,
-	"./uz": 440,
-	"./uz-latn": 441,
-	"./uz-latn.js": 441,
-	"./uz.js": 440,
-	"./vi": 442,
-	"./vi.js": 442,
-	"./x-pseudo": 443,
-	"./x-pseudo.js": 443,
-	"./yo": 444,
-	"./yo.js": 444,
-	"./zh-cn": 445,
-	"./zh-cn.js": 445,
-	"./zh-hk": 446,
-	"./zh-hk.js": 446,
-	"./zh-tw": 447,
-	"./zh-tw.js": 447
+	"./af": 324,
+	"./af.js": 324,
+	"./ar": 325,
+	"./ar-dz": 326,
+	"./ar-dz.js": 326,
+	"./ar-kw": 327,
+	"./ar-kw.js": 327,
+	"./ar-ly": 328,
+	"./ar-ly.js": 328,
+	"./ar-ma": 329,
+	"./ar-ma.js": 329,
+	"./ar-sa": 330,
+	"./ar-sa.js": 330,
+	"./ar-tn": 331,
+	"./ar-tn.js": 331,
+	"./ar.js": 325,
+	"./az": 332,
+	"./az.js": 332,
+	"./be": 333,
+	"./be.js": 333,
+	"./bg": 334,
+	"./bg.js": 334,
+	"./bm": 335,
+	"./bm.js": 335,
+	"./bn": 336,
+	"./bn.js": 336,
+	"./bo": 337,
+	"./bo.js": 337,
+	"./br": 338,
+	"./br.js": 338,
+	"./bs": 339,
+	"./bs.js": 339,
+	"./ca": 340,
+	"./ca.js": 340,
+	"./cs": 341,
+	"./cs.js": 341,
+	"./cv": 342,
+	"./cv.js": 342,
+	"./cy": 343,
+	"./cy.js": 343,
+	"./da": 344,
+	"./da.js": 344,
+	"./de": 345,
+	"./de-at": 346,
+	"./de-at.js": 346,
+	"./de-ch": 347,
+	"./de-ch.js": 347,
+	"./de.js": 345,
+	"./dv": 348,
+	"./dv.js": 348,
+	"./el": 349,
+	"./el.js": 349,
+	"./en-au": 350,
+	"./en-au.js": 350,
+	"./en-ca": 351,
+	"./en-ca.js": 351,
+	"./en-gb": 352,
+	"./en-gb.js": 352,
+	"./en-ie": 353,
+	"./en-ie.js": 353,
+	"./en-il": 354,
+	"./en-il.js": 354,
+	"./en-nz": 355,
+	"./en-nz.js": 355,
+	"./eo": 356,
+	"./eo.js": 356,
+	"./es": 357,
+	"./es-do": 358,
+	"./es-do.js": 358,
+	"./es-us": 359,
+	"./es-us.js": 359,
+	"./es.js": 357,
+	"./et": 360,
+	"./et.js": 360,
+	"./eu": 361,
+	"./eu.js": 361,
+	"./fa": 362,
+	"./fa.js": 362,
+	"./fi": 363,
+	"./fi.js": 363,
+	"./fo": 364,
+	"./fo.js": 364,
+	"./fr": 365,
+	"./fr-ca": 366,
+	"./fr-ca.js": 366,
+	"./fr-ch": 367,
+	"./fr-ch.js": 367,
+	"./fr.js": 365,
+	"./fy": 368,
+	"./fy.js": 368,
+	"./gd": 369,
+	"./gd.js": 369,
+	"./gl": 370,
+	"./gl.js": 370,
+	"./gom-latn": 371,
+	"./gom-latn.js": 371,
+	"./gu": 372,
+	"./gu.js": 372,
+	"./he": 373,
+	"./he.js": 373,
+	"./hi": 374,
+	"./hi.js": 374,
+	"./hr": 375,
+	"./hr.js": 375,
+	"./hu": 376,
+	"./hu.js": 376,
+	"./hy-am": 377,
+	"./hy-am.js": 377,
+	"./id": 378,
+	"./id.js": 378,
+	"./is": 379,
+	"./is.js": 379,
+	"./it": 380,
+	"./it.js": 380,
+	"./ja": 381,
+	"./ja.js": 381,
+	"./jv": 382,
+	"./jv.js": 382,
+	"./ka": 383,
+	"./ka.js": 383,
+	"./kk": 384,
+	"./kk.js": 384,
+	"./km": 385,
+	"./km.js": 385,
+	"./kn": 386,
+	"./kn.js": 386,
+	"./ko": 387,
+	"./ko.js": 387,
+	"./ky": 388,
+	"./ky.js": 388,
+	"./lb": 389,
+	"./lb.js": 389,
+	"./lo": 390,
+	"./lo.js": 390,
+	"./lt": 391,
+	"./lt.js": 391,
+	"./lv": 392,
+	"./lv.js": 392,
+	"./me": 393,
+	"./me.js": 393,
+	"./mi": 394,
+	"./mi.js": 394,
+	"./mk": 395,
+	"./mk.js": 395,
+	"./ml": 396,
+	"./ml.js": 396,
+	"./mn": 397,
+	"./mn.js": 397,
+	"./mr": 398,
+	"./mr.js": 398,
+	"./ms": 399,
+	"./ms-my": 400,
+	"./ms-my.js": 400,
+	"./ms.js": 399,
+	"./mt": 401,
+	"./mt.js": 401,
+	"./my": 402,
+	"./my.js": 402,
+	"./nb": 403,
+	"./nb.js": 403,
+	"./ne": 404,
+	"./ne.js": 404,
+	"./nl": 405,
+	"./nl-be": 406,
+	"./nl-be.js": 406,
+	"./nl.js": 405,
+	"./nn": 407,
+	"./nn.js": 407,
+	"./pa-in": 408,
+	"./pa-in.js": 408,
+	"./pl": 409,
+	"./pl.js": 409,
+	"./pt": 410,
+	"./pt-br": 411,
+	"./pt-br.js": 411,
+	"./pt.js": 410,
+	"./ro": 412,
+	"./ro.js": 412,
+	"./ru": 413,
+	"./ru.js": 413,
+	"./sd": 414,
+	"./sd.js": 414,
+	"./se": 415,
+	"./se.js": 415,
+	"./si": 416,
+	"./si.js": 416,
+	"./sk": 417,
+	"./sk.js": 417,
+	"./sl": 418,
+	"./sl.js": 418,
+	"./sq": 419,
+	"./sq.js": 419,
+	"./sr": 420,
+	"./sr-cyrl": 421,
+	"./sr-cyrl.js": 421,
+	"./sr.js": 420,
+	"./ss": 422,
+	"./ss.js": 422,
+	"./sv": 423,
+	"./sv.js": 423,
+	"./sw": 424,
+	"./sw.js": 424,
+	"./ta": 425,
+	"./ta.js": 425,
+	"./te": 426,
+	"./te.js": 426,
+	"./tet": 427,
+	"./tet.js": 427,
+	"./tg": 428,
+	"./tg.js": 428,
+	"./th": 429,
+	"./th.js": 429,
+	"./tl-ph": 430,
+	"./tl-ph.js": 430,
+	"./tlh": 431,
+	"./tlh.js": 431,
+	"./tr": 432,
+	"./tr.js": 432,
+	"./tzl": 433,
+	"./tzl.js": 433,
+	"./tzm": 434,
+	"./tzm-latn": 435,
+	"./tzm-latn.js": 435,
+	"./tzm.js": 434,
+	"./ug-cn": 436,
+	"./ug-cn.js": 436,
+	"./uk": 437,
+	"./uk.js": 437,
+	"./ur": 438,
+	"./ur.js": 438,
+	"./uz": 439,
+	"./uz-latn": 440,
+	"./uz-latn.js": 440,
+	"./uz.js": 439,
+	"./vi": 441,
+	"./vi.js": 441,
+	"./x-pseudo": 442,
+	"./x-pseudo.js": 442,
+	"./yo": 443,
+	"./yo.js": 443,
+	"./zh-cn": 444,
+	"./zh-cn.js": 444,
+	"./zh-hk": 445,
+	"./zh-hk.js": 445,
+	"./zh-tw": 446,
+	"./zh-tw.js": 446
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1991,8 +1994,8 @@ webpackContext.id = 813;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2048,19 +2051,21 @@ var ListPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_login__ = __webpack_require__(833);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_component__ = __webpack_require__(490);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__header_header__ = __webpack_require__(834);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__footer_footer__ = __webpack_require__(835);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__edit_row_edit_row__ = __webpack_require__(836);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__header1_header1__ = __webpack_require__(837);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -2076,12 +2081,14 @@ var ComponentsModule = /** @class */ (function () {
             declarations: [__WEBPACK_IMPORTED_MODULE_1__login_login__["a" /* LoginComponent */],
                 __WEBPACK_IMPORTED_MODULE_4__header_header__["a" /* HeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__footer_footer__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__edit_row_edit_row__["a" /* EditRowComponent */]],
+                __WEBPACK_IMPORTED_MODULE_6__edit_row_edit_row__["a" /* EditRowComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__header1_header1__["a" /* Header1Component */]],
             imports: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["IonicModule"].forRoot(__WEBPACK_IMPORTED_MODULE_2__app_app_component__["a" /* MyApp */])],
             exports: [__WEBPACK_IMPORTED_MODULE_1__login_login__["a" /* LoginComponent */],
                 __WEBPACK_IMPORTED_MODULE_4__header_header__["a" /* HeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__footer_footer__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__edit_row_edit_row__["a" /* EditRowComponent */]]
+                __WEBPACK_IMPORTED_MODULE_6__edit_row_edit_row__["a" /* EditRowComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__header1_header1__["a" /* Header1Component */]]
         })
     ], ComponentsModule);
     return ComponentsModule;
@@ -2096,11 +2103,11 @@ var ComponentsModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2166,9 +2173,9 @@ var LoginComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_home_home__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_home_home__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2200,7 +2207,7 @@ var HeaderComponent = /** @class */ (function () {
     };
     HeaderComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'header',template:/*ion-inline-start:"G:\gitlab\avia\src\components\header\header.html"*/'<!-- Generated template for the HeaderComponent component -->\n\n<div class="mainHeader">\n\n    <div class="avatar">\n\n        <img src="images/home/avatar.png" style="width:90%"/>\n\n        <p>{{userName}}</p>\n\n    </div>\n\n\n\n    <div class="headLogo" align="center" (click)="goMainPage()">\n\n        <img src="images/logo.png" style="width: 60%"/>\n\n    </div>\n\n\n\n    <div class="bar" menuToggle side="right">\n\n        <img src="images/home/side_bar.png" style="width: 70%"/>\n\n    </div>\n\n\n\n</div>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\components\header\header.html"*/
+            selector: 'header',template:/*ion-inline-start:"G:\gitlab\avia\src\components\header\header.html"*/'<!-- Generated template for the HeaderComponent component -->\n\n<div class="mainHeader">\n\n    <div class="avatar">\n\n        <img src="images/home/avatar.png" style="width:90%"/>\n\n        <p>{{userName}}</p>\n\n    </div>\n\n\n\n    <div class="headLogo" align="center" (click)="goMainPage()">\n\n        <img src="images/logo.png" style="width: 60%"/>\n\n    </div>\n\n\n\n    <div class="bar" menuToggle side="right">\n\n        <img src="images/home/side_bar.png" style="width: 70%"/>\n\n    </div>\n\n</div>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\components\header\header.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["NavController"]])
     ], HeaderComponent);
@@ -2216,10 +2223,10 @@ var HeaderComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_user_details_user_details__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_contact_contact__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_insurance_insurance__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2286,7 +2293,7 @@ var FooterComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditRowComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2340,7 +2347,7 @@ var EditRowComponent = /** @class */ (function () {
     ], EditRowComponent.prototype, "Editable", void 0);
     EditRowComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'edit-row',template:/*ion-inline-start:"G:\gitlab\avia\src\components\edit-row\edit-row.html"*/'<!-- Generated template for the EditRowComponent component -->\n\n<div>\n\n    <div class="fullRow">\n\n        <div class="nonEditRow" *ngIf="!isOpen" (click)="editRow(Editable)">\n\n            <div class="rowRight">\n\n                {{Title}} : {{Data[jsonKey]}}\n\n            </div>\n\n            <div class="rowLeft">\n\n                <img src="images/edit.png" *ngIf="Editable == \'true\'" style="width: 100%">\n\n            </div>\n\n        </div>\n\n        <div class="EditRow" *ngIf="isOpen">\n\n            <ion-icon name="checkmark" style="font-size:50px; margin:3px 7px" class="absoluteEditButton" (click)="editRow(Editable)" ></ion-icon>\n\n\n\n            <!--<img src="images/edit.png"  >-->\n\n            <input [type]="FieldType" class="inputText MT10" value="" [(ngModel)]="Data[jsonKey]" (ngModelChange)="modelChanged($event)"\n\n                   [placeholder]="Title"/>\n\n        </div>\n\n    </div>\n\n</div>\n\n\n\n'/*ion-inline-end:"G:\gitlab\avia\src\components\edit-row\edit-row.html"*/
+            selector: 'edit-row',template:/*ion-inline-start:"G:\gitlab\avia\src\components\edit-row\edit-row.html"*/'<!-- Generated template for the EditRowComponent component -->\n\n<div>\n\n    <div class="fullRow">\n\n        <div class="nonEditRow" *ngIf="!isOpen" (click)="editRow(Editable)">\n\n            <div class="rowRight">\n\n                {{Title}} : {{Data[jsonKey]}}\n\n            </div>\n\n            <div class="rowLeft">\n\n                <img src="images/edit.png" *ngIf="Editable == \'true\'" style="width: 80%">\n\n            </div>\n\n        </div>\n\n        <div class="EditRow" *ngIf="isOpen">\n\n            <ion-icon name="checkmark" class="absoluteEditButton" (click)="editRow(Editable)" ></ion-icon>\n\n\n\n            <!--<img src="images/edit.png"  >-->\n\n            <input [type]="FieldType" class="inputText MT10" value="" [(ngModel)]="Data[jsonKey]" (ngModelChange)="modelChanged($event)"\n\n                   [placeholder]="Title"/>\n\n        </div>\n\n    </div>\n\n</div>\n\n\n\n'/*ion-inline-end:"G:\gitlab\avia\src\components\edit-row\edit-row.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], EditRowComponent);
@@ -2351,16 +2358,77 @@ var EditRowComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 837:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Header1Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(47);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the Header1Component component.
+ *
+ * See https://angular.io/api/core/Component for more info on Angular
+ * Components.
+ */
+var Header1Component = /** @class */ (function () {
+    function Header1Component(navCtrl) {
+        this.navCtrl = navCtrl;
+        if (localStorage.userData) {
+            this.userData = JSON.parse(localStorage.userData);
+            this.userName = this.userData.CUSTDES;
+        }
+    }
+    Header1Component.prototype.goMainPage = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__pages_home_home__["a" /* HomePage */]);
+    };
+    Header1Component.prototype.ngOnInit = function () {
+        console.log("HeaderTitle : ", this.HeaderTitle);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], Header1Component.prototype, "HeaderTitle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], Header1Component.prototype, "type", void 0);
+    Header1Component = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'header1',template:/*ion-inline-start:"G:\gitlab\avia\src\components\header1\header1.html"*/'<div class="mainHeader">\n  <div class="avatar">\n      <img src="images/home/avatar.png" style="width:90%"/>\n      <p>{{userName}}</p>\n  </div>\n\n  <div class="headLogo" align="center" (click)="goMainPage()">\n     <div>{{HeaderTitle}}</div>\n  </div>\n\n  <div *ngIf="type == \'0\'" class="bar" menuToggle side="right">\n      <img src="images/home/side_bar.png" style="width: 70%"/>\n  </div>\n</div>'/*ion-inline-end:"G:\gitlab\avia\src\components\header1\header1.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"]])
+    ], Header1Component);
+    return Header1Component;
+}());
+
+//# sourceMappingURL=header1.js.map
+
+/***/ }),
+
 /***/ 95:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2436,7 +2504,7 @@ var ContactPage = /** @class */ (function () {
     };
     ContactPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-contact',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\contact\contact.html"*/'<!--\n\n  Generated template for the ContactPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header xmlns="http://www.w3.org/1999/html">\n\n  <header></header>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <div class="info">\n\n    <div class="MainAvatar">\n\n      <img src="images/footeric1.png" style="width: 20%">\n\n    </div>\n\n\n\n\n\n\n\n    <div>\n\n      <div class="fullRow">\n\n        <div class="EditRow" >\n\n          <select class="inputText MT10" style="direction: rtl;" [(ngModel)]="contactFields.subject">\n\n            <option value="" >נושא הפניה</option>\n\n            <option *ngFor="let row of contactSubjects; let i = index" [value]="row.subject_code">{{row.title}}</option>\n\n            <!--<option [value]="0" >תמיכה טכנית</option>-->\n\n            <!--<option [value]="1" >פניית שירות</option>-->\n\n            <!--<option [value]="2" >אחר</option>-->\n\n          </select>\n\n        </div>\n\n\n\n        <div class="EditRow" >\n\n          <textarea  class="inputText MT10" value="" [(ngModel)]="contactFields.desc" rows="5" cols="10"  dir="rtl" placeholder="הכנס פרטים (עד 50 תווים)" maxlength="50"></textarea>\n\n        </div>\n\n      </div>\n\n    </div>\n\n\n\n\n\n    <div class="buttons">\n\n      <button ion-button full style="background-color: #6eb43f" (click)="sendContact()">שלח</button>\n\n    </div>\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\contact\contact.html"*/,
+            selector: 'page-contact',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\contact\contact.html"*/'<!--\n\n  Generated template for the ContactPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <header1 HeaderTitle="יצירת קשר" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n\n\n  <div class="info">\n\n    <div class="MainAvatar">\n\n      <img src="images/home/ic5_1.png" style="width: 30%">\n\n    </div>\n\n\n\n\n\n\n\n    <div>\n\n      <div class="fullRow">\n\n        <div class="EditRow" >\n\n          <select class="inputText MT10" style="direction: rtl;" [(ngModel)]="contactFields.subject">\n\n            <option value="" >נושא הפניה</option>\n\n            <option *ngFor="let row of contactSubjects; let i = index" [value]="row.subject_code">{{row.title}}</option>\n\n            <!--<option [value]="0" >תמיכה טכנית</option>-->\n\n            <!--<option [value]="1" >פניית שירות</option>-->\n\n            <!--<option [value]="2" >אחר</option>-->\n\n          </select>\n\n        </div>\n\n\n\n        <div class="EditRow" >\n\n          <textarea  class="inputText1 MT10" value="" [(ngModel)]="contactFields.desc" rows="5" cols="10"  dir="rtl" placeholder="הכנס פרטים (עד 50 תווים)" maxlength="50"></textarea>\n\n        </div>\n\n      </div>\n\n    </div>\n\n\n\n\n\n    <div class="buttons">\n\n      <button ion-button full style="background-color: #6eb43f" (click)="sendContact()">שלח</button>\n\n    </div>\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\contact\contact.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */]])
     ], ContactPage);
@@ -2452,18 +2520,18 @@ var ContactPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_camera__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_file_path__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__selectedproducts_selectedproducts__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_camera__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_file_path__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__selectedproducts_selectedproducts__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(449);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__image_modal_image_modal__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__image_modal_image_modal__ = __webpack_require__(449);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2661,7 +2729,7 @@ var ProductsPage = /** @class */ (function () {
                 //return false;
                 var alertBox = this.alertCtrl.create({
                     title: 'שינוים שלא נשמרו',
-                    message: 'האם ברצונך לשמור את השינוים?',
+                    message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
                     buttons: [
                         {
                             text: 'לא',
@@ -2677,6 +2745,21 @@ var ProductsPage = /** @class */ (function () {
                             }
                         }
                     ]
+                    // buttons: [
+                    //     {
+                    //         text: 'לא',
+                    //         role: 'cancel',
+                    //         handler: () => {
+                    //             console.log('Cancel clicked');
+                    //         }
+                    //     },
+                    //     {
+                    //         text: 'כן',
+                    //         handler: () => {
+                    //             this.navCtrl.pop();
+                    //         }
+                    //     }
+                    // ]
                 });
                 alertBox.present();
                 return false;
@@ -2823,14 +2906,14 @@ var ProductsPage = /** @class */ (function () {
                                         }
                                     }
                                     console.log("selectedDayArray", _this.selectedDayArray);
+                                    //'1988-01-01 '
                                     for (var i = 0; i < _this.productsArray.length; i++) {
                                         if (_this.productsArray[i].choosen == true) {
                                             _this.productsSendArray.push({
                                                 "PARTNAME": _this.productsArray[i].PARTNAME,
                                                 "SERNUM": _this.productsArray[i].SERNUM,
-                                                "DUEDATE": "",
-                                                "TASKDATE": __WEBPACK_IMPORTED_MODULE_7_moment___default()(_this.selectedDayArray.c, 'YYYY-MM-DD').format(),
-                                                "FROMDATE": __WEBPACK_IMPORTED_MODULE_7_moment___default()('1988-01-01 ' + _this.selectedDayArray.start_hour + ':00', 'YYYY-MM-DD HH:mm:ss').format(),
+                                                "TASKDATE": __WEBPACK_IMPORTED_MODULE_7_moment___default()(_this.selectedDayArray.formatted_date, 'YYYY-MM-DD').format(),
+                                                "FROMDATE": __WEBPACK_IMPORTED_MODULE_7_moment___default()('1988-01-01' + _this.selectedDayArray.start_hour + ':00', 'YYYY-MM-DD HH:mm:ss').format(),
                                                 "TODATE": __WEBPACK_IMPORTED_MODULE_7_moment___default()('1988-01-01 ' + _this.selectedDayArray.end_hour + ':00', 'YYYY-MM-DD HH:mm:ss').format() /* עד שעה למשימה*/
                                             });
                                         }
@@ -2847,7 +2930,7 @@ var ProductsPage = /** @class */ (function () {
                                     var sendData = {
                                         "LOADCODE": "3",
                                         "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),
-                                        "DOCDATE": "",
+                                        // "DOCDATE":"", /* תאריך הזמנה  this.todaydate,*/
                                         "TYPECODE": TYPECODE,
                                         "PRIT_DOCLINE_SUBFORM": _this.productsSendArray,
                                         "PRIT_INTERFACE_SUBFORM": [
@@ -2915,7 +2998,9 @@ var ProductsPage = /** @class */ (function () {
         var _this = this;
         this.productsArray[place].STATUS = status;
         this.productFields.isChanged = true;
-        if (status == 0 || status == 3) {
+        if (status == 3)
+            this.navCtrl.pop();
+        else if (status == 0) {
             console.log("cs1");
             this.productFields.isChanged = false;
             var URL_2 = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
@@ -3237,7 +3322,7 @@ var ProductsPage = /** @class */ (function () {
     };
     ProductsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-products',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\products\products.html"*/'<!--\n\n  Generated template for the ProductsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <header></header>\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n    <!--<div class="buttonsBar">-->\n\n        <!--<div class="buttonsBarLeft">-->\n\n            <!--<button ion-button [ngClass]="[selectedReturnItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>-->\n\n        <!--</div>-->\n\n        <!--<div class="buttonsBarRight">-->\n\n            <!--<button ion-button  [ngClass]="[selectedPullItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>-->\n\n        <!--</div>-->\n\n    <!--</div>-->\n\n\n\n    <!--<div align="center">-->\n\n        <!--<button ion-button color="secondary" round *ngIf="selectedPullItems || selectedReturnItems" (click)="selectAll()">סימון כל הפריטים</button>-->\n\n    <!--</div>-->\n\n\n\n    <div class="buttonsBar">\n\n        <div class="buttonsBarAll" *ngIf="selectedPullItems || selectedReturnItems" >\n\n            <i class="far fa-check-square checkAllIcon" (click)="selectAll()"></i>\n\n            <!--<button ion-button color="secondary" round (click)="selectAll()">סימון כל הפריטים</button>-->\n\n        </div>\n\n        <div class="buttonsBarLeft">\n\n            <div class="btn-group btn-group-justified">\n\n                <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? \'ActiveBt\' : \'btnGr\']" (click)="ToggleCheckBox(1)">החזרת פריטים</a>\n\n                <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? \'ActiveBt\' : \'btnGr\']" (click)="ToggleCheckBox(0)">שליפת פריטים</a>\n\n            </div>\n\n        </div>\n\n        <!-- <div [ngClass]="[!selectedReturnItems || !selectedPullItems ? \'buttonsBarLeft\' : \'buttonsBarLeft\']">\n\n            <button ion-button [ngClass]="[selectedReturnItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>\n\n        </div>\n\n        <div [ngClass]="[!selectedReturnItems || !selectedPullItems  ? \'buttonsBarRight\' : \'buttonsBarRight\']">\n\n            <button ion-button  [ngClass]="[selectedPullItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>\n\n        </div> -->\n\n    </div>\n\n    <hr>\n\n\n\n    <div class="products">\n\n        <div *ngFor="let item of productsArray let i=index" class="productItem">\n\n            <div *ngIf="!item.STATUS || item.STATUS == 0">\n\n                <div class="row" style="direction:rtl">\n\n                    <div *ngIf="toggleCheckBox"  class="col-1 toggleCheckBox">\n\n                        <ion-checkbox [(ngModel)]="item.choosen"  (click)="selectProduct()" ></ion-checkbox>\n\n                    </div>\n\n                    <div class="col-2">\n\n                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="w-100 productImage"/>\n\n                        <img *ngIf="getImageLen(i) < 2" src="images/add.png" class="addIcon" (click)="presentActionSheet(item)" />\n\n        \n\n                    </div>\n\n                    <div class="col-8" *ngIf="!toggleCheckBox">\n\n                        <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>\n\n                        <div class="productText">\n\n                            <div> {{item.PARTDES}}</div>\n\n                            <div> {{item.FREE1}}</div>\n\n                            <div *ngIf = "item.PRIT_FREE" ><span style="font-weight: bold">הערות : </span>{{item.PRIT_FREE}}</div>\n\n                        </div>\n\n                    </div>\n\n                    <div class="col-6" *ngIf="toggleCheckBox">\n\n                        <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>\n\n                        <div class="productText">\n\n                            <div> {{item.PARTDES}}</div>\n\n                            <div> {{item.FREE1}}</div>\n\n                            <div>  {{item.PRIT_FREE}}</div>\n\n                        </div>\n\n                    </div>\n\n                    <div class="col-2">\n\n                        <div class="productEdit" (click)="changeStatus(i,1)">\n\n                            <img src="images/edit.png" style="width:100%" />\n\n                        </div>\n\n                    </div>\n\n                </div>\n\n            </div>\n\n\n\n            <div *ngIf="item.STATUS == 1">\n\n                <div class="row" style="direction:rtl">\n\n                    <div *ngIf="toggleCheckBox"  class="col-1 toggleCheckBox">\n\n                        <ion-checkbox [(ngModel)]="item.choosen"  (click)="selectProduct(item)" ></ion-checkbox>\n\n                    </div>\n\n                    <div class="col-2">\n\n                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="w-100 productImage"/>\n\n                    </div>\n\n                    <div class="col-8" *ngIf="!toggleCheckBox">\n\n                        <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>\n\n                        <div class="productText">\n\n                            <div> {{item.PARTDES}}</div>\n\n                            <div> {{item.FREE1}}</div>\n\n                            <div class="detailsEdit"> הערות :</div>\n\n                            <textarea rows="1" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>\n\n                        </div>\n\n                    </div>\n\n                    <div class="col-6" *ngIf="toggleCheckBox">\n\n                        <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>\n\n                        <div class="productText">\n\n                            <div> {{item.PARTDES}}</div>\n\n                            <div> {{item.FREE1}}</div>\n\n                            <div class="detailsEdit"> הערות :</div>\n\n                            <textarea rows="1" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>\n\n                        </div>\n\n                    </div>\n\n                    <div class="col-2">\n\n                        <div class="productEdit" (click)="changeStatus(i,1)">\n\n                            <img src="images/edit.png" style="width:100%" />\n\n                        </div>\n\n                    </div>\n\n                </div>\n\n                <button ion-button class="editButton" (click)="changeStatus(i,0)"> סיים עריכה</button>\n\n            </div>\n\n            <div *ngIf="ImagesArray" style="overflow: hidden">\n\n                    <div *ngFor="let img of ImagesArray[i]" >\n\n                            <img src="{{imgURL}}{{img.url}}" (click)="fullscreenImage(img)" class="imgThumb"/>\n\n                    </div>\n\n            </div>\n\n            <hr>\n\n            <!--<div *ngIf="!item.STATUS || item.STATUS == 0">-->\n\n                <!--<div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>-->\n\n\n\n\n\n                <!--<div class="productInfo" >-->\n\n                    <!--<ion-checkbox class = "productCheck" [(ngModel)]="item.choosen" *ngIf="toggleCheckBox"  (click)="selectProduct(item)" ></ion-checkbox>-->\n\n                    <!--<div class="productImage">-->\n\n                        <!--<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />-->\n\n                        <!--&lt;!&ndash;<img src="images/avatar.png"  style="width: 100%" />&ndash;&gt;-->\n\n                    <!--</div>-->\n\n                    <!--<div class="productText">-->\n\n                        <!--<div> {{item.PARTDES}} </div>-->\n\n                        <!--<div> {{item.FREE1}}</div>-->\n\n                        <!--<div class="editable"> {{item.PRIT_FREE}}</div>-->\n\n                    <!--</div>-->\n\n                    <!--<div class="productEdit" (click)="changeStatus(i,1)">-->\n\n                        <!--<img src="images/edit.png" style="width: 100%" />-->\n\n                    <!--</div>-->\n\n                <!--</div>-->\n\n            <!--</div>-->\n\n            <!--<div *ngIf="item.STATUS == 1">-->\n\n                <!--<div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>-->\n\n                <!--<div class="productInfo" >-->\n\n                    <!--<div class="productImage">-->\n\n                        <!--&lt;!&ndash;<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />&ndash;&gt;-->\n\n                        <!--<img src="images/avatar.png"  style="width: 100%" />                    </div>-->\n\n                    <!--<div class="productText">-->\n\n                        <!--<div> {{item.PARTDES}}</div>-->\n\n                        <!--<div> {{item.FREE1}}</div>-->\n\n                    <!--</div>-->\n\n\n\n                    <!--<textarea rows="4" cols="50" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>-->\n\n                    <!--<button ion-button class="editButton" (click)="changeStatus(i,0)"> סיים עריכה</button>-->\n\n                <!--</div>-->\n\n                <!--&lt;!&ndash; <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>-->\n\n                <!--<div>6666767676767676767</div> &ndash;&gt;-->\n\n            <!--</div>-->\n\n            <!--<hr>-->\n\n        </div>\n\n    </div>\n\n</ion-content>\n\n\n\n<ion-footer *ngIf="showSelectedFooter">\n\n        <div class="buttons">\n\n            <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>\n\n            <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>\n\n        </div>\n\n</ion-footer>\n\n\n\n\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\products\products.html"*/,
+            selector: 'page-products',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\products\products.html"*/'<!--\n\n  Generated template for the ProductsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n        <header1 HeaderTitle="הפריטים שלי" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="mainContent">\n\n    <!--<div class="buttonsBar">-->\n\n        <!--<div class="buttonsBarLeft">-->\n\n            <!--<button ion-button [ngClass]="[selectedReturnItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>-->\n\n        <!--</div>-->\n\n        <!--<div class="buttonsBarRight">-->\n\n            <!--<button ion-button  [ngClass]="[selectedPullItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>-->\n\n        <!--</div>-->\n\n    <!--</div>-->\n\n\n\n    <!--<div align="center">-->\n\n        <!--<button ion-button color="secondary" round *ngIf="selectedPullItems || selectedReturnItems" (click)="selectAll()">סימון כל הפריטים</button>-->\n\n    <!--</div>-->\n\n\n\n    <div class="buttonsBar">\n\n        <div class="buttonsBarAll" *ngIf="selectedPullItems || selectedReturnItems" >\n\n            <i class="far fa-check-square checkAllIcon" (click)="selectAll()"></i>\n\n            <!--<button ion-button color="secondary" round (click)="selectAll()">סימון כל הפריטים</button>-->\n\n        </div>\n\n        <div class="buttonsBarLeft">\n\n            <div class="btn-group btn-group-justified">\n\n                <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? \'ActiveBt\' : \'btnGr\']" (click)="ToggleCheckBox(1)">החזרת פריטים</a>\n\n                <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? \'ActiveBt\' : \'btnGr\']" (click)="ToggleCheckBox(0)">שליפת פריטים</a>\n\n            </div>\n\n        </div>\n\n        <!-- <div [ngClass]="[!selectedReturnItems || !selectedPullItems ? \'buttonsBarLeft\' : \'buttonsBarLeft\']">\n\n            <button ion-button [ngClass]="[selectedReturnItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>\n\n        </div>\n\n        <div [ngClass]="[!selectedReturnItems || !selectedPullItems  ? \'buttonsBarRight\' : \'buttonsBarRight\']">\n\n            <button ion-button  [ngClass]="[selectedPullItems ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>\n\n        </div> -->\n\n    </div>\n\n    <hr>\n\n\n\n    <div class="products">\n\n        <div *ngFor="let item of productsArray let i=index" class="productItem">\n\n            <div *ngIf="!item.STATUS || item.STATUS == 0">\n\n                <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>\n\n                <div class="row" style="direction:rtl">\n\n                    <div *ngIf="toggleCheckBox"  class="col-1 toggleCheckBox">\n\n                        <ion-checkbox [(ngModel)]="item.choosen"  (click)="selectProduct()" ></ion-checkbox>\n\n                    </div>\n\n                    <div class="col-3">\n\n                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="productImage"/>\n\n                    </div>\n\n                    <div class="col-7" *ngIf="!toggleCheckBox">\n\n                        <div class="productText">\n\n                            <div> {{item.PARTDES}}</div>\n\n                            <div> {{item.FREE1}}</div>\n\n                            <div *ngIf = "item.PRIT_FREE" ><span style="font-weight: bold">הערות : </span>{{item.PRIT_FREE}}</div>\n\n                        </div>\n\n                    </div>\n\n                    <div class="col-6" *ngIf="toggleCheckBox">\n\n                        <div class="productText">\n\n                            <div> {{item.PARTDES}}</div>\n\n                            <div> {{item.FREE1}}</div>\n\n                            <div>  {{item.PRIT_FREE}}</div>\n\n                        </div>\n\n                    </div>\n\n                    <div class="col-1">\n\n                        <div class="productEdit" (click)="changeStatus(i,1)">\n\n                            <ion-icon name="more" class="moreIcon"></ion-icon>\n\n                        </div>\n\n                    </div>\n\n                </div>\n\n            </div>\n\n\n\n            <div *ngIf="item.STATUS == 1">\n\n                <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>\n\n                <div class="row" style="direction:rtl">\n\n                    <div *ngIf="toggleCheckBox"  class="col-1 toggleCheckBox">\n\n                        <ion-checkbox [(ngModel)]="item.choosen"  (click)="selectProduct(item)" ></ion-checkbox>\n\n                    </div>\n\n                    <div class="col-3">\n\n                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="w-100 productImage"/>\n\n                        <div *ngIf="ImagesArray">\n\n                                <div *ngFor="let img of ImagesArray[i]" >\n\n                                        <img src="{{imgURL}}{{img.url}}" (click)="fullscreenImage(img)" class="imgThumb"/>\n\n                                </div>\n\n                        </div>\n\n                        <div class="addImg" *ngIf="getImageLen(i) < 2" (click)="presentActionSheet(item)">\n\n                                <ion-icon name="add" class="addIcon"></ion-icon>\n\n                            </div>\n\n                            <!-- <img src="images/add.png" class="addIcon"  /> -->\n\n                        </div>\n\n                    <div class="col-7" *ngIf="!toggleCheckBox">\n\n                        <div class="productText1">\n\n                            <div> {{item.PARTDES}}</div>\n\n                            <div> {{item.FREE1}}</div>\n\n                            <div class="detailsEdit"> הערות :</div>\n\n                            <textarea rows="2" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>\n\n                        </div>\n\n                    </div>\n\n                    <div class="col-6" *ngIf="toggleCheckBox">\n\n                        <div class="productText1">\n\n                            <div> {{item.PARTDES}}</div>\n\n                            <div> {{item.FREE1}}</div>\n\n                            <div class="detailsEdit"> הערות :</div>\n\n                            <textarea rows="1" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>\n\n                        </div>\n\n                    </div>\n\n                    <div class="col-1">\n\n                        <div class="productEdit" (click)="changeStatus(i,1)">\n\n                            <img src="images/edit.png" style="width:100%" />\n\n                        </div>\n\n                    </div>\n\n                </div>\n\n                <button ion-button class="editButton" (click)="changeStatus(i,0)"> סיים עריכה</button>\n\n            </div>\n\n            <hr>\n\n            <!--<div *ngIf="!item.STATUS || item.STATUS == 0">-->\n\n                <!--<div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>-->\n\n\n\n\n\n                <!--<div class="productInfo" >-->\n\n                    <!--<ion-checkbox class = "productCheck" [(ngModel)]="item.choosen" *ngIf="toggleCheckBox"  (click)="selectProduct(item)" ></ion-checkbox>-->\n\n                    <!--<div class="productImage">-->\n\n                        <!--<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />-->\n\n                        <!--&lt;!&ndash;<img src="images/avatar.png"  style="width: 100%" />&ndash;&gt;-->\n\n                    <!--</div>-->\n\n                    <!--<div class="productText">-->\n\n                        <!--<div> {{item.PARTDES}} </div>-->\n\n                        <!--<div> {{item.FREE1}}</div>-->\n\n                        <!--<div class="editable"> {{item.PRIT_FREE}}</div>-->\n\n                    <!--</div>-->\n\n                    <!--<div class="productEdit" (click)="changeStatus(i,1)">-->\n\n                        <!--<img src="images/edit.png" style="width: 100%" />-->\n\n                    <!--</div>-->\n\n                <!--</div>-->\n\n            <!--</div>-->\n\n            <!--<div *ngIf="item.STATUS == 1">-->\n\n                <!--<div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>-->\n\n                <!--<div class="productInfo" >-->\n\n                    <!--<div class="productImage">-->\n\n                        <!--&lt;!&ndash;<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />&ndash;&gt;-->\n\n                        <!--<img src="images/avatar.png"  style="width: 100%" />                    </div>-->\n\n                    <!--<div class="productText">-->\n\n                        <!--<div> {{item.PARTDES}}</div>-->\n\n                        <!--<div> {{item.FREE1}}</div>-->\n\n                    <!--</div>-->\n\n\n\n                    <!--<textarea rows="4" cols="50" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>-->\n\n                    <!--<button ion-button class="editButton" (click)="changeStatus(i,0)"> סיים עריכה</button>-->\n\n                <!--</div>-->\n\n                <!--&lt;!&ndash; <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>-->\n\n                <!--<div>6666767676767676767</div> &ndash;&gt;-->\n\n            <!--</div>-->\n\n            <!--<hr>-->\n\n        </div>\n\n    </div>\n\n</ion-content>\n\n\n\n<ion-footer *ngIf="showSelectedFooter">\n\n        <div class="buttons">\n\n            <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>\n\n            <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>\n\n        </div>\n\n</ion-footer>\n\n\n\n\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\products\products.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["ToastController"], __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__["a" /* Transfer */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["Platform"], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__["a" /* File */], __WEBPACK_IMPORTED_MODULE_1__ionic_native_file_path__["a" /* FilePath */], __WEBPACK_IMPORTED_MODULE_0__ionic_native_camera__["a" /* Camera */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["ActionSheetController"], __WEBPACK_IMPORTED_MODULE_4__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_5__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["ModalController"], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["AlertController"], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["LoadingController"]])
     ], ProductsPage);
@@ -3253,13 +3338,13 @@ var ProductsPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__daypickermodal_daypickermodal__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__daypickermodal_daypickermodal__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3509,7 +3594,7 @@ var RoomsPage = /** @class */ (function () {
     };
     RoomsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-rooms',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\rooms\rooms.html"*/'<!--\n\n  Generated template for the RoomsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <header></header>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <div align="center">\n\n        <img src="images/home/ic1.png" class="w-25" />\n\n    </div>\n\n  <div class="buttonsBar">\n\n    <button ion-button full style="background-color: #7f7f7f"  (click)="ToggleCheckBox(1)">הודעה על פינוי</button>\n\n  </div>\n\n\n\n  <div class="products mt-3">\n\n    <div *ngFor="let item of roomsArray let i=index" class="productItem">\n\n        \n\n        <div class="row RTL">\n\n            <div *ngIf="toggleCheckBox" class="productEdit col-2">\n\n                <ion-checkbox [(ngModel)]="item.choosen"   (click)="selectProduct(item)" ></ion-checkbox>\n\n            </div>\n\n            <div [ngClass]="[!toggleCheckBox ? \'col-9 infoRow\' : \'col-9 infoRow1\']" >\n\n                <div class="productNumber">  יחידת אחסון: {{item.PARTNAME}}</div>\n\n                <div class="row RTL">\n\n                    <div class="col-6 RTL"> סניף: {{item.PRIT_SPECDES1}}</div>\n\n                    <div class="col-6 RTL">מבנה: {{item.PRIT_SPECDES2}}</div>\n\n                </div>\n\n                <div class="row RTL">\n\n                    <div class="col-6 RTL">אגף: {{item.PRIT_SPECDES3}}</div>\n\n                    <div class="col-6 RTL">כמות קוב: {{item.AVI_KUB_QUANT}}</div>\n\n                </div>\n\n                <div class="row RTL">\n\n                    <div class="col-12 RTL mt-1">תאריך כניסה: {{item.DUEDATE | date:\'dd/MM/yyyy\'}}</div>\n\n                </div>\n\n                <div class="row RTL">\n\n                    <div class="col-12 RTL">מחיר כולל מע"מ ל-30 יום: {{mathRound(item.PRIT_VATPRICE)}}</div>\n\n                </div>\n\n            </div>\n\n        </div>\n\n      <hr>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n\n\n<!--<ion-footer no-border class="topBorder" *ngIf="!showSelectedFooter">-->\n\n  <!--<button ion-button full style="background-color: #6eb43f" (click)="ClearRooms()">פינוי חדרים כללי</button>-->\n\n<!--</ion-footer>-->\n\n\n\n\n\n<ion-footer *ngIf="showSelectedFooter">\n\n  <div class="buttons">\n\n    <!--<button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>-->\n\n    <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>\n\n  </div>\n\n</ion-footer>\n\n\n\n\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\rooms\rooms.html"*/,
+            selector: 'page-rooms',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\rooms\rooms.html"*/'<!--\n\n  Generated template for the RoomsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  <header1 HeaderTitle="פרטי איחסון" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding style="background-color: #f8f8f8">\n\n    <div align="center" style="margin-top: 0px;">\n\n        <img src="images/home/ic1.jpg" class="w-25" />\n\n    </div>\n\n \n\n\n\n  <div class="products mt-3">\n\n    <div *ngFor="let item of roomsArray let i=index" class="productItem">\n\n        \n\n        <div class="row RTL">\n\n            <div *ngIf="toggleCheckBox" class="productEdit col-2">\n\n                <ion-checkbox [(ngModel)]="item.choosen"   (click)="selectProduct(item)" ></ion-checkbox>\n\n            </div>\n\n            <div [ngClass]="[!toggleCheckBox ? \'col-9 infoRow\' : \'col-9 infoRow1\']" >\n\n                <div class="productNumber">  יחידת אחסון: {{item.PARTNAME}}</div>\n\n                <div class="row RTL">\n\n                    <div class="col-6 RTL"> סניף: {{item.PRIT_SPECDES1}}</div>\n\n                    <div class="col-6 RTL">מבנה: {{item.PRIT_SPECDES2}}</div>\n\n                </div>\n\n                <div class="row RTL">\n\n                    <div class="col-6 RTL">אגף: {{item.PRIT_SPECDES3}}</div>\n\n                    <div class="col-6 RTL">כמות קוב: {{item.AVI_KUB_QUANT}}</div>\n\n                </div>\n\n                <div class="row RTL">\n\n                    <div class="col-12 RTL mt-1">תאריך כניסה: {{item.DUEDATE | date:\'dd/MM/yyyy\'}}</div>\n\n                </div>\n\n                <div class="row RTL">\n\n                    <div class="col-12 RTL">מחיר כולל מע"מ ל-30 יום: {{mathRound(item.PRIT_VATPRICE)}}</div>\n\n                </div>\n\n            </div>\n\n        </div>\n\n      <hr>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n\n\n<!--<ion-footer no-border class="topBorder" *ngIf="!showSelectedFooter">-->\n\n  <!--<button ion-button full style="background-color: #6eb43f" (click)="ClearRooms()">פינוי חדרים כללי</button>-->\n\n<!--</ion-footer>-->\n\n\n\n\n\n<ion-footer no-border >\n\n  <div class="buttons" *ngIf="showSelectedFooter">\n\n    <!--<button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>-->\n\n    <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>\n\n  </div>\n\n\n\n  <div class="buttonsBar" *ngIf="!showSelectedFooter">\n\n    <button ion-button full style="background-color: #7f7f7f"  (click)="ToggleCheckBox(1)">הודעה על פינוי</button>\n\n  </div>\n\n</ion-footer>\n\n\n\n\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\rooms\rooms.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_2__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"], __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"]])
     ], RoomsPage);
@@ -3525,10 +3610,10 @@ var RoomsPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentinfoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(89);
@@ -3654,7 +3739,7 @@ var PaymentinfoPage = /** @class */ (function () {
     };
     PaymentinfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-paymentinfo',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\paymentinfo\paymentinfo.html"*/'<!--\n\n  Generated template for the PaymentinfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <header></header>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <div align="center">\n\n        <img src="images/home/ic4.png" class="w-25" />\n\n    </div>\n\n  <div>\n\n    <div class="fullRow">\n\n      <div class="nonEditRow"  >\n\n        <div class="rowRight">\n\n          מספר כרטיס אשראי: {{jsonResponse.PAYACCOUNT}}\n\n        </div>\n\n      </div>\n\n    </div>\n\n\n\n      <div class="fullRow">\n\n        <div class="nonEditRow"  >\n\n          <div class="rowRight">\n\n         תוקף: {{jsonResponse.VALIDMONTH}}\n\n          </div>\n\n        </div>\n\n    </div>\n\n\n\n    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" (click)="saveCard()">החלף כרטיס</button>\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\paymentinfo\paymentinfo.html"*/,
+            selector: 'page-paymentinfo',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\paymentinfo\paymentinfo.html"*/'<!--\n\n  Generated template for the PaymentinfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <header1 HeaderTitle="עדכון פרטי כרטיסי אשראי" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n    <div align="center">\n\n        <img src="images/home/ic4_1.png" class="w-25" />\n\n        <div class="iconInfoText">בוא תעדכן את פרטי האשראי שלך</div>\n\n    </div>\n\n  <div>\n\n      <div class="InfoText">כרטיס אשראי</div>\n\n    <div class="fullRow">\n\n      <div class="nonEditRow"  >\n\n        <div class="rowRight">\n\n          מספר כרטיס אשראי: {{jsonResponse.PAYACCOUNT}}\n\n        </div>\n\n      </div>\n\n    </div>\n\n\n\n      <div class="fullRow">\n\n        <div class="nonEditRow"  >\n\n          <div class="rowRight">\n\n         תוקף: {{jsonResponse.VALIDMONTH}}\n\n          </div>\n\n        </div>\n\n    </div>\n\n\n\n    <button ion-button full style="background-color: #7f7f7f; margin-top:25px;" (click)="saveCard()">החלף כרטיס</button>\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\paymentinfo\paymentinfo.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_2__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ToastController"]])
     ], PaymentinfoPage);
@@ -3670,11 +3755,11 @@ var PaymentinfoPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymenthistoryPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3764,7 +3849,7 @@ var PaymenthistoryPage = /** @class */ (function () {
     };
     PaymenthistoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-paymenthistory',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\paymenthistory\paymenthistory.html"*/'<ion-header>\n\n  <header></header>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <div class="btn-group btn-group-justified">\n\n                <a href="#" class="btn"  [ngClass]="[FilterType == 2 ? \'ActiveBt\' : \'btnGr\']" (click)="ChangeFilter(2)">חשבוניות</a>\n\n                <a href="#" class="btn"  [ngClass]="[FilterType == 1 ? \'ActiveBt\' : \'btnGr\']" (click)="ChangeFilter(1)">קבלות</a>\n\n                <a href="#" class="btn"  [ngClass]="[FilterType == 0 ? \'ActiveBt\' : \'btnGr\']" (click)="ChangeFilter(0)">כל הפעולות</a>\n\n    </div>\n\n    <!-- <div class="buttonsBar">\n\n        <div class="buttonsBarLeft">\n\n            <button ion-button [ngClass]="[FilterType == 0? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(0)"> {{FilterType}}כל הפעולות</button>\n\n        </div>\n\n        <div class="buttonsBarRight">\n\n            <button ion-button  [ngClass]="[FilterType == 1 ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(1)"> קבלות</button>\n\n        </div>\n\n\n\n        <div class="buttonsBarRight">\n\n            <button ion-button  [ngClass]="[FilterType == 2 ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(2)">  חשבוניות</button>\n\n        </div>\n\n    </div> -->\n\n\n\n  <div class="products">\n\n    <div *ngFor="let item of paymentHistoryArray let i=index" class="productItem">\n\n        <div class="row">\n\n            <div class="col-3 invoicIcon" >\n\n                <div *ngIf="item.KLINE == 1" (click)="showRecipet(item.TODOREF)">\n\n                        <i class="far fa-file-alt mIcon"></i>\n\n                        <p>לפתיחת החשבונית</p>\n\n                </div>\n\n            </div>\n\n            <div class="col-9" [ngClass]="[item.KLINE == 1 ? \'col-9\' : \'col12\']">\n\n                    <div class="productNumber">{{item.DETAILS}} </div>\n\n                    <div class="productInfo" >\n\n                        <div class="productText">\n\n                            <div> תאריך: {{item.BALDATE | date:\'dd/MM/yyyy\'}}</div>\n\n                            <div style="direction: rtl;" *ngIf="item.KLINE == 2"> מספר קבלה: {{item.TODOREF}}</div>\n\n                            <div style="direction: rtl;" *ngIf="item.KLINE == 1"> מספר חשבונית: {{item.TODOREF}}</div>\n\n                \n\n                            <div style="direction: rtl;" *ngIf="item.KLINE == 2"> סכום הקבלה: {{item.CREDIT}} &#8362;</div>\n\n                            <div style="direction: rtl;" *ngIf="item.KLINE == 1"> סכום החשבונית: {{item.DEBIT}} &#8362;</div>\n\n                        </div>\n\n                    </div>\n\n                    <!-- <button ion-button full style="background-color: #6eb43f"   *ngIf="item.KLINE == 1" (click)="showRecipet(item.TODOREF)"> קישור לחשבונית</button> -->\n\n            </div>\n\n        </div>\n\n        <hr>\n\n    </div>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-footer >\n\n    <div class="buttons">\n\n        <button ion-button full style="background-color: #7f7f7f; margin-top:5px; direction: rtl" >סה"כ יתרה: {{BALANCE}} &#8362;</button>\n\n    </div>\n\n</ion-footer>'/*ion-inline-end:"G:\gitlab\avia\src\pages\paymenthistory\paymenthistory.html"*/,
+            selector: 'page-paymenthistory',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\paymenthistory\paymenthistory.html"*/'<ion-header>\n\n        <header1 HeaderTitle="פירוט חיובים" type="0"></header1>\n\n</ion-header>\n\n\n\n<ion-content padding class="mainContent">\n\n    <div class="btn-group btn-group-justified">\n\n                <a href="#" class="btn"  [ngClass]="[FilterType == 2 ? \'ActiveBt\' : \'btnGr\']" (click)="ChangeFilter(2)">חשבוניות</a>\n\n                <a href="#" class="btn"  [ngClass]="[FilterType == 1 ? \'ActiveBt\' : \'btnGr\']" (click)="ChangeFilter(1)">קבלות</a>\n\n                <a href="#" class="btn"  [ngClass]="[FilterType == 0 ? \'ActiveBt\' : \'btnGr\']" (click)="ChangeFilter(0)">כל הפעולות</a>\n\n    </div>\n\n    <!-- <div class="buttonsBar">\n\n        <div class="buttonsBarLeft">\n\n            <button ion-button [ngClass]="[FilterType == 0? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(0)"> {{FilterType}}כל הפעולות</button>\n\n        </div>\n\n        <div class="buttonsBarRight">\n\n            <button ion-button  [ngClass]="[FilterType == 1 ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(1)"> קבלות</button>\n\n        </div>\n\n\n\n        <div class="buttonsBarRight">\n\n            <button ion-button  [ngClass]="[FilterType == 2 ? \'buttonsBarButton2\' : \'buttonsBarButton\']" (click)="ChangeFilter(2)">  חשבוניות</button>\n\n        </div>\n\n    </div> -->\n\n\n\n  <div class="products">\n\n    <div *ngFor="let item of paymentHistoryArray let i=index" class="productItem">\n\n        <div class="row">\n\n            <div class="col-3 invoicIcon" >\n\n                <div *ngIf="item.KLINE == 1" (click)="showRecipet(item.TODOREF)">\n\n                        <i class="far fa-file-alt mIcon"></i>\n\n                        <p>לפתיחת החשבונית</p>\n\n                </div>\n\n            </div>\n\n            <div class="col-9" [ngClass]="[item.KLINE == 1 ? \'col-9\' : \'col12\']">\n\n                    <div class="productNumber">{{item.DETAILS}} </div>\n\n                    <div class="productInfo" >\n\n                        <div class="productText">\n\n                            <div> תאריך: {{item.BALDATE | date:\'dd/MM/yyyy\'}}</div>\n\n                            <div style="direction: rtl;" *ngIf="item.KLINE == 2"> מספר קבלה: {{item.TODOREF}}</div>\n\n                            <div style="direction: rtl;" *ngIf="item.KLINE == 1"> מספר חשבונית: {{item.TODOREF}}</div>\n\n                \n\n                            <div style="direction: rtl;" *ngIf="item.KLINE == 2"> סכום הקבלה: {{item.CREDIT}} &#8362;</div>\n\n                            <div style="direction: rtl;" *ngIf="item.KLINE == 1"> סכום החשבונית: {{item.DEBIT}} &#8362;</div>\n\n                        </div>\n\n                    </div>\n\n                    <!-- <button ion-button full style="background-color: #6eb43f"   *ngIf="item.KLINE == 1" (click)="showRecipet(item.TODOREF)"> קישור לחשבונית</button> -->\n\n            </div>\n\n        </div>\n\n        <hr>\n\n    </div>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-footer >\n\n    <div class="buttons">\n\n        <button ion-button full style="background-color: #7f7f7f; margin-top:5px; direction: rtl; font-size: 17px;" >סה"כ יתרה: {{BALANCE}} &#8362;</button>\n\n    </div>\n\n</ion-footer>'/*ion-inline-end:"G:\gitlab\avia\src\pages\paymenthistory\paymenthistory.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_2__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */]])
     ], PaymenthistoryPage);

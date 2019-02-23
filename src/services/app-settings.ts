@@ -3,7 +3,7 @@ export const AppSettings = Object.freeze({
     "IMAGE_URL":'http://www.tapper.org.il/avia/laravel/storage/app/public/',
     "FACEBOOKID":'1759132254144414',
     "TOAST": {
-        "duration": 1000,
+        "duration": 3000,
         "position": "buttom"
     }
 });

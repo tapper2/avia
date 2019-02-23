@@ -17,6 +17,8 @@ export class EditRowComponent implements OnInit {
     @Input() Title:string;
     @Input() FieldType:string;
     @Input() Editable:string;
+    @Input() From:string = "";
+    
     //public isChanged : boolean = false;
     public isOpen = false;
     

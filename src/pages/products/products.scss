@@ -126,9 +126,50 @@ page-products {
     margin-top: 15px;
   }
 
+  .selectedAll
+  {
+    position: relative;
+    width: 92%;
+    margin: auto;
+    top: 5px !important;
+  }
+
+  .selectedAllEmpty
+  {
+    border:1px solid #6eb43f;
+    font-weight: bold;
+    font-size: 15px;
+
+    height: 30px;
+    font-size: 17px;
+    padding-top: 1px;
+    border-color: #6eb43f;
+    background-color: #f8f8f8;
+    color:#6eb43f;
+  }
+
+  .selectedAllFull
+  {
+    border:1px solid #6eb43f;
+    font-weight: bold;
+    font-size: 15px;
+
+    height: 30px;
+    font-size: 17px;
+    padding-top: 1px;
+    border-color: #6eb43f;
+    background-color: #6eb43f;
+    color:white;
+  }
+
+  .mainHR
+  {
+    margin-top: 10px !important;
+  }
+
   .buttonsBarLeft
   {
-    width: 82%;
+    width: 92%;
     float: left;
     margin-left: 4%;
   }

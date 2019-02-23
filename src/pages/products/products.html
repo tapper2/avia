@@ -24,24 +24,28 @@
     <!--</div>-->
 
     <div class="buttonsBar">
-        <div class="buttonsBarAll" *ngIf="selectedPullItems || selectedReturnItems" >
+        <!-- <div class="buttonsBarAll" *ngIf="selectedPullItems || selectedReturnItems" >
             <i class="far fa-check-square checkAllIcon" (click)="selectAll()"></i>
-            <!--<button ion-button color="secondary" round (click)="selectAll()">סימון כל הפריטים</button>-->
-        </div>
+            <!--<button ion-button color="secondary" round (click)="selectAll()">סימון כל הפריטים</button>
+        </div> -->
         <div class="buttonsBarLeft">
             <div class="btn-group btn-group-justified">
                 <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? 'ActiveBt' : 'btnGr']" (click)="ToggleCheckBox(1)">החזרת פריטים</a>
                 <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? 'ActiveBt' : 'btnGr']" (click)="ToggleCheckBox(0)">שליפת פריטים</a>
             </div>
         </div>
-        <!-- <div [ngClass]="[!selectedReturnItems || !selectedPullItems ? 'buttonsBarLeft' : 'buttonsBarLeft']">
+        <!--style="background-color: #6eb43f"  <div [ngClass]="[!selectedReturnItems || !selectedPullItems ? 'buttonsBarLeft' : 'buttonsBarLeft']">
             <button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>
         </div>
         <div [ngClass]="[!selectedReturnItems || !selectedPullItems  ? 'buttonsBarRight' : 'buttonsBarRight']">
             <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>
         </div> -->
     </div>
-    <hr>
+    
+    <div  class="selectedAll" *ngIf="selectedPullItems || selectedReturnItems">
+        <button ion-button full (click)="selectAll()" [ngClass]="[selectedAll ? 'selectedAllFull' : 'selectedAllEmpty']" >בחר הכל</button>
+    </div>
+    <hr class="mainHR">
 
     <div class="products">
         <div *ngFor="let item of productsArray let i=index" class="productItem">

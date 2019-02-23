@@ -29267,9 +29267,9 @@ header1 .headLogo {
   float: left;
   width: 64% !important;
   margin: auto;
-  margin-top: 22px !important;
-  font-size: 18px;
-  color: #9f9f9f;
+  margin-top: 18px !important;
+  font-size: 22px;
+  color: #333;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -29326,6 +29326,7 @@ page-addcontact .nonEditRow {
   border-bottom: 2px solid #b1bdbe;
   padding: 30px 5px;
   color: #8b9596;
+  line-height: 0.7;
 }
 
 page-addcontact .MainAvatar {
@@ -29470,6 +29471,11 @@ page-contacts .phoneImg {
 
 page-contacts .row {
   vertical-align: middle;
+}
+
+page-contacts .addIcon {
+  margin-right: 5px;
+  padding: 5px;
 }
 
 page-daypickermodal .mainHeader {
@@ -29955,8 +29961,43 @@ page-products .buttonsBar {
   margin-top: 15px;
 }
 
+page-products .selectedAll {
+  position: relative;
+  width: 92%;
+  margin: auto;
+  top: 5px !important;
+}
+
+page-products .selectedAllEmpty {
+  border: 1px solid #6eb43f;
+  font-weight: bold;
+  font-size: 15px;
+  height: 30px;
+  font-size: 17px;
+  padding-top: 1px;
+  border-color: #6eb43f;
+  background-color: #f8f8f8;
+  color: #6eb43f;
+}
+
+page-products .selectedAllFull {
+  border: 1px solid #6eb43f;
+  font-weight: bold;
+  font-size: 15px;
+  height: 30px;
+  font-size: 17px;
+  padding-top: 1px;
+  border-color: #6eb43f;
+  background-color: #6eb43f;
+  color: white;
+}
+
+page-products .mainHR {
+  margin-top: 10px !important;
+}
+
 page-products .buttonsBarLeft {
-  width: 82%;
+  width: 92%;
   float: left;
   margin-left: 4%;
 }
@@ -30330,13 +30371,13 @@ page-selectedproducts .greenButton {
   width: 100%;
   float: left;
   background-color: #6eb43f;
-  margin-top: 9px;
+  margin-top: -1px !important;
   font-size: 16px;
 }
 
 page-selectedproducts .redButton {
   width: 100%;
-  margin-top: -23px !important;
+  margin-top: 9px;
   font-size: 16px;
 }
 

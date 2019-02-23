@@ -75,8 +75,8 @@ export class PaymentinfoPage implements OnInit{
 
                 const AlertShow = this.toastCtrl.create({
                     message: 'פרטי אשראי עודכנו בהצלחה',
-                    showCloseButton: true,
-                    closeButtonText: 'אישור'
+                    // showCloseButton: true,
+                    // closeButtonText: 'אישור'
                 });
                 AlertShow.present();
                 this.getItem();
