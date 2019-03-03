@@ -30,7 +30,7 @@ export class LoginComponent {
     
     LogIn() {
         
-        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS?$filter=CUSTNAME eq '" + this.UserId + "' and PRIT_PASSWORD eq '" + this.Password + "'" ;
+        let URL = "/odata/Priority/tabula.ini/avia/CUSTOMERS?$filter=CUSTNAME eq '" + this.UserId + "' and PRIT_PASSWORD eq '" + this.Password + "'" ;
         
         this.server.GetData(URL).then((data: any) => {
             console.log("getLoginDetaild : ", data.json().value[0]);

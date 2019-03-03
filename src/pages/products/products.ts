@@ -229,8 +229,6 @@ export class ProductsPage  {
 
     selectAll()
     {
-        
-
         for (let i = 0; i < this.productsArray.length; i++) {
             if(this.selectedAll == false)
             {

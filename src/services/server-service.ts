@@ -14,6 +14,7 @@ export class ServerService {
 
     public homePageArray:any = [];
     public appsettingsArray:any = [];
+    public aviaServer = "https://aviatest.wee.co.il";
 
     constructor(public loadingCtrl: LoadingController,
                 private http: Http) {
@@ -139,7 +140,7 @@ export class ServerService {
             let body = new FormData();
             return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
                 //btoa('username' + ":" + 'password')
-                this.http.get(url,{ headers: new Headers(
+                this.http.get(this.aviaServer+''+url,{ headers: new Headers(
                     {
                         'Authorization' : "Basic YXBpOmFwSTEwNTY=",
                         'content-Type'  : 'application/json',

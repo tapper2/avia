@@ -715,7 +715,7 @@ webpackEmptyAsyncContext.id = 181;
 
 var map = {
 	"../pages/addcontact/addcontact.module": [
-		848,
+		845,
 		13
 	],
 	"../pages/article/article.module": [
@@ -727,11 +727,11 @@ var map = {
 		11
 	],
 	"../pages/contacts/contacts.module": [
-		847,
+		854,
 		10
 	],
 	"../pages/daypickermodal/daypickermodal.module": [
-		845,
+		847,
 		9
 	],
 	"../pages/insurance/insurance.module": [
@@ -739,11 +739,11 @@ var map = {
 		8
 	],
 	"../pages/login/login.module": [
-		850,
+		851,
 		7
 	],
 	"../pages/paymenthistory/paymenthistory.module": [
-		851,
+		848,
 		6
 	],
 	"../pages/paymentinfo/paymentinfo.module": [
@@ -759,7 +759,7 @@ var map = {
 		3
 	],
 	"../pages/roomscalendar/roomscalendar.module": [
-		852,
+		850,
 		2
 	],
 	"../pages/selectedproducts/selectedproducts.module": [
@@ -767,7 +767,7 @@ var map = {
 		1
 	],
 	"../pages/user-details/user-details.module": [
-		854,
+		852,
 		0
 	]
 };
@@ -818,6 +818,7 @@ var ServerService = /** @class */ (function () {
         this.http = http;
         this.homePageArray = [];
         this.appsettingsArray = [];
+        this.aviaServer = "https://aviatest.wee.co.il";
     }
     ServerService.prototype.getServerData = function (url) {
         var _this = this;
@@ -933,7 +934,7 @@ var ServerService = /** @class */ (function () {
             var body = new FormData();
             return new Promise(function (resolve, reject) {
                 //btoa('username' + ":" + 'password')
-                _this.http.get(url, { headers: new __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Headers */]({
+                _this.http.get(_this.aviaServer + '' + url, { headers: new __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Headers */]({
                         'Authorization': "Basic YXBpOmFwSTEwNTY=",
                         'content-Type': 'application/json',
                         'Accept': 'application/json'
@@ -987,10 +988,10 @@ var ServerService = /** @class */ (function () {
     };
     ServerService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
-            __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _b || Object])
     ], ServerService);
     return ServerService;
+    var _a, _b;
 }());
 
 //this._categories.next(categories);
@@ -1639,16 +1640,16 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/article/article.module#ArticlePageModule', name: 'ArticlePage', segment: 'article', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/daypickermodal/daypickermodal.module#DaypickermodalPageModule', name: 'DaypickermodalPage', segment: 'daypickermodal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/insurance/insurance.module#InsurancePageModule', name: 'InsurancePage', segment: 'insurance', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/addcontact/addcontact.module#AddcontactPageModule', name: 'AddcontactPage', segment: 'addcontact', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/paymentinfo/paymentinfo.module#PaymentinfoPageModule', name: 'PaymentinfoPage', segment: 'paymentinfo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/insurance/insurance.module#InsurancePageModule', name: 'InsurancePage', segment: 'insurance', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/daypickermodal/daypickermodal.module#DaypickermodalPageModule', name: 'DaypickermodalPage', segment: 'daypickermodal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/paymenthistory/paymenthistory.module#PaymenthistoryPageModule', name: 'PaymenthistoryPage', segment: 'paymenthistory', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/paymentinfo/paymentinfo.module#PaymentinfoPageModule', name: 'PaymentinfoPage', segment: 'paymentinfo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/roomscalendar/roomscalendar.module#RoomscalendarPageModule', name: 'RoomscalendarPage', segment: 'roomscalendar', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/selectedproducts/selectedproducts.module#SelectedproductsPageModule', name: 'SelectedproductsPage', segment: 'selectedproducts', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-details/user-details.module#UserDetailsPageModule', name: 'UserDetailsPage', segment: 'user-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/selectedproducts/selectedproducts.module#SelectedproductsPageModule', name: 'SelectedproductsPage', segment: 'selectedproducts', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rooms/rooms.module#RoomsPageModule', name: 'RoomsPage', segment: 'rooms', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/products/products.module#ProductsPageModule', name: 'ProductsPage', segment: 'products', priority: 'low', defaultHistory: [] }
                     ]
@@ -2141,7 +2142,7 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent.prototype.LogIn = function () {
         var _this = this;
-        var URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS?$filter=CUSTNAME eq '" + this.UserId + "' and PRIT_PASSWORD eq '" + this.Password + "'";
+        var URL = "/odata/Priority/tabula.ini/avia/CUSTOMERS?$filter=CUSTNAME eq '" + this.UserId + "' and PRIT_PASSWORD eq '" + this.Password + "'";
         this.server.GetData(URL).then(function (data) {
             console.log("getLoginDetaild : ", data.json().value[0]);
             if (data.json().value[0]) {
@@ -2159,9 +2160,10 @@ var LoginComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'login',template:/*ion-inline-start:"G:\gitlab\avia\src\components\login\login.html"*/'<!-- Generated template for the LoginComponent component -->\n\n\n\n    <div>\n\n        <div class="mainLogo">\n\n            <img src="images/logo.png" style="width: 100%">\n\n        </div>\n\n\n\n        <div class="loginForm">\n\n            <img class="loginImg" src="images/li1.png" >\n\n            <input type="text" class="inputText" value="" [(ngModel)]="UserId" placeholder="הכנס מייל "/>\n\n            <img class="loginImg1" src="images/li2.png" >\n\n            <input type="text" class="inputText MT10" value="" [(ngModel)]="Password"  placeholder="הכנס סיסמה "/>\n\n        </div>\n\n\n\n        <button ion-button color="dark" full class="MT20" (click)="LogIn()">כניסה</button>\n\n        <p >שכחת סיסמה ?</p>\n\n    </div>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\components\login\login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */]) === "function" && _c || Object])
     ], LoginComponent);
     return LoginComponent;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=login.js.map
@@ -3744,10 +3746,9 @@ var PaymentinfoPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-paymentinfo',template:/*ion-inline-start:"G:\gitlab\avia\src\pages\paymentinfo\paymentinfo.html"*/'<!--\n\n  Generated template for the PaymentinfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <header1 HeaderTitle="עדכון פרטי כרטיסי אשראי" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n    <div align="center">\n\n        <img src="images/home/ic4_1.png" class="w-25" />\n\n        <div class="iconInfoText">בוא תעדכן את פרטי האשראי שלך</div>\n\n    </div>\n\n  <div>\n\n      <div class="InfoText">כרטיס אשראי</div>\n\n    <div class="fullRow">\n\n      <div class="nonEditRow"  >\n\n        <div class="rowRight">\n\n          מספר כרטיס אשראי: {{jsonResponse.PAYACCOUNT}}\n\n        </div>\n\n      </div>\n\n    </div>\n\n\n\n      <div class="fullRow">\n\n        <div class="nonEditRow"  >\n\n          <div class="rowRight">\n\n         תוקף: {{jsonResponse.VALIDMONTH}}\n\n          </div>\n\n        </div>\n\n    </div>\n\n\n\n    <button ion-button full style="background-color: #7f7f7f; margin-top:25px;" (click)="saveCard()">החלף כרטיס</button>\n\n\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"G:\gitlab\avia\src\pages\paymentinfo\paymentinfo.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_server_service__["a" /* ServerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_server_service__["a" /* ServerService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__["a" /* InAppBrowser */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__["a" /* InAppBrowser */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ToastController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ToastController"]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_2__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_3__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ToastController"]])
     ], PaymentinfoPage);
     return PaymentinfoPage;
-    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=paymentinfo.js.map
