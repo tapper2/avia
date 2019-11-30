@@ -1,26 +1,26 @@
-<ion-menu [content]="content"  side="right">
+<ion-menu [content]="content" side="right">
   <ion-header>
     <ion-toolbar align="center">
-        <img src="images/logo.png" style="width:100px;" />
+      <img src="images/logo1.png" style="width:100px;" />
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-        <div *ngFor="let p of pages" >
-          <button menuClose  ion-item *ngIf="checkVisible(p)" (click)="openPage(p)">
-              <div class="menuItem" >
-                  <div class="menuItemIcon">
-                    <img src="{{p.img}}" style="width:100%" />
-                  </div>
-                  <div class="menuItemText">{{p.title}}</div>
-              </div>
-          </button>
+      <div *ngFor="let p of pages">
+        <button menuClose ion-item *ngIf="checkVisible(p)" (click)="openPage(p)">
+          <div class="menuItem">
+            <div class="menuItemIcon">
+              <img src="{{p.img}}" style="width:100%" />
+            </div>
+            <div class="menuItemText">{{p.title}}</div>
           </div>
+        </button>
+      </div>
     </ion-list>
   </ion-content>
 
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav   [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

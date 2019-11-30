@@ -35,7 +35,7 @@ export class PaymentinfoPage implements OnInit{
   }
 
   getItem() {
-      let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')/PAYMENTDEF_SUBFORM";
+      let URL = "/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')/PAYMENTDEF_SUBFORM";
       this.server.GetData(URL).then((data: any) => {
           this.jsonResponse = data.json();
           console.log (this.jsonResponse);
@@ -75,6 +75,8 @@ export class PaymentinfoPage implements OnInit{
 
                 const AlertShow = this.toastCtrl.create({
                     message: 'פרטי אשראי עודכנו בהצלחה',
+                    duration : 3000,
+                    cssClass : "mainToastClass",
                     // showCloseButton: true,
                     // closeButtonText: 'אישור'
                 });

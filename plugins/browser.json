@@ -33,6 +33,9 @@
     },
     "cordova-plugin-filepath": {
       "PACKAGE_NAME": "com.tapper.avia"
+    },
+    "cordova-android-support-gradle-release": {
+      "PACKAGE_NAME": "com.tapper.avia"
     }
   },
   "dependent_plugins": {}

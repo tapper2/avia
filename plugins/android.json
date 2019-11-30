@@ -7,6 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.tapper.avia"
+    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.tapper.avia"
     },
@@ -14,6 +17,9 @@
       "PACKAGE_NAME": "com.tapper.avia"
     },
     "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.tapper.avia"
+    },
+    "cordova-plugin-filepath": {
       "PACKAGE_NAME": "com.tapper.avia"
     },
     "cordova-plugin-inappbrowser": {
@@ -34,10 +40,8 @@
     "mx.ferreyra.callnumber": {
       "PACKAGE_NAME": "com.tapper.avia"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.tapper.avia"
-    },
-    "cordova-plugin-filepath": {
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "27.+",
       "PACKAGE_NAME": "com.tapper.avia"
     }
   },

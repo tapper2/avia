@@ -30,7 +30,7 @@ export class MyApp {
     constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen , public server:ServerService) {
         this.initializeApp();
         
-        this.server.GetData("https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')").then((data: any) => {
+        this.server.GetData("/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')").then((data: any) => {
           this.ctypecode  = data.json().CTYPECODE;
           console.log("ctypecodeMain : " , "hard coded:" + this.ctypecode);
         });
@@ -61,7 +61,7 @@ export class MyApp {
         if(this.settings['CUSTNAME'])
         {
             console.log("CST : " ,this.settings['CUSTNAME']  ,   this.settings['PRIT_PASSWORD'])
-            let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS?$filter=CUSTNAME eq '" + this.settings['CUSTNAME'] + "' and PRIT_PASSWORD eq '" + this.settings['PRIT_PASSWORD']+ "'" ;
+            let URL = "/odata/Priority/tabula.ini/avia/CUSTOMERS?$filter=CUSTNAME eq '" + this.settings['CUSTNAME'] + "' and PRIT_PASSWORD eq '" + this.settings['PRIT_PASSWORD']+ "'" ;
         
             this.server.GetData(URL).then((data: any) => {
                 console.log("getLoginDetaild : ", data.json().value[0]);

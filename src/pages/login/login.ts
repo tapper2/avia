@@ -21,7 +21,7 @@ export class LoginPage {
     
     
     constructor(public navCtrl: NavController, public navParams: NavParams , public server:ServerService, public Toast:ToastService) {
-        // this.server.GetData('https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC').then((data: any) => {
+        // this.server.GetData('/odata/Priority/tabula.ini/avia/PRIT_LOADDOC').then((data: any) => {
         //     alert (data);
         //     console.log("getPastClasses : " , data.json());
         //     this.jsonResponse = data.json();

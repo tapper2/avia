@@ -27,7 +27,7 @@ export class AddcontactPage {
       "EMAIL" : "",
       "isChanged" : false
   }
-
+  public mainURl = this.server.aviaServer;
     public appsettingsArray = [];
 
 
@@ -88,7 +88,7 @@ export class AddcontactPage {
 
 
         else {
-            let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+            let URL = "/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
             let sendData =
 
 

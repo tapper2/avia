@@ -23,9 +23,9 @@ export class RoomsPage implements OnInit {
 
     public roomsArray = [];
     public roomsArray1 = [];
-    public imageUrl = 'https://aviatest.wee.co.il/primail/';
+    public imageUrl = this.server.imageUrl; 
 
-
+    public mainURl = this.server.aviaServer;
     public selectedReturnItems : boolean = false;
     public countedSelected : number = 0;
     public showSelectedFooter : boolean = false;
@@ -52,7 +52,7 @@ export class RoomsPage implements OnInit {
     }
 
     getItems() {
-        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/ORDISINGLE?$filter=CUSTNAME eq '"+localStorage.getItem("CUSTNAME")+"' and PRIT_COND eq 'Y'";
+        let URL = "/odata/Priority/tabula.ini/avia/ORDISINGLE?$filter=CUSTNAME eq '"+localStorage.getItem("CUSTNAME")+"' and PRIT_COND eq 'Y'";
 
         this.server.GetData(URL).then((data: any) => {
             this.roomsArray = data.json().value;
@@ -202,7 +202,7 @@ export class RoomsPage implements OnInit {
 
 
 
-                            let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+                            let URL = "/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
 
                             let sendData =
                                 {

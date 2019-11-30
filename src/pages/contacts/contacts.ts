@@ -21,11 +21,11 @@ export class ContactsPage {
 
     public contactsArray = [];
     public appsettingsArray = [];
-    public imageUrl = 'https://aviatest.wee.co.il/primail/';
+    public imageUrl = this.server.imageUrl; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService, public Toast:ToastService,private callNumber: CallNumber) {
 
-      let URL  = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')/CUSTPERSONNEL_SUBFORM?$filter=INACTIVE ne 'Y'";
+      let URL  = "/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')/CUSTPERSONNEL_SUBFORM?$filter=INACTIVE ne 'Y'";
       this.server.GetData(URL).then((data: any) => {
           this.contactsArray = data.json().value;
           console.log(this.contactsArray);

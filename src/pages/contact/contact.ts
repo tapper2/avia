@@ -22,7 +22,7 @@ export class ContactPage {
     "subject" : "",
       "desc" : ""
   }
-
+  public mainURl = this.server.aviaServer;
   public contactSubjects:any[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public server:ServerService, public Toast:ToastService) {
@@ -49,7 +49,7 @@ export class ContactPage {
 
      else
        {
-        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+        let URL = "/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
         let sendData =
             {
 

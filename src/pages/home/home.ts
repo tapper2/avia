@@ -45,7 +45,7 @@ export class HomePage implements  OnInit{
 
   checkClient()
   {
-      this.server.GetData("https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')").then((data: any) => {
+      this.server.GetData("/odata/Priority/tabula.ini/avia/CUSTOMERS('"+localStorage.getItem("CUSTNAME")+"')").then((data: any) => {
           this.ctypecode  = data.json().CTYPECODE;
           console.log("ctypecode : " , "hard coded:"+this.ctypecode);
       });

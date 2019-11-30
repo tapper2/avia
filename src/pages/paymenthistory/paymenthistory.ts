@@ -23,19 +23,19 @@ export class PaymenthistoryPage {
     public caluclatedSum:any = 0;
     public FilterType: number = 0;
     public BALANCE:number = 0;
-    public pdfURL = 'https://aviatest.wee.co.il/primail/invoices/';
+    public pdfURL = this.server.pdfURL;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public server: ServerService,private iab: InAppBrowser, public Toast:ToastService) {
 
 
-      let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/ACCOUNTS_RECEIVABLE('"+localStorage.getItem("CUSTNAME")+"')/ACCFNCITEMS2_SUBFORM";
+      let URL = "/odata/Priority/tabula.ini/avia/ACCOUNTS_RECEIVABLE('"+localStorage.getItem("CUSTNAME")+"')/ACCFNCITEMS2_SUBFORM";
 
       this.server.GetData(URL).then((data: any) => {
           this.paymentHistoryArray = data.json().value;
           this.paymentHistoryArray1 = data.json().value;
       });
 
-      let URL1 = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/ACCOUNTS_RECEIVABLE('"+localStorage.getItem("CUSTNAME")+"')";
+      let URL1 = "/odata/Priority/tabula.ini/avia/ACCOUNTS_RECEIVABLE('"+localStorage.getItem("CUSTNAME")+"')";
 
       this.server.GetData(URL1).then((data: any) => {
           let ans = data.json();
@@ -65,7 +65,7 @@ export class PaymenthistoryPage {
     showRecipet(recipet) {
 
         console.log(recipet);
-        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_CUSTINVOICES?$filter=IVNUM eq '"+recipet+"'&$expand=EXTFILES_SUBFORM($filter=EXTFILEDES eq 'Printed Invoice')";
+        let URL = "/odata/Priority/tabula.ini/avia/PRIT_CUSTINVOICES?$filter=IVNUM eq '"+recipet+"'&$expand=EXTFILES_SUBFORM($filter=EXTFILEDES eq 'Printed Invoice')";
         let filename = '';
         this.server.GetData(URL).then((data: any) => {
             console.log("recipet:", data.json().value[0]);

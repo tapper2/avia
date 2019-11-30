@@ -11,6 +11,7 @@ export class ToastService {
         console.log("Toast : " , AppSettings.TOAST);
         let toastItem = AppSettings.TOAST;
         toastItem["message"] = message;
+        toastItem["duration"] = 3000;
         toastItem["cssClass"] = "mainToastClass"
         let toast = this.toastCtrl.create(toastItem);
         toast.present();

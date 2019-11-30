@@ -30,7 +30,8 @@ export class UserDetailsPage implements OnInit{
         'city':false,
         'zip':false,
     }
-    
+    public mainURl = this.server.aviaServer;
+
     constructor(public navCtrl: NavController, public navParams: NavParams, public server:ServerService, public Toast:ToastService,private alertCtrl: AlertController) {
         this.userData = JSON.parse(localStorage.getItem("userData"));
         this.userData.isChanged = false;
@@ -85,7 +86,7 @@ export class UserDetailsPage implements OnInit{
         console.log("1111" , this.userData);
         this.userData.isChanged = false;
 
-        let URL = "https://aviatest.wee.co.il/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+        let URL = "/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
         let sendData =
 
 

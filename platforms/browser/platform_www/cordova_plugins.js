@@ -93,7 +93,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.3",
     "mx.ferreyra.callnumber": "0.0.2",
     "cordova-plugin-camera": "4.0.3",
-    "cordova-plugin-filepath": "1.4.2"
+    "cordova-plugin-filepath": "1.4.2",
+    "cordova-android-support-gradle-release": "3.0.1"
 }
 // BOTTOM OF METADATA
 });
