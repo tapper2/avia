@@ -14,13 +14,13 @@ export class ServerService {
 
     public homePageArray: any = [];
     public appsettingsArray: any = [];
-    // public aviaServer = "https://aviatest.wee.co.il";
-    // public imageUrl = 'https://aviatest.wee.co.il/primail';
-    // public pdfURL = 'https://aviatest.wee.co.il/primail/invoices/';
+    public aviaServer = "https://aviatest.wee.co.il";
+    public imageUrl = 'https://aviatest.wee.co.il/primail';
+    public pdfURL = 'https://aviatest.wee.co.il/primail/invoices/';
 
-    public aviaServer = "https://avia.wee.co.il";
-    public imageUrl = 'https://avia.wee.co.il/primail';
-    public pdfURL = 'https://avia.wee.co.il/primail/invoices/';
+    // public aviaServer = "https://avia.wee.co.il";
+    // public imageUrl = 'https://avia.wee.co.il/primail';
+    // public pdfURL = 'https://avia.wee.co.il/primail/invoices/';
 
     constructor(public loadingCtrl: LoadingController, private http: Http) { }
 

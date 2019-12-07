@@ -8,8 +8,8 @@ webpackJsonp([14],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts_contacts__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -147,147 +147,10 @@ var UserDetailsPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddcontactPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contacts_contacts__ = __webpack_require__(50);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the AddcontactPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AddcontactPage = /** @class */ (function () {
-    function AddcontactPage(navCtrl, navParams, server, Toast, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.server = server;
-        this.Toast = Toast;
-        this.alertCtrl = alertCtrl;
-        this.contactFields = {
-            "NAME": "",
-            "PHONENUM": "",
-            "CELLPHONE": "",
-            "HOMEPHONE": "",
-            "EMAIL": "",
-            "isChanged": false
-        };
-        this.mainURl = this.server.aviaServer;
-        this.appsettingsArray = [];
-        this.contactFields.isChanged = false;
-        this.appsettingsArray = this.server.appsettingsArray;
-        console.log("appsettingsArray", this.appsettingsArray);
-    }
-    AddcontactPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AddcontactPage');
-    };
-    AddcontactPage.prototype.ionViewCanLeave = function () {
-        var _this = this;
-        if (this.contactFields.isChanged) {
-            var alertBox = this.alertCtrl.create({
-                title: 'שינוים שלא נשמרו',
-                message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
-                buttons: [
-                    {
-                        text: 'לא',
-                        role: 'cancel',
-                        handler: function () {
-                            console.log('Cancel clicked');
-                        }
-                    },
-                    {
-                        text: 'כן',
-                        handler: function () {
-                            _this.contactFields.isChanged = false;
-                            _this.navCtrl.pop();
-                        }
-                    }
-                ]
-            });
-            alertBox.present();
-            return false;
-        }
-    };
-    AddcontactPage.prototype.saveContact = function () {
-        var _this = this;
-        console.log("1111", this.contactFields);
-        this.contactFields.isChanged = false;
-        if (!this.contactFields.NAME)
-            this.Toast.presentToast("יש להזין שם איש קשר");
-        else if (!this.contactFields.CELLPHONE)
-            this.Toast.presentToast("יש להזין טלפון נייד");
-        else if (!this.contactFields.HOMEPHONE)
-            this.Toast.presentToast("יש להזין תעודת זהות");
-        else {
-            var URL_1 = "/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
-            var sendData = {
-                "LOADCODE": "1",
-                "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),
-                "PRIT_CUSTPERSONNEL_SUBFORM": [
-                    {
-                        "NAME": this.contactFields.NAME,
-                        "PHONENUM": this.contactFields.PHONENUM,
-                        "CELLPHONE": this.contactFields.CELLPHONE,
-                        "HOMEPHONE": this.contactFields.HOMEPHONE,
-                        "EMAIL": this.contactFields.EMAIL,
-                    }
-                ],
-                "PRIT_INTERFACE_SUBFORM": [
-                    {
-                        "EXECUTE": "Y"
-                    }
-                ]
-            };
-            this.server.SendPost(URL_1, sendData).then(function (data) {
-                console.log("response", data);
-                var response = data;
-                if (response.ok) {
-                    _this.Toast.presentToast("איש קשר נוסף בהצלחה");
-                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__contacts_contacts__["a" /* ContactsPage */]);
-                }
-                else {
-                    _this.Toast.presentToast("שגיאה, יש לנסות שוב");
-                }
-            });
-        }
-    };
-    AddcontactPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-addcontact',template:/*ion-inline-start:"H:\gitlab\avia\src\pages\addcontact\addcontact.html"*/'<!--\n\n  Generated template for the AddcontactPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <header1 HeaderTitle="הוספת איש קשר" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n\n\n    <div align="center">\n\n        <img src="images/home/addcontact.png" class="mainImg" />\n\n    </div>\n\n  <div align="center" class="infoText">\n\n    {{appsettingsArray.AddContactDesc}}\n\n  </div>\n\n\n\n  <div class="info">\n\n\n\n\n\n    <edit-row jsonKey="NAME" Title = "שם איש קשר" [Data]="contactFields" FieldType="text" Editable="true" From="1"> </edit-row>\n\n    <!--<edit-row jsonKey="PHONENUM" Title = "טלפון" [Data]="contactFields" FieldType="tel" Editable="true" From="1"> </edit-row>-->\n\n    <edit-row jsonKey="CELLPHONE" Title = "טלפון נייד" [Data]="contactFields" FieldType="tel" Editable="true" From="1"> </edit-row>\n\n    <edit-row jsonKey="HOMEPHONE" Title = "תעודת זהות" [Data]="contactFields" FieldType="tel" Editable="true" From="1"> </edit-row>\n\n    <edit-row jsonKey="EMAIL" Title = "דואר אלקטרוני (לא חובה)" [Data]="contactFields" FieldType="email" Editable="true" From="1"> </edit-row>\n\n\n\n\n\n\n\n    <div class="buttons">\n\n      <button ion-button full style="background-color: #6eb43f" (click)="saveContact()">שלח</button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"H:\gitlab\avia\src\pages\addcontact\addcontact.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"]])
-    ], AddcontactPage);
-    return AddcontactPage;
-}());
-
-//# sourceMappingURL=addcontact.js.map
-
-/***/ }),
-
-/***/ 166:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticlePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_app_settings__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -337,14 +200,14 @@ var ArticlePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectedproductsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -475,14 +338,14 @@ var SelectedproductsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DaypickermodalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -594,6 +457,143 @@ var DaypickermodalPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 168:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddcontactPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contacts_contacts__ = __webpack_require__(50);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the AddcontactPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AddcontactPage = /** @class */ (function () {
+    function AddcontactPage(navCtrl, navParams, server, Toast, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.server = server;
+        this.Toast = Toast;
+        this.alertCtrl = alertCtrl;
+        this.contactFields = {
+            "NAME": "",
+            "PHONENUM": "",
+            "CELLPHONE": "",
+            "HOMEPHONE": "",
+            "EMAIL": "",
+            "isChanged": false
+        };
+        this.mainURl = this.server.aviaServer;
+        this.appsettingsArray = [];
+        this.contactFields.isChanged = false;
+        this.appsettingsArray = this.server.appsettingsArray;
+        console.log("appsettingsArray", this.appsettingsArray);
+    }
+    AddcontactPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AddcontactPage');
+    };
+    AddcontactPage.prototype.ionViewCanLeave = function () {
+        var _this = this;
+        if (this.contactFields.isChanged) {
+            var alertBox = this.alertCtrl.create({
+                title: 'שינוים שלא נשמרו',
+                message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
+                buttons: [
+                    {
+                        text: 'לא',
+                        role: 'cancel',
+                        handler: function () {
+                            console.log('Cancel clicked');
+                        }
+                    },
+                    {
+                        text: 'כן',
+                        handler: function () {
+                            _this.contactFields.isChanged = false;
+                            _this.navCtrl.pop();
+                        }
+                    }
+                ]
+            });
+            alertBox.present();
+            return false;
+        }
+    };
+    AddcontactPage.prototype.saveContact = function () {
+        var _this = this;
+        console.log("1111", this.contactFields);
+        this.contactFields.isChanged = false;
+        if (!this.contactFields.NAME)
+            this.Toast.presentToast("יש להזין שם איש קשר");
+        else if (!this.contactFields.CELLPHONE)
+            this.Toast.presentToast("יש להזין טלפון נייד");
+        else if (!this.contactFields.HOMEPHONE)
+            this.Toast.presentToast("יש להזין תעודת זהות");
+        else {
+            var URL_1 = "/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
+            var sendData = {
+                "LOADCODE": "1",
+                "CUSTNAME": localStorage.getItem("CUSTNAME").toString(),
+                "PRIT_CUSTPERSONNEL_SUBFORM": [
+                    {
+                        "NAME": this.contactFields.NAME,
+                        "PHONENUM": this.contactFields.PHONENUM,
+                        "CELLPHONE": this.contactFields.CELLPHONE,
+                        "HOMEPHONE": this.contactFields.HOMEPHONE,
+                        "EMAIL": this.contactFields.EMAIL,
+                    }
+                ],
+                "PRIT_INTERFACE_SUBFORM": [
+                    {
+                        "EXECUTE": "Y"
+                    }
+                ]
+            };
+            this.server.SendPost(URL_1, sendData).then(function (data) {
+                console.log("response", data);
+                var response = data;
+                if (response.ok) {
+                    _this.Toast.presentToast("איש קשר נוסף בהצלחה");
+                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__contacts_contacts__["a" /* ContactsPage */]);
+                }
+                else {
+                    _this.Toast.presentToast("שגיאה, יש לנסות שוב");
+                }
+            });
+        }
+    };
+    AddcontactPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-addcontact',template:/*ion-inline-start:"H:\gitlab\avia\src\pages\addcontact\addcontact.html"*/'<!--\n\n  Generated template for the AddcontactPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <header1 HeaderTitle="הוספת איש קשר" type="0"></header1>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainContent">\n\n\n\n    <div align="center">\n\n        <img src="images/home/addcontact.png" class="mainImg" />\n\n    </div>\n\n  <div align="center" class="infoText">\n\n    {{appsettingsArray.AddContactDesc}}\n\n  </div>\n\n\n\n  <div class="info">\n\n\n\n\n\n    <edit-row jsonKey="NAME" Title = "שם איש קשר" [Data]="contactFields" FieldType="text" Editable="true" From="1"> </edit-row>\n\n    <!--<edit-row jsonKey="PHONENUM" Title = "טלפון" [Data]="contactFields" FieldType="tel" Editable="true" From="1"> </edit-row>-->\n\n    <edit-row jsonKey="CELLPHONE" Title = "טלפון נייד" [Data]="contactFields" FieldType="tel" Editable="true" From="1"> </edit-row>\n\n    <edit-row jsonKey="HOMEPHONE" Title = "תעודת זהות" [Data]="contactFields" FieldType="tel" Editable="true" From="1"> </edit-row>\n\n    <edit-row jsonKey="EMAIL" Title = "דואר אלקטרוני (לא חובה)" [Data]="contactFields" FieldType="email" Editable="true" From="1"> </edit-row>\n\n\n\n\n\n\n\n    <div class="buttons">\n\n      <button ion-button full style="background-color: #6eb43f" (click)="saveContact()">שלח</button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"H:\gitlab\avia\src\pages\addcontact\addcontact.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_2__services_toast_service__["a" /* ToastService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"]])
+    ], AddcontactPage);
+    return AddcontactPage;
+}());
+
+//# sourceMappingURL=addcontact.js.map
+
+/***/ }),
+
 /***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -646,8 +646,8 @@ var InsurancePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -717,19 +717,19 @@ webpackEmptyAsyncContext.id = 181;
 
 var map = {
 	"../pages/addcontact/addcontact.module": [
-		843,
+		846,
 		13
 	],
 	"../pages/article/article.module": [
-		844,
+		843,
 		12
 	],
 	"../pages/contact/contact.module": [
-		845,
+		844,
 		11
 	],
 	"../pages/contacts/contacts.module": [
-		846,
+		845,
 		10
 	],
 	"../pages/daypickermodal/daypickermodal.module": [
@@ -793,50 +793,6 @@ module.exports = webpackAsyncContext;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_settings__ = __webpack_require__(80);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ToastService = /** @class */ (function () {
-    function ToastService(toastCtrl) {
-        this.toastCtrl = toastCtrl;
-    }
-    ToastService.prototype.presentToast = function (message) {
-        console.log("Toast : ", __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].TOAST);
-        var toastItem = __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].TOAST;
-        toastItem["message"] = message;
-        toastItem["duration"] = 3000;
-        toastItem["cssClass"] = "mainToastClass";
-        var toast = this.toastCtrl.create(toastItem);
-        toast.present();
-    };
-    ToastService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["ToastController"]])
-    ], ToastService);
-    return ToastService;
-}());
-
-//# sourceMappingURL=toast-service.js.map
-
-/***/ }),
-
-/***/ 24:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServerService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
@@ -859,17 +815,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ServerService = /** @class */ (function () {
+    // public aviaServer = "https://avia.wee.co.il";
+    // public imageUrl = 'https://avia.wee.co.il/primail';
+    // public pdfURL = 'https://avia.wee.co.il/primail/invoices/';
     function ServerService(loadingCtrl, http) {
         this.loadingCtrl = loadingCtrl;
         this.http = http;
         this.homePageArray = [];
         this.appsettingsArray = [];
-        // public aviaServer = "https://aviatest.wee.co.il";
-        // public imageUrl = 'https://aviatest.wee.co.il/primail';
-        // public pdfURL = 'https://aviatest.wee.co.il/primail/invoices/';
-        this.aviaServer = "https://avia.wee.co.il";
-        this.imageUrl = 'https://avia.wee.co.il/primail';
-        this.pdfURL = 'https://avia.wee.co.il/primail/invoices/';
+        this.aviaServer = "https://aviatest.wee.co.il";
+        this.imageUrl = 'https://aviatest.wee.co.il/primail';
+        this.pdfURL = 'https://aviatest.wee.co.il/primail/invoices/';
     }
     ServerService.prototype.getServerData = function (url) {
         var _this = this;
@@ -1055,7 +1011,51 @@ var ServerService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 450:
+/***/ 24:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_settings__ = __webpack_require__(80);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ToastService = /** @class */ (function () {
+    function ToastService(toastCtrl) {
+        this.toastCtrl = toastCtrl;
+    }
+    ToastService.prototype.presentToast = function (message) {
+        console.log("Toast : ", __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].TOAST);
+        var toastItem = __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].TOAST;
+        toastItem["message"] = message;
+        toastItem["duration"] = 3000;
+        toastItem["cssClass"] = "mainToastClass";
+        var toast = this.toastCtrl.create(toastItem);
+        toast.present();
+    };
+    ToastService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["ToastController"]])
+    ], ToastService);
+    return ToastService;
+}());
+
+//# sourceMappingURL=toast-service.js.map
+
+/***/ }),
+
+/***/ 449:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1118,13 +1118,13 @@ var ImageModalPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__products_products__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rooms_rooms__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__paymentinfo_paymentinfo__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__paymenthistory_paymenthistory__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_app_settings__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__article_article__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__article_article__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__contacts_contacts__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1230,7 +1230,7 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_products_products__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_contacts_contacts__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_user_details_user_details__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_paymenthistory_paymenthistory__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_contact_contact__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_rooms_rooms__ = __webpack_require__(97);
@@ -1361,7 +1361,7 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomscalendarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1463,10 +1463,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_call_number__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__addcontact_addcontact__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_call_number__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__addcontact_addcontact__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1546,37 +1546,37 @@ var ContactsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(490);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(831);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(448);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(491);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(492);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_components_module__ = __webpack_require__(832);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_http__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_products_products__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_rooms_rooms__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_contacts_contacts__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_addcontact_addcontact__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_addcontact_addcontact__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_contact_contact__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_paymentinfo_paymentinfo__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_selectedproducts_selectedproducts__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_selectedproducts_selectedproducts__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_paymenthistory_paymenthistory__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_roomscalendar_roomscalendar__ = __webpack_require__(497);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_daypickermodal_daypickermodal__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_article_article__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_daypickermodal_daypickermodal__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_article_article__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_user_details_user_details__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_call_number__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_call_number__ = __webpack_require__(450);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_native_in_app_browser__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_ion2_calendar__ = __webpack_require__(838);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_ion2_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_29_ion2_calendar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__angular_common__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_common_locales_he__ = __webpack_require__(842);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_insurance_insurance__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_camera__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ionic_native_file_path__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_transfer__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_image_modal_image_modal__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_camera__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ionic_native_file_path__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_transfer__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_image_modal_image_modal__ = __webpack_require__(449);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1650,10 +1650,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["IonicModule"].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/addcontact/addcontact.module#AddcontactPageModule', name: 'AddcontactPage', segment: 'addcontact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/article/article.module#ArticlePageModule', name: 'ArticlePage', segment: 'article', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/addcontact/addcontact.module#AddcontactPageModule', name: 'AddcontactPage', segment: 'addcontact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/daypickermodal/daypickermodal.module#DaypickermodalPageModule', name: 'DaypickermodalPage', segment: 'daypickermodal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insurance/insurance.module#InsurancePageModule', name: 'InsurancePage', segment: 'insurance', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
@@ -1737,252 +1737,252 @@ var AppSettings = Object.freeze({
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 325,
-	"./af.js": 325,
-	"./ar": 326,
-	"./ar-dz": 327,
-	"./ar-dz.js": 327,
-	"./ar-kw": 328,
-	"./ar-kw.js": 328,
-	"./ar-ly": 329,
-	"./ar-ly.js": 329,
-	"./ar-ma": 330,
-	"./ar-ma.js": 330,
-	"./ar-sa": 331,
-	"./ar-sa.js": 331,
-	"./ar-tn": 332,
-	"./ar-tn.js": 332,
-	"./ar.js": 326,
-	"./az": 333,
-	"./az.js": 333,
-	"./be": 334,
-	"./be.js": 334,
-	"./bg": 335,
-	"./bg.js": 335,
-	"./bm": 336,
-	"./bm.js": 336,
-	"./bn": 337,
-	"./bn.js": 337,
-	"./bo": 338,
-	"./bo.js": 338,
-	"./br": 339,
-	"./br.js": 339,
-	"./bs": 340,
-	"./bs.js": 340,
-	"./ca": 341,
-	"./ca.js": 341,
-	"./cs": 342,
-	"./cs.js": 342,
-	"./cv": 343,
-	"./cv.js": 343,
-	"./cy": 344,
-	"./cy.js": 344,
-	"./da": 345,
-	"./da.js": 345,
-	"./de": 346,
-	"./de-at": 347,
-	"./de-at.js": 347,
-	"./de-ch": 348,
-	"./de-ch.js": 348,
-	"./de.js": 346,
-	"./dv": 349,
-	"./dv.js": 349,
-	"./el": 350,
-	"./el.js": 350,
-	"./en-au": 351,
-	"./en-au.js": 351,
-	"./en-ca": 352,
-	"./en-ca.js": 352,
-	"./en-gb": 353,
-	"./en-gb.js": 353,
-	"./en-ie": 354,
-	"./en-ie.js": 354,
-	"./en-il": 355,
-	"./en-il.js": 355,
-	"./en-nz": 356,
-	"./en-nz.js": 356,
-	"./eo": 357,
-	"./eo.js": 357,
-	"./es": 358,
-	"./es-do": 359,
-	"./es-do.js": 359,
-	"./es-us": 360,
-	"./es-us.js": 360,
-	"./es.js": 358,
-	"./et": 361,
-	"./et.js": 361,
-	"./eu": 362,
-	"./eu.js": 362,
-	"./fa": 363,
-	"./fa.js": 363,
-	"./fi": 364,
-	"./fi.js": 364,
-	"./fo": 365,
-	"./fo.js": 365,
-	"./fr": 366,
-	"./fr-ca": 367,
-	"./fr-ca.js": 367,
-	"./fr-ch": 368,
-	"./fr-ch.js": 368,
-	"./fr.js": 366,
-	"./fy": 369,
-	"./fy.js": 369,
-	"./gd": 370,
-	"./gd.js": 370,
-	"./gl": 371,
-	"./gl.js": 371,
-	"./gom-latn": 372,
-	"./gom-latn.js": 372,
-	"./gu": 373,
-	"./gu.js": 373,
-	"./he": 374,
-	"./he.js": 374,
-	"./hi": 375,
-	"./hi.js": 375,
-	"./hr": 376,
-	"./hr.js": 376,
-	"./hu": 377,
-	"./hu.js": 377,
-	"./hy-am": 378,
-	"./hy-am.js": 378,
-	"./id": 379,
-	"./id.js": 379,
-	"./is": 380,
-	"./is.js": 380,
-	"./it": 381,
-	"./it.js": 381,
-	"./ja": 382,
-	"./ja.js": 382,
-	"./jv": 383,
-	"./jv.js": 383,
-	"./ka": 384,
-	"./ka.js": 384,
-	"./kk": 385,
-	"./kk.js": 385,
-	"./km": 386,
-	"./km.js": 386,
-	"./kn": 387,
-	"./kn.js": 387,
-	"./ko": 388,
-	"./ko.js": 388,
-	"./ky": 389,
-	"./ky.js": 389,
-	"./lb": 390,
-	"./lb.js": 390,
-	"./lo": 391,
-	"./lo.js": 391,
-	"./lt": 392,
-	"./lt.js": 392,
-	"./lv": 393,
-	"./lv.js": 393,
-	"./me": 394,
-	"./me.js": 394,
-	"./mi": 395,
-	"./mi.js": 395,
-	"./mk": 396,
-	"./mk.js": 396,
-	"./ml": 397,
-	"./ml.js": 397,
-	"./mn": 398,
-	"./mn.js": 398,
-	"./mr": 399,
-	"./mr.js": 399,
-	"./ms": 400,
-	"./ms-my": 401,
-	"./ms-my.js": 401,
-	"./ms.js": 400,
-	"./mt": 402,
-	"./mt.js": 402,
-	"./my": 403,
-	"./my.js": 403,
-	"./nb": 404,
-	"./nb.js": 404,
-	"./ne": 405,
-	"./ne.js": 405,
-	"./nl": 406,
-	"./nl-be": 407,
-	"./nl-be.js": 407,
-	"./nl.js": 406,
-	"./nn": 408,
-	"./nn.js": 408,
-	"./pa-in": 409,
-	"./pa-in.js": 409,
-	"./pl": 410,
-	"./pl.js": 410,
-	"./pt": 411,
-	"./pt-br": 412,
-	"./pt-br.js": 412,
-	"./pt.js": 411,
-	"./ro": 413,
-	"./ro.js": 413,
-	"./ru": 414,
-	"./ru.js": 414,
-	"./sd": 415,
-	"./sd.js": 415,
-	"./se": 416,
-	"./se.js": 416,
-	"./si": 417,
-	"./si.js": 417,
-	"./sk": 418,
-	"./sk.js": 418,
-	"./sl": 419,
-	"./sl.js": 419,
-	"./sq": 420,
-	"./sq.js": 420,
-	"./sr": 421,
-	"./sr-cyrl": 422,
-	"./sr-cyrl.js": 422,
-	"./sr.js": 421,
-	"./ss": 423,
-	"./ss.js": 423,
-	"./sv": 424,
-	"./sv.js": 424,
-	"./sw": 425,
-	"./sw.js": 425,
-	"./ta": 426,
-	"./ta.js": 426,
-	"./te": 427,
-	"./te.js": 427,
-	"./tet": 428,
-	"./tet.js": 428,
-	"./tg": 429,
-	"./tg.js": 429,
-	"./th": 430,
-	"./th.js": 430,
-	"./tl-ph": 431,
-	"./tl-ph.js": 431,
-	"./tlh": 432,
-	"./tlh.js": 432,
-	"./tr": 433,
-	"./tr.js": 433,
-	"./tzl": 434,
-	"./tzl.js": 434,
-	"./tzm": 435,
-	"./tzm-latn": 436,
-	"./tzm-latn.js": 436,
-	"./tzm.js": 435,
-	"./ug-cn": 437,
-	"./ug-cn.js": 437,
-	"./uk": 438,
-	"./uk.js": 438,
-	"./ur": 439,
-	"./ur.js": 439,
-	"./uz": 440,
-	"./uz-latn": 441,
-	"./uz-latn.js": 441,
-	"./uz.js": 440,
-	"./vi": 442,
-	"./vi.js": 442,
-	"./x-pseudo": 443,
-	"./x-pseudo.js": 443,
-	"./yo": 444,
-	"./yo.js": 444,
-	"./zh-cn": 445,
-	"./zh-cn.js": 445,
-	"./zh-hk": 446,
-	"./zh-hk.js": 446,
-	"./zh-tw": 447,
-	"./zh-tw.js": 447
+	"./af": 324,
+	"./af.js": 324,
+	"./ar": 325,
+	"./ar-dz": 326,
+	"./ar-dz.js": 326,
+	"./ar-kw": 327,
+	"./ar-kw.js": 327,
+	"./ar-ly": 328,
+	"./ar-ly.js": 328,
+	"./ar-ma": 329,
+	"./ar-ma.js": 329,
+	"./ar-sa": 330,
+	"./ar-sa.js": 330,
+	"./ar-tn": 331,
+	"./ar-tn.js": 331,
+	"./ar.js": 325,
+	"./az": 332,
+	"./az.js": 332,
+	"./be": 333,
+	"./be.js": 333,
+	"./bg": 334,
+	"./bg.js": 334,
+	"./bm": 335,
+	"./bm.js": 335,
+	"./bn": 336,
+	"./bn.js": 336,
+	"./bo": 337,
+	"./bo.js": 337,
+	"./br": 338,
+	"./br.js": 338,
+	"./bs": 339,
+	"./bs.js": 339,
+	"./ca": 340,
+	"./ca.js": 340,
+	"./cs": 341,
+	"./cs.js": 341,
+	"./cv": 342,
+	"./cv.js": 342,
+	"./cy": 343,
+	"./cy.js": 343,
+	"./da": 344,
+	"./da.js": 344,
+	"./de": 345,
+	"./de-at": 346,
+	"./de-at.js": 346,
+	"./de-ch": 347,
+	"./de-ch.js": 347,
+	"./de.js": 345,
+	"./dv": 348,
+	"./dv.js": 348,
+	"./el": 349,
+	"./el.js": 349,
+	"./en-au": 350,
+	"./en-au.js": 350,
+	"./en-ca": 351,
+	"./en-ca.js": 351,
+	"./en-gb": 352,
+	"./en-gb.js": 352,
+	"./en-ie": 353,
+	"./en-ie.js": 353,
+	"./en-il": 354,
+	"./en-il.js": 354,
+	"./en-nz": 355,
+	"./en-nz.js": 355,
+	"./eo": 356,
+	"./eo.js": 356,
+	"./es": 357,
+	"./es-do": 358,
+	"./es-do.js": 358,
+	"./es-us": 359,
+	"./es-us.js": 359,
+	"./es.js": 357,
+	"./et": 360,
+	"./et.js": 360,
+	"./eu": 361,
+	"./eu.js": 361,
+	"./fa": 362,
+	"./fa.js": 362,
+	"./fi": 363,
+	"./fi.js": 363,
+	"./fo": 364,
+	"./fo.js": 364,
+	"./fr": 365,
+	"./fr-ca": 366,
+	"./fr-ca.js": 366,
+	"./fr-ch": 367,
+	"./fr-ch.js": 367,
+	"./fr.js": 365,
+	"./fy": 368,
+	"./fy.js": 368,
+	"./gd": 369,
+	"./gd.js": 369,
+	"./gl": 370,
+	"./gl.js": 370,
+	"./gom-latn": 371,
+	"./gom-latn.js": 371,
+	"./gu": 372,
+	"./gu.js": 372,
+	"./he": 373,
+	"./he.js": 373,
+	"./hi": 374,
+	"./hi.js": 374,
+	"./hr": 375,
+	"./hr.js": 375,
+	"./hu": 376,
+	"./hu.js": 376,
+	"./hy-am": 377,
+	"./hy-am.js": 377,
+	"./id": 378,
+	"./id.js": 378,
+	"./is": 379,
+	"./is.js": 379,
+	"./it": 380,
+	"./it.js": 380,
+	"./ja": 381,
+	"./ja.js": 381,
+	"./jv": 382,
+	"./jv.js": 382,
+	"./ka": 383,
+	"./ka.js": 383,
+	"./kk": 384,
+	"./kk.js": 384,
+	"./km": 385,
+	"./km.js": 385,
+	"./kn": 386,
+	"./kn.js": 386,
+	"./ko": 387,
+	"./ko.js": 387,
+	"./ky": 388,
+	"./ky.js": 388,
+	"./lb": 389,
+	"./lb.js": 389,
+	"./lo": 390,
+	"./lo.js": 390,
+	"./lt": 391,
+	"./lt.js": 391,
+	"./lv": 392,
+	"./lv.js": 392,
+	"./me": 393,
+	"./me.js": 393,
+	"./mi": 394,
+	"./mi.js": 394,
+	"./mk": 395,
+	"./mk.js": 395,
+	"./ml": 396,
+	"./ml.js": 396,
+	"./mn": 397,
+	"./mn.js": 397,
+	"./mr": 398,
+	"./mr.js": 398,
+	"./ms": 399,
+	"./ms-my": 400,
+	"./ms-my.js": 400,
+	"./ms.js": 399,
+	"./mt": 401,
+	"./mt.js": 401,
+	"./my": 402,
+	"./my.js": 402,
+	"./nb": 403,
+	"./nb.js": 403,
+	"./ne": 404,
+	"./ne.js": 404,
+	"./nl": 405,
+	"./nl-be": 406,
+	"./nl-be.js": 406,
+	"./nl.js": 405,
+	"./nn": 407,
+	"./nn.js": 407,
+	"./pa-in": 408,
+	"./pa-in.js": 408,
+	"./pl": 409,
+	"./pl.js": 409,
+	"./pt": 410,
+	"./pt-br": 411,
+	"./pt-br.js": 411,
+	"./pt.js": 410,
+	"./ro": 412,
+	"./ro.js": 412,
+	"./ru": 413,
+	"./ru.js": 413,
+	"./sd": 414,
+	"./sd.js": 414,
+	"./se": 415,
+	"./se.js": 415,
+	"./si": 416,
+	"./si.js": 416,
+	"./sk": 417,
+	"./sk.js": 417,
+	"./sl": 418,
+	"./sl.js": 418,
+	"./sq": 419,
+	"./sq.js": 419,
+	"./sr": 420,
+	"./sr-cyrl": 421,
+	"./sr-cyrl.js": 421,
+	"./sr.js": 420,
+	"./ss": 422,
+	"./ss.js": 422,
+	"./sv": 423,
+	"./sv.js": 423,
+	"./sw": 424,
+	"./sw.js": 424,
+	"./ta": 425,
+	"./ta.js": 425,
+	"./te": 426,
+	"./te.js": 426,
+	"./tet": 427,
+	"./tet.js": 427,
+	"./tg": 428,
+	"./tg.js": 428,
+	"./th": 429,
+	"./th.js": 429,
+	"./tl-ph": 430,
+	"./tl-ph.js": 430,
+	"./tlh": 431,
+	"./tlh.js": 431,
+	"./tr": 432,
+	"./tr.js": 432,
+	"./tzl": 433,
+	"./tzl.js": 433,
+	"./tzm": 434,
+	"./tzm-latn": 435,
+	"./tzm-latn.js": 435,
+	"./tzm.js": 434,
+	"./ug-cn": 436,
+	"./ug-cn.js": 436,
+	"./uk": 437,
+	"./uk.js": 437,
+	"./ur": 438,
+	"./ur.js": 438,
+	"./uz": 439,
+	"./uz-latn": 440,
+	"./uz-latn.js": 440,
+	"./uz.js": 439,
+	"./vi": 441,
+	"./vi.js": 441,
+	"./x-pseudo": 442,
+	"./x-pseudo.js": 442,
+	"./yo": 443,
+	"./yo.js": 443,
+	"./zh-cn": 444,
+	"./zh-cn.js": 444,
+	"./zh-hk": 445,
+	"./zh-hk.js": 445,
+	"./zh-tw": 446,
+	"./zh-tw.js": 446
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -2119,8 +2119,8 @@ var ComponentsModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_home_home__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2146,6 +2146,8 @@ var LoginComponent = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.server = server;
         this.Toast = Toast;
+        this.UserId = 513102566; //112233//513102566;
+        this.Password = '34343434rr'; //'123456';//'34343434rr'
     }
     LoginComponent.prototype.gotoHomePage = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_home_home__["a" /* HomePage */]);
@@ -2170,10 +2172,9 @@ var LoginComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'login',template:/*ion-inline-start:"H:\gitlab\avia\src\components\login\login.html"*/'<!-- Generated template for the LoginComponent component -->\n\n\n\n<div>\n\n    <div class="mainLogo">\n\n        <img src="images/logo1.png" style="width: 100%">\n\n    </div>\n\n\n\n    <div class="loginForm">\n\n        <img class="loginImg" src="images/li1.png">\n\n        <input type="text" class="inputText" value="" [(ngModel)]="UserId" placeholder="הכנס שם משתמש " />\n\n        <img class="loginImg1" src="images/li2.png">\n\n        <input type="text" class="inputText MT10" value="" [(ngModel)]="Password" placeholder="הכנס סיסמה " />\n\n    </div>\n\n\n\n    <button ion-button color="dark" full class="MT20" (click)="LogIn()">כניסה</button>\n\n    <!-- <p>שכחת סיסמה ?</p> -->\n\n</div>'/*ion-inline-end:"H:\gitlab\avia\src\components\login\login.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_3__services_server_service__["a" /* ServerService */], __WEBPACK_IMPORTED_MODULE_4__services_toast_service__["a" /* ToastService */]])
     ], LoginComponent);
     return LoginComponent;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=login.js.map
@@ -2443,8 +2444,8 @@ var Header1Component = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2538,18 +2539,18 @@ var ContactPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_camera__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_file_path__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_camera__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_file_path__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__selectedproducts_selectedproducts__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__selectedproducts_selectedproducts__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(449);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__image_modal_image_modal__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__image_modal_image_modal__ = __webpack_require__(449);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3361,11 +3362,11 @@ var ProductsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__daypickermodal_daypickermodal__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__daypickermodal_daypickermodal__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3634,8 +3635,8 @@ var RoomsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentinfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_toast_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(89);
@@ -3779,9 +3780,9 @@ var PaymentinfoPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymenthistoryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_server_service__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_toast_service__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

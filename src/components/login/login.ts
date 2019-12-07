@@ -18,8 +18,8 @@ import { UserDetailsPage } from "../../pages/user-details/user-details";
 export class LoginComponent {
 
     text: string;
-    public UserId: number //= //513102566//112233//513102566;
-    public Password: string //= //'34343434rr' //'123456';//'34343434rr'
+    public UserId: number = 513102566//112233//513102566;
+    public Password: string = '34343434rr' //'123456';//'34343434rr'
     public jsonResponse;
     constructor(public navCtrl: NavController, public server: ServerService, public Toast: ToastService) {
     }
