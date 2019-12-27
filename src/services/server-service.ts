@@ -111,7 +111,29 @@ export class ServerService {
     }
 
 
-    getWorkingDays(url) {
+    getWorkingDays(url, branch) {
+
+        let loading = this.loadingCtrl.create({ content: '...בטעינה' });
+        loading.present();
+        try {
+            let body = new FormData();
+            body.append('branch', branch);
+            return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
+                this.http.post(AppSettings.SERVER_URL + url, body) //for post, put and delete put the body before the headers
+                    .toPromise()
+                    .then(res => resolve(res))
+                    .catch(err => console.log("error:", err));
+            });
+
+        } catch (err) {
+            console.log(err);
+        } finally {
+            loading.dismiss();
+        }
+    }
+
+
+    getBranchesType9(url) {
 
         let loading = this.loadingCtrl.create({ content: '...בטעינה' });
         loading.present();
@@ -175,6 +197,47 @@ export class ServerService {
             console.log("Start2");
             return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
                 this.http.post(this.aviaServer + '' + url, JSON.stringify(data), {
+                    headers: new Headers(
+                        {
+                            //'Authorization' : "Basic YXBpOmFwSTEwNTY=",
+                            'Authorization': "Basic " + btoa("elik:ee323245"),
+                            'content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        }
+
+                    )
+                }) //for post, put and delete put the body before the headers
+                    .toPromise()
+                    .then(res => {
+                        resolve(res);
+                        console.log("Start3");
+                        loading.dismiss();
+                    })
+                    .catch(err => {
+                        console.log("error:", err);
+                        alert("התקבלה שגיאה, יש לנסות שוב");
+                        loading.dismiss();
+                    });
+            });
+
+        } catch (err) {
+            console.log(err);
+        } finally {
+            console.log("Start4");
+        }
+    }
+
+
+    SendPatch(url, data) {
+        console.log("Start99");
+        let loading = this.loadingCtrl.create({ content: '...בטעינה' });
+        loading.present();
+        try {
+            let body = new FormData();
+            //body.append('data', JSON.stringify(data));
+            console.log("Start2");
+            return new Promise((resolve, reject) => {  //return a promise to the calling function so it can handle the response
+                this.http.patch(this.aviaServer + '' + url, JSON.stringify(data), {
                     headers: new Headers(
                         {
                             //'Authorization' : "Basic YXBpOmFwSTEwNTY=",

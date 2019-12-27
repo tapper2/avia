@@ -1,0 +1,123 @@
+<ion-header>
+  <header1 HeaderTitle="הפריטים שלי" type="0"></header1>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="products">
+    <div *ngFor="let item of productsArray let i=index" class="productItem mt-3">
+      <div *ngIf="!item.STATUS || item.STATUS == 0">
+        <div class="productNumber"> תיאור מוצר : {{product.PDES}}</div>
+        <div class="row" style="direction:rtl">
+          <div *ngIf="toggleCheckBox" class="col-1 toggleCheckBox">
+            <ion-checkbox [(ngModel)]="item.choosen" (click)="selectProduct()"></ion-checkbox>
+          </div>
+          <div class="col-3">
+            <img src="{{cutImage(item.PRIT_FILENAME,item.PARTNAME)}}" class="productImage" />
+          </div>
+          <div class="col-7" *ngIf="!toggleCheckBox">
+            <div class="productText">
+              <div style="margin-top: 15px;">{{item.CUSTNUM || "הכנס מספר פריט"}}</div>
+              <div>{{item.CUSTREMARK || "הכנס פירוט"}}</div>
+              <!-- <div *ngIf="item.PRIT_FREE"><span style="font-weight: bold">הערות : </span>{{item.PRIT_FREE}}</div> -->
+            </div>
+          </div>
+          <div class="col-6" *ngIf="toggleCheckBox">
+            <div class="productText">
+              <div> {{item.CUSTNUM}}</div>
+              <div> {{item.CUSTREMARK}}</div>
+              <!-- <div> {{item.PRIT_FREE}}</div> -->
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="productEdit" (click)="changeStatus(i,1)">
+              <ion-icon name="more" class="moreIcon"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <!-- אחרי עריכה -->
+      <div *ngIf="item.STATUS == 1">
+        <div class="productNumber"> תיאור מוצר : {{product.PDES}}</div>
+        <div class="row" style="direction:rtl">
+          <div *ngIf="toggleCheckBox" class="col-1 toggleCheckBox">
+            <!-- <ion-checkbox [(ngModel)]="item.CUSTNUM" (click)="selectProduct(item)"></ion-checkbox> -->
+          </div>
+          <div class="col-3">
+            <img src="{{cutImage(item.PRIT_FILENAME,item.PARTNAME)}}" class="w-100 productImage" />
+            <div *ngIf="ImagesArray">
+              <div *ngFor="let img of ImagesArray[i]">
+                <img src="{{imgURL}}{{img.url}}" (click)="fullscreenImage(img)" class="imgThumb" />
+              </div>
+            </div>
+            <div class="addImg" *ngIf="getImageLen(i) < 2" (click)="presentActionSheet(item)">
+              <ion-icon name="add" class="addIcon"></ion-icon>
+            </div>
+          </div>
+
+
+          <div class="col-7" *ngIf="!toggleCheckBox">
+            <!-- <div class="productText1">
+              <div class="detailsEdit"> הוסף מספר מוצר :</div>
+              <input class="form-control" type="num" [(ngModel)]="item.CUSTNUM" (ngModelChange)="modelChanged($event)"
+                placeholder="הכנס מספר מוצר" />
+
+            </div> -->
+            <!-- <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"></span>
+              </div>
+              <input type="number" class="form-control" [(ngModel)]="item.CUSTNUM" placeholder="הכנס מספר מוצר">
+            </div> -->
+            <div class="form-group productText2">
+              <div class="detailsEdit">הכנס מספר מוצר :</div>
+              <input type="number" class="form-control mt-2 p-2 inp" [(ngModel)]="item.CUSTNUM"
+                id="exampleInputPassword1" placeholder="הכנס מספר מוצר">
+            </div>
+            <div class="productText1">
+              <div class="detailsEdit"> הוסף פירוט :</div>
+              <textarea rows="6" cols="8" [(ngModel)]="item.CUSTREMARK"
+                (ngModelChange)="modelChanged($event)"> </textarea>
+            </div>
+          </div>
+
+
+
+          <!-- <div class="col-6" *ngIf="toggleCheckBox">
+            <div class="productText1">
+              <div> {{item.PARTDES}}</div>
+              <div> {{item.FREE1}}</div>
+              <div class="detailsEdit"> הערות :</div>
+              <textarea rows="1" cols="3" [(ngModel)]="item.CUSTREMARK"
+                (ngModelChange)="modelChanged($event)"> </textarea>
+            </div>
+          </div> -->
+          <!-- <div class="col-1">
+            <div class="productEdit" (click)="changeStatus(i,1)">
+              <img src="images/edit.png" style="width:100%" />
+            </div>
+          </div> -->
+        </div>
+        <div class="row no-gutters">
+          <div class="col-3 no-gutters">
+            <button ion-button class="delButton" (click)="changeStatus(i,0,0)"> בטל</button>
+          </div>
+          <div class="col-9 no-gutters">
+            <button ion-button class="editButton" (click)="changeStatus(i,0,1)"> שמור</button>
+          </div>
+        </div>
+        <!-- <hr /> -->
+      </div>
+
+    </div>
+  </div>
+</ion-content>
+
+
+<ion-footer no-border>
+  <div class="buttonsBar">
+    <button ion-button full style="background-color: #7f7f7f" (click)="onSubmit()">שמור</button>
+  </div>
+</ion-footer>

@@ -1,0 +1,364 @@
+page-type9 {
+ 
+        .productInfo
+        {
+          overflow: hidden;
+          width: 100%;
+        }
+      
+        .productNumber
+        {
+          text-align: right;
+          direction: rtl;
+          padding: 0px 20px;
+          color: #6eb43f;
+          font-weight: bold;
+          font-size: 17px;
+        }
+      
+        .addIcon
+        {
+          width: 30px;
+          margin-top: 5px;
+          margin-right: 23px;
+        }
+      
+        .productText
+        {
+          padding: 0px 20px;
+          text-align: right;
+          color: #B6B6B6;
+          font-size: 15px;
+          width: 100%;
+        }
+
+        .inp{
+          padding: 15px 10px !important;
+          font-size: 15px;
+        }
+      
+        .productText1
+        {
+          padding: 0px 20px;
+          text-align: right;
+          color: #B6B6B6;
+          font-size: 15px;
+          width: 143%;
+        }
+
+        .productText2
+        {
+          padding: 0px 20px;
+          text-align: right;
+          color: #B6B6B6;
+          font-size: 17px;
+          width: 100%;
+        }
+      
+        .productEdit
+        {
+          width: 50%;
+          margin-top: 0px;
+          margin-left: 20px;
+        }
+      
+        .addImg
+        {
+          width: 65px;
+          height: 65px;
+          margin-right: 19px;
+          margin-top: 10px;
+          background-color: #7f7f7f;
+        }
+      
+        .addIcon
+        {
+          position: relative;
+          color: white;
+          text-align: center;
+          width: 65px;
+          left: 23px;
+          font-size: 16px;
+          margin-top: 23px;
+        }
+      
+        .productImage
+        {
+          margin-right: 20px;
+          margin-top: 5px;
+          width: 70px !important;
+          height: 60px !important;
+        }
+      
+        .imgThumb
+        {
+          width: 65px;
+          height: 65px;
+          margin-right: 19px;
+          margin-top: 10px;
+          background-color: #7f7f7f;
+        }
+      
+        .moreIcon
+        {
+          font-size: 30px;
+          color:#6fb43f;
+          margin-top: -10px;
+        }
+      
+        .toggleCheckBox
+        {
+          margin-right: 13px;
+          margin-top: 18px;
+        }
+      
+        .editButton
+        {
+          background-color:#6fb43f;
+          width: 90%;
+          margin: auto;
+          margin-left: 5%;
+          margin-top:10px;
+        }
+        
+        .delButton{
+          background-color:red;
+          width: 90%;
+          margin: auto;
+          margin-left: 5%;
+          margin-top:10px;
+        }
+       
+      
+        textarea
+        {
+          width: 67%;
+          margin: auto;
+          margin-left: 5%;
+          margin-top:10px;
+          text-align: right;
+          padding: 5px;
+          border: 1px solid #B6B6B6;
+        }
+      
+        .buttonsBar
+        {
+          width: 100%;
+          overflow: hidden;
+          margin-top: 15px;
+        }
+      
+        .selectedAll
+        {
+          position: relative;
+          width: 92%;
+          margin: auto;
+          top: 5px !important;
+        }
+      
+        .selectedAllEmpty
+        {
+          border:1px solid #6eb43f;
+          font-weight: bold;
+          font-size: 15px;
+      
+          height: 30px;
+          font-size: 17px;
+          padding-top: 1px;
+          border-color: #6eb43f;
+          background-color: #f8f8f8;
+          color:#6eb43f;
+        }
+      
+        .selectedAllFull
+        {
+          border:1px solid #6eb43f;
+          font-weight: bold;
+          font-size: 15px;
+      
+          height: 30px;
+          font-size: 17px;
+          padding-top: 1px;
+          border-color: #6eb43f;
+          background-color: #6eb43f;
+          color:white;
+        }
+      
+        .mainHR
+        {
+          margin-top: 10px !important;
+        }
+      
+        .buttonsBarLeft
+        {
+          width: 92%;
+          float: left;
+          margin-left: 4%;
+        }
+      
+        .buttonsBarLeftSelected
+        {
+          width: 38%;
+          float: right;
+          margin-right: 3%;
+          background-color: red;
+        }
+      
+        .buttonsBarRight
+        {
+          width: 38%;
+          float: left;
+          margin-left: 3%;
+        }
+      
+        .buttonsBarRightSelected
+        {
+          width: 40%;
+          float: right;
+          margin-right: 3%;
+          background-color: blue;
+        }
+      
+        .buttonsBarButton
+        {
+          width: 100%;
+          background-color:#6fb43f;
+        }
+      
+        .buttonsBarButton2
+        {
+          width: 100%;
+          background-color: #333;
+          border: none;
+        }
+      
+        .buttonsBarAll
+        {
+          width: 5%;
+          float: right;
+          margin-right: 5%;
+        }
+      
+        .checkAllIcon
+        {
+          font-size: 30px;
+          margin-top: 8px;
+          color:#6fb43f;
+        }
+      
+        .alert-wrapper , alert-message
+        {
+          text-align: right !important;
+          direction: rtl !important;
+        }
+      
+        .alert-title {
+          text-align: center !important;
+       }
+      
+       .alert-ios .alert-wrapper{
+        text-align: right !important;
+        button.alertButton
+        {
+          background-color: red !important;
+          text-align: right
+          }
+        }
+      
+        .alert-message
+        {
+          text-align: right !important;
+        }
+      
+        .products
+        {
+          margin-bottom: 150px;
+        }
+      
+        .ActiveBt
+        {
+          width: 50% !important;
+          height: 40px;
+          font-size: 17px;
+          padding-top: 6px;
+          color: #fff;
+          background-color: #6eb43f;
+          border-color: #6eb43f;
+        }
+      
+        .checkbox-icon
+        {
+          border:1px solid #6eb43f !important;
+        }
+      
+        .checkbox-checked
+        {
+          border:1px solid #6eb43f !important;
+          background-color: #6eb43f !important;
+        }
+      
+        textarea
+        {
+          background-color: #f8f8f8 !important;
+        }
+      
+        .detailsEdit
+        {
+          margin-top: 5px;
+          margin-bottom: -5px;
+          font-weight: bold
+        }
+      
+        
+        .btnGr
+        {
+          width: 50% !important;
+          height: 40px;
+          font-size: 17px;
+          padding-top: 6px;
+          border-color: #6eb43f;
+          background-color: #f8f8f8;
+          color:#6eb43f;
+        }
+      
+        .btn-group
+        {
+          width: 100% !important;
+        }
+      
+      
+      }
+        .alert-ios .alert-message,
+          .alert-md .alert-message ,.alert-title{
+              text-align: right;
+              direction: rtl;
+          }
+      
+          .actioSheet
+          {
+            text-align: right;
+            background-color: red;
+            ion-icon{
+              color: 'red';
+          }
+          }
+      
+          .button-inner
+          {
+            text-align: right;
+            direction: rtl;
+            padding: 5px;
+          }
+      
+          .action-sheets-groups-page {
+              
+            text-align: right;
+            background-color: red !important;
+         
+            .actioSheet {
+              color: danger !important;
+            }
+        
+       
+          
+}

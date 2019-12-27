@@ -50,10 +50,11 @@ export class ProductsPage {
     public BeforeImagesArray: Array<string> = [];
     public ImagesArray: Array<string> = [];
     public mainURl = this.server.aviaServer;
-    public imgURL: string = "http://www.tapper.org.il/avia/laravel/storage/app/public/"
+    public imgURL: string = "https://www.tapper.org.il/avia/laravel/storage/app/public/"
     public productFields: any = {
         "isChanged": false
     }
+    public type9;
 
 
 
@@ -75,6 +76,7 @@ export class ProductsPage {
             console.log(this.productsArray);
         });
 
+        this.type9 = localStorage.type9;
     }
 
     getImagesFromServer() {
@@ -336,7 +338,7 @@ export class ProductsPage {
     async openProductsModal() {
 
 
-        await this.server.getWorkingDays("getWorkingDays").then((data: any) => {
+        await this.server.getWorkingDays("getWorkingDays", 1).then((data: any) => {
             let serverResponse = data.json();
             console.log("serverResponse", serverResponse);
 
@@ -400,7 +402,7 @@ export class ProductsPage {
                     //     TYPECODE = "14";
 
                     let URL = "/odata/Priority/tabula.ini/avia/PRIT_LOADDOC";
-
+                    console.log(data[0].branchName, data[0])
                     let sendData =
                     {
                         "LOADCODE": "3",
@@ -414,6 +416,10 @@ export class ProductsPage {
                                     "EXECUTE": "Y"
                                 }
                             ]
+                    }
+
+                    if (this.type9) {
+                        sendData['BRANCHNAME'] = data[0].branchName;
                     }
 
 
@@ -461,6 +467,7 @@ export class ProductsPage {
     // }
 
     cutImageUrl(url, type) {
+
         if (url) {
             let arr = url.split("/");
             return this.imageUrl + "/" + arr[4] + "/" + arr[5] + "/" + arr[6];
@@ -814,7 +821,7 @@ export class ProductsPage {
     public uploadImage() {
         // Destination URL
         console.log("Up1  : getProductImage ")
-        var url = "http://www.tapper.org.il/avia/laravel/public/api/GetFile"
+        var url = "https://www.tapper.org.il/avia/laravel/public/api/GetFile"
         //var url = "http://www.tapper.co.il/salecar/laravel/public/api/GetFile";
 
         // File for Upload

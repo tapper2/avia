@@ -8307,7 +8307,7 @@ textarea::-webkit-input-placeholder {
   padding-left: 2px;
 }
 
-textarea:-ms-input-placeholder {
+textarea::-moz-placeholder {
   padding-left: 2px;
 }
 
@@ -30423,6 +30423,329 @@ page-selectedproducts .bar {
   margin: auto;
   margin-top: 20px;
   margin-right: 5px;
+}
+
+page-selectedproducts .selectedProducts {
+  margin-top: 10px;
+  text-align: right;
+  height: 40px;
+  direction: rtl;
+  font-size: 14px;
+  border: 1px solid #6eb43f;
+}
+
+page-type9 .productInfo {
+  overflow: hidden;
+  width: 100%;
+}
+
+page-type9 .productNumber {
+  text-align: right;
+  direction: rtl;
+  padding: 0px 20px;
+  color: #6eb43f;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+page-type9 .addIcon {
+  width: 30px;
+  margin-top: 5px;
+  margin-right: 23px;
+}
+
+page-type9 .productText {
+  padding: 0px 20px;
+  text-align: right;
+  color: #B6B6B6;
+  font-size: 15px;
+  width: 100%;
+}
+
+page-type9 .inp {
+  padding: 15px 10px !important;
+  font-size: 15px;
+}
+
+page-type9 .productText1 {
+  padding: 0px 20px;
+  text-align: right;
+  color: #B6B6B6;
+  font-size: 15px;
+  width: 143%;
+}
+
+page-type9 .productText2 {
+  padding: 0px 20px;
+  text-align: right;
+  color: #B6B6B6;
+  font-size: 17px;
+  width: 100%;
+}
+
+page-type9 .productEdit {
+  width: 50%;
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+page-type9 .addImg {
+  width: 65px;
+  height: 65px;
+  margin-right: 19px;
+  margin-top: 10px;
+  background-color: #7f7f7f;
+}
+
+page-type9 .addIcon {
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 65px;
+  left: 23px;
+  font-size: 16px;
+  margin-top: 23px;
+}
+
+page-type9 .productImage {
+  margin-right: 20px;
+  margin-top: 5px;
+  width: 70px !important;
+  height: 60px !important;
+}
+
+page-type9 .imgThumb {
+  width: 65px;
+  height: 65px;
+  margin-right: 19px;
+  margin-top: 10px;
+  background-color: #7f7f7f;
+}
+
+page-type9 .moreIcon {
+  font-size: 30px;
+  color: #6fb43f;
+  margin-top: -10px;
+}
+
+page-type9 .toggleCheckBox {
+  margin-right: 13px;
+  margin-top: 18px;
+}
+
+page-type9 .editButton {
+  background-color: #6fb43f;
+  width: 90%;
+  margin: auto;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+page-type9 .delButton {
+  background-color: red;
+  width: 90%;
+  margin: auto;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+page-type9 textarea {
+  width: 67%;
+  margin: auto;
+  margin-left: 5%;
+  margin-top: 10px;
+  text-align: right;
+  padding: 5px;
+  border: 1px solid #B6B6B6;
+}
+
+page-type9 .buttonsBar {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+page-type9 .selectedAll {
+  position: relative;
+  width: 92%;
+  margin: auto;
+  top: 5px !important;
+}
+
+page-type9 .selectedAllEmpty {
+  border: 1px solid #6eb43f;
+  font-weight: bold;
+  font-size: 15px;
+  height: 30px;
+  font-size: 17px;
+  padding-top: 1px;
+  border-color: #6eb43f;
+  background-color: #f8f8f8;
+  color: #6eb43f;
+}
+
+page-type9 .selectedAllFull {
+  border: 1px solid #6eb43f;
+  font-weight: bold;
+  font-size: 15px;
+  height: 30px;
+  font-size: 17px;
+  padding-top: 1px;
+  border-color: #6eb43f;
+  background-color: #6eb43f;
+  color: white;
+}
+
+page-type9 .mainHR {
+  margin-top: 10px !important;
+}
+
+page-type9 .buttonsBarLeft {
+  width: 92%;
+  float: left;
+  margin-left: 4%;
+}
+
+page-type9 .buttonsBarLeftSelected {
+  width: 38%;
+  float: right;
+  margin-right: 3%;
+  background-color: red;
+}
+
+page-type9 .buttonsBarRight {
+  width: 38%;
+  float: left;
+  margin-left: 3%;
+}
+
+page-type9 .buttonsBarRightSelected {
+  width: 40%;
+  float: right;
+  margin-right: 3%;
+  background-color: blue;
+}
+
+page-type9 .buttonsBarButton {
+  width: 100%;
+  background-color: #6fb43f;
+}
+
+page-type9 .buttonsBarButton2 {
+  width: 100%;
+  background-color: #333;
+  border: none;
+}
+
+page-type9 .buttonsBarAll {
+  width: 5%;
+  float: right;
+  margin-right: 5%;
+}
+
+page-type9 .checkAllIcon {
+  font-size: 30px;
+  margin-top: 8px;
+  color: #6fb43f;
+}
+
+page-type9 .alert-wrapper, page-type9 alert-message {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+page-type9 .alert-title {
+  text-align: center !important;
+}
+
+page-type9 .alert-ios .alert-wrapper {
+  text-align: right !important;
+}
+
+page-type9 .alert-ios .alert-wrapper button.alertButton {
+  background-color: red !important;
+  text-align: right;
+}
+
+page-type9 .alert-message {
+  text-align: right !important;
+}
+
+page-type9 .products {
+  margin-bottom: 150px;
+}
+
+page-type9 .ActiveBt {
+  width: 50% !important;
+  height: 40px;
+  font-size: 17px;
+  padding-top: 6px;
+  color: #fff;
+  background-color: #6eb43f;
+  border-color: #6eb43f;
+}
+
+page-type9 .checkbox-icon {
+  border: 1px solid #6eb43f !important;
+}
+
+page-type9 .checkbox-checked {
+  border: 1px solid #6eb43f !important;
+  background-color: #6eb43f !important;
+}
+
+page-type9 textarea {
+  background-color: #f8f8f8 !important;
+}
+
+page-type9 .detailsEdit {
+  margin-top: 5px;
+  margin-bottom: -5px;
+  font-weight: bold;
+}
+
+page-type9 .btnGr {
+  width: 50% !important;
+  height: 40px;
+  font-size: 17px;
+  padding-top: 6px;
+  border-color: #6eb43f;
+  background-color: #f8f8f8;
+  color: #6eb43f;
+}
+
+page-type9 .btn-group {
+  width: 100% !important;
+}
+
+.alert-ios .alert-message,
+.alert-md .alert-message, .alert-title {
+  text-align: right;
+  direction: rtl;
+}
+
+.actioSheet {
+  text-align: right;
+  background-color: red;
+}
+
+.actioSheet ion-icon {
+  color: 'red';
+}
+
+.button-inner {
+  text-align: right;
+  direction: rtl;
+  padding: 5px;
+}
+
+.action-sheets-groups-page {
+  text-align: right;
+  background-color: red !important;
+}
+
+.action-sheets-groups-page .actioSheet {
+  color: danger !important;
 }
 
 page-user-details .nonEditRow {

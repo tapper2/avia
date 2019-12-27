@@ -5,22 +5,22 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-        <header1 HeaderTitle="הפריטים שלי" type="0"></header1>
+    <header1 HeaderTitle="הפריטים שלי" type="0"></header1>
 </ion-header>
 
 
 <ion-content class="mainContent">
     <!--<div class="buttonsBar">-->
-        <!--<div class="buttonsBarLeft">-->
-            <!--<button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>-->
-        <!--</div>-->
-        <!--<div class="buttonsBarRight">-->
-            <!--<button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>-->
-        <!--</div>-->
+    <!--<div class="buttonsBarLeft">-->
+    <!--<button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(1)"> החזרת פריטים</button>-->
+    <!--</div>-->
+    <!--<div class="buttonsBarRight">-->
+    <!--<button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>-->
+    <!--</div>-->
     <!--</div>-->
 
     <!--<div align="center">-->
-        <!--<button ion-button color="secondary" round *ngIf="selectedPullItems || selectedReturnItems" (click)="selectAll()">סימון כל הפריטים</button>-->
+    <!--<button ion-button color="secondary" round *ngIf="selectedPullItems || selectedReturnItems" (click)="selectAll()">סימון כל הפריטים</button>-->
     <!--</div>-->
 
     <div class="buttonsBar">
@@ -30,8 +30,10 @@
         </div> -->
         <div class="buttonsBarLeft">
             <div class="btn-group btn-group-justified">
-                <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? 'ActiveBt' : 'btnGr']" (click)="ToggleCheckBox(1)">החזרת פריטים</a>
-                <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? 'ActiveBt' : 'btnGr']" (click)="ToggleCheckBox(0)">שליפת פריטים</a>
+                <a href="#" class="btn" [ngClass]="[selectedReturnItems ? 'ActiveBt' : 'btnGr']"
+                    (click)="ToggleCheckBox(1)">החזרת פריטים</a>
+                <a href="#" class="btn" [ngClass]="[selectedPullItems  ? 'ActiveBt' : 'btnGr']"
+                    (click)="ToggleCheckBox(0)">שליפת פריטים</a>
             </div>
         </div>
         <!--style="background-color: #6eb43f"  <div [ngClass]="[!selectedReturnItems || !selectedPullItems ? 'buttonsBarLeft' : 'buttonsBarLeft']">
@@ -41,9 +43,10 @@
             <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" (click)="ToggleCheckBox(0)"> שליפת פריטים</button>
         </div> -->
     </div>
-    
-    <div  class="selectedAll" *ngIf="selectedPullItems || selectedReturnItems">
-        <button ion-button full (click)="selectAll()" [ngClass]="[selectedAll ? 'selectedAllFull' : 'selectedAllEmpty']" >בחר הכל</button>
+
+    <div class="selectedAll" *ngIf="selectedPullItems || selectedReturnItems">
+        <button ion-button full (click)="selectAll()"
+            [ngClass]="[selectedAll ? 'selectedAllFull' : 'selectedAllEmpty']">בחר הכל</button>
     </div>
     <hr class="mainHR">
 
@@ -52,24 +55,25 @@
             <div *ngIf="!item.STATUS || item.STATUS == 0">
                 <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
                 <div class="row" style="direction:rtl">
-                    <div *ngIf="toggleCheckBox"  class="col-1 toggleCheckBox">
-                        <ion-checkbox [(ngModel)]="item.choosen"  (click)="selectProduct()" ></ion-checkbox>
+                    <div *ngIf="toggleCheckBox" class="col-1 toggleCheckBox">
+                        <ion-checkbox [(ngModel)]="item.choosen" (click)="selectProduct()"></ion-checkbox>
                     </div>
                     <div class="col-3">
-                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="productImage"/>
+                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="productImage" />
                     </div>
                     <div class="col-7" *ngIf="!toggleCheckBox">
                         <div class="productText">
                             <div> {{item.PARTDES}}</div>
                             <div> {{item.FREE1}}</div>
-                            <div *ngIf = "item.PRIT_FREE" ><span style="font-weight: bold">הערות : </span>{{item.PRIT_FREE}}</div>
+                            <div *ngIf="item.PRIT_FREE"><span style="font-weight: bold">הערות :
+                                </span>{{item.PRIT_FREE}}</div>
                         </div>
                     </div>
                     <div class="col-6" *ngIf="toggleCheckBox">
                         <div class="productText">
                             <div> {{item.PARTDES}}</div>
                             <div> {{item.FREE1}}</div>
-                            <div>  {{item.PRIT_FREE}}</div>
+                            <div> {{item.PRIT_FREE}}</div>
                         </div>
                     </div>
                     <div class="col-1">
@@ -83,27 +87,28 @@
             <div *ngIf="item.STATUS == 1">
                 <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
                 <div class="row" style="direction:rtl">
-                    <div *ngIf="toggleCheckBox"  class="col-1 toggleCheckBox">
-                        <ion-checkbox [(ngModel)]="item.choosen"  (click)="selectProduct(item)" ></ion-checkbox>
+                    <div *ngIf="toggleCheckBox" class="col-1 toggleCheckBox">
+                        <ion-checkbox [(ngModel)]="item.choosen" (click)="selectProduct(item)"></ion-checkbox>
                     </div>
                     <div class="col-3">
-                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="w-100 productImage"/>
+                        <img src="{{cutImageUrl(item.PRIT_FILENAME,item.PARTNAME)}}" class="w-100 productImage" />
                         <div *ngIf="ImagesArray">
-                                <div *ngFor="let img of ImagesArray[i]" >
-                                        <img src="{{imgURL}}{{img.url}}" (click)="fullscreenImage(img)" class="imgThumb"/>
-                                </div>
+                            <div *ngFor="let img of ImagesArray[i]">
+                                <img src="{{imgURL}}{{img.url}}" (click)="fullscreenImage(img)" class="imgThumb" />
+                            </div>
                         </div>
                         <div class="addImg" *ngIf="getImageLen(i) < 2" (click)="presentActionSheet(item)">
-                                <ion-icon name="add" class="addIcon"></ion-icon>
-                            </div>
-                            <!-- <img src="images/add.png" class="addIcon"  /> -->
+                            <ion-icon name="add" class="addIcon"></ion-icon>
                         </div>
+                        <!-- <img src="images/add.png" class="addIcon"  /> -->
+                    </div>
                     <div class="col-7" *ngIf="!toggleCheckBox">
                         <div class="productText1">
                             <div> {{item.PARTDES}}</div>
                             <div> {{item.FREE1}}</div>
                             <div class="detailsEdit"> הערות :</div>
-                            <textarea rows="2" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>
+                            <textarea rows="2" cols="3" [(ngModel)]="item.PRIT_FREE"
+                                (ngModelChange)="modelChanged($event)"> </textarea>
                         </div>
                     </div>
                     <div class="col-6" *ngIf="toggleCheckBox">
@@ -111,7 +116,8 @@
                             <div> {{item.PARTDES}}</div>
                             <div> {{item.FREE1}}</div>
                             <div class="detailsEdit"> הערות :</div>
-                            <textarea rows="1" cols="3" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>
+                            <textarea rows="1" cols="3" [(ngModel)]="item.PRIT_FREE"
+                                (ngModelChange)="modelChanged($event)"> </textarea>
                         </div>
                     </div>
                     <div class="col-1">
@@ -124,41 +130,41 @@
             </div>
             <hr>
             <!--<div *ngIf="!item.STATUS || item.STATUS == 0">-->
-                <!--<div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>-->
+            <!--<div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>-->
 
 
-                <!--<div class="productInfo" >-->
-                    <!--<ion-checkbox class = "productCheck" [(ngModel)]="item.choosen" *ngIf="toggleCheckBox"  (click)="selectProduct(item)" ></ion-checkbox>-->
-                    <!--<div class="productImage">-->
-                        <!--<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />-->
-                        <!--&lt;!&ndash;<img src="images/avatar.png"  style="width: 100%" />&ndash;&gt;-->
-                    <!--</div>-->
-                    <!--<div class="productText">-->
-                        <!--<div> {{item.PARTDES}} </div>-->
-                        <!--<div> {{item.FREE1}}</div>-->
-                        <!--<div class="editable"> {{item.PRIT_FREE}}</div>-->
-                    <!--</div>-->
-                    <!--<div class="productEdit" (click)="changeStatus(i,1)">-->
-                        <!--<img src="images/edit.png" style="width: 100%" />-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--<div class="productInfo" >-->
+            <!--<ion-checkbox class = "productCheck" [(ngModel)]="item.choosen" *ngIf="toggleCheckBox"  (click)="selectProduct(item)" ></ion-checkbox>-->
+            <!--<div class="productImage">-->
+            <!--<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />-->
+            <!--&lt;!&ndash;<img src="images/avatar.png"  style="width: 100%" />&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="productText">-->
+            <!--<div> {{item.PARTDES}} </div>-->
+            <!--<div> {{item.FREE1}}</div>-->
+            <!--<div class="editable"> {{item.PRIT_FREE}}</div>-->
+            <!--</div>-->
+            <!--<div class="productEdit" (click)="changeStatus(i,1)">-->
+            <!--<img src="images/edit.png" style="width: 100%" />-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <!--<div *ngIf="item.STATUS == 1">-->
-                <!--<div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>-->
-                <!--<div class="productInfo" >-->
-                    <!--<div class="productImage">-->
-                        <!--&lt;!&ndash;<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />&ndash;&gt;-->
-                        <!--<img src="images/avatar.png"  style="width: 100%" />                    </div>-->
-                    <!--<div class="productText">-->
-                        <!--<div> {{item.PARTDES}}</div>-->
-                        <!--<div> {{item.FREE1}}</div>-->
-                    <!--</div>-->
+            <!--<div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>-->
+            <!--<div class="productInfo" >-->
+            <!--<div class="productImage">-->
+            <!--&lt;!&ndash;<img src="{{imageUrl}}{{cutImageUrl(item.PRIT_FILENAME)}}"  style="width: 100%" />&ndash;&gt;-->
+            <!--<img src="images/avatar.png"  style="width: 100%" />                    </div>-->
+            <!--<div class="productText">-->
+            <!--<div> {{item.PARTDES}}</div>-->
+            <!--<div> {{item.FREE1}}</div>-->
+            <!--</div>-->
 
-                    <!--<textarea rows="4" cols="50" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>-->
-                    <!--<button ion-button class="editButton" (click)="changeStatus(i,0)"> סיים עריכה</button>-->
-                <!--</div>-->
-                <!--&lt;!&ndash; <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>-->
-                <!--<div>6666767676767676767</div> &ndash;&gt;-->
+            <!--<textarea rows="4" cols="50" [(ngModel)]="item.PRIT_FREE" (ngModelChange)="modelChanged($event)"> </textarea>-->
+            <!--<button ion-button class="editButton" (click)="changeStatus(i,0)"> סיים עריכה</button>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; <img src="images/edit.png" style="width:5%" (click)="changeStatus(i,0)"/>-->
+            <!--<div>6666767676767676767</div> &ndash;&gt;-->
             <!--</div>-->
             <!--<hr>-->
         </div>
@@ -166,10 +172,9 @@
 </ion-content>
 
 <ion-footer *ngIf="showSelectedFooter">
-        <div class="buttons">
-            <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>
-            <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>
-        </div>
+    <div class="buttons">
+        <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" *ngIf="!type9">סה"כ:
+            {{caluclateProductPrice | number}} ש"ח</button>
+        <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>
+    </div>
 </ion-footer>
-
-

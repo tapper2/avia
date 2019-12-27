@@ -1,10 +1,10 @@
 <ion-header>
-  <!--<ion-navbar>-->
+    <!--<ion-navbar>-->
     <!--<button ion-button menuToggle>-->
-      <!--<ion-icon name="menu"></ion-icon>-->
+    <!--<ion-icon name="menu"></ion-icon>-->
     <!--</button>-->
     <!--<ion-title>Home</ion-title>-->
-  <!--</ion-navbar>-->
+    <!--</ion-navbar>-->
     <header></header>
 </ion-header>
 
@@ -12,40 +12,46 @@
     <div>
         <ion-slides>
             <ion-slide *ngFor="let row of articlesArray; let i = index" (click)="goArticle(i,row.clickable)">
-                <img [src]="imageHost+row.image" style="width: 100%"  />
+                <img [src]="imageHost+row.image" style="width: 100%" />
             </ion-slide>
         </ion-slides>
     </div>
     <div class="lineH"></div>
     <div class="mainRow">
         <div class="row firstdRow">
-            <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(2)" *ngIf="ctypecode == 6 || ctypecode == 7">
-                    <img src="images/home/ic2.png"  />
-                    <div class="mainIconTitle">הפריטים שלי</div>
-            </div> 
-            <div class="col-6 mainIcon1 leftIcon" align="center" (click)="NavigatePage(5)" *ngIf="ctypecode != 6 && ctypecode != 7">
-                    <img src="images/home/ic6.png" style="margin-top: 4px;"  />
-                    <div class="mainIconTitle" style="margin-top: -10px;">אנשי קשר</div>
-            </div> 
-            <div class="col-6 mainIcon" align="center" (click)="NavigatePage(1)"  *ngIf="ctypecode != 6">
-                    <img src="images/home/ic1.png"  />
-                    <div class="mainIconTitle">יחידות אחסון</div>
+            <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(2)"
+                *ngIf="ctypecode == 6 || ctypecode == 7 || ctypecode == 9">
+                <img src="images/home/ic2.png" />
+                <div class="mainIconTitle">הפריטים שלי</div>
+            </div>
+            <div class="col-6 mainIcon1 leftIcon" align="center" (click)="NavigatePage(5)"
+                *ngIf="ctypecode != 6 && ctypecode != 7 && ctypecode != 9">
+                <img src="images/home/ic6.png" style="margin-top: 4px;" />
+                <div class="mainIconTitle" style="margin-top: -10px;">אנשי קשר</div>
+            </div>
+            <div class="col-6 mainIcon" align="center" (click)="NavigatePage(1)" *ngIf="ctypecode != 6">
+                <img src="images/home/ic1.png" />
+                <div class="mainIconTitle">יחידות אחסון</div>
             </div>
             <div class="col-6 mainIcon1 leftIcon1" align="center" (click)="NavigatePage(5)" *ngIf="ctypecode == 6">
-                    <img src="images/home/ic6.png"  />
-                    <div class="mainIconTitle">אנשי קשר</div>
-            </div> 
+                <img src="images/home/ic6.png" />
+                <div class="mainIconTitle">אנשי קשר</div>
+            </div>
         </div>
         <div class="lineW"></div>
         <div class="row secondRow">
-                <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(3)">
-                        <img src="images/home/ic3.png" />
-                        <div class="mainIconTitle">פירוט חיובים</div>
-                </div> 
-                <div class="col-6 mainIcon" align="center" (click)="NavigatePage(4)">
-                        <img src="images/home/ic4.png" />
-                        <div class="mainIconTitle">החלפת כרטיס אשראי</div>
-                </div>  
+            <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(3)">
+                <img src="images/home/ic3.png" />
+                <div class="mainIconTitle">פירוט חיובים</div>
+            </div>
+            <div class="col-6 mainIcon" align="center" (click)="NavigatePage(4)">
+                <img src="images/home/ic4.png" />
+                <div class="mainIconTitle">החלפת כרטיס אשראי</div>
+            </div>
+            <!-- <div class="col-6 mainIcon leftIcon" align="center" (click)="NavigatePage(6)" *ngIf="ctypecode == 9">
+                <img src="images/home/ic2.png" />
+                <div class="mainIconTitle">ממתין לקליטה</div>
+            </div> -->
         </div>
     </div>
     <!-- <div class="mainIcons">

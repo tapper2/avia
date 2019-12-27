@@ -1,11 +1,11 @@
 <!--<ion-header>-->
 
-  <!--<ion-navbar>-->
-    <!--<ion-buttons start>-->
-      <!--<button ion-button (click)="dismiss()">Close</button>-->
-    <!--</ion-buttons>-->
-    <!--<ion-title>Modals</ion-title>-->
-  <!--</ion-navbar>-->
+<!--<ion-navbar>-->
+<!--<ion-buttons start>-->
+<!--<button ion-button (click)="dismiss()">Close</button>-->
+<!--</ion-buttons>-->
+<!--<ion-title>Modals</ion-title>-->
+<!--</ion-navbar>-->
 
 <!--</ion-header>-->
 
@@ -18,7 +18,7 @@
   </div>
 </ion-header> -->
 <ion-header>
-        <!-- <div class="mainHeader">
+  <!-- <div class="mainHeader">
                 <div class="avatar">
                     <img src="images/home/avatar.png" style="width:90%"/>
                     <p>{{userName}}</p>
@@ -32,69 +32,80 @@
             
             </div>
        -->
-       <header1 HeaderTitle="הפריטים שלי - בחירת מועד"></header1>
-    </ion-header>
+  <header1 HeaderTitle="הפריטים שלי - בחירת מועד"></header1>
+</ion-header>
 <ion-content class="mainContent">
-    <div class="buttonsBar">
-        <div class="btn-group btn-group-justified">
-                    <a href="#" class="btn"  [ngClass]="[selectedReturnItems ? 'ActiveBt' : 'btnGr']" >החזרת פריטים</a>
-                    <a href="#" class="btn"  [ngClass]="[selectedPullItems  ? 'ActiveBt' : 'btnGr']" >שליפת פריטים</a>
-        </div>
+  <div class="buttonsBar">
+    <div class="btn-group btn-group-justified">
+      <a href="#" class="btn" [ngClass]="[selectedReturnItems ? 'ActiveBt' : 'btnGr']">החזרת פריטים</a>
+      <a href="#" class="btn" [ngClass]="[selectedPullItems  ? 'ActiveBt' : 'btnGr']">שליפת פריטים</a>
+    </div>
 
-       <!-- <div class="buttonsBarLeft">
+    <!-- <div class="buttonsBarLeft">
             <button ion-button [ngClass]="[selectedReturnItems ? 'buttonsBarButton2' : 'buttonsBarButton']"> החזרת פריטים</button>
         </div>
         <div class="buttonsBarRight">
             <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" > שליפת פריטים</button>
         </div>  -->
-    </div>
-    <hr>
-  <!--<div class="products">-->
-    <!--<div *ngFor="let item of daysOptions let i=index" class="product">-->
-        <!--<div class="productDV">-->
-            <!--<div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>-->
-            <!--<div class="productInfo" >-->
-                <!--<div class="productEdit" >-->
-                    <!--<ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
 
-        <!--<hr>-->
-    <!--</div>-->
-    <div class="products">
-        <div *ngFor="let item of daysOptions let i=index" class="productItem">
-            <div class="row">
-                <div class="col-1 toogleCB">
-                    <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>
-                </div>
-                <div class="col-8">
-                    <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>
-                </div>
-                <div class="col-2 calenderIcon">
-                      <img *ngIf="!item.choosen" style="width:20px;" src="images/home/cal1.png">
-                      <img *ngIf="item.choosen" style="width:20px" src="images/home/cal2.png">
-                </div>
-            </div>
-            <hr>
-        </div>
+    <div *ngIf="type9" class="form-group">
+      <select class="form-control selectedProducts" id="exampleFormControlSelect1" [(ngModel)]="currentBranch"
+        (ngModelChange)="getWorkingDaysByBranch($event)">
+        <option *ngFor="let branch of branches" value="{{branch.id}}">
+          {{branch.title}}</option>
+      </select>
     </div>
+  </div>
+  <hr>
+  <!--<div class="products">-->
+  <!--<div *ngFor="let item of daysOptions let i=index" class="product">-->
+  <!--<div class="productDV">-->
+  <!--<div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} - {{item.end_hour}}</div>-->
+  <!--<div class="productInfo" >-->
+  <!--<div class="productEdit" >-->
+  <!--<ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<hr>-->
+  <!--</div>-->
+  <div class="products">
+    <div *ngFor="let item of daysOptions let i=index" class="productItem">
+      <div class="row">
+        <div class="col-1 toogleCB">
+          <ion-checkbox [(ngModel)]="item.choosen" (click)="selectDay(item)"></ion-checkbox>
+        </div>
+        <div class="col-8">
+          <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} -
+            {{item.end_hour}}</div>
+        </div>
+        <div class="col-2 calenderIcon">
+          <img *ngIf="!item.choosen" style="width:20px;" src="images/home/cal1.png">
+          <img *ngIf="item.choosen" style="width:20px" src="images/home/cal2.png">
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
 
 
 </ion-content>
 
 
 
-<ion-footer  >
-  <div class="buttons" >
-    <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" >סה"כ: {{caluclateProductPrice | number}} ש"ח</button>
-   
-     <div style="width: 100%; overflow: hidden; padding: 0px; margin-top: -10px;">
-        <div style="width: 100%;  float: left">
-                <button ion-button color="danger"  class="redButton"  full (click)="sendSelectedProducts(0)">ביטול</button>
-                <button ion-button full  class="greenButton" (click)="sendSelectedProducts(1)">שליחה</button>
-        </div>
-     </div>
-      
+<ion-footer>
+  <div class="buttons">
+    <button *ngIf="!type9" ion-button full style="background-color: #7f7f7f; margin-top:5px;">סה"כ:
+      {{caluclateProductPrice | number}}
+      ש"ח</button>
+
+    <div style="width: 100%; overflow: hidden; padding: 0px; margin-top: -10px;">
+      <div style="width: 100%;  float: left">
+        <button ion-button color="danger" class="redButton" full (click)="sendSelectedProducts(0)">ביטול</button>
+        <button ion-button full class="greenButton" (click)="sendSelectedProducts(1)">שליחה</button>
+      </div>
+    </div>
+
   </div>
 </ion-footer>
