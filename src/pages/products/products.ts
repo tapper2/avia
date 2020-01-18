@@ -54,7 +54,8 @@ export class ProductsPage {
     public productFields: any = {
         "isChanged": false
     }
-    public type9;
+
+    public type9 = 'false';
 
 
 
@@ -77,6 +78,7 @@ export class ProductsPage {
         });
 
         this.type9 = localStorage.type9;
+        console.log("TYPE9 : ", this.type9)
     }
 
     getImagesFromServer() {
@@ -356,6 +358,10 @@ export class ProductsPage {
                     TYPECODE = "13"
                 else if (data[0].selectedReturnItems == true)
                     TYPECODE = "14"
+
+                if (this.type9 == 'true')
+                    TYPECODE = "12";
+
                 console.log("TYPECODE  : ", data[0].selectedPullItems, data[0].selectedReturnItems, TYPECODE)
 
                 this.countedSelected = 0;
@@ -376,14 +382,15 @@ export class ProductsPage {
                     }
 
 
-                    console.log("selectedDayArray", this.selectedDayArray)
+                    console.log("selectedDayArray", this.selectedDayArray, moment(this.selectedDayArray.formatted_date, 'DD-MM-YYYY').format())
                     //'1988-01-01 '
                     for (let i = 0; i < this.productsArray.length; i++) {
                         if (this.productsArray[i].choosen == true) {
                             this.productsSendArray.push({
                                 "PARTNAME": this.productsArray[i].PARTNAME,
                                 "SERNUM": this.productsArray[i].SERNUM,
-                                "TASKDATE": moment(this.selectedDayArray.formatted_date, 'YYYY-MM-DD').format(),   /* תאריך למשימה*/
+                                "TASKDATE": moment(this.selectedDayArray.formatted_date, 'DD-MM-YYYY').format(),   /* תאריך למשימה*/
+                                "DUEDATE": moment(this.selectedDayArray.formatted_date, 'DD-MM-YYYY').format(),   /* תאריך למשימה*/
                                 "FROMDATE": moment('1988-01-01' + this.selectedDayArray.start_hour + ':00', 'YYYY-MM-DD HH:mm:ss').format(), /* משעה למשימה*/
                                 "TODATE": moment('1988-01-01 ' + this.selectedDayArray.end_hour + ':00', 'YYYY-MM-DD HH:mm:ss').format() /* עד שעה למשימה*/
                             });
@@ -467,12 +474,12 @@ export class ProductsPage {
     // }
 
     cutImageUrl(url, type) {
-
         if (url) {
             let arr = url.split("/");
             return this.imageUrl + "/" + arr[4] + "/" + arr[5] + "/" + arr[6];
         }
         else {
+
             if (String(type) == "100")
                 return 'images/100.png';
             else if (String(type) == "101")
@@ -481,6 +488,8 @@ export class ProductsPage {
                 return 'images/102.jpg';
         }
 
+        if (this.type9 == 'true')
+            return 'images/ic4.png';
     }
 
     changeStatus(place, status) {

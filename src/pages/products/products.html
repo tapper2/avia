@@ -53,7 +53,7 @@
     <div class="products">
         <div *ngFor="let item of productsArray let i=index" class="productItem">
             <div *ngIf="!item.STATUS || item.STATUS == 0">
-                <div class="productNumber"> מספר מוצר : {{item.SERNUM}}</div>
+                <div class="productNumber"> מספר פריט : {{item.SERNUM}}</div>
                 <div class="row" style="direction:rtl">
                     <div *ngIf="toggleCheckBox" class="col-1 toggleCheckBox">
                         <ion-checkbox [(ngModel)]="item.choosen" (click)="selectProduct()"></ion-checkbox>
@@ -173,7 +173,7 @@
 
 <ion-footer *ngIf="showSelectedFooter">
     <div class="buttons">
-        <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" *ngIf="!type9">סה"כ:
+        <button ion-button full style="background-color: #7f7f7f; margin-top:5px;" *ngIf="type9 == 'false'">סה"כ:
             {{caluclateProductPrice | number}} ש"ח</button>
         <button ion-button full style="background-color: #6eb43f" (click)="openProductsModal()">המשך</button>
     </div>

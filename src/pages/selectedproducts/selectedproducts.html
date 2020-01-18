@@ -48,7 +48,8 @@
             <button ion-button  [ngClass]="[selectedPullItems ? 'buttonsBarButton2' : 'buttonsBarButton']" > שליפת פריטים</button>
         </div>  -->
 
-    <div *ngIf="type9" class="form-group">
+    <div *ngIf="type9 == 'true'" class="form-group">
+      <div class="selectedInfo">בחר מרכז תפעול לקבלת הפריטים</div>
       <select class="form-control selectedProducts" id="exampleFormControlSelect1" [(ngModel)]="currentBranch"
         (ngModelChange)="getWorkingDaysByBranch($event)">
         <option *ngFor="let branch of branches" value="{{branch.id}}">
@@ -78,7 +79,7 @@
         </div>
         <div class="col-8">
           <div class="productNumber"> {{dayName[item.day]}} | {{item.formatted_date}} | {{item.start_hour}} -
-            {{item.end_hour}}</div>
+            {{item.end_hour}} </div>
         </div>
         <div class="col-2 calenderIcon">
           <img *ngIf="!item.choosen" style="width:20px;" src="images/home/cal1.png">

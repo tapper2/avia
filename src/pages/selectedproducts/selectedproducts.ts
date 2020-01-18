@@ -171,6 +171,9 @@ export class SelectedproductsPage {
     async getWorkingDaysByBranch(event?) {
         await this.server.getWorkingDays("getWorkingDays", this.currentBranch).then((data: any) => {
             this.daysOptions = data.json();
+            for (let i = 0; i < this.daysOptions.length; i++) {
+                this.daysOptions[i].choosen = false;
+            }
         });
     }
 

@@ -4,9 +4,12 @@
 
 
 <ion-content padding>
+  <div class="mainTXT">
+    {{mainText}}
+  </div>
   <div class="products">
     <div *ngFor="let item of productsArray let i=index" class="productItem mt-3">
-      <div *ngIf="!item.STATUS || item.STATUS == 0">
+      <div *ngIf="item.STATUS == 0">
         <div class="productNumber"> תיאור מוצר : {{product.PDES}}</div>
         <div class="row" style="direction:rtl">
           <div *ngIf="toggleCheckBox" class="col-1 toggleCheckBox">
@@ -39,7 +42,7 @@
       </div>
 
       <!-- אחרי עריכה -->
-      <div *ngIf="item.STATUS == 1">
+      <div *ngIf="!item.STATUS || item.STATUS == 1">
         <div class="productNumber"> תיאור מוצר : {{product.PDES}}</div>
         <div class="row" style="direction:rtl">
           <div *ngIf="toggleCheckBox" class="col-1 toggleCheckBox">
@@ -52,9 +55,9 @@
                 <img src="{{imgURL}}{{img.url}}" (click)="fullscreenImage(img)" class="imgThumb" />
               </div>
             </div>
-            <div class="addImg" *ngIf="getImageLen(i) < 2" (click)="presentActionSheet(item)">
+            <!-- <div class="addImg" *ngIf="getImageLen(i) < 2" (click)="presentActionSheet(item)">
               <ion-icon name="add" class="addIcon"></ion-icon>
-            </div>
+            </div> -->
           </div>
 
 
@@ -73,7 +76,7 @@
             </div> -->
             <div class="form-group productText2">
               <div class="detailsEdit">הכנס מספר מוצר :</div>
-              <input type="number" class="form-control mt-2 p-2 inp" [(ngModel)]="item.CUSTNUM"
+              <input type="number" (ngModelChange)="modelChanged($event)" class="form-control mt-2 p-2 inp" [(ngModel)]="item.CUSTNUM"
                 id="exampleInputPassword1" placeholder="הכנס מספר מוצר">
             </div>
             <div class="productText1">
@@ -100,15 +103,15 @@
             </div>
           </div> -->
         </div>
-        <div class="row no-gutters">
+        <!-- <div class="row no-gutters">
           <div class="col-3 no-gutters">
-            <button ion-button class="delButton" (click)="changeStatus(i,0,0)"> בטל</button>
+            <button ion-button class="delButton" (click)="changeStatus(i,1,0)"> בטל</button>
           </div>
           <div class="col-9 no-gutters">
-            <button ion-button class="editButton" (click)="changeStatus(i,0,1)"> שמור</button>
+            <button ion-button class="editButton" (click)="changeStatus(i,1,1)"> שמור</button>
           </div>
-        </div>
-        <!-- <hr /> -->
+        </div> -->
+        <hr />
       </div>
 
     </div>

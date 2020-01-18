@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController, Loading, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController, Loading, ToastController, AlertController } from 'ionic-angular';
 import { ServerService } from '../../services/server-service';
 import { ToastService } from '../../services/toast-service';
 import { Camera } from '@ionic-native/camera';
@@ -23,7 +23,7 @@ declare var cordova: any;
 })
 export class Type9Page {
 
-  public productsArray = [];
+  public productsArray: any = [];
   public product = [];
   public toggleCheckBox: boolean = false;
   public currentProductId: string;
@@ -35,6 +35,8 @@ export class Type9Page {
     "isChanged": false
   }
   public lastSaveObject = {}
+  public mainText = this.server.appsettingsArray['type9']
+  public isChanged: boolean = false;
   loading: Loading;
 
 
@@ -49,7 +51,8 @@ export class Type9Page {
     public file: File,
     public filePath: FilePath,
     public loadingCtrl: LoadingController,
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController,
+    private alertCtrl: AlertController) {
 
     let URL = "/odata/Priority/tabula.ini/avia/PRIT_ORDIAPI?$filter=CUSTNAME eq '" + localStorage.getItem("CUSTNAME") + "'&$expand=PRIT_ORDISERN_SUBFORM";
 
@@ -74,6 +77,7 @@ export class Type9Page {
   modelChanged(newObj) {
     console.log("Change");
     this.productFields.isChanged = true;
+    this.isChanged = true;
   }
 
   cutImage(url, type) {
@@ -89,7 +93,7 @@ export class Type9Page {
       else if (String(type) == "102")
         return 'images/102.jpg';
       else
-        return 'images/lg.png';
+        return 'images/ic3.png';
     }
   }
 
@@ -153,9 +157,36 @@ export class Type9Page {
     return arr;
   }
 
+  ionViewCanLeave(): boolean {
+    if (this.isChanged) {
+      let alertBox = this.alertCtrl.create({
+        title: 'שינוים שלא נשמרו',
+        message: 'האם ברצונך לצאת מבלי לשמור את השינוים?',
+        buttons: [
+          {
+            text: 'לא',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          },
+          {
+            text: 'כן',
+            handler: () => {
+              this.isChanged = false;
+              this.navCtrl.pop();
+            }
+          }
+        ]
+      });
+      alertBox.present();
+      return false;
+    }
+  }
+
   onSubmit() {
     this.productFields.isChanged = false;
-
+    let pr = this.productsArray;
 
     let URL = "/odata/Priority/tabula.ini/avia/PRIT_ORDIAPI";
     let obArray = this.buildArryForServer();
@@ -163,6 +194,8 @@ export class Type9Page {
       "ORDI": this.product['ORDI'],                                              //   מזהה שורת ההזמנה
       "PRIT_ORDISERN_SUBFORM": obArray
     }
+
+
 
     // let sendData =
     // {

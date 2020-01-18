@@ -29,11 +29,13 @@
                 <img src="images/home/ic6.png" style="margin-top: 4px;" />
                 <div class="mainIconTitle" style="margin-top: -10px;">אנשי קשר</div>
             </div>
-            <div class="col-6 mainIcon" align="center" (click)="NavigatePage(1)" *ngIf="ctypecode != 6">
+            <div class="col-6 mainIcon" align="center" (click)="NavigatePage(1)"
+                *ngIf="ctypecode != 6 && ctypecode != 9">
                 <img src="images/home/ic1.png" />
                 <div class="mainIconTitle">יחידות אחסון</div>
             </div>
-            <div class="col-6 mainIcon1 leftIcon1" align="center" (click)="NavigatePage(5)" *ngIf="ctypecode == 6">
+            <div class="col-6 mainIcon1 leftIcon1" align="center" (click)="NavigatePage(5)"
+                *ngIf="ctypecode == 6 || ctypecode == 9">
                 <img src="images/home/ic6.png" />
                 <div class="mainIconTitle">אנשי קשר</div>
             </div>
